@@ -49,6 +49,20 @@ jobs:
       with:
         fetch-depth: 0
 
+    - name: Prepare Working Directory
+      run: |
+          mkdir -p ./working-dir
+          cp -r ./* ./working-dir
+          cd ./working-dir
+
+    - uses: actions/checkout@v1  
+      with:
+        repository: SoftEngResearch/mop-with-dynapt
+        token: ${{ secrets.GH_ACCESS_TOKEN }}
+
+    - name: List files in the current directory
+      run: ls
+
     - name: Run installation script
       run: |
         chmod +x ./scripts/install.sh
