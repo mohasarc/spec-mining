@@ -51,8 +51,7 @@ jobs:
 
     - name: Prepare Working Directory
       run: |
-          mkdir -p ./working-dir
-          cp -r ./* ./working-dir
+          mkdir ./working-dir
           cd ./working-dir
 
     - uses: actions/checkout@v1  
