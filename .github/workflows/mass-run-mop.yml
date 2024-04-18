@@ -71,6 +71,12 @@ jobs:
         ../scripts/install.sh ${{ matrix.repo }}
     - name: Execute mop script
       run: |
+        REPO_URL="${{ matrix.repo }}"
+        REPO_NAME="${REPO_URL##*/}"  # This strips everything before the last '/' character
+        echo "Repository Name: $REPO_NAME"
         cd ./working-dir
+        ls
         chmod +x ../scripts/run-mop-new.sh
-        ../scripts/run-mop-new.sh ./${{ matrix.repo }}
+        ../scripts/run-mop-new.sh ./$REPO_NAME
+        ls 
+        ls ./reports
