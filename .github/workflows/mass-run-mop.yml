@@ -1,57 +1,51 @@
-name: Matrix GitHub Repos Workflow
+name: Run Scripts on Multiple Repositories
 
 on:
   workflow_dispatch:
     inputs:
       google_sheet_id:
-        description: 'Google Sheet id containing GitHub repository links'
+        description: 'ID of the Google Sheet containing repository links'
         required: true
 
 jobs:
-  prepare:
+  fetch_data:
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.set-matrix.outputs.matrix }}
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Fetch Repository Links
+        id: fetch-repos
+        uses: jroehl/gsheet.action@v2.0.0
+        with:
+          spreadsheetId: ${{ github.event.inputs.google_sheet_id }}
+          commands: |
+            [
+              { "command": "getData", "args": { "range": "links!A:A" }}
+            ]
+        env:
+          GSHEET_CLIENT_EMAIL: ${{ secrets.GSHEET_CLIENT_EMAIL }}
+          GSHEET_PRIVATE_KEY: ${{ secrets.GSHEET_PRIVATE_KEY }}
 
-    - id: googlesheet_actions
-      uses: rjoydip/googlesheet-actions@0.1.1
-      with:
-        sheet-id: ${{ inputs.google_sheet_id }}
+      - name: Set up matrix for job
+        id: set-matrix
+        run: echo "::set-output name=matrix::${{ toJSON(fromJSON(steps.fetch-repos.outputs.results)) }}"
 
-    - id: echo
-      uses: actions/github-script@v2
-      with:
-        github-token: ${{secrets.GITHUB_TOKEN}}
-        script: |
-            console.log(${{steps.googlesheet_actions.outputs.result}})
-
-    - name: Set up matrix for job
-      id: set-matrix
-      run: echo "::set-output name=matrix::$(jq -r '.[] | .links' ${{ steps.fetch-data.outputs.result-path }})"
-
-  run-jobs:
-    needs: prepare
+  run_jobs:
+    needs: fetch_data
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        repo: ${{ fromJson(needs.prepare.outputs.matrix) }}
-
+        repo: ${{ fromJson(needs.fetch_data.outputs.matrix) }}
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
       with:
         repository: ${{ matrix.repo }}
-
     - name: Run installation script
       run: |
         chmod +x install.sh
-        ./scripts/install.sh ${{ matrix.repo }}
-
+        ./install.sh ${{ matrix.repo }}
     - name: Execute mop script
       run: |
-        ./scripts/run-mop-new.sh ./${{ github.repository }}
+        ./run-mop-new.sh ./${{ github.repository }}
