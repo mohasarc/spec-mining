@@ -64,6 +64,7 @@ jobs:
       run: |
         cd ./projects
         cp ../scripts/* .
+        ls -l
 
     - name: Install Dependencies and Run MOP
       run: |
