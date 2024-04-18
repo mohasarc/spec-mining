@@ -34,6 +34,6 @@ pip3 install pytest-json-report pytest-monitor
 # Install pythonmop (assuming it's in a sibling directory named 'mop-with-dynapt')
 cd ../mop-with-dynapt || exit
 pip3 install .
-apt-get install python3-tk -y
+sudo apt-get install python3-tk -y
 cd -
 deactivate
