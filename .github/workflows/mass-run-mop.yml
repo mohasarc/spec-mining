@@ -64,18 +64,16 @@ jobs:
         cd ./working-dir
         ls
 
-    - name: Run installation script
+    - name: Install Dependencies and Run MOP
       run: |
+        echo "Installing dependencies"
         cd ./working-dir
         chmod +x ../scripts/install.sh
         ../scripts/install.sh ${{ matrix.repo }}
-    - name: Execute mop script
-      run: |
+
+        echo "Running MOP"
         REPO_URL="${{ matrix.repo }}"
         REPO_NAME="${REPO_URL##*/}"  # This strips everything before the last '/' character
         echo "Repository Name: $REPO_NAME"
-        cd ./working-dir
-        ls
         chmod +x ../scripts/run-mop-new.sh
         ../scripts/run-mop-new.sh ./$REPO_NAME
-        ls 
