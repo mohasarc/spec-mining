@@ -26,10 +26,17 @@ jobs:
           GSHEET_CLIENT_EMAIL: ${{ secrets.GSHEET_CLIENT_EMAIL }}
           GSHEET_PRIVATE_KEY: ${{ secrets.GSHEET_PRIVATE_KEY }}
 
+      - name: log results
+        run: |
+          echo "Results:"
+          echo "${{ steps.fetch-repos.outputs.results }}"
+
       - name: Set up matrix for job
         id: set-matrix
         run: |
-          JSON_STRING=$(jq -c '[.[] | select(. != null) | .[]]' <<< "${{ steps.fetch-repos.outputs.results }}")
+          JSON_STRING=$(jq -c '[.results[].result.rawData[][]]' <<< "${{ steps.fetch-repos.outputs.results }}")
+          echo "Extracted JSON String:"
+          echo "$JSON_STRING"
           echo "::set-output name=matrix::$JSON_STRING"
 
   run_jobs:
