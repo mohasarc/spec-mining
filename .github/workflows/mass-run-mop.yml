@@ -79,4 +79,3 @@ jobs:
         chmod +x ../scripts/run-mop-new.sh
         ../scripts/run-mop-new.sh ./$REPO_NAME
         ls 
-        ls ./reports

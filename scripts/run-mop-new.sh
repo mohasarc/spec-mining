@@ -69,5 +69,6 @@ cp .pymon $report/db.pymon
 gzip $report/db.pymon
 deactivate
 
+ls -l $report
 
 echo "--->END"
