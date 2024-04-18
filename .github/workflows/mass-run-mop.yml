@@ -1,5 +1,10 @@
 name: Run Scripts on Multiple Repositories
 
+
+permissions:
+  contents: write
+
+
 on:
   workflow_dispatch:
     inputs:
