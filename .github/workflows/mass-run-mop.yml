@@ -20,7 +20,7 @@ jobs:
           spreadsheetId: ${{ github.event.inputs.google_sheet_id }}
           commands: |
             [
-              { "command": "getData", "args": { "range": "links!A:A" }}
+              { "command": "getData", "args": { "range": "links!A2:A" }}
             ]
         env:
           GSHEET_CLIENT_EMAIL: ${{ secrets.GSHEET_CLIENT_EMAIL }}
@@ -28,7 +28,9 @@ jobs:
 
       - name: Set up matrix for job
         id: set-matrix
-        run: echo "::set-output name=matrix::${{ toJSON(fromJSON(steps.fetch-repos.outputs.results)) }}"
+        run: |
+          JSON_STRING=$(jq -c '[.[] | select(. != null) | .[]]' <<< "${{ steps.fetch-repos.outputs.results }}")
+          echo "::set-output name=matrix::$JSON_STRING"
 
   run_jobs:
     needs: fetch_data
