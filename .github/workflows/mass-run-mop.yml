@@ -96,12 +96,13 @@ jobs:
       run: |
         cd ./projects/reports/$REPO_NAME
         zip -r ../../$ZIP_FILE .  # Create a zip file in the projects directory
+        ls -l ../../
       shell: bash
 
     - name: Upload report to GitHub Release
       uses: softprops/action-gh-release@v1
       with:
-        files: ./projects/reports/$ZIP_FILE
+        files: ./projects/$ZIP_FILE
         tag_name: mass-run-mop-${{ github.run_id }}
         name: mass-run-mop-${{ github.run_id }}
         draft: false
