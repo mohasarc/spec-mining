@@ -26,6 +26,8 @@ call_pymop(){
     set +x
     
 
+    ls -l
+
     mv .report.json $report/$algo.report.json
     mv "$algo"-full.json $report/$algo-full.json
     mv "$algo"-violations.json $report/$algo-violations.json
