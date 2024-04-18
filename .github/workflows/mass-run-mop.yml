@@ -58,15 +58,16 @@ jobs:
       with:
         repository: SoftEngResearch/mop-with-dynapt
         token: ${{ secrets.GH_ACCESS_TOKEN }}
-
-    - name: List files in the current directory
-      run: ls
+    
+    - run: |
+        cd ..
+        ls
 
     - name: Run installation script
       run: |
-        chmod +x ./scripts/install.sh
-        ./scripts/install.sh ${{ matrix.repo }}
+        chmod +x ../scripts/install.sh
+        ../scripts/install.sh ${{ matrix.repo }}
     - name: Execute mop script
       run: |
-        chmod +x ./scripts/run-mop-new.sh
-        ./scripts/run-mop-new.sh ./${{ github.repository }}
+        chmod +x ../scripts/run-mop-new.sh
+        ../scripts/run-mop-new.sh ./${{ github.repository }}
