@@ -103,7 +103,7 @@ jobs:
       with:
         files: ./projects/reports/$ZIP_FILE
         tag_name: mass-run-mop-${{ github.run_id }}
-        release_name: mass-run-mop-${{ github.run_id }}
+        name: mass-run-mop-${{ github.run_id }}
         draft: false
         prerelease: true
         token: ${{ secrets.GITHUB_TOKEN }}
