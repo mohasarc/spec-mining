@@ -3,8 +3,8 @@ name: Matrix GitHub Repos Workflow
 on:
   workflow_dispatch:
     inputs:
-      google_sheet_url:
-        description: 'Google Sheet URL containing GitHub repository links'
+      google_sheet_id:
+        description: 'Google Sheet id containing GitHub repository links'
         required: true
 
 jobs:
@@ -17,15 +17,17 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Extract spreadsheet ID from URL
-      id: extract-id
-      run: echo "::set-output name=id::$(echo '${{ github.event.inputs.google_sheet_url }}' | grep -o 'spreadsheets/d/[^/]*' | cut -d'/' -f 3)"
-
-    - name: Fetch Google Sheet data
-      id: fetch-data
-      uses: bradbase/fetch-google-sheets@v1.0.1
+    - id: googlesheet_actions
+      uses: rjoydip/googlesheet-actions@0.1.1
       with:
-        url: ${{ github.event.inputs.google_sheet_url }}
+        sheet-id: ${{ inputs.google_sheet_id }}
+
+    - id: echo
+      uses: actions/github-script@v2
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+            console.log(${{steps.googlesheet_actions.outputs.result}})
 
     - name: Set up matrix for job
       id: set-matrix
