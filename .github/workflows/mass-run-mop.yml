@@ -54,13 +54,12 @@ jobs:
           mkdir ./working-dir
           cd ./working-dir
 
-    - uses: actions/checkout@v4
-      with:
-        repository: SoftEngResearch/mop-with-dynapt
-        token: ${{ secrets.GH_ACCESS_TOKEN }}
-    
+
+    - name: clone SoftEngResearch/mop-with-dynapt
+      run: |
+        git clone https://${{ secrets.GH_ACCESS_TOKEN }}@github.com/SoftEngResearch/mop-with-dynapt.git
+
     - run: |
-        cd ..
         ls
 
     - name: Run installation script
