@@ -54,7 +54,7 @@ jobs:
           mkdir ./working-dir
           cd ./working-dir
 
-    - uses: actions/checkout@v1  
+    - uses: actions/checkout@v4
       with:
         repository: SoftEngResearch/mop-with-dynapt
         token: ${{ secrets.GH_ACCESS_TOKEN }}
