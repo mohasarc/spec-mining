@@ -51,8 +51,9 @@ jobs:
 
     - name: Run installation script
       run: |
-        chmod +x install.sh
+        chmod +x ./scripts/install.sh
         ./scripts/install.sh ${{ matrix.repo }}
     - name: Execute mop script
       run: |
+        chmod +x ./scripts/run-mop-new.sh
         ./scripts/run-mop-new.sh ./${{ github.repository }}
