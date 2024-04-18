@@ -102,7 +102,7 @@ jobs:
     - name: Upload report to GitHub Release
       uses: softprops/action-gh-release@v1
       with:
-        files: ./projects/$ZIP_FILE
+        files: ./projects/${{env.ZIP_FILE}}
         tag_name: mass-run-mop-${{ github.run_id }}
         name: mass-run-mop-${{ github.run_id }}
         draft: false
