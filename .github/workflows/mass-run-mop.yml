@@ -100,7 +100,7 @@ jobs:
     - name: Generate report csv
       run: |
         # move all data from ./projects/reports/$REPO_NAME to ./projects/reports
-        mv ./projects/reports/$REPO_NAME/* ./reports/reports
+        mv ./projects/reports/$REPO_NAME/* ./projects/reports
         cd ./projects/reports
 
         # extract all .gz files
