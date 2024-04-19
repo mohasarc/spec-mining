@@ -62,6 +62,14 @@ jobs:
           mkdir ./projects
           cd ./projects
 
+    - name: Setup variables
+      run: |
+          REPO_URL="${{ matrix.repo }}"
+          REPO_NAME="${REPO_URL##*/}"  # This strips everything before the last '/' character
+          ZIP_FILE="${REPO_NAME}.zip"
+          echo "REPO_NAME=$REPO_NAME" >> $GITHUB_ENV
+          echo "ZIP_FILE=$ZIP_FILE" >> $GITHUB_ENV
+      shell: bash
 
     - name: clone SoftEngResearch/mop-with-dynapt
       run: |
@@ -90,15 +98,6 @@ jobs:
         echo "Repository Name: $REPO_NAME"
         chmod +x ./run-mop-new.sh
         ./run-mop-new.sh ./$REPO_NAME
-
-    - name: Setup repository name and zip file name
-      run: |
-          REPO_URL="${{ matrix.repo }}"
-          REPO_NAME="${REPO_URL##*/}"  # This strips everything before the last '/' character
-          ZIP_FILE="${REPO_NAME}.zip"
-          echo "REPO_NAME=$REPO_NAME" >> $GITHUB_ENV
-          echo "ZIP_FILE=$ZIP_FILE" >> $GITHUB_ENV
-      shell: bash
 
     - name: Generate report csv
       run: |
@@ -199,7 +198,7 @@ jobs:
                 "minRow": 1,
                 "worksheetTitle": "results",
                 "data": [
-                  ["${{ env.REPO_NAME }}", "Failed to generate results.csv"]
+                  ["${{ env.REPO_NAME }}", "Action failed for some reason"]
                 ]
               }
             }
