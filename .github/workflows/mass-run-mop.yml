@@ -160,7 +160,8 @@ jobs:
               "command": "getData",
               "args": {
                 "minCol": 1,
-                "range": "results!1:1"
+                "minRow": 1,
+                "maxRow": 1,
               }
             }
           ]
