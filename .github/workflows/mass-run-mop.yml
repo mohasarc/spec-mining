@@ -184,44 +184,10 @@ jobs:
         echo "::set-output name=row1::$ROW1"
         echo "::set-output name=row2::$ROW2"
         echo "::set-output name=row3::$ROW3"
-    
-    - name: Read first row from Google Sheet
-      if: steps.check_results_csv.outputs.results_exist == 'true'
-      id: read_first_row
-      uses: jroehl/gsheet.action@v2.0.0
-      with:
-        spreadsheetId: ${{ github.event.inputs.output_google_sheet_id }}
-        commands: |
-          [
-            {
-              "command": "getData",
-              "args": {
-                "worksheetTitle": "results",
-                "minCol": 1,
-                "minRow": 1,
-                "maxRow": 1
-              }
-            }
-          ]
-      env:
-        GSHEET_CLIENT_EMAIL: ${{ secrets.GSHEET_CLIENT_EMAIL }}
-        GSHEET_PRIVATE_KEY: ${{ secrets.GSHEET_PRIVATE_KEY }}
 
-    - name: Check if first row is empty
-      if: steps.check_results_csv.outputs.results_exist == 'true'
-      id: check_first_row
-      run: |
-        ENCODED_RESULTS=$(echo '${{ steps.fetch-repos.outputs.results }}' | base64)
-        if [ -z "$(echo "$ENCODED_RESULTS" | base64 --decode | jq -r '.results[0].result.rawData')" ]; then
-          echo "First row is empty"
-          echo "::set-output name=is_empty::true"
-        else
-          echo "First row is not empty"
-          echo "::set-output name=is_empty::false"
-        fi
 
-    - name: Append 1st row from CSV if first row is empty
-      if: ${{ steps.check_results_csv.outputs.results_exist == 'true' && steps.check_first_row.outputs.is_empty == 'true' }}
+    - name: Append results to Google Sheet
+      if: steps.check_results_csv.outputs.results_exist == 'true'
       uses: jroehl/gsheet.action@v2.0.0
       with:
         spreadsheetId: ${{ github.event.inputs.output_google_sheet_id }}
@@ -237,19 +203,7 @@ jobs:
                   [${{ steps.read_csv_rows.outputs.row1 }}]
                 ]
               }
-            }
-          ]
-      env:
-        GSHEET_CLIENT_EMAIL: ${{ secrets.GSHEET_CLIENT_EMAIL }}
-        GSHEET_PRIVATE_KEY: ${{ secrets.GSHEET_PRIVATE_KEY }}
-
-    - name: Append results to Google Sheet
-      if: steps.check_results_csv.outputs.results_exist == 'true'
-      uses: jroehl/gsheet.action@v2.0.0
-      with:
-        spreadsheetId: ${{ github.event.inputs.output_google_sheet_id }}
-        commands: |
-          [
+            },
             {
               "command": "appendData",
               "args": {
