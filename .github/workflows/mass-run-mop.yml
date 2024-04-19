@@ -11,6 +11,9 @@ on:
       google_sheet_id:
         description: 'ID of the Google Sheet containing repository links'
         required: true
+      output_google_sheet_id:
+        description: 'ID of the Google Sheet where results will be appended. you need to add mass-run-mop@mohas-filemap-cloud.iam.gserviceaccount.com as an editor to this sheet'
+        required: true
 
 jobs:
   fetch_data:
@@ -133,3 +136,33 @@ jobs:
         draft: false
         prerelease: true
         token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Read rows from results.csv
+      id: read_csv_rows
+      run: |
+        # Read 2nd and 3rd rows from results.csv
+        ROWS=$(sed -n '2,3p' ./projects/reports/$REPO_NAME/results.csv)
+        echo "::set-output name=row1::$(echo "$ROWS" | sed -n '1p')"
+        echo "::set-output name=row2::$(echo "$ROWS" | sed -n '2p')"
+    
+    - name: Append results to Google Sheet
+      uses: jroehl/gsheet.action@v2.0.0
+      with:
+        spreadsheetId: ${{ github.event.inputs.output_google_sheet_id }}
+        commands: |
+          [
+            {
+              "command": "appendData",
+              "args": {
+                "range": "results!A1",
+                "values": [
+                  [${{ steps.read_csv_rows.outputs.row1 }}],
+                  [${{ steps.read_csv_rows.outputs.row2 }}]
+                ]
+              }
+            }
+          ]
+      env:
+        GSHEET_CLIENT_EMAIL: ${{ secrets.GSHEET_CLIENT_EMAIL }}
+        GSHEET_PRIVATE_KEY: ${{ secrets.GSHEET_PRIVATE_KEY }}
+    
