@@ -97,11 +97,29 @@ jobs:
           echo "ZIP_FILE=$ZIP_FILE" >> $GITHUB_ENV
       shell: bash
 
+    - name: Generate report csv
+      run: |
+        # move all data from ./projects/reports/$REPO_NAME to ./projects/reports
+        mv ./projects/reports/$REPO_NAME/* ./reports/reports
+        cd ./projects/reports
+
+        # extract all .gz files
+        find . -type f -name "*.gz" -exec gunzip {} \;
+        ls -l
+
+        # move ../scripts/parse-reports.py to ./projects/reports
+        cp ../scripts/parse-reports.py .
+
+        # run the python script
+        python3 parse-reports.py
+        ls -l
+      shell: bash
+
     - name: Zip report files
       run: |
-        cd ./projects/reports/$REPO_NAME
-        zip -r ../../$ZIP_FILE .  # Create a zip file in the projects directory
-        ls -l ../../
+        cd ./projects/reports
+        zip -r ../$ZIP_FILE .  # Create a zip file in the projects directory
+        ls -l ../
       shell: bash
 
     - name: Upload report to GitHub Release
