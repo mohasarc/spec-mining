@@ -138,42 +138,7 @@ jobs:
         prerelease: true
         token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Check if results.csv exists
-      id: check_results_csv
-      run: |
-        if [ -f ./projects/reports/$REPO_NAME/results.csv ]; then
-          echo "results.csv exists"
-          echo "::set-output name=results_exist::true"
-        else
-          echo "results.csv does not exist"
-          echo "::set-output name=results_exist::false"
-        fi
-  
-    - name: Append failure message to Google Sheet
-      if: steps.check_results_csv.outputs.results_exist == 'false'
-      uses: jroehl/gsheet.action@v2.0.0
-      with:
-        spreadsheetId: ${{ github.event.inputs.output_google_sheet_id }}
-        commands: |
-          [
-            {
-              "command": "appendData",
-              "args": {
-                "minCol": 1,
-                "minRow": 1,
-                "worksheetTitle": "results",
-                "data": [
-                  ["${{ env.REPO_NAME }}", "Failed to generate results.csv"]
-                ]
-              }
-            }
-          ]
-      env:
-        GSHEET_CLIENT_EMAIL: ${{ secrets.GSHEET_CLIENT_EMAIL }}
-        GSHEET_PRIVATE_KEY: ${{ secrets.GSHEET_PRIVATE_KEY }}
-
     - name: Read rows from results.csv
-      if: steps.check_results_csv.outputs.results_exist == 'true'
       id: read_csv_rows
       run: |
         # Read the first 3 rows from results.csv
@@ -187,7 +152,6 @@ jobs:
 
 
     - name: Append results to Google Sheet
-      if: steps.check_results_csv.outputs.results_exist == 'true'
       uses: jroehl/gsheet.action@v2.0.0
       with:
         spreadsheetId: ${{ github.event.inputs.output_google_sheet_id }}
@@ -220,4 +184,26 @@ jobs:
       env:
         GSHEET_CLIENT_EMAIL: ${{ secrets.GSHEET_CLIENT_EMAIL }}
         GSHEET_PRIVATE_KEY: ${{ secrets.GSHEET_PRIVATE_KEY }}
-    
+
+    - name: Action failed for some reason
+      if: failure()
+      uses: jroehl/gsheet.action@v2.0.0
+      with:
+        spreadsheetId: ${{ github.event.inputs.output_google_sheet_id }}
+        commands: |
+          [
+            {
+              "command": "appendData",
+              "args": {
+                "minCol": 1,
+                "minRow": 1,
+                "worksheetTitle": "results",
+                "data": [
+                  ["${{ env.REPO_NAME }}", "Failed to generate results.csv"]
+                ]
+              }
+            }
+          ]
+      env:
+        GSHEET_CLIENT_EMAIL: ${{ secrets.GSHEET_CLIENT_EMAIL }}
+        GSHEET_PRIVATE_KEY: ${{ secrets.GSHEET_PRIVATE_KEY }}
