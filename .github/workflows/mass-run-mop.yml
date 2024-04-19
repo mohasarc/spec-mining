@@ -173,8 +173,9 @@ jobs:
     - name: Check if first row is empty
       id: check_first_row
       run: |
-        FIRST_ROW="${{ steps.read_first_row.outputs.results }}"
-        if [ -z "$FIRST_ROW" ]; then
+        ENCODED_FIRST_ROW=$(echo "${{ steps.read_first_row.outputs.results }}" | base64)
+        DECODED_FIRST_ROW=$(echo "$ENCODED_FIRST_ROW" | base64 --decode)
+        if [ -z "$(echo "$DECODED_FIRST_ROW" | jq -r '.results[0].result.rawData')" ]; then
           echo "First row is empty"
           echo "::set-output name=is_empty::true"
         else
