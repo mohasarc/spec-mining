@@ -142,8 +142,10 @@ jobs:
       run: |
         # Read 2nd and 3rd rows from results.csv
         ROWS=$(sed -n '2,3p' ./projects/reports/$REPO_NAME/results.csv)
-        echo "::set-output name=row1::$(echo "$ROWS" | sed -n '1p')"
-        echo "::set-output name=row2::$(echo "$ROWS" | sed -n '2p')"
+        ROW1=$(echo "$ROWS" | sed -n '1p' | sed 's/,/","/g' | sed 's/^/"/' | sed 's/$/"/')
+        ROW2=$(echo "$ROWS" | sed -n '2p' | sed 's/,/","/g' | sed 's/^/"/' | sed 's/$/"/')
+        echo "::set-output name=row1::$ROW1"
+        echo "::set-output name=row2::$ROW2"
     
     - name: Append results to Google Sheet
       uses: jroehl/gsheet.action@v2.0.0
