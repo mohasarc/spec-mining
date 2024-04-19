@@ -107,8 +107,8 @@ jobs:
         find . -type f -name "*.gz" -exec gunzip {} \;
         ls -l
 
-        # move ../scripts/parse-reports.py to ./projects/reports
-        cp ../scripts/parse-reports.py .
+        # move ../../scripts/parse-reports.py to ./projects/reports
+        cp ../../scripts/parse-reports.py .
 
         # run the python script
         python3 parse-reports.py
