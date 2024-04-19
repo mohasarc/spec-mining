@@ -105,11 +105,11 @@ jobs:
 
         # extract all .gz files
         find . -type f -name "*.gz" -exec gunzip {} \;
-        ls -l
-
+        
         # move ../../scripts/parse-reports.py to ./projects/reports
         cp ../../scripts/parse-reports.py .
-
+        
+        ls -l
         # run the python script
         python3 parse-reports.py
         ls -l
