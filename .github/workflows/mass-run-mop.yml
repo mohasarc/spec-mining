@@ -120,7 +120,7 @@ jobs:
     - name: Zip report files
       run: |
         cd ./projects/reports/$REPO_NAME
-        zip -r ../$ZIP_FILE .  # Create a zip file in the projects directory
+        zip -r ../../$ZIP_FILE .  # Create a zip file in the projects directory
         ls -l ../
       shell: bash
 
