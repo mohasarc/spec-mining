@@ -140,13 +140,68 @@ jobs:
     - name: Read rows from results.csv
       id: read_csv_rows
       run: |
-        # Read 2nd and 3rd rows from results.csv
-        ROWS=$(sed -n '2,3p' ./projects/reports/$REPO_NAME/results.csv)
+        # Read the first 3 rows from results.csv
+        ROWS=$(head -n 3 ./projects/reports/$REPO_NAME/results.csv)
         ROW1=$(echo "$ROWS" | sed -n '1p' | sed 's/,/","/g' | sed 's/^/"/' | sed 's/$/"/')
         ROW2=$(echo "$ROWS" | sed -n '2p' | sed 's/,/","/g' | sed 's/^/"/' | sed 's/$/"/')
+        ROW3=$(echo "$ROWS" | sed -n '3p' | sed 's/,/","/g' | sed 's/^/"/' | sed 's/$/"/')
         echo "::set-output name=row1::$ROW1"
         echo "::set-output name=row2::$ROW2"
+        echo "::set-output name=row3::$ROW3"
     
+    - name: Read first row from Google Sheet
+      id: read_first_row
+      uses: jroehl/gsheet.action@v2.0.0
+      with:
+        spreadsheetId: ${{ github.event.inputs.output_google_sheet_id }}
+        commands: |
+          [
+            {
+              "command": "getData",
+              "args": {
+                "range": "results!1:1"
+              }
+            }
+          ]
+      env:
+        GSHEET_CLIENT_EMAIL: ${{ secrets.GSHEET_CLIENT_EMAIL }}
+        GSHEET_PRIVATE_KEY: ${{ secrets.GSHEET_PRIVATE_KEY }}
+
+    - name: Check if first row is empty
+      id: check_first_row
+      run: |
+        FIRST_ROW="${{ steps.read_first_row.outputs.results }}"
+        if [ -z "$FIRST_ROW" ]; then
+          echo "First row is empty"
+          echo "::set-output name=is_empty::true"
+        else
+          echo "First row is not empty"
+          echo "::set-output name=is_empty::false"
+        fi
+
+    - name: Append 1st row from CSV if first row is empty
+      if: steps.check_first_row.outputs.is_empty == 'true'
+      uses: jroehl/gsheet.action@v2.0.0
+      with:
+        spreadsheetId: ${{ github.event.inputs.output_google_sheet_id }}
+        commands: |
+          [
+            {
+              "command": "updateData",
+              "args": {
+                "minCol": 1,
+                "minRow": 1,
+                "worksheetTitle": "results",
+                "data": [
+                  [${{ steps.read_csv_rows.outputs.row1 }}]
+                ]
+              }
+            }
+          ]
+      env:
+        GSHEET_CLIENT_EMAIL: ${{ secrets.GSHEET_CLIENT_EMAIL }}
+        GSHEET_PRIVATE_KEY: ${{ secrets.GSHEET_PRIVATE_KEY }}
+
     - name: Append results to Google Sheet
       uses: jroehl/gsheet.action@v2.0.0
       with:
@@ -159,8 +214,8 @@ jobs:
                 "minCol": 1,
                 "worksheetTitle": "results",
                 "data": [
-                  [${{ steps.read_csv_rows.outputs.row1 }}],
-                  [${{ steps.read_csv_rows.outputs.row2 }}]
+                  [${{ steps.read_csv_rows.outputs.row2 }}],
+                  [${{ steps.read_csv_rows.outputs.row3 }}]
                 ]
               }
             }
