@@ -156,6 +156,7 @@ jobs:
             {
               "command": "appendData",
               "args": {
+                "worksheetTitle": "results",
                 "data": [
                   [${{ steps.read_csv_rows.outputs.row1 }}],
                   [${{ steps.read_csv_rows.outputs.row2 }}]
