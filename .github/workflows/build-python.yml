@@ -37,17 +37,23 @@ jobs:
     - name: Package Python into a .deb file
       run: |
         cd Python-3.10.9
-        sudo checkinstall --pkgname=python310 --pkgversion="3.10.9" --default
+        cp ../scripts/build-python/postinst .
+        chmod +x postinst
+        sudo checkinstall --pkgname=python310 --pkgversion="3.10.9" --install=no --fstrans=no --default --postinst=./postinst
 
     - name: Update shared library cache
       run: sudo ldconfig /usr/local/lib
 
-    - name: Upload Python package to GitHub Release
-      uses: softprops/action-gh-release@v1
-      with: 
+    - name: Upload report to GitHub Release
+      uses: Wandalen/wretry.action@master
+      with:
+        attempt_delay: 60000 # 1 min
+        attempt_limit: 10
+        action: softprops/action-gh-release@v1
+        with: |
         files: ./Python-3.10.9/python310_3.10.9-1_amd64.deb
-        tag_name: python3.10.9-build-${{ github.run_id }}
-        name: python3.10.9-build-${{ github.run_id }}
+        tag_name: python3-10-9-build-${{ github.run_id }}
+        name: python3-10-9-build-${{ github.run_id }}
         draft: false
         prerelease: true
         token: ${{ secrets.GITHUB_TOKEN }}
