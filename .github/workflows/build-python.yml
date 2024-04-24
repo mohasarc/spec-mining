@@ -8,7 +8,10 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, ubuntu-20.04, ubuntu-22.04]
 
     steps:
     - name: Checkout code
@@ -42,28 +45,37 @@ jobs:
         cd Python-3.10.9
         sudo checkinstall --pkgname=python310 --pkgversion="3.10.9" --default
 
+    - name: Rename .deb file
+      run: |
+        cd Python-3.10.9
+        mv ./python310_3.10.9-1_amd64.deb ./python310_3.10.9-1_amd64_${{ matrix.os }}.deb
+
     - name: Update shared library cache
       run: sudo ldconfig /usr/local/lib
 
     - name: Upload report to GitHub Release
-      uses: Wandalen/wretry.action@master
+      uses: softprops/action-gh-release@v1
       with:
-        attempt_delay: 60000 # 1 min
-        attempt_limit: 10
-        action: softprops/action-gh-release@v1
-        with: |
-            files: ./Python-3.10.9/python310_3.10.9-1_amd64.deb
-            tag_name: python3-10-9-build-${{ github.run_id }}
-            name: python3-10-9-build-${{ github.run_id }}
-            draft: false
-            prerelease: true
-            body: download, run `sudo dpkg -i python310_3.10.9-1_amd64.deb` then `sudo bash -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/python310.conf && ldconfig'`
-            token: ${{ secrets.GITHUB_TOKEN }}
+        files: ./Python-3.10.9/python310_3.10.9-1_amd64_${{ matrix.os }}.deb
+        tag_name: python3-10-9-build-${{ github.run_id }}
+        name: python3-10-9-build-${{ github.run_id }}
+        draft: false
+        prerelease: true
+        token: ${{ secrets.GITHUB_TOKEN }}
+        body: |
+            Steps to use this version
+
+            1. Download appropriate versuin
+                a. for ubuntu-18.04 `wget https://github.com/mohasarc/spec-mining/releases/download/python3-10-9-build-${{ github.run_id }}/python310_3.10.9-1_amd64_ubuntu-18.04.deb`
+                b. for ubuntu-20.04 `wget https://github.com/mohasarc/spec-mining/releases/download/python3-10-9-build-${{ github.run_id }}/python310_3.10.9-1_amd64_ubuntu-20.04.deb`
+                c. for ubuntu-22.04  `wget https://github.com/mohasarc/spec-mining/releases/download/python3-10-9-build-${{ github.run_id }}/python310_3.10.9-1_amd64_ubuntu-22.04.deb`
+            2. run `sudo dpkg -i python310_3.10.9-1_amd64.deb`
+            3. run `sudo bash -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/python310.conf && ldconfig'`
 
     - name: Install Python 3.10
       run: |
         cd Python-3.10.9
-        sudo apt-get install ./python310_3.10.9-1_amd64.deb
+        sudo apt-get install ./python310_3.10.9-1_amd64_${{ matrix.os }}.deb
 
     - name: Verify Python installation
       run: ldd /usr/local/bin/python3.10
