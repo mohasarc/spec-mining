@@ -67,9 +67,11 @@ jobs:
             Steps to use this version
 
             1. Download appropriate versuin
-                a. for ubuntu-20.04 `wget https://github.com/mohasarc/spec-mining/releases/download/python3-10-9-build-${{ github.run_id }}/python310_3.10.9-1_amd64_ubuntu-20.04.deb`
-                b. for ubuntu-22.04  `wget https://github.com/mohasarc/spec-mining/releases/download/python3-10-9-build-${{ github.run_id }}/python310_3.10.9-1_amd64_ubuntu-22.04.deb`
-            2. run `sudo dpkg -i python310_3.10.9-1_amd64.deb`
+              a. ubuntu-20.04: `wget https://github.com/mohasarc/spec-mining/releases/download/python3-10-9-build-${{ github.run_id }}/python310_3.10.9-1_amd64_ubuntu-20.04.deb`
+              b. ubuntu-22.04:  `wget https://github.com/mohasarc/spec-mining/releases/download/python3-10-9-build-${{ github.run_id }}/python310_3.10.9-1_amd64_ubuntu-22.04.deb`
+            2. run
+              a. ubuntu-20.04: `sudo dpkg -i python310_3.10.9-1_amd64_ubuntu-20.04.deb`
+              b. ubuntu-22.04: `sudo dpkg -i python310_3.10.9-1_amd64_ubuntu-22.04.deb`
             3. run `sudo bash -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/python310.conf && ldconfig'`
 
     - name: Install Python 3.10
