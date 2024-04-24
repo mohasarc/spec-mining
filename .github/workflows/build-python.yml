@@ -1,4 +1,4 @@
-name: Build Python 3.10
+name: Build and Package Python 3.10
 
 on:
     workflow_dispatch:
@@ -17,7 +17,7 @@ jobs:
         sudo apt-get install build-essential libssl-dev zlib1g-dev \
         libncurses5-dev libncursesw5-dev libreadline-dev libsqlite3-dev \
         libgdbm-dev libdb5.3-dev libbz2-dev libexpat1-dev liblzma-dev \
-        libffi-dev uuid-dev
+        libffi-dev uuid-dev checkinstall
 
     - name: Download Python 3.10
       run: |
@@ -29,14 +29,31 @@ jobs:
         cd Python-3.10.9
         ./configure --enable-optimizations --enable-shared
 
-    - name: Build and install Python
+    - name: Build Python
       run: |
         cd Python-3.10.9
         make -j 8
-        sudo make altinstall
+
+    - name: Package Python into a .deb file
+      run: |
+        cd Python-3.10.9
+        sudo checkinstall --pkgname=python310 --pkgversion="3.10.9" --default
 
     - name: Update shared library cache
       run: sudo ldconfig /usr/local/lib
+
+    - name: Upload Python package to GitHub Release
+      uses: softprops/action-gh-release@v1
+      with: 
+        files: ./python310_3.10.9-1_amd64.deb
+        tag_name: python3.10.9-build-${{ github.run_id }}
+        name: python3.10.9-build-${{ github.run_id }}
+        draft: false
+        prerelease: true
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Install Python 3.10
+      run: sudo apt-get install /usr/local/lib/python310_3.10.9-1_amd64.deb
 
     - name: Verify Python installation
       run: ldd /usr/local/bin/python3.10
