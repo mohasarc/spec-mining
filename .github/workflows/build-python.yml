@@ -37,9 +37,7 @@ jobs:
     - name: Package Python into a .deb file
       run: |
         cd Python-3.10.9
-        cp ../scripts/build-python/postinst .
-        chmod +x postinst
-        sudo checkinstall --pkgname=python310 --pkgversion="3.10.9" --install=no --fstrans=no --default --postinst=./postinst
+        sudo checkinstall --pkgname=python310 --pkgversion="3.10.9" --default
 
     - name: Update shared library cache
       run: sudo ldconfig /usr/local/lib
@@ -51,12 +49,13 @@ jobs:
         attempt_limit: 10
         action: softprops/action-gh-release@v1
         with: |
-        files: ./Python-3.10.9/python310_3.10.9-1_amd64.deb
-        tag_name: python3-10-9-build-${{ github.run_id }}
-        name: python3-10-9-build-${{ github.run_id }}
-        draft: false
-        prerelease: true
-        token: ${{ secrets.GITHUB_TOKEN }}
+            files: ./Python-3.10.9/python310_3.10.9-1_amd64.deb
+            tag_name: python3-10-9-build-${{ github.run_id }}
+            name: python3-10-9-build-${{ github.run_id }}
+            draft: false
+            prerelease: true
+            body: download, run `sudo dpkg -i python310_3.10.9-1_amd64.deb` then `sudo bash -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/python310.conf && ldconfig'`
+            token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Install Python 3.10
       run: |
