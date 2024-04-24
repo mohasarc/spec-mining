@@ -62,6 +62,7 @@ jobs:
         draft: false
         prerelease: true
         token: ${{ secrets.GITHUB_TOKEN }}
+        append_body: false
         body: |
             Steps to use this version
 
