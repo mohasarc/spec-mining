@@ -20,7 +20,16 @@ static PyObject *custom_append(PyObject *self, PyObject *arg) {
         PyObject *pFunc = PyObject_GetAttrString(pModule, "my_custom_function");
 
         if (pFunc && PyCallable_Check(pFunc)) {
-            PyObject *pValue = PyObject_CallObject(pFunc, NULL);  // Call without arguments
+            // Create a tuple containing the argument and the ID of the list instance
+            PyObject *args = PyTuple_New(2);
+            Py_INCREF(arg); // Increment ref count of arg since PyTuple_SetItem steals a reference
+            PyTuple_SetItem(args, 0, arg);
+
+            PyObject *id = PyLong_FromVoidPtr((void*)self); // Get the unique identifier of the object
+            PyTuple_SetItem(args, 1, id); // Tuple steals the reference to id
+
+            PyObject *pValue = PyObject_CallObject(pFunc, args);  // Call with the tuple as argument
+            Py_DECREF(args);  // Decrement reference count of args tuple
 
             if (pValue != NULL) {
                 Py_DECREF(pValue);
@@ -36,7 +45,6 @@ static PyObject *custom_append(PyObject *self, PyObject *arg) {
     } else {
         PyErr_Print();
     }
-
 
     // Call the original append method with the new argument
     PyObject *result = original_append(self, new_arg);
