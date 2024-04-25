@@ -6,18 +6,18 @@ static PyObject *(*original_append)(PyObject *, PyObject *);
 // New append method
 static PyObject *custom_append(PyObject *self, PyObject *arg) {
     // Wrap every appended item with ~~~~
-    PyObject *new_arg = PyUnicode_FromFormat("~~~~%S~~~~", arg);
-    if (new_arg == NULL) return NULL; // Handle error in argument creation
+    // PyObject *new_arg = PyUnicode_FromFormat("~~~~%S~~~~", arg);
+    // if (new_arg == NULL) return NULL; // Handle error in argument creation
 
     // Assuming Python's GIL is already held or your context ensures it
 
     // find the module and function and call it
-    PyObject *pName = PyUnicode_FromString("my_python_functions");
+    PyObject *pName = PyUnicode_FromString("pymop_instrumentation");
     PyObject *pModule = PyImport_Import(pName);
     Py_DECREF(pName);
 
     if (pModule != NULL) {
-        PyObject *pFunc = PyObject_GetAttrString(pModule, "my_custom_function");
+        PyObject *pFunc = PyObject_GetAttrString(pModule, "append_python");
 
         if (pFunc && PyCallable_Check(pFunc)) {
             // Create a tuple containing the argument and the ID of the list instance
@@ -47,8 +47,8 @@ static PyObject *custom_append(PyObject *self, PyObject *arg) {
     }
 
     // Call the original append method with the new argument
-    PyObject *result = original_append(self, new_arg);
-    Py_DECREF(new_arg); // Clean up the reference
+    PyObject *result = original_append(self, arg);
+    // Py_DECREF(new_arg); // Clean up the reference
     return result;
 }
 

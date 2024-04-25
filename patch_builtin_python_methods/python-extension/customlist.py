@@ -9,4 +9,7 @@ a.append("blala")
 
 b = {1:"hello", 2: "world"}
 a.append(b)
+
+c = []
+c.append(5)
 print(a)  # Should show: ['~~~~hello~~~~']
