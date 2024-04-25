@@ -5,8 +5,38 @@ static PyObject *(*original_append)(PyObject *, PyObject *);
 
 // New append method
 static PyObject *custom_append(PyObject *self, PyObject *arg) {
+    // Wrap every appended item with ~~~~
     PyObject *new_arg = PyUnicode_FromFormat("~~~~%S~~~~", arg);
     if (new_arg == NULL) return NULL; // Handle error in argument creation
+
+    // Assuming Python's GIL is already held or your context ensures it
+
+    // find the module and function and call it
+    PyObject *pName = PyUnicode_FromString("my_python_functions");
+    PyObject *pModule = PyImport_Import(pName);
+    Py_DECREF(pName);
+
+    if (pModule != NULL) {
+        PyObject *pFunc = PyObject_GetAttrString(pModule, "my_custom_function");
+
+        if (pFunc && PyCallable_Check(pFunc)) {
+            PyObject *pValue = PyObject_CallObject(pFunc, NULL);  // Call without arguments
+
+            if (pValue != NULL) {
+                Py_DECREF(pValue);
+            } else {
+                PyErr_Print();  // Handle error appropriately
+            }
+        } else {
+            PyErr_Print();
+        }
+
+        Py_XDECREF(pFunc);
+        Py_DECREF(pModule);
+    } else {
+        PyErr_Print();
+    }
+
 
     // Call the original append method with the new argument
     PyObject *result = original_append(self, new_arg);

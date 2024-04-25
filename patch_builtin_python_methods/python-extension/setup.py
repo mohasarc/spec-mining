@@ -8,5 +8,5 @@ setup(name='CustomList',
       ext_modules=[module])
 
 
-# build with `python setup.py build_ext --inplace`
+# build with `python3 setup.py build_ext --inplace`
 # then run any python script

@@ -1,5 +1,6 @@
 import pymopeventemitter
 import time
+import my_python_functions
 
 emitter = pymopeventemitter.PyMopEventEmitter()
 emitter.subscribe("hello", lambda: print("Hello event triggered"))
@@ -38,4 +39,4 @@ if __name__ == '__main__':
     main()
  
     time.sleep(30) 
-    # delayed_function()
+    delayed_function()

@@ -7,6 +7,10 @@ typedef struct {
     PyObject *events; // Dictionary storing events and their listeners.
 } PyMopEventEmitter;
 
+
+__attribute__((visibility("default")))
+PyMopEventEmitter *global_event_emitter = NULL;
+
 static void
 PyMopEventEmitter_dealloc(PyMopEventEmitter* self)
 {
@@ -14,11 +18,40 @@ PyMopEventEmitter_dealloc(PyMopEventEmitter* self)
     Py_TYPE(self)->tp_free((PyObject*) self);
 }
 
-static PyObject *
+__attribute__((visibility("default")))
+PyObject *
 PyMopEventEmitter_new(PyTypeObject *type, PyObject *args, PyObject *kwds)
 {
     PyMopEventEmitter *self;
     self = (PyMopEventEmitter *)type->tp_alloc(type, 0);
+
+    // Assuming Python's GIL is already held or your context ensures it
+    PyObject *pName = PyUnicode_FromString("my_python_functions");
+    PyObject *pModule = PyImport_Import(pName);
+    Py_DECREF(pName);
+
+    if (pModule != NULL) {
+        PyObject *pFunc = PyObject_GetAttrString(pModule, "my_custom_function");
+
+        if (pFunc && PyCallable_Check(pFunc)) {
+            PyObject *pValue = PyObject_CallObject(pFunc, NULL);  // Call without arguments
+
+            if (pValue != NULL) {
+                Py_DECREF(pValue);
+            } else {
+                PyErr_Print();  // Handle error appropriately
+            }
+        } else {
+            PyErr_Print();
+        }
+
+        Py_XDECREF(pFunc);
+        Py_DECREF(pModule);
+    } else {
+        PyErr_Print();
+    }
+
+
     if (self != NULL) {
         self->events = PyDict_New();
         if (self->events == NULL) {
@@ -85,11 +118,20 @@ PyMopEventEmitter_emit(PyMopEventEmitter* self, PyObject *args)
 
 static PyTypeObject PyMopEventEmitterType;
 
+static PyObject *
+PyMopEventEmitter_get_global_emitter(PyMopEventEmitter* self, PyObject *args)
+{
+    Py_INCREF(global_event_emitter);
+    return (PyObject *)global_event_emitter;
+}
+
 static PyMethodDef PyMopEventEmitter_methods[] = {
     {"subscribe", (PyCFunction) PyMopEventEmitter_subscribe, METH_VARARGS,
      "Subscribe to an event with a callback."},
     {"emit", (PyCFunction) PyMopEventEmitter_emit, METH_VARARGS,
      "Emit an event, calling all subscribed callbacks."},
+    {"get_global_emitter", (PyCFunction) PyMopEventEmitter_get_global_emitter,
+    METH_NOARGS, "Get the global event emitter instance."},
     {NULL}  /* Sentinel */
 };
 
@@ -122,6 +164,12 @@ PyInit_pymopeventemitter(void)
     PyObject *m = PyModule_Create(&pymopeventemittermodule);
     if (m == NULL)
         return NULL;
+
+    global_event_emitter = (PyMopEventEmitter *)PyMopEventEmitter_new(&PyMopEventEmitterType, NULL, NULL);
+    if (global_event_emitter == NULL)
+        return NULL;
+
+    Py_INCREF(global_event_emitter);  // Increment the reference count
 
     Py_INCREF(&PyMopEventEmitterType);
     if (PyModule_AddObject(m, "PyMopEventEmitter", (PyObject *)&PyMopEventEmitterType) < 0) {
