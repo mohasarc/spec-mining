@@ -34,7 +34,7 @@ export interface DependantRepoDetails extends BaseRepository {
     issues: number,
     pullRequests: number,
     description: string,
-    manifestFileName: string,
+    manifestFileName?: string,
     dependencyName: string,
     testingFramework: string,
     created_at: string
@@ -80,7 +80,6 @@ const searchForFiles = async (fileNames: Array<string>, libName: string, testing
         rateLimitReset,
         remainingRateLimit
     };
-
 }
 
 const searchForRegex = async (specRegex: string, testingFramework: string, page: number): Promise<WithRateLimitMetaData<Array<BaseRepository & { fileName: string }>>> => {
@@ -291,6 +290,36 @@ export const collectGithubRepos = async (outDir: string, libNames: Array<string>
     }
 }
 
+const usesPytest = async (reposInfo: Array<BaseRepository>) => {
+    const filePathList = MANIFEST_FILES.map(fileName => `filename:${fileName}`).join("+OR+");
+    const targetPackages = reposInfo.map(repo => `repo:${repo.owner}/${repo.repoName}`).join("+OR+");
+    const searchQuery = `${targetPackages}+pytest+in:file+${filePathList}`;
+    
+    const searchResults = await octokit.request('GET /search/code', {
+        q: searchQuery,
+        per_page: 100, // Adjust per_page as needed, up to a maximum of 100
+    });
+
+    const rateLimitReset = searchResults.headers["x-ratelimit-reset"]
+    const remainingRateLimit = searchResults.headers["x-ratelimit-remaining"]
+
+    const doesUse = searchResults.data.items.map(item => ({
+        owner: item.repository.owner.login,
+        repoName: item.repository.name
+    }));
+
+    return {
+        data: reposInfo.map((repo) => {
+            return {
+                ...repo,
+                usesTestingFramework: doesUse.some((item) => item.owner === repo.owner && item.repoName === repo.repoName)
+            }
+        }),
+        rateLimitReset,
+        remainingRateLimit
+    }
+}
+
 export const collectGithubReposUsingSpecs = async (outDir: string, testFrameworks: Array<string>, startPage: number, endPage: number) => {
     if (endPage > 10) {
         console.warn('End page is greater than 10, which is the maximum number of pages allowed by GitHub code search API. Setting end page to 10');
@@ -306,11 +335,24 @@ export const collectGithubReposUsingSpecs = async (outDir: string, testFramework
                 console.log('Page:', page, ' - Fetching details for', specId.specName, 'from GitHub', 'with test framework:', testFramework);
                 const {data: baseRepoInfo, rateLimitReset, remainingRateLimit} = await searchForRegex(specId.regexQuery, testFramework, page)
 
-                const chunks = [baseRepoInfo.slice(0, baseRepoInfo.length/2), baseRepoInfo.slice(baseRepoInfo.length/2, baseRepoInfo.length)]
-        
+                await sleepTillRateLimitResets(remainingRateLimit, rateLimitReset);
+                
+                const { data, rateLimitReset: rateLimitReset2, remainingRateLimit: remainingRateLimit2 } = await usesPytest(baseRepoInfo);
+                
+                console.log('Page:', page, ' - Fetched details for', data.length, 'repos.', 'Using test framework:', testFramework);
+                console.log('Page:', page, ' - Fetched details for', data.filter(repo => repo.usesTestingFramework).length, 'repos using', testFramework, 'testing framework.');
+
+                const filteredBaseRepoInfo = data.filter(repo => repo.usesTestingFramework);
+
+                const chunks = [
+                    filteredBaseRepoInfo.slice(0, filteredBaseRepoInfo.length/2),
+                    filteredBaseRepoInfo.slice(filteredBaseRepoInfo.length/2, filteredBaseRepoInfo.length)
+                ]
+
                 await Promise.all(chunks.map(async (chunk, i) => {
                     if (chunk.length < 1) return;
 
+                    
                     const response = await fetchRepositoriesDetails(chunk);
                 
                     const repoDetails: Array<DependantRepoDetails> = chunk.map((repo, index) => {
@@ -323,7 +365,7 @@ export const collectGithubReposUsingSpecs = async (outDir: string, testFramework
                             issues: repoDetails.issues.totalCount,
                             pullRequests: repoDetails.pullRequests.totalCount,
                             description: repoDetails.description,
-                            manifestFileName: chunk[index].fileName,
+                            // manifestFileName: chunk[index].fileName,
                             dependencyName: specId.dependencyName,
                             testingFramework: testFramework,
                             created_at: repoDetails.createdAt,
@@ -355,7 +397,7 @@ export const collectGithubReposUsingSpecs = async (outDir: string, testFramework
                     }
                 })
         
-                await sleepTillRateLimitResets(remainingRateLimit, rateLimitReset);
+                await sleepTillRateLimitResets(remainingRateLimit2, rateLimitReset2);
             }
         }
     }
