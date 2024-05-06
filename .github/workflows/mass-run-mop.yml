@@ -217,6 +217,10 @@ jobs:
     needs: run_jobs
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: download files from release
         uses: robinraju/release-downloader@v1.10
         with:
