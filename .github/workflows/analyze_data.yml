@@ -17,7 +17,7 @@ on:
 
 jobs:
   prepare_data:
-    runs-on: ubuntu-latest
+    runs-on: ubicloud
     outputs:
       chunks: ${{ steps.set_chunks.outputs.chunks }}
       repositories: ${{ steps.prepare_repos.outputs.repos }}
