@@ -14,7 +14,7 @@ on:
         required: true 
 jobs:
   run-original:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     timeout-minutes: 185
     steps:
         - uses: actions/checkout@v4
@@ -124,7 +124,7 @@ jobs:
 
   run-algos:
     needs: run-original
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2204
     strategy:
       matrix:
         algorithm: ['A', 'B', 'C', 'C+', 'D']
