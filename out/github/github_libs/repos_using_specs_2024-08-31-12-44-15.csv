@@ -1,0 +1,488 @@
+Owner,Repository Name,Repository Link,Stars,Forks,Issues,Pull Requests,Description,File Name,Dependency Name,Spec Name,Testing Framework,Created At
+google-research,google-research,https://github.com/google-research/google-research,33730,7725,1229,867,Google Research,argparse.py,pydocs,ArgParse_Parent,pytest,10/4/2018
+ray-project,ray,https://github.com/ray-project/ray,32839,5467,18313,28832,Ray is a unified framework for scaling AI and Python applications. Ray consists of a core distributed runtime and a set of AI Libraries for accelerating ML workloads.,decode.py,pydocs,faulthandler_disableBeforeClose,pytest,10/25/2016
+samuelclay,NewsBlur,https://github.com/samuelclay/NewsBlur,6818,971,1415,473,NewsBlur is a personal news reader that brings people together to talk about the world. A new sound of an old instrument.,endpoints.py,requests,DataMustOpenInBinary,pytest,1/5/2009
+Ultimaker,Cura,https://github.com/Ultimaker/Cura,6043,1932,15556,3968,3D printer / slicing GUI built on top of the Uranium framework,__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,6/16/2014
+TandoorRecipes,recipes,https://github.com/TandoorRecipes/recipes,5286,552,1734,1286,"Application for managing recipes<> planning meals, building shopping lists and much much more!",mesh_func.py,requests,DataMustOpenInBinary,pytest,11/13/2019
+awslabs,gluonts,https://github.com/awslabs/gluonts,4521,715,954,1813,Probabilistic time series modeling in Python,train.py,pydocs,ArgParse_Parent,pytest,5/15/2019
+Azure,azure-sdk-for-python,https://github.com/Azure/azure-sdk-for-python,4454,2693,10045,27006,This repository is for active development of the Azure SDK for Python. For consumers of the SDK we recommend visiting our public developer docs at https://learn.microsoft.com/python/azure/ or our versioned developer docs at https://azure.github.io/azure-sdk-for-python. ,wordpress_add.py,requests,DataMustOpenInBinary,pytest,4/24/2012
+pyqtgraph,pyqtgraph,https://github.com/pyqtgraph/pyqtgraph,3832,1072,1269,1714,Fast data visualization and GUI tools for scientific / engineering applications,runner.py,pydocs,faulthandler_disableBeforeClose,pytest,9/12/2013
+ydb-platform,ydb,https://github.com/ydb-platform/ydb,3771,427,1510,7039,YDB is an open source Distributed SQL Database that combines high availability and scalability with strong consistency and ACID transactions,absltest.py,pydocs,faulthandler_disableBeforeClose,pytest,2/7/2022
+waditu,czsc,https://github.com/waditu/czsc,2683,908,79,102,缠中说禅技术分析工具；缠论；股票；期货；Quant；量化交易,l.py,requests,DataMustOpenInBinary,pytest,6/11/2019
+pyston,pyston,https://github.com/pyston/pyston,2502,89,96,215,(No longer maintained) A faster and highly-compatible implementation of the Python programming language.,test_regrtest.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,3/1/2021
+lowRISC,opentitan,https://github.com/lowRISC/opentitan,2485,724,6677,17791,OpenTitan: Open source silicon root of trust,old_main.py,pydocs,ArgParse_Parent,pytest,8/26/2019
+mitogen-hq,mitogen,https://github.com/mitogen-hq/mitogen,2302,186,524,291,Distributed self-replicating programs in Python,absltest.py,pydocs,faulthandler_disableBeforeClose,pytest,8/14/2016
+oegedijk,explainerdashboard,https://github.com/oegedijk/explainerdashboard,2285,324,235,49,"Quickly build Explainable AI dashboards that show the inner workings of so-called ""blackbox"" machine learning models.",archive.py,pydocs,Arrays_Comparable,pytest,10/30/2019
+intel,neural-compressor,https://github.com/intel/neural-compressor,2123,247,197,1784,"SOTA low-bit LLM quantization (INT8/FP8/INT4/FP4/NF4) & sparsity<> leading model compression techniques on TensorFlow<> PyTorch, and ONNX Runtime",psiPerGene.py,pydocs,ArgParse_Parent,pytest,7/21/2020
+cider-security-research,cicd-goat,https://github.com/cider-security-research/cicd-goat,1896,291,27,60,A deliberately vulnerable CI/CD environment. Learn CI/CD security through multiple challenges.,ai.py,requests,DataMustOpenInBinary,pytest,3/27/2022
+stanford-crfm,helm,https://github.com/stanford-crfm/helm,1840,237,1064,1897,Holistic Evaluation of Language Models (HELM)<> a framework to increase the transparency of language models (https://arxiv.org/abs/2211.09110). This framework is also used to evaluate text-to-image models in Holistic Evaluation of Text-to-Image Models (HEIM) (https://arxiv.org/abs/2311.04287).,utils.py,pydocs,faulthandler_disableBeforeClose,pytest,11/29/2021
+ytsaurus,ytsaurus,https://github.com/ytsaurus/ytsaurus,1816,124,357,454,YTsaurus is a scalable and fault-tolerant open-source big data platform.,absltest.py,pydocs,faulthandler_disableBeforeClose,pytest,12/5/2022
+indico,indico,https://github.com/indico/indico,1722,416,3578,2916,"Indico - A feature-rich event management system<> made @ CERN, the place where the Web was born.",submission_manager.py,pydocs,Arrays_Comparable,pytest,7/27/2011
+ceccopierangiolieugenio,pyTermTk,https://github.com/ceccopierangiolieugenio/pyTermTk,580,21,117,141,Python Terminal Toolkit - a Spiced Up TUI Library 🌶️ ,31435.py,pydocs,Console_CloseReader|Console_CloseWriter,pytest,2/16/2021
+lidaohang,ceph_study,https://github.com/lidaohang/ceph_study,385,208,0,0,ceph学习资料整理,vm.py,pydocs,Console_CloseErrorWriter|Console_CloseReader|Console_CloseWriter,pytest,4/11/2018
+Xilinx,brevitas,https://github.com/Xilinx/brevitas,1139,190,430,542,Brevitas: neural network quantization in PyTorch,yabai_manager_CLI.py,pydocs,ArgParse_Parent,pytest,7/10/2018
+ryfeus,lambda-packs,https://github.com/ryfeus/lambda-packs,1108,235,48,11,Precompiled packages for AWS Lambda,run_mej_dists_edit,pydocs,faulthandler_disableBeforeClose,pytest,10/19/2016
+sajjadium,ctf-archives,https://github.com/sajjadium/ctf-archives,791,126,2,4, CTF Archives: Collection of CTF Challenges.,test_regrtest.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,6/10/2021
+DFIRKuiper,Kuiper,https://github.com/DFIRKuiper/Kuiper,753,110,71,50,Digital Forensics Investigation Platform,decorators.py,requests,DataMustOpenInBinary,pytest,11/1/2019
+pychess,pychess,https://github.com/pychess/pychess,683,183,1631,629,PyChess - a chess client for Linux/Windows,__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,2/2/2015
+SunzeY,AlphaCLIP,https://github.com/SunzeY/AlphaCLIP,629,37,53,9,[CVPR 2024] Alpha-CLIP: A CLIP Model Focusing on Wherever You Want,tiny_imagenet.py,pydocs,Arrays_Comparable,pytest,11/27/2023
+LGE-ARC-AdvancedAI,auptimizer,https://github.com/LGE-ARC-AdvancedAI/auptimizer,200,27,6,44,An automatic ML model optimization tool.,tripletsample_dataset.py,pydocs,Arrays_Comparable|Console_CloseReader|Console_CloseWriter,pytest,9/12/2019
+earthgecko,skyline,https://github.com/earthgecko/skyline,549,60,54,594,Anomaly detection,genutils.py,pydocs,Console_CloseReader,pytest,6/4/2014
+seanfisk,python-project-template,https://github.com/seanfisk/python-project-template,542,166,22,49,A template Python project with a focus on best practices.,generate_offset.py,pydocs,ArgParse_Parent,pytest,4/11/2012
+salesforce,CodeRL,https://github.com/salesforce/CodeRL,490,62,27,32,This is the official code for the paper CodeRL: Mastering Code Generation through Pretrained Models and Deep Reinforcement Learning (NeurIPS22).,include.py,pydocs,faulthandler_disableBeforeClose,pytest,6/30/2022
+kubilus1,autoortho,https://github.com/kubilus1/autoortho,207,34,213,84,Orthophoto streaming for X-Plane 11,cpcc,pydocs,Console_CloseErrorWriter|Console_CloseWriter,pytest,12/31/2021
+avrae,avrae,https://github.com/avrae/avrae,395,129,1312,717,A Discord bot to streamline running D&D 5e.,tmpfs.py,pydocs,faulthandler_disableBeforeClose,pytest,2/2/2017
+spectrochempy,spectrochempy,https://github.com/spectrochempy/spectrochempy,125,24,196,533,SpectroChemPy is a framework for processing<> analyzing and modeling spectroscopic data for chemistry with Python,linux-dependencies.py,pydocs,Arrays_Comparable|Console_CloseErrorWriter|Console_CloseWriter,pytest,5/13/2020
+FMInference,H2O,https://github.com/FMInference/H2O,348,30,38,7,[NeurIPS'23] H2O: Heavy-Hitter Oracle for Efficient Generative Inference of Large Language Models.,code_metrics_helper.py,pydocs,faulthandler_disableBeforeClose,pytest,6/12/2023
+Yelp,Tron,https://github.com/Yelp/Tron,340,59,152,841,Next generation batch process scheduling and management,pw,pydocs,ArgParse_Parent,pytest,9/9/2010
+open-policy-agent,contrib,https://github.com/open-policy-agent/contrib,321,150,47,213,"Integrations<> examples, and proof-of-concepts that are not part of OPA proper.",PX.py,requests,DataMustOpenInBinary,pytest,4/25/2017
+pytorch,torchx,https://github.com/pytorch/torchx,319,105,180,771,TorchX is a universal job launcher for PyTorch applications. TorchX is designed to have fast iteration time for training/research and support for E2E production ML pipelines when you're ready.,session_widget.py,pydocs,Console_CloseErrorWriter,pytest,5/4/2021
+smousavi05,EQTransformer,https://github.com/smousavi05/EQTransformer,300,144,124,31,EQTransformer<> a python package for earthquake signal detection and phase picking using AI.,evaluate_IL.py,pydocs,faulthandler_disableBeforeClose,pytest,3/11/2020
+EI-CoreBioinformatics,mikado,https://github.com/EI-CoreBioinformatics/mikado,91,14,325,131,Mikado is a lightweight Python3 pipeline whose purpose is to facilitate the identification of expressed loci from RNA-Seq data * and to select the best models in each locus.,test_repr.py,pydocs,Arrays_Comparable|Console_CloseReader|Console_CloseWriter,pytest,8/31/2015
+promptops,cli,https://github.com/promptops/cli,122,3,13,5,um is a GPT-powered CLI assistant. Ask questions in plain English<> get the perfect shell command.,split_bed_by_haplotype.py,pydocs,Console_CloseErrorWriter|Console_CloseWriter,pytest,5/9/2023
+ryanmrestivo,red-team,https://github.com/ryanmrestivo/red-team,119,32,0,0,"Notes<> red team materials, testing tools, etc.",Rsa2048Sha256GenerateKeys.py,pydocs,Console_CloseReader|Console_CloseWriter,pytest,4/12/2021
+kobotoolbox,kobocat,https://github.com/kobotoolbox/kobocat,117,119,386,538,Our (backend) server for providing blank forms to Collect and Enketo and for receiving and storing submissions. ,install.py,pydocs,Console_CloseErrorWriter|Console_CloseWriter,pytest,11/18/2013
+mindflowai,mindflow,https://github.com/mindflowai/mindflow,222,20,19,112,"🧠 AI-powered CLI git wrapper<> boilerplate code generator, chat history manager, and code search engine to streamline your dev workflow 🌊",s.py,requests,DataMustOpenInBinary,pytest,12/10/2022
+ansible,ansible-rulebook,https://github.com/ansible/ansible-rulebook,188,74,48,661,N/A,axis-2_9.with_run_disable_and_mode_pins,pydocs,Console_CloseReader,pytest,2/16/2022
+cocrawler,cocrawler,https://github.com/cocrawler/cocrawler,182,24,4,9,CoCrawler is a versatile web crawler built using modern tools and concurrency.,runner.py,pydocs,faulthandler_disableBeforeClose,pytest,7/15/2016
+GaloisInc,MATE,https://github.com/GaloisInc/MATE,177,11,44,22,MATE is a suite of tools for interactive program analysis with a focus on hunting for bugs in C and C++ code using Code Property Graphs.,update_tdt4265_dataset.py,requests,DataMustOpenInBinary,pytest,1/26/2022
+YuzukiHD,TinyVision,https://github.com/YuzukiHD/TinyVision,153,19,16,19,TinyVision - A Tiny Linux Board / IPC / Server / Router / And so on...,jail.py,pydocs,Console_CloseErrorWriter,pytest,11/13/2023
+eXtern-OS,eXternOS-Base,https://github.com/eXtern-OS/eXternOS-Base,50,12,6,2,N/A,__main__.py,pydocs,Console_CloseErrorWriter|Console_CloseWriter|faulthandler_tracetrackDumpBeforeClose,pytest,2/6/2020
+RBVI,ChimeraX,https://github.com/RBVI/ChimeraX,145,27,26,14,Source code for molecular graphics program UCSF ChimeraX,bksf.py,pydocs,Arrays_Comparable,pytest,9/10/2020
+Josverl,micropython-stubs,https://github.com/Josverl/micropython-stubs,144,22,61,688,Stubs of most MicroPython ports<> boards and versions to make writing code that much simpler.,createMakefile.am.lib.py,pydocs,Console_CloseErrorWriter,pytest,10/17/2020
+torchpipe,torchpipe,https://github.com/torchpipe/torchpipe,140,12,7,22,Serving Inside Pytorch,gen_builders.py,pydocs,ArgParse_Parent,pytest,10/24/2023
+FudanDNN-NLP,RAG,https://github.com/FudanDNN-NLP/RAG,140,8,2,2,This is an implementation of the paper:  Searching for Best Practices in Retrieval-Augmented Generation,srparser.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,6/29/2024
+yandex,yatool,https://github.com/yandex/yatool,136,8,11,6,"Yatool is a cross-platform distribution<> building, testing, and debugging toolkit focused on monorepositories",mseed_predictor.py,pydocs,faulthandler_disableBeforeClose,pytest,11/24/2023
+microsoft,vscode-python-tools-extension-template,https://github.com/microsoft/vscode-python-tools-extension-template,132,41,22,171,Template for creating VS Code extensions for python tools. ,popen.py,pydocs,Console_CloseReader,pytest,5/25/2022
+ucbds-infra,otter-grader,https://github.com/ucbds-infra/otter-grader,122,62,379,451,A Python and R autograding solution,q3_1.py,pydocs,Arrays_Comparable,pytest,9/13/2019
+andreamad8,FSB,https://github.com/andreamad8/FSB,121,10,4,0,The Few-Shot Bot: Prompt-Based Learning for Dialogue Systems,dqn_demo.py,pydocs,ArgParse_Parent,pytest,10/8/2021
+sys-bio,tellurium,https://github.com/sys-bio/tellurium,106,35,472,113,Python Environment for Modeling and Simulating Biological Systems,main.py,pydocs,faulthandler_disableBeforeClose,pytest,2/12/2014
+xuarehere,yolo_series_deepsort_pytorch,https://github.com/xuarehere/yolo_series_deepsort_pytorch,102,26,15,0,"Deepsort with yolo series. This project support the existing yolo detection model algorithm (YOLOV8<>  YOLOV7,  YOLOV6,  YOLOV5,  YOLOV4Scaled,  YOLOV4, YOLOv3', PPYOLOE,  YOLOR,  YOLOX ).",feature_extraction.py,pydocs,ArgParse_Parent,pytest,7/13/2022
+roytam1,UXP,https://github.com/roytam1/UXP,48,8,0,12,UXP commits smorgasbord. Picking changes without removing XP/Vista and WebExtensions support. My custom changes will be in `custom` branch. Default `tracking` branch is not for compiling. Support requests should be raised in my blog comment forms below.,repo,pydocs,Console_CloseErrorWriter|Console_CloseWriter,pytest,2/14/2019
+sammchardy,python-idex,https://github.com/sammchardy/python-idex,92,47,44,4,IDEX v3 Exchange REST API python implementation,directory.py,requests,DataMustOpenInBinary,pytest,11/15/2017
+blackducksoftware,hub-rest-api-python,https://github.com/blackducksoftware/hub-rest-api-python,89,104,79,193,HUB REST API Python bindings,secded_gen.py,pydocs,ArgParse_Parent,pytest,7/9/2018
+biothings,myvariant.info,https://github.com/biothings/myvariant.info,87,27,135,57,MyVariant.info: A BioThings API for human variant annotations,processor.py,pydocs,Arrays_Comparable,pytest,4/26/2014
+EldarMuradov,EraEngine,https://github.com/EldarMuradov/EraEngine,87,7,8,8,Open source C++ 3D game engine ,xforth.py,pydocs,Console_CloseReader,pytest,11/20/2023
+uccross,skyhookdm-ceph,https://github.com/uccross/skyhookdm-ceph,28,9,23,61,Skyhook Data Management: programmable storage for databases.  This repo contains the Ceph extensions to support data management in storage.,vm.py,pydocs,Console_CloseErrorWriter|Console_CloseReader|Console_CloseWriter,pytest,3/9/2017
+cndn,intelligent-code-completion,https://github.com/cndn/intelligent-code-completion,14,12,2,1,N/A,handler.py,pydocs|nltk|requests,Console_CloseErrorWriter|Console_CloseWriter|CreateWidgetOnSameFrameCanvas|DataMustOpenInBinary|faulthandler_disableBeforeClose|faulthandler_tracetrackDumpBeforeClose,pytest,10/2/2017
+cambridge-cares,TheWorldAvatar,https://github.com/cambridge-cares/TheWorldAvatar,83,24,337,989,A knowledge-graph-based digital twin of the world.,device_tracker.py,requests,DataMustOpenInBinary,pytest,3/6/2021
+allenai,reclip,https://github.com/allenai/reclip,79,14,10,1,N/A,learner.py,pydocs,Arrays_Comparable,pytest,4/7/2022
+timothyyu,wsae-lstm,https://github.com/timothyyu/wsae-lstm,77,30,20,50,"implementation of WSAE-LSTM model as defined by Bao<> Yue, Rao (2017)",dc_converter.py,pydocs,faulthandler_disableBeforeClose,pytest,10/16/2018
+timothyyu,ml_monorepo,https://github.com/timothyyu/ml_monorepo,74,38,2,1,super-monorepo for machine learning and algorithmic trading ,calcres.py,pydocs,Arrays_Comparable,pytest,2/1/2019
+FAForever,client,https://github.com/FAForever/client,74,85,582,552,FAF Python Client,__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,9/24/2014
+Deeplite,deeplite-torch-zoo,https://github.com/Deeplite/deeplite-torch-zoo,73,10,64,336,Collection of SOTA efficient computer vision models for embedded applications<> with pre-trained weights and training recipes,embed.py,pydocs,ArgParse_Parent,pytest,4/5/2021
+UKP-SQuARE,square-core,https://github.com/UKP-SQuARE/square-core,71,14,31,570,SQuARE: Software for question answering research.,__init__.py,requests,DataMustOpenInBinary,pytest,2/3/2021
+PacktPublishing,Ansible-for-Real-life-Automation,https://github.com/PacktPublishing/Ansible-for-Real-life-Automation,67,75,0,20,Ansible for Real-Life Automation<> published by Packt,pdf.py,requests,DataMustOpenInBinary,pytest,11/15/2021
+openpsi-project,ReaLHF,https://github.com/openpsi-project/ReaLHF,66,3,12,47,Super-Efficient RLHF Training of LLMs with Parameter Reallocation,app.py,requests,DataMustOpenInBinary,pytest,6/18/2024
+BonexGoo,Boss2D,https://github.com/BonexGoo/Boss2D,33,2,7,2,C++ AppEngine for Qt,1DividirPob_0.py,pydocs,Arrays_Comparable|faulthandler_tracetrackDumpBeforeClose,pytest,7/18/2019
+CityOfPhiladelphia,ais,https://github.com/CityOfPhiladelphia/ais,19,6,100,97,Address Information System,main.py,pydocs|requests,Console_CloseReader|Console_CloseWriter|DataMustOpenInBinary,pytest,3/29/2016
+pedro0311,freshtomato-arm,https://github.com/pedro0311/freshtomato-arm,28,11,0,4,Alternative open source firmware for Broadcom based routers | Mirror of https://bitbucket.org/pedro311/freshtomato-arm,cpuinfo.py,pydocs,Console_CloseErrorWriter|Console_CloseWriter,pytest,10/29/2019
+codybum,OpenStackInAction,https://github.com/codybum/OpenStackInAction,53,36,1,25,Code and configuration supporting the OpenStack In Action book.,fileinput.py,pydocs,Console_CloseWriter,pytest,4/3/2014
+ydb-platform,nbs,https://github.com/ydb-platform/nbs,52,21,275,1647,Network Block Store,__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,3/14/2023
+ag1455,OpenPLi-PC,https://github.com/ag1455/OpenPLi-PC,24,22,20,4,Watch TV from satellites on PC,stacktrace_translator.py,pydocs,Console_CloseErrorWriter|Console_CloseWriter,pytest,1/11/2020
+Deep-Spark,DeepSparkHub,https://github.com/Deep-Spark/DeepSparkHub,45,10,2,2,"DeepSparkHub selects hundreds of application algorithms and models<> covering various fields of AI and general-purpose computing, to support the mainstream intelligent computing scenarios.",migrate-woonerf.py,pydocs,Console_CloseWriter,pytest,9/8/2022
+logicmoo,logicmoo_workspace,https://github.com/logicmoo/logicmoo_workspace,44,8,444,28,https://jenkins.logicmoo.org/job/logicmoo_workspace https://logicmoo.org/xwiki/,srparser_app.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,11/11/2014
+hwang595,Cuttlefish,https://github.com/hwang595/Cuttlefish,42,5,0,1,"The implementation for MLSys 2023 paper: ""Cuttlefish: Low-rank Model Training without All The Tuning""",test_fixers.py,pydocs,Arrays_Comparable,pytest,3/30/2023
+rkevin-arch,ECS189M,https://github.com/rkevin-arch/ECS189M,14,4,14,9,All challenges and auto deployment scripts for the ECS189M CTF<> a CTF aimed to teach people about computer security,SConstruct_Firefox,pydocs,Console_CloseErrorWriter|Console_CloseReader|Console_CloseWriter,pytest,12/6/2019
+isc-projects,forge,https://github.com/isc-projects/forge,36,9,0,3,ISC Forge is an open source DHCP conformance validation framework<> primarily used for testing ISC Kea.,avg.py,pydocs,Console_CloseReader,pytest,3/25/2013
+opencomputeproject,Rack-Manager,https://github.com/opencomputeproject/Rack-Manager,18,12,1,5,The base repo for the OCP OpenRMC Initiative,evaluation_saliencymap.py,pydocs,Arrays_Comparable|Console_CloseReader,pytest,12/11/2018
+NL2Code,CodeS,https://github.com/NL2Code/CodeS,12,0,0,0,N/A,lrbd,pydocs|requests,Console_CloseErrorWriter|Console_CloseWriter|DataMustOpenInBinary,pytest,3/25/2024
+Psiphon-Inc,psiphon-automation,https://github.com/Psiphon-Inc/psiphon-automation,33,25,0,127,Psiphon Circumvention System automation and server mangement,wfuzz.py,requests,DataMustOpenInBinary,pytest,4/1/2020
+asterfusion,Helium_DPU,https://github.com/asterfusion/Helium_DPU,32,9,3,0,"Helium DPU<> ET3000, ET2500, ET1600",test_faulthandler.py,pydocs,faulthandler_disableBeforeClose,pytest,4/7/2023
+KaiLv69,UDR,https://github.com/KaiLv69/UDR,31,6,9,0,ACL'23: Unified Demonstration Retriever for In-Context Learning,dqn_demo.py,pydocs,ArgParse_Parent,pytest,5/7/2023
+RockyLzy,TextDefender,https://github.com/RockyLzy/TextDefender,30,2,6,2,"codes for ""Searching for an Effective Defender:Benchmarking Defense against Adversarial Word Substitution""",planner.py,pydocs,Console_CloseWriter,pytest,9/8/2021
+openshift,lightspeed-service,https://github.com/openshift/lightspeed-service,30,31,8,1503,Core repository for an AI-powered OCP assistant service,main.py,requests,DataMustOpenInBinary,pytest,11/8/2023
+maihao14,BlocklyEQTransformer,https://github.com/maihao14/BlocklyEQTransformer,30,1,0,1,A Python Toolbox for Customizing Seismic Phase Pickers,gnumed.py,pydocs,faulthandler_disableBeforeClose,pytest,6/16/2022
+pedrobcst,Xerus,https://github.com/pedrobcst/Xerus,28,6,29,25,XRay Estimation and Refinement Using Similarity (XERUS),snn_mono_tagger.py,pydocs,Console_CloseErrorWriter,pytest,8/27/2021
+cfe-lab,MiCall,https://github.com/cfe-lab/MiCall,14,6,580,568,Pipeline for processing FASTQ data from an Illumina MiSeq to genotype human RNA viruses like HIV and hepatitis C,metadata.py,pydocs|requests,Arrays_Comparable|DataMustOpenInBinary,pytest,4/17/2014
+microsoft,verseagility,https://github.com/microsoft/verseagility,27,11,2,34,"Ramp up your custom natural language processing (NLP) task<> allowing you to bring your own data, use your preferred frameworks and bring models into production. ",pw,pydocs,ArgParse_Parent,pytest,1/24/2020
+nasa,CTF,https://github.com/nasa/CTF,27,6,52,3,This is a new repository for a new tool to be added to the cFS ecosystem called cFS Test Framework (CTF).,jldd,pydocs,Console_CloseWriter,pytest,10/1/2020
+hallamlab,TreeSAPP,https://github.com/hallamlab/TreeSAPP,25,3,67,29,A Python package for gene-centric taxonomic and functional classification using phylogenetic placement,git.py,pydocs,Console_CloseWriter,pytest,9/21/2013
+Open-Earth-Foundation,CityCatalyst,https://github.com/Open-Earth-Foundation/CityCatalyst,20,5,8,677,Open Source carbon accounting for cities,check_static.py,pydocs,ArgParse_Parent,pytest,5/11/2023
+dbpedia,gsoc-2020-dashboard,https://github.com/dbpedia/gsoc-2020-dashboard,20,0,0,6,N/A,rembg.py,requests,DataMustOpenInBinary,pytest,5/22/2020
+ellakk,5v5dota2ai-framework,https://github.com/ellakk/5v5dota2ai-framework,20,5,2,0,N/A,db_toolbox.py,requests,DataMustOpenInBinary,pytest,5/6/2020
+sophgo,sophon_ffmpeg,https://github.com/sophgo/sophon_ffmpeg,10,6,4,6,N/A,__init__.py,pydocs,faulthandler_disableBeforeClose|faulthandler_tracetrackDumpBeforeClose,pytest,9/1/2022
+BuysDB,SingleCellMultiOmics,https://github.com/BuysDB/SingleCellMultiOmics,19,9,70,200,Tools which deal with multiple single cell measurements ,cli.py,pydocs,ArgParse_Parent,pytest,5/20/2019
+airshipit,shipyard,https://github.com/airshipit/shipyard,19,9,0,67,A cluster lifecycle orchestrator for Airship.,_client.py,requests,DataMustOpenInBinary,pytest,5/17/2018
+prefeiturasp,SME-PratoAberto-API,https://github.com/prefeiturasp/SME-PratoAberto-API,18,18,18,109,API da aplicação PratoAberto,fit,pydocs,Arrays_Comparable,pytest,3/12/2018
+graphcore-research,unit-scaling-demo,https://github.com/graphcore-research/unit-scaling-demo,16,2,2,1,Unit Scaling demo and experimentation code,ctf,pydocs,ArgParse_Parent,pytest,3/14/2023
+gzlock,pyonedesk,https://github.com/gzlock/pyonedesk,16,3,1,32,N/A,activation.py,requests,DataMustOpenInBinary,pytest,7/6/2019
+introlab,opentera,https://github.com/introlab/opentera,16,8,170,83,OpenTera - Open TeleRehabilitation Server and Micro-Services,questionnaire_responseitem.py,requests,DataMustOpenInBinary,pytest,1/31/2019
+Gongdezhi1990,Qualcomm-_ADK6.4.0.43,https://github.com/Gongdezhi1990/Qualcomm-_ADK6.4.0.43,15,12,0,2,N/A,2.distributed.py,pydocs,ArgParse_Parent,pytest,11/30/2019
+hubernikus,nonlinear_obstacle_avoidance,https://github.com/hubernikus/nonlinear_obstacle_avoidance,15,4,1,0,Obstacle avoidance around linear and nonlinear dynamics.,test_faulthandler.py,pydocs,faulthandler_disableBeforeClose,pytest,1/19/2023
+lumanjiao,XLS_BigData_Hue,https://github.com/lumanjiao/XLS_BigData_Hue,14,5,0,1,新零售大数据平台-运维监控平台的开发,webtlsmdd.py,pydocs,Console_CloseWriter,pytest,1/10/2019
+MetaCell,cloud-harness,https://github.com/MetaCell/cloud-harness,14,4,367,396,N/A,steps.py,requests,DataMustOpenInBinary,pytest,2/18/2020
+delphix,cloud-init,https://github.com/delphix/cloud-init,7,19,2,86,Cloud-init automatically configures many subsystems of our cloud and non-cloud instances. Package is already provided by Ubuntu<> but we need some changes.,puma_poly.py,pydocs,Console_CloseErrorWriter|Console_CloseWriter,pytest,11/5/2018
+sophgo,sophon_opencv,https://github.com/sophgo/sophon_opencv,7,5,0,5,N/A,absltest.py,pydocs,faulthandler_disableBeforeClose|faulthandler_tracetrackDumpBeforeClose,pytest,9/1/2022
+lumoe,dlkinematics,https://github.com/lumoe/dlkinematics,13,1,0,0,Differentiable Forward Kinematics for TensorFlow and Keras based on URDF files,evaluate-v1.1.py,pydocs,ArgParse_Parent,pytest,2/18/2021
+JohnnyPeng18,TypeFix,https://github.com/JohnnyPeng18/TypeFix,13,4,5,0,"This is the tool released in ICSE 2024 paper ""Domain Knowledge Matters: Improving Prompts with Fix Templates for Repairing Python Type Errors"".",main.py,pydocs,Arrays_Comparable,pytest,10/6/2022
+graphcore,distributed-kge-poplar,https://github.com/graphcore/distributed-kge-poplar,13,1,1,3,The application is a end-user training and evaluation system for standard knowledge graph embedding models. It was developed to optimise the WikiKG90Mv2 dataset,rgg,pydocs,Console_CloseErrorWriter,pytest,11/16/2022
+kupl,PyTER,https://github.com/kupl/PyTER,12,4,3,3,N/A,oov.py,pydocs,Arrays_Comparable,pytest,3/17/2022
+muctadir,lama,https://github.com/muctadir/lama,12,1,14,8,"LaMa<> short for Labelling Machine, is an web application developed for aiding in thematic analysis of qualitative data. ",apriori.py,pydocs,Arrays_Comparable,pytest,10/17/2022
+sophgo,bootloader-arm64,https://github.com/sophgo/bootloader-arm64,4,15,0,15,bootloader for Sophon AI chips,polymopo,pydocs,Console_CloseErrorWriter|Console_CloseReader|Console_CloseWriter,pytest,10/12/2022
+illinois-ceesd,mirgecom,https://github.com/illinois-ceesd/mirgecom,11,19,199,859,MIRGE-Com is the workhorse simulation application for the Center for Exascale-Enabled Scramjet Design at the University of Illinois.,CoinData.py,pydocs,ArgParse_Parent,pytest,5/28/2020
+Ascend,ModelZoo-TensorFlow,https://github.com/Ascend/ModelZoo-TensorFlow,11,2,1,0,N/A,spm_batch.py,pydocs,Console_CloseErrorWriter,pytest,4/20/2022
+dextersjab,code-interpreter-notes,https://github.com/dextersjab/code-interpreter-notes,11,0,0,0,Notes and insights about OpenAI's Code Interpreter,chartparser_app.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,7/10/2023
+manishshettym,codescholar,https://github.com/manishshettym/codescholar,10,0,12,16,codescholar: growing programs graphs idiomatically for API usage examples,nodeclassification.py,pydocs,ArgParse_Parent,pytest,9/2/2022
+kosaurang,google-research,https://github.com/kosaurang/google-research,10,3,0,0,Google Research,sorted.py,pydocs,Arrays_Comparable,pytest,3/20/2022
+stereotech,STE-Slicer,https://github.com/stereotech/STE-Slicer,10,4,77,96,N/A,testing_util.py,pydocs,faulthandler_disableBeforeClose,pytest,10/20/2020
+shayan-cyber,DotSlashProj,https://github.com/shayan-cyber/DotSlashProj,10,3,1,4,CodeTogether is a platform that aims to bring all the developers and coders together to appreciate collaborative coding by resolving issues faced by programmers on normal IDEs/platforms. It allows developers to communicate with their fellow developers or collaborators through online voice call and realtime chat. Besides<> the whiteboard makes the framing of an algorithm easier by helping programmers working collaboratively to discuss and plan their approach together,test_kmeans_learner_basic_model.py,pydocs,faulthandler_disableBeforeClose,pytest,1/7/2022
+koking0,LuffyCity,https://github.com/koking0/LuffyCity,10,9,0,25,路飞学城在线教育平台,test_embedding.py,pydocs,faulthandler_disableBeforeClose,pytest,5/2/2020
+st4sd,st4sd-runtime-core,https://github.com/st4sd/st4sd-runtime-core,9,0,21,24,Create and deploy virtual-experiments - co-processing computational workflows,cwl_cmdline.py,pydocs,ArgParse_Parent,pytest,11/30/2022
+sunishsheth2009,ChatterBot,https://github.com/sunishsheth2009/ChatterBot,9,7,0,2,"Uses Python<> Flask, Natural Language processing, SQLAlchemy, NLTK and beautiful soup for web scrapping. ",main.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,10/2/2014
+CroMarmot,oiTerminal,https://github.com/CroMarmot/oiTerminal,9,0,1,17,"terminal tool for codeforces atcoder<> problem/contest fetch, testcase download,test, submit",untitled1.py,requests,DataMustOpenInBinary,pytest,3/3/2019
+MatchCake,MatchCake,https://github.com/MatchCake/MatchCake,9,0,11,23,Fermionic Machine Learning python package built on PennyLane,mseed_predictor.py,pydocs,faulthandler_disableBeforeClose,pytest,10/2/2023
+wizzdev-pl,iot-starter,https://github.com/wizzdev-pl/iot-starter,8,1,3,39,WizzDev's IoT project - an open-source platform for IoT prototyping,brute_pzl12_GO.py,pydocs,Console_CloseReader,pytest,1/27/2021
+open-data-toronto,operations,https://github.com/open-data-toronto/operations,8,0,1,213,Home for all operations related code and solutions for the Open Data Toronto catalogue,app.py,requests,DataMustOpenInBinary,pytest,9/11/2020
+sswam,allemande,https://github.com/sswam/allemande,8,1,0,0,This is a work-in-progress AI software toolkit in the UNIX tradition.,vasp_client.py,requests,DataMustOpenInBinary,pytest,4/13/2023
+neuroethology,bento,https://github.com/neuroethology/bento,8,1,122,73,N/A,bootstrap.py,pydocs,faulthandler_disableBeforeClose,pytest,11/30/2020
+BCN3D,Stratos,https://github.com/BCN3D/Stratos,8,3,23,19,3D printer / slicing GUI built on top of the Uranium framework<> customized for the BCN3D machines,cura_app.py,pydocs,faulthandler_disableBeforeClose,pytest,7/9/2021
+hasanar1f,HiRED,https://github.com/hasanar1f/HiRED,7,3,0,0,HiRED strategically drops visual tokens in the image encoding stage to improve inference efficiency for High-Resolution Vision-Language Models (e.g.<> LLaVA-Next) under a fixed token budget.,003_create_final_dataset.py,pydocs,ArgParse_Parent,pytest,8/19/2024
+VOLTTRON,deprecated-volttron-applications,https://github.com/VOLTTRON/deprecated-volttron-applications,7,32,3,104,VOLTTRON Application tree (moved from volttron/applications),post_request.py,requests,DataMustOpenInBinary,pytest,6/3/2016
+acornsoft-edgecraft,kore-on,https://github.com/acornsoft-edgecraft/kore-on,7,12,0,292,N/A,qthelpers.py,pydocs,faulthandler_disableBeforeClose,pytest,3/2/2022
+natcap,rangeland_production,https://github.com/natcap/rangeland_production,7,9,22,25,Rangeland Production Model built on raster-based Python implementation of Century.,test_response_large_scale.py,pydocs,faulthandler_disableBeforeClose,pytest,11/22/2019
+zerovm,zerovm-cli,https://github.com/zerovm/zerovm-cli,6,7,18,56,ZeroVM command line utilities,ddmin,pydocs,Console_CloseErrorWriter,pytest,11/18/2013
+viannaandreBR,My-Data-Science-Journey,https://github.com/viannaandreBR/My-Data-Science-Journey,6,13,1,9,"My Data Science Journey with Python<> Pycaret, StreamLit, Pandas, Airflow, MinIO, ",cfg.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,10/23/2021
+volentixlabsinc,venue-server,https://github.com/volentixlabsinc/venue-server,6,0,199,70,The backend services for Venue<> a community engagement platform for the Volentix community,hipchat.py,requests,DataMustOpenInBinary,pytest,10/25/2017
+davecoulter,YSE_PZ,https://github.com/davecoulter/YSE_PZ,6,14,79,290,N/A,YSE_Forced_Phot.py,requests,DataMustOpenInBinary,pytest,11/9/2017
+abukharin3,HERON,https://github.com/abukharin3/HERON,6,1,0,0,Code for HERON,__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,9/5/2023
+Rohan-cod,cross_platform_calc,https://github.com/Rohan-cod/cross_platform_calc,2,1,5,4,"A calculator made using the kivy framework in python. Can be installed on mac<> windows, android and ios. ",base_events.py,pydocs,Console_CloseReader|Console_CloseWriter|faulthandler_tracetrackDumpBeforeClose,pytest,1/31/2020
+amd,ZenDNN-pytorch,https://github.com/amd/ZenDNN-pytorch,5,1,1,0,N/A,__init__.py,pydocs,Arrays_Comparable,pytest,3/1/2023
+OP-TED,ted-rdf-conversion-pipeline,https://github.com/OP-TED/ted-rdf-conversion-pipeline,5,5,11,536,TED Semantic Web Services,object_dispatch.py,requests,DataMustOpenInBinary,pytest,12/3/2021
+SeolhwaLee,EMNLP_workshop_COVID_QA,https://github.com/SeolhwaLee/EMNLP_workshop_COVID_QA,5,2,0,4,N/A,start3.py,requests,DataMustOpenInBinary,pytest,4/20/2020
+ray-project,maze-raylit,https://github.com/ray-project/maze-raylit,5,0,0,2,Hackathon 2020! Max Archit Zhe,worker.py,pydocs,faulthandler_disableBeforeClose,pytest,12/3/2020
+K-Kit,liquitrader,https://github.com/K-Kit/liquitrader,5,2,35,51,LiquiTrader is the most flexible UI based TA based trading system available for Binance crypto currency exchange,make_min_imu_gto_bag.py,pydocs,faulthandler_disableBeforeClose,pytest,8/22/2018
+linjc16,TBranT,https://github.com/linjc16/TBranT,5,4,1,0,"[KBS 2022] Official implementation of ""Learning to Branch with Tree-aware Branching Transformers"".",__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,12/11/2021
+WenjieZhao1,ModelZoo-PyTorch,https://github.com/WenjieZhao1/ModelZoo-PyTorch,4,0,1,0,N/A,v2_forecast_manager.py,pydocs,ArgParse_Parent,pytest,9/20/2022
+Deep-Spark,DeepSparkInference,https://github.com/Deep-Spark/DeepSparkInference,4,2,0,0,"DeepSparkInference has selected 48 inference model examples<> covering fields such as computer vision, natural language processing, and speech recognition. Subsequent phases will gradually expand to more AI fields.",patch_trade_dialogues.py,pydocs,ArgParse_Parent,pytest,3/25/2024
+Henricus-Basien,AutobopFirmware,https://github.com/Henricus-Basien/AutobopFirmware,4,1,0,0,Firmware for the Autonomous Parrot Bebop 2 Drone.,convert_genbank_to_gff3.py,pydocs,ArgParse_Parent,pytest,3/7/2018
+pablovdcf,TFM_HADO_Cares,https://github.com/pablovdcf/TFM_HADO_Cares,4,0,0,0,Analysis of principal diagnosis<> trends. treatments and others. App created with streamlit.,pyrece.py,pydocs,Arrays_Comparable,pytest,3/29/2023
+cameron-simpson,css,https://github.com/cameron-simpson/css,4,2,1,3,my personal kit<> containing thousands of scripts and hundreds of Python modules and assorted other code,OSC.py,pydocs,Console_CloseErrorWriter,pytest,7/5/2020
+carolin-violet,trace_system,https://github.com/carolin-violet/trace_system,4,1,0,0,基于加密技术的农产品溯源仿真系统。我的大学大创项目。主要包含区块链、非对称加密、vue全家桶、echarts、python-flask、爬虫requests库等相关技术,data_prep.py,pydocs,Console_CloseReader,pytest,6/7/2022
+ErickOF,CE5303-Embedded-System-for-Smart-Home,https://github.com/ErickOF/CE5303-Embedded-System-for-Smart-Home,4,0,0,155,Customized Embedded System for the control and monitoring of a smart home through a web server.,minify.py,pydocs,Console_CloseReader,pytest,9/23/2020
+di,ruffruffs,https://github.com/di/ruffruffs,4,0,0,7,Barkyipyipruff grr woofwoof,packtpub-free-ebook,requests,DataMustOpenInBinary,pytest,6/1/2016
+BatsResearch,piriyakulkij-mlsys22-code,https://github.com/BatsResearch/piriyakulkij-mlsys22-code,4,0,0,0,N/A,train_GenCVAE_Seq.py,pydocs,faulthandler_disableBeforeClose,pytest,3/13/2022
+ElsevierSoftwareX,SOFTX-D-21-00006,https://github.com/ElsevierSoftwareX/SOFTX-D-21-00006,4,5,1,0,OptiMic: A tool to generate optimized polycrystalline microstructures for materials simulations. To cite this Original Software Publication: https://www.sciencedirect.com/science/article/pii/S2352711021000534,main.py,pydocs,faulthandler_disableBeforeClose,pytest,5/19/2021
+khb84341,FDP-emulator,https://github.com/khb84341/FDP-emulator,4,0,0,0,Support Flexible Data Placement feature for FEMU,setup.py,pydocs,faulthandler_disableBeforeClose,pytest,11/1/2023
+brichard28,TalkingHeads,https://github.com/brichard28/TalkingHeads,2,0,0,0,TalkingHeads Audiovisual Experiment in LiMN/Biophotonics/APC Labs at Carnegie Mellon and the University of Pittsburgh,partitionquantiles.py,pydocs,Arrays_Comparable|faulthandler_disableBeforeClose,pytest,3/20/2023
+snoopgodlinux,packages,https://github.com/snoopgodlinux/packages,1,0,0,0,Official packages repository of SnoopGod Linux OS,870.py,pydocs|requests,Arrays_Comparable|Console_CloseReader|Console_CloseWriter|DataMustOpenInBinary,pytest,6/20/2024
+fliibs,address_planner,https://github.com/fliibs/address_planner,3,3,2,8,Address planner is a tool used to plan the allocation of all register and memory addresses in a chip.,run_pretrain_ml_qa.py,pydocs,ArgParse_Parent,pytest,1/22/2021
+ZCShou,BOARD-STM32F769I-EVAL_OLD,https://github.com/ZCShou/BOARD-STM32F769I-EVAL_OLD,3,1,0,0,u-boot and linux port to BOARD-STM32F769I-EVAL,check-package,pydocs,ArgParse_Parent,pytest,7/2/2022
+ATP-BME,LGMF-GNN,https://github.com/ATP-BME/LGMF-GNN,3,1,1,0,"Code of paper ""An Objective Quantitative Diagnosis of Depression Using Local-to-global Multi-modal Fusion Graph Neural Network""",label_wav.py,pydocs,ArgParse_Parent,pytest,10/20/2023
+RomanKoshkin,toLLMatch,https://github.com/RomanKoshkin/toLLMatch,3,0,0,0,toLLMatch🔪: Context-aware LLM-based simultaneous translation,tu_tracepoints.py,pydocs,ArgParse_Parent,pytest,6/20/2024
+abdullahfsm,PCS,https://github.com/abdullahfsm/PCS,3,0,0,0,N/A,cfo_example.py,pydocs,ArgParse_Parent,pytest,1/18/2024
+tasosnent,BeyondMeSH,https://github.com/tasosnent/BeyondMeSH,3,1,0,20,A weakly supervised approach for fine-grained semantic indexing of biomedical literature,pg_logger.py,pydocs,Arrays_Comparable,pytest,2/13/2019
+psipred,ted-tools,https://github.com/psipred/ted-tools,3,1,0,2,ML toolset for creating TED: The Encyclopedia of Domains,ponderateListSynsets.py,pydocs,Console_CloseErrorWriter,pytest,3/26/2024
+PaNGalaxy,galaxy,https://github.com/PaNGalaxy/galaxy,3,1,0,0,a fork of Galaxy repo from https://github.com/galaxyproject/galaxy,play.py,pydocs,Console_CloseErrorWriter,pytest,10/12/2022
+Inspq,ansible,https://github.com/Inspq/ansible,3,3,0,20,N/A,d.rast.edit.py,pydocs,Console_CloseReader,pytest,7/14/2017
+ubclaunchpad,bounce,https://github.com/ubclaunchpad/bounce,3,4,105,52,🏀 Bringing people with common interests together,atlassian-confluence-rce.py,requests,DataMustOpenInBinary,pytest,5/19/2018
+openjamoses,TOSEM-2021-Replication,https://github.com/openjamoses/TOSEM-2021-Replication,3,2,0,1,This repository is a replication package analyzing the software testing practices related to Machine Learning based application,capture_frame_azure.py,pydocs,faulthandler_disableBeforeClose,pytest,6/7/2021
+Web-Dev-Collaborative,WEB_DEV_COLLABORATIVE,https://github.com/Web-Dev-Collaborative/WEB_DEV_COLLABORATIVE,3,3,1,3,WEB_DEV_COLLABORATIVE,29563_regrtest.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,12/10/2021
+vmssoftware,python_3_8_2,https://github.com/vmssoftware/python_3_8_2,3,3,0,1,OpenVMS port for Python 3.8.2,eintr_tester.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,11/26/2020
+visit-dav,visit-deps,https://github.com/visit-dav/visit-deps,3,5,1,174,Dependencies for VisIt,eintr_tester.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,3/5/2019
+k754a,C-Custom-Code-Editor,https://github.com/k754a/C-Custom-Code-Editor,3,0,2,0,my C++ text engine,regrtest.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,7/1/2024
+sophgo,sophon_media,https://github.com/sophgo/sophon_media,3,1,0,0,N/A,test_regrtest.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,4/9/2024
+patricksferraz,learning,https://github.com/patricksferraz/learning,2,0,0,6,Step to step for learning some tools,reproduce_nces.py,pydocs,ArgParse_Parent,pytest,10/4/2019
+cesarali,conditional_rate_matching,https://github.com/cesarali/conditional_rate_matching,2,0,13,0,Flow Matching for Discrete Variables,train.py,pydocs,ArgParse_Parent,pytest,10/24/2023
+Alibaba-NLP,Vec-RA-ODQA,https://github.com/Alibaba-NLP/Vec-RA-ODQA,2,1,0,0,"Source code of paper Improving ""Retrieval Augmented Open-Domain Question-Answering with Vectorized Contexts",eval_triviaqa_em_online.py,pydocs,ArgParse_Parent,pytest,5/28/2024
+skwin83,Industrial_AI,https://github.com/skwin83/Industrial_AI,2,1,0,0,산업인공지능학과 관련,check-package,pydocs,ArgParse_Parent,pytest,9/1/2022
+lyqcom,models-master,https://github.com/lyqcom/models-master,2,0,0,0,N/A,tu_tracepoints.py,pydocs,ArgParse_Parent,pytest,4/15/2023
+jingwangsg,Code-Reading-Project,https://github.com/jingwangsg/Code-Reading-Project,2,0,0,0,Reading project for researching purpose,12018_sungwoo.py,pydocs,Arrays_Comparable,pytest,7/16/2022
+ArtificialZeng,pytorch-explained,https://github.com/ArtificialZeng/pytorch-explained,2,0,0,0,pytorch-explained annatated,test_l2gateway.py,pydocs,Arrays_Comparable,pytest,7/13/2023
+Huawei-Ascend,modelzoo,https://github.com/Huawei-Ascend/modelzoo,2,1,0,15,N/A,virtualenv.py,pydocs,Console_CloseErrorWriter,pytest,12/7/2020
+ii6uu99,.dotfiles,https://github.com/ii6uu99/.dotfiles,2,1,0,21,backup my dotfiles,os.py,pydocs,Console_CloseReader,pytest,12/19/2017
+HanKin2015,Storage,https://github.com/HanKin2015/Storage,2,0,0,58,My privite storage!,LKHSolver.py,pydocs,Console_CloseReader,pytest,4/1/2016
+UTSA-ICS,openstack-cvrm,https://github.com/UTSA-ICS/openstack-cvrm,2,1,0,1,OpenStack-CVRM is a Constriant-Driven Virtual Resource Management in OpenStack,mfchd.py,pydocs,Console_CloseWriter,pytest,2/19/2015
+pection-zz,Allproject,https://github.com/pection-zz/Allproject,2,4,0,0,N/A,transip_ip_updater.py,requests,DataMustOpenInBinary,pytest,9/13/2020
+odaridavid,POLITICO-API,https://github.com/odaridavid/POLITICO-API,2,0,0,71,Api  built with Python Flask Web Framework and Postgres backend for voting system,hf_api.py,requests,DataMustOpenInBinary,pytest,2/3/2019
+flixha,RobustRAQN,https://github.com/flixha/RobustRAQN,2,0,0,0,Robust request and data quality negotiater for robust matched-filter detection of seismic events,dbot.py,pydocs,faulthandler_disableBeforeClose,pytest,4/20/2021
+sunnyhello369,flat_ped_sim,https://github.com/sunnyhello369/flat_ped_sim,2,2,1,0,N/A,kernel.py,pydocs,faulthandler_disableBeforeClose,pytest,2/13/2024
+qutebrowser,experiments,https://github.com/qutebrowser/experiments,2,2,1,41,Various experiments (as branches) which never made it into the main repo.,__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,2/5/2017
+CKIP-Joint,Evaluator,https://github.com/CKIP-Joint/Evaluator,2,0,0,0,N/A,__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,2/24/2023
+rubbs14,CSP-Analyzer,https://github.com/rubbs14/CSP-Analyzer,2,3,0,18,A fast and efficient multi-spectrum anlayzer for 2-D NMR Fragment Screening based on SMOTE-ENN machine-learning discriminator.,framework.py,pydocs,faulthandler_disableBeforeClose,pytest,12/11/2019
+JAYANTHNITW,NutriScan_APP_Large_Image_Model,https://github.com/JAYANTHNITW/NutriScan_APP_Large_Image_Model,2,0,0,0,N/A,test_parallel_backend.py,pydocs,faulthandler_disableBeforeClose,pytest,1/30/2024
+Happy-Egg,redesigned-happiness,https://github.com/Happy-Egg/redesigned-happiness,2,1,0,21,"A curriculum design project from NJUST<> include speech-recognition, word-segmentation & emotion-recognition.",test_parallel_backend.py,pydocs,faulthandler_disableBeforeClose,pytest,8/28/2019
+pilgrimbeart,synth,https://github.com/pilgrimbeart/synth,2,2,0,0,An HDL simulator<> managing a queue of events and then firing them when they're due.,faulthandler.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,11/4/2019
+brighter-ai,custom-integration-platform,https://github.com/brighter-ai/custom-integration-platform,1,0,0,3,N/A,ffmpeg_executor.py,pydocs,Console_CloseErrorWriter|Console_CloseWriter,pytest,9/4/2023
+asmmhossain,phyG,https://github.com/asmmhossain/phyG,1,1,16,1,This repository contains files for the phylogenetic workflow developed for Galaxy,client.py,pydocs,Console_CloseErrorWriter|Console_CloseWriter,pytest,10/23/2013
+tjefferson401,pyodide,https://github.com/tjefferson401/pyodide,1,0,0,0,Pyodide build with Unthrow,regrtest.py,pydocs,faulthandler_disableBeforeClose|faulthandler_tracetrackDumpBeforeClose,pytest,9/17/2022
+slayer,duoauthproxy-freebsd,https://github.com/slayer/duoauthproxy-freebsd,1,2,0,1,Duo authproxy patched for building on FreeBSD (pfSense),test_faulthandler.py,pydocs,faulthandler_disableBeforeClose|faulthandler_tracetrackDumpBeforeClose,pytest,8/27/2020
+SanjayM0han,Ceph-Doc,https://github.com/SanjayM0han/Ceph-Doc,1,0,0,11,N/A,sra_metadata.py,pydocs,ArgParse_Parent,pytest,4/16/2024
+AleksNeStu,projects,https://github.com/AleksNeStu/projects,1,1,1,0,"🎧 Apps<> solutions, code examples, documentation for education purposes  🚀",px_process_airframes.py,pydocs,ArgParse_Parent,pytest,12/7/2021
+statgen,locuszoom-api,https://github.com/statgen/locuszoom-api,1,3,17,10,Flask server code for LocusZoom APIs,bagHandParse.py,pydocs,ArgParse_Parent,pytest,8/25/2016
+disintegrate-Fred,NBME-Score-Clinical-Patient-Notes,https://github.com/disintegrate-Fred/NBME-Score-Clinical-Patient-Notes,1,0,0,0,N/A,android_pattern_cracker.py,pydocs,ArgParse_Parent,pytest,6/28/2023
+gunpowder78,google-research,https://github.com/gunpowder78/google-research,1,0,0,0,N/A,mc.py,pydocs,Arrays_Comparable,pytest,3/11/2022
+SunnierLee,DP-Pretrain,https://github.com/SunnierLee/DP-Pretrain,1,0,0,0,Differentially Private Self-Pretraining Diffusion Models for the Private Image Synthesis,forms.py,pydocs,Arrays_Comparable,pytest,7/10/2024
+xxchenxx,ParaEfficient,https://github.com/xxchenxx/ParaEfficient,1,0,0,0,N/A,nltk_with_tfidf.py,pydocs,Arrays_Comparable,pytest,3/10/2022
+brash6,dataviz_dauphine_tunis,https://github.com/brash6/dataviz_dauphine_tunis,1,2,0,0,A repository to store and share ressources for the Data Visualisation module of the BDIA Master of Dauphine Tunis,util.py,pydocs,Arrays_Comparable,pytest,1/19/2023
+CommutativeGrid,commutazzio,https://github.com/CommutativeGrid/commutazzio,1,0,0,0,N/A,1-my_list.py,pydocs,Arrays_Comparable,pytest,1/6/2022
+gilzilberfeld,dirty-tests-workshop,https://github.com/gilzilberfeld/dirty-tests-workshop,1,2,0,0,N/A,latex.py,pydocs,Arrays_Comparable,pytest,7/28/2021
+tht-jxny,MicroPineTime,https://github.com/tht-jxny/MicroPineTime,1,0,0,16,An OS for the Pine64 PineTime made with python,dstbuild_bson.py,pydocs,Console_CloseErrorWriter,pytest,5/16/2020
+yumoh,catboost_iter,https://github.com/yumoh/catboost_iter,1,1,0,1,N/A,lab2_mode0_easy.py,pydocs,Console_CloseReader,pytest,1/11/2019
+gridgentoo,YandexcCatboost,https://github.com/gridgentoo/YandexcCatboost,1,2,0,1,"Архитектура Градиентного бустинга Yandex<> CatBoost on Decision Trees library, used for ranking, classification, regression and other machine learning tasks ",unitok.py,pydocs,Console_CloseReader,pytest,12/19/2018
+jingpad-bsp,android_external_autotest,https://github.com/jingpad-bsp/android_external_autotest,1,0,0,0,N/A,htmllib.py,pydocs,Console_CloseReader,pytest,2/8/2022
+JinfenLi,NLP_discourse_ML,https://github.com/JinfenLi/NLP_discourse_ML,1,0,0,0,discourse parser,cfg.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,3/2/2021
+tylerwinn,AIVideoMaker,https://github.com/tylerwinn/AIVideoMaker,1,0,0,0,N/A,util.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,6/2/2023
+StacyWK,Stock-price-prediction,https://github.com/StacyWK/Stock-price-prediction,1,1,3,0,Stock price prediction web application using LSTM and Sentiment Analysis of Tweets,tree.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,12/28/2022
+WallaceChen000,jupyter-ansible,https://github.com/WallaceChen000/jupyter-ansible,1,0,0,0,N/A,gcp_cloudfunctions_cloud_function.py,requests,DataMustOpenInBinary,pytest,9/26/2022
+Totenkaf,ML_Ops,https://github.com/Totenkaf/ML_Ops,1,0,0,1,N/A,Helpers.py,requests,DataMustOpenInBinary,pytest,10/8/2022
+VangSang0,SkillSwap,https://github.com/VangSang0/SkillSwap,1,0,0,28,N/A,ogc_utility.py,requests,DataMustOpenInBinary,pytest,3/27/2024
+erwin-willems,deso-hackathon,https://github.com/erwin-willems/deso-hackathon,1,1,0,2,DeSo AI / ML hackathon,JD_WSCK_conver.py,requests,DataMustOpenInBinary,pytest,4/10/2022
+Omaraitbenhaddi,E-Authentication-System-Using-QR-Code-OTP,https://github.com/Omaraitbenhaddi/E-Authentication-System-Using-QR-Code-OTP,1,0,0,2,E Authentication System Using QR Code & OTP,ArpSentry.py,requests,DataMustOpenInBinary,pytest,8/7/2022
+khobragade2001,SQL_AND_API,https://github.com/khobragade2001/SQL_AND_API,1,0,0,0,N/A,utility.py,requests,DataMustOpenInBinary,pytest,8/12/2024
+Gavince,LLM,https://github.com/Gavince/LLM,1,0,0,8,整理有关LLM相关的资料,local_doc_qa.py,requests,DataMustOpenInBinary,pytest,9/24/2023
+Totenkaf,advanced_python,https://github.com/Totenkaf/advanced_python,1,0,0,13,N/A,anime.py,requests,DataMustOpenInBinary,pytest,9/9/2022
+Kedar59,skillExchange,https://github.com/Kedar59/skillExchange,1,0,0,0,N/A,endpoints.py,requests,DataMustOpenInBinary,pytest,9/25/2023
+alliance-genome,agr_literature_service,https://github.com/alliance-genome/agr_literature_service,1,1,0,739,Alliance Bibliographic Corpus (ABC) Manager,speech_assistant.py,requests,DataMustOpenInBinary,pytest,1/6/2021
+Prince-JH,dosuri-backend,https://github.com/Prince-JH/dosuri-backend,1,0,0,120,N/A,auth.py,requests,DataMustOpenInBinary,pytest,9/25/2022
+zaxe3d,xdesktop,https://github.com/zaxe3d/xdesktop,1,0,0,0,Desktop application for Zaxe 3D printers.,ya.py,pydocs,faulthandler_disableBeforeClose,pytest,8/25/2022
+Go3DInnovation,Go3DPrintPro,https://github.com/Go3DInnovation/Go3DPrintPro,1,0,0,9,N/A,cura_app.py,pydocs,faulthandler_disableBeforeClose,pytest,6/23/2024
+ytsaurus,ytsaurus-cpp-sdk,https://github.com/ytsaurus/ytsaurus-cpp-sdk,1,1,0,3,N/A,ya.py,pydocs,faulthandler_disableBeforeClose,pytest,8/16/2023
+IntelliSys-Lab,Stellaris-SC24,https://github.com/IntelliSys-Lab/Stellaris-SC24,1,0,0,0,N/A,ForexPredictor.py,pydocs,faulthandler_disableBeforeClose,pytest,6/26/2024
+DailinH,cs273-project,https://github.com/DailinH/cs273-project,1,0,0,0,N/A,utils.py,pydocs,faulthandler_disableBeforeClose,pytest,12/4/2020
+itcrowdsource,vcftocsvcontactexporter,https://github.com/itcrowdsource/vcftocsvcontactexporter,1,0,0,0,VFC to CSV contact exporter,simulator.py,pydocs,faulthandler_disableBeforeClose,pytest,11/15/2023
+VUZhuangweiKang,CloudNativeDLSys,https://github.com/VUZhuangweiKang/CloudNativeDLSys,1,0,0,0,N/A,ssd_tf_onnx_trt_extdir_v2_fpn_0.py,pydocs,faulthandler_disableBeforeClose,pytest,7/15/2023
+dustedmtl,lastu,https://github.com/dustedmtl/lastu,1,0,2,2,N/A,utils.py,pydocs,faulthandler_disableBeforeClose,pytest,9/5/2022
+rohankumardubey,ray,https://github.com/rohankumardubey/ray,1,0,0,95,N/A,model_training.py,pydocs,faulthandler_disableBeforeClose,pytest,2/22/2022
+amirmahdiKhosravi,Adaptive-Logging-System,https://github.com/amirmahdiKhosravi/Adaptive-Logging-System,1,0,0,0,N/A,runner.py,pydocs,faulthandler_disableBeforeClose,pytest,3/1/2023
+whqkdhfh13,sswp,https://github.com/whqkdhfh13/sswp,1,3,0,2,N/A,__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,7/26/2016
+khb84341,FEMU,https://github.com/khb84341/FEMU,1,0,0,0,FEMU for Storage Architecture class supporting directive streams for multi-stream SSD,setup.py,pydocs,faulthandler_disableBeforeClose,pytest,9/4/2023
+jody3t,ray-jo,https://github.com/jody3t/ray-jo,1,0,0,0,N/A,multi_process_runner.py,pydocs,faulthandler_disableBeforeClose,pytest,10/24/2020
+emilyirenelai,sofe3700-final-project,https://github.com/emilyirenelai/sofe3700-final-project,1,0,0,7,N/A,regrtest.py,pydocs,faulthandler_disableBeforeClose,pytest,11/14/2023
+zerynth,z3tester,https://github.com/zerynth/z3tester,1,2,0,3,N/A,faulthandler.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,3/15/2021
+enedelte,myvenv,https://github.com/enedelte/myvenv,1,0,0,0,NEPS Projects,faulthandler.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,8/27/2023
+Web-Dev-Collaborative,ARCHIVE-WEBDEVCOLLAB,https://github.com/Web-Dev-Collaborative/ARCHIVE-WEBDEVCOLLAB,1,2,0,2,N/A,faulthandler.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,8/22/2021
+ManuBerea,Songsurf,https://github.com/ManuBerea/Songsurf,1,0,0,0,N/A,faulthandler.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,7/12/2023
+dead-1ine,the-open-source-explorer,https://github.com/dead-1ine/the-open-source-explorer,1,0,0,0,Whenever something piques my interest<> I delve into it for fun or to apply what I learn at work.,test_regrtest.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,3/22/2024
+KapilKumar2002,Katio_game_kivy_,https://github.com/KapilKumar2002/Katio_game_kivy_,1,0,0,0,N/A,main.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,11/24/2022
+impatrq,bgas,https://github.com/impatrq/bgas,1,3,0,4,bgas_ar,runtest_mp.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,9/1/2023
+PierceConnaughton,Project-400,https://github.com/PierceConnaughton/Project-400,1,0,0,1,N/A,test_faulthandler.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,10/28/2021
+SaurabhTayde,Android-App-Development---Build-a-Feel-Good-App-using-Python,https://github.com/SaurabhTayde/Android-App-Development---Build-a-Feel-Good-App-using-Python,1,0,0,0,"This repository consists of the python codes and files that are required to build an android app - 'A Feel Good App'. After signup and successful login<> this app asks user about how he is feeling now and three options are given - 'happy', 'sad', 'unloved'. When one option out of these three is selected by user, app gives the quote to make the user feel good and happy. User can also select next and read the next quotes. 'APK' file is the output of the final code and this file can be installed in the android app. ",test_faulthandler.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,3/26/2022
+KaiStryker,ReCentiFi,https://github.com/KaiStryker/ReCentiFi,0,1,0,5,N/A,policy_train.py,pydocs,ArgParse_Parent,pytest,9/23/2023
+AlexanderJCS,golden,https://github.com/AlexanderJCS/golden,0,0,0,0,For my data science class. Uses datasets from Max Planck Florida Institute for Neuroscience,collocate_single_text.py,pydocs,ArgParse_Parent,pytest,3/5/2024
+IvorBr,Qungeon,https://github.com/IvorBr/Qungeon,0,0,0,0,Quantum puzzle game created using Unitary.,evaluate_cpu.py,pydocs,ArgParse_Parent,pytest,8/28/2024
+dorogit,inteLearn_ML,https://github.com/dorogit/inteLearn_ML,0,0,0,0,N/A,evaluation.py,pydocs,ArgParse_Parent|Arrays_Comparable,pytest,4/1/2024
+tidy-neuralnetwork,tidy-open_model_zoo,https://github.com/tidy-neuralnetwork/tidy-open_model_zoo,0,0,0,0,N/A,pre-convert.py,pydocs,ArgParse_Parent,pytest,2/24/2023
+gosshhh,NeuralChat,https://github.com/gosshhh/NeuralChat,0,0,0,0,Int4 optimised NeuralChat Model for handling both text and table based RAG SYSTEM,prompt_extraction.py,pydocs,ArgParse_Parent|Arrays_Comparable,pytest,3/13/2024
+zztin,fragmentomics2,https://github.com/zztin/fragmentomics2,0,0,0,1,N/A,actgan.py,pydocs,ArgParse_Parent,pytest,4/18/2023
+lochel,rise_drones,https://github.com/lochel/rise_drones,0,7,0,1,N/A,main.py,pydocs,ArgParse_Parent,pytest,5/20/2022
+SmallPigPeppa,flexivit,https://github.com/SmallPigPeppa/flexivit,0,0,0,0,N/A,scheduled.py,pydocs,ArgParse_Parent,pytest,3/18/2024
+MariaTariq123,First-Blog-1,https://github.com/MariaTariq123/First-Blog-1,0,0,0,2,N/A,sklearn_train.py,pydocs,ArgParse_Parent,pytest,8/25/2023
+mybenkhadda,Cloud_removal,https://github.com/mybenkhadda/Cloud_removal,0,0,0,1,N/A,LSTM.py,pydocs,ArgParse_Parent,pytest,6/28/2022
+2lambda123,google-research-google-research,https://github.com/2lambda123/google-research-google-research,0,0,0,12,N/A,argparse.py,pydocs,ArgParse_Parent,pytest,3/20/2024
+sdurand777,test_msdp,https://github.com/sdurand777/test_msdp,0,0,0,0,test msdp repo pour docker,argparse.py,pydocs,ArgParse_Parent,pytest,8/26/2024
+DANNHIROAKI,NN-Papers,https://github.com/DANNHIROAKI/NN-Papers,0,0,0,0,收集了一些经典的神经网络论文,answer_generator.py,pydocs,ArgParse_Parent,pytest,6/6/2024
+krijnD,DIG-dig-stable,https://github.com/krijnD/DIG-dig-stable,0,0,0,0,N/A,answer_generator.py,pydocs,ArgParse_Parent,pytest,1/19/2024
+cycrab,unipcm,https://github.com/cycrab/unipcm,0,0,0,0,"Code and data for the paper ""UniPCM: Universal Pre-trained Conversation Model with Task-aware Automatic Prompt"" (accepted by Coling2024)",patch_trade_dialogues.py,pydocs,ArgParse_Parent,pytest,9/7/2023
+okhay-p,QR-code-generator,https://github.com/okhay-p/QR-code-generator,0,0,0,0,A QR code generator with Python Flask,px_process_airframes.py,pydocs,ArgParse_Parent,pytest,9/17/2023
+nazzang49,gcp-tutorials,https://github.com/nazzang49/gcp-tutorials,0,0,0,0,A Google Cloud Platform Tutorials w/ Self Studies!,px_process_airframes.py,pydocs,ArgParse_Parent,pytest,1/8/2024
+richardagalvez,bare-copy-gcp-python-examples,https://github.com/richardagalvez/bare-copy-gcp-python-examples,0,0,0,0,GCP python libraries example github repo copy for indexing,sklearn_train.py,pydocs,ArgParse_Parent,pytest,7/12/2023
+lacie-life,Solitude,https://github.com/lacie-life/Solitude,0,0,0,0,A stray jellyfish,generate_offset.py,pydocs,ArgParse_Parent,pytest,7/7/2021
+aa386400024,study-langchain-chatchat,https://github.com/aa386400024/study-langchain-chatchat,0,0,0,0,N/A,Faces_2_RoomExit_V2.py,pydocs,ArgParse_Parent,pytest,2/21/2024
+steliosbl,acute-care-pathways,https://github.com/steliosbl/acute-care-pathways,0,0,0,0,N/A,calw2sTFIDF.py,pydocs,ArgParse_Parent,pytest,2/19/2023
+johnsonice,IMF_VE_News,https://github.com/johnsonice/IMF_VE_News,0,0,0,0,code repository for process news data for Vulnerability exercise,__main__.py,pydocs,ArgParse_Parent,pytest,11/8/2018
+yyoncho,switcher,https://github.com/yyoncho/switcher,0,0,0,0,N/A,run.py,pydocs,ArgParse_Parent,pytest,7/9/2015
+infrascloudy,python-project-template,https://github.com/infrascloudy/python-project-template,0,0,1,268,N/A,train.py,pydocs,ArgParse_Parent,pytest,5/19/2017
+infrascloudy,cookiecutter-python,https://github.com/infrascloudy/cookiecutter-python,0,0,0,0,N/A,ncreatescu.py,pydocs,ArgParse_Parent,pytest,9/6/2017
+swe-train,intel__neural-compressor,https://github.com/swe-train/intel__neural-compressor,0,0,0,0,N/A,filter_sfile.py,pydocs,ArgParse_Parent,pytest,5/21/2024
+ppashakhanloo,with_modules,https://github.com/ppashakhanloo/with_modules,0,0,0,0,N/A,filter_sfile.py,pydocs,ArgParse_Parent,pytest,5/12/2022
+wozqhl,Improved-Distiller,https://github.com/wozqhl/Improved-Distiller,0,0,0,0,这是对Intel神经网络压缩框架Distiller按照自己的需求更改后的代码。,label_wav.py,pydocs,ArgParse_Parent,pytest,5/18/2020
+fc524079318,Ray,https://github.com/fc524079318/Ray,0,0,0,0,source code of Ray,cfo_example.py,pydocs,ArgParse_Parent,pytest,12/7/2021
+FangZ53,FZDissertation,https://github.com/FangZ53/FZDissertation,0,0,0,0,ID 230248461,cfo_example.py,pydocs,ArgParse_Parent,pytest,8/30/2024
+Eashurox,CPDP_ML,https://github.com/Eashurox/CPDP_ML,0,0,0,0,We performed an empirical assessment of the performance of 64 defect prediction models on the defect dataset of five ML projects.,cfo_example.py,pydocs,ArgParse_Parent|faulthandler_disableBeforeClose,pytest,11/18/2023
+its-abhijeet,proof-reading-tool,https://github.com/its-abhijeet/proof-reading-tool,0,0,0,0,N/A,features_extraction.py,pydocs,ArgParse_Parent,pytest,9/21/2023
+mehulagg,mozilla-central,https://github.com/mehulagg/mozilla-central,0,0,0,1,N/A,test,pydocs,Arrays_Comparable,pytest,1/31/2020
+NOAA-ORR-ERD,MapRoom,https://github.com/NOAA-ORR-ERD/MapRoom,0,1,0,1,wxPython / OpenGL Desktop interactive geospatial data / map manipulation tool.,utils.py,pydocs,Arrays_Comparable,pytest,1/6/2022
+msimacek,copr,https://github.com/msimacek/copr,0,0,0,0,Mirror of https://git.fedorahosted.org/cgit/copr.git/ used for development of copr-java library,create_file_system.py,pydocs,Arrays_Comparable,pytest,12/2/2014
+esshariprasad,A-Testing-Case-Study-on-Numpy-Library,https://github.com/esshariprasad/A-Testing-Case-Study-on-Numpy-Library,0,0,0,0,N/A,NimManager.py,pydocs,Arrays_Comparable,pytest,4/25/2022
+xxxtrillionarie,google_research,https://github.com/xxxtrillionarie/google_research,0,0,0,0,N/A,mc.py,pydocs,Arrays_Comparable,pytest,4/13/2022
+mattheweaver05,Google-Wrapped-In-Red-Event-Advent-2022,https://github.com/mattheweaver05/Google-Wrapped-In-Red-Event-Advent-2022,0,0,1,0,N/A,resolutions.py,pydocs,Arrays_Comparable,pytest,12/15/2022
+Rulial,GoogleRe-Pi,https://github.com/Rulial/GoogleRe-Pi,0,0,0,0,N/A,wheel.py,pydocs,Arrays_Comparable,pytest,9/16/2022
+docholag,Game_Automation,https://github.com/docholag/Game_Automation,0,0,0,0,N/A,partitionquantiles.py,pydocs,Arrays_Comparable,pytest,5/24/2024
+GeneralMK,prosperityLMS,https://github.com/GeneralMK/prosperityLMS,0,0,0,0,N/A,dicom.py,pydocs,Arrays_Comparable,pytest,10/13/2022
+justchugh,ai_in_handwritten_notes,https://github.com/justchugh/ai_in_handwritten_notes,0,0,0,0,N/A,dicom.py,pydocs,Arrays_Comparable,pytest,6/11/2024
+Neville-N,hue_game,https://github.com/Neville-N/hue_game,0,0,0,6,Solve hue game algorithmically with python and opencv,ElasticNetRegressor.py,pydocs,Arrays_Comparable,pytest,5/15/2023
+sureindia-in,pipelines-kfp,https://github.com/sureindia-in/pipelines-kfp,0,0,0,0,N/A,animal.py,pydocs,Arrays_Comparable,pytest,7/22/2021
+GoTartans,need3,https://github.com/GoTartans/need3,0,0,0,0,N/A,split_strategy.py,pydocs,Arrays_Comparable,pytest,12/6/2022
+riverlijunjie,openvino,https://github.com/riverlijunjie/openvino,0,0,0,0,N/A,music_player_wip.py,pydocs,Arrays_Comparable,pytest,1/10/2022
+Evraa,FiD-train,https://github.com/Evraa/FiD-train,0,0,0,0,N/A,getters.py,pydocs,Arrays_Comparable,pytest,11/18/2021
+RaginiMedhi,py_presto,https://github.com/RaginiMedhi/py_presto,0,0,0,0,"R package ""immunogenomics/presto"" adapted for python users",data_utils.py,pydocs,Arrays_Comparable,pytest,7/29/2024
+swsunbin,squid,https://github.com/swsunbin/squid,0,0,0,35,"Ceph is a distributed object<> block, and file storage platform",test_annnotation.py,pydocs,Arrays_Comparable,pytest,5/10/2024
+bopopescu,QC,https://github.com/bopopescu/QC,0,0,0,0,Quantum Computation,isomorph.py,pydocs,Arrays_Comparable,pytest,7/26/2020
+RajKulk16,Customer-Clusters-Revealed,https://github.com/RajKulk16/Customer-Clusters-Revealed,0,0,0,0,Who Are Your Real Customers? RFM Modelling & K-Means Reveal the Answer.,isomorph.py,pydocs,Arrays_Comparable|Console_CloseWriter,pytest,2/5/2024
+naimulnashid,LLMProject,https://github.com/naimulnashid/LLMProject,0,0,0,0,N/A,dataset.py,pydocs,Arrays_Comparable|Console_CloseWriter|faulthandler_disableBeforeClose,pytest,7/15/2024
+Egeguzelgonul,ANPR,https://github.com/Egeguzelgonul/ANPR,0,0,0,0,License Plate Detection,core.py,pydocs,Arrays_Comparable,pytest,8/25/2023
+dlgroupuoft,Duumviri-NDSS25,https://github.com/dlgroupuoft/Duumviri-NDSS25,0,0,0,0,Artifact release of our NDSS 2025 Paper Duumviri: Detecting Trackers and Mixed Trackers with a Breakage Detector,data_loaders_PaRe.py,pydocs,Arrays_Comparable,pytest,8/31/2024
+yes01,xhl-api-test-script,https://github.com/yes01/xhl-api-test-script,0,0,0,0,N/A,matching.py,pydocs,Arrays_Comparable,pytest,5/17/2023
+fifity-fifity,Data100,https://github.com/fifity-fifity/Data100,0,0,0,0,BIG DATA LEARNING,test_urllib2.py,pydocs,Arrays_Comparable,pytest,7/29/2024
+AgRoboticsResearch,alpha-clip,https://github.com/AgRoboticsResearch/alpha-clip,0,0,0,0,N/A,tiny_imagenet.py,pydocs,Arrays_Comparable,pytest,3/8/2024
+arfzmri,volascan,https://github.com/arfzmri/volascan,0,0,0,0,N/A,test_l2gateway.py,pydocs,Arrays_Comparable,pytest,7/22/2024
+liuxiaotiao,pytorch_test,https://github.com/liuxiaotiao/pytorch_test,0,0,0,0,N/A,test_statistics.py,pydocs,Arrays_Comparable,pytest,11/8/2023
+cyyever,pytorch_private,https://github.com/cyyever/pytorch_private,0,1,0,1,N/A,test_statistics.py,pydocs,Arrays_Comparable,pytest,2/3/2022
+ashen-sensored,pytorch,https://github.com/ashen-sensored/pytorch,0,0,0,0,N/A,test_statistics.py,pydocs,Arrays_Comparable,pytest,10/15/2023
+orgTestCodacy11KRepos110MB,repo-3136-pyod,https://github.com/orgTestCodacy11KRepos110MB/repo-3136-pyod,0,0,0,0,N/A,waterwire.py,pydocs,Arrays_Comparable,pytest,1/30/2023
+swimmio,demo-sentry-autodocs,https://github.com/swimmio/demo-sentry-autodocs,0,0,0,55,N/A,Theseus_v8_best_path.py,pydocs|requests,Arrays_Comparable|DataMustOpenInBinary,pytest,5/22/2024
+xdslproject,xdsl-typed_pointers,https://github.com/xdslproject/xdsl-typed_pointers,0,0,0,5,Old version of xDSL compatible with typed pointers in LLVM 17. Ported some operations that were missing and support for constructs like aliases from the new version of xDSL in the main repository,polycos.py,pydocs,Console_CloseErrorWriter|Console_CloseWriter,pytest,8/19/2024
+Echways,trash,https://github.com/Echways/trash,0,0,0,0,N/A,os.py,pydocs|requests,Console_CloseErrorWriter|DataMustOpenInBinary,pytest,7/25/2023
+exorde-labs,exorde-swarm-client,https://github.com/exorde-labs/exorde-swarm-client,0,0,1,0,Cluster/multi-process exorde client ,file_packager.py,pydocs,Console_CloseErrorWriter|Console_CloseWriter,pytest,11/6/2023
+form-case,kobocat,https://github.com/form-case/kobocat,0,0,0,0,N/A,randomtaggerservice.py,pydocs,Console_CloseErrorWriter|Console_CloseWriter,pytest,8/10/2024
+hammadbawara,Instagram-Bot,https://github.com/hammadbawara/Instagram-Bot,0,0,0,0,N/A,ss13_genchangelog.py,pydocs|requests,Console_CloseErrorWriter|DataMustOpenInBinary,pytest,4/16/2023
+mahmudamen,dist,https://github.com/mahmudamen/dist,0,0,0,0,N/A,ss13_genchangelog.py,pydocs,Console_CloseErrorWriter|Console_CloseWriter,pytest,7/27/2022
+BobbyLiukeling,python,https://github.com/BobbyLiukeling/python,0,0,0,0,N/A,ss13_genchangelog.py,pydocs,Console_CloseErrorWriter|Console_CloseWriter,pytest,4/10/2021
+moderrotech,highview-zephyr,https://github.com/moderrotech/highview-zephyr,0,0,0,1,N/A,serveur0.py,pydocs,Console_CloseErrorWriter|Console_CloseWriter,pytest,11/17/2019
+Shawen17,Marz-VFX,https://github.com/Shawen17/Marz-VFX,0,0,0,0,N/A,gene2TF.py,pydocs,Console_CloseErrorWriter|Console_CloseWriter,pytest,7/21/2024
+XDeadshoTX-dev,Lab3,https://github.com/XDeadshoTX-dev/Lab3,0,0,0,3,"Website<> Django, Docker",runqueue.py,pydocs,Console_CloseReader,pytest,3/3/2024
+riquito,fs-radar,https://github.com/riquito/fs-radar,0,0,0,11,A directory/file watcher,daemon_mixin.py,pydocs,Console_CloseReader,pytest,6/6/2016
+ansible-collection-migration,misc.not_a_real_collection,https://github.com/ansible-collection-migration/misc.not_a_real_collection,0,0,0,0,N/A,genutils.py,pydocs,Console_CloseReader,pytest,1/21/2020
+ajithpadman,vscode-lsp,https://github.com/ajithpadman/vscode-lsp,0,0,0,15,N/A,popen.py,pydocs,Console_CloseReader,pytest,7/1/2024
+lucianotonet,vscode-python-tools-extension,https://github.com/lucianotonet/vscode-python-tools-extension,0,0,0,10,N/A,popen.py,pydocs,Console_CloseReader,pytest,7/22/2024
+z3z1ma,sqlmesh-lsp-vscode,https://github.com/z3z1ma/sqlmesh-lsp-vscode,0,0,0,14,A VSCode extension over a simple SQLMesh LSP implementation,popen.py,pydocs,Console_CloseReader,pytest,7/8/2024
+mdo6180,PyRex-VSCode,https://github.com/mdo6180/PyRex-VSCode,0,0,0,9,N/A,lsp_jsonrpc.py,pydocs,Console_CloseReader,pytest,8/2/2024
+msft-mirror-aosp,platform.external.autotest,https://github.com/msft-mirror-aosp/platform.external.autotest,0,0,0,0,N/A,gui.py,pydocs,Console_CloseReader,pytest,8/9/2022
+TinkerBoard2-Android,external-autotest,https://github.com/TinkerBoard2-Android/external-autotest,0,0,0,0,N/A,gSpeechAPI.py,pydocs,Console_CloseReader,pytest,9/28/2021
+m-abyzov,itis_tracker_backend,https://github.com/m-abyzov/itis_tracker_backend,0,0,0,0,server for tracker app,build.py,pydocs,Console_CloseWriter,pytest,6/30/2018
+arethalevi,cvthru-resumeparser,https://github.com/arethalevi/cvthru-resumeparser,0,0,0,0,N/A,34745___init__.py,pydocs,Console_CloseWriter,pytest,12/9/2022
+sodium24,CIL,https://github.com/sodium24/CIL,0,0,0,0,Interaction Language developed for competitor-to-competitor communication in the Spectrum Collaboration Challenge ,SearchAll.py,pydocs,Console_CloseWriter,pytest,7/10/2021
+ano1herengineer,Gen_Ai,https://github.com/ano1herengineer/Gen_Ai,0,0,0,0,Generative AI with LangChain and HuggingFace,main.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,7/28/2024
+nfacciol,Project-C-NLP,https://github.com/nfacciol/Project-C-NLP,0,0,0,0,Nicholas Facciola NLP submission for Natural Language Processing with Disaster Tweets https://www.kaggle.com/competitions/nlp-getting-started/overview,rdparser_app.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,6/3/2024
+bmwant,solenie,https://github.com/bmwant/solenie,0,0,0,10,super-duper-sniffle,tree.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,10/14/2018
+yuanjiajun999,AI_Nirvana,https://github.com/yuanjiajun999/AI_Nirvana,0,0,0,11,N/A,tree2image.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,6/24/2024
+intellivoid,CoffeeHousePy,https://github.com/intellivoid/CoffeeHousePy,0,1,0,0,Full implementation of CoffeeHouse for Python and all it's required dependencies,tree.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,12/25/2020
+myneuronews,flbrh,https://github.com/myneuronews/flbrh,0,0,0,0,N/A,srparser_app.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,2/18/2018
+HussainM899,Customer_Reviews_Analyzer,https://github.com/HussainM899/Customer_Reviews_Analyzer,0,0,0,0,N/A,tree.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,4/27/2024
+sally-20,InteractiveIntelligenceStudyAid,https://github.com/sally-20/InteractiveIntelligenceStudyAid,0,0,0,0,N/A,tree.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,11/17/2023
+only-cr,uploading,https://github.com/only-cr/uploading,0,1,0,1,model_code,tree.py,nltk|pydocs,CreateWidgetOnSameFrameCanvas|faulthandler_disableBeforeClose,pytest,1/5/2019
+don-ibrhm,docQueries,https://github.com/don-ibrhm/docQueries,0,0,0,1,N/A,util.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,9/7/2023
+meddhafer97,Risk-management-khnowledge-based-system,https://github.com/meddhafer97/Risk-management-khnowledge-based-system,0,1,0,1,N/A,chartparser_app.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,12/26/2021
+PedroHV72,Abatedouro-uvpd-P1,https://github.com/PedroHV72/Abatedouro-uvpd-P1,0,0,0,0,N/A,srparser_app.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,4/16/2021
+prathamsuroshi,major-project,https://github.com/prathamsuroshi/major-project,0,0,0,0,N/A,tree.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,2/21/2024
+WilliamEspe,Actividad-3-p3,https://github.com/WilliamEspe/Actividad-3-p3,0,0,0,0,N/A,util.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,8/24/2024
+Awannaphasch2016,FAUCovid19,https://github.com/Awannaphasch2016/FAUCovid19,0,0,0,15,N/A,tree.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,7/24/2020
+razscalelot,festumevento,https://github.com/razscalelot/festumevento,0,0,0,0,N/A,tree.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,8/30/2022
+LucasRomanato0,IA,https://github.com/LucasRomanato0/IA,0,0,0,0,N/A,srparser_app.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,7/17/2024
+tKhang08,MyProject_01,https://github.com/tKhang08/MyProject_01,0,0,0,0,DataMining and AnalyzeData by MachinLearning,srparser_app.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,7/14/2024
+kyoo-147,all_application_pyqt5_UI_NaVin,https://github.com/kyoo-147/all_application_pyqt5_UI_NaVin,0,0,0,0,N/A,cfg.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,10/15/2023
+Roberadesissai,PyNLPToolkit,https://github.com/Roberadesissai/PyNLPToolkit,0,0,0,0,N/A,cfg.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,3/14/2024
+ElinaZhang0721,DeepTarget-NLP-Task-1,https://github.com/ElinaZhang0721/DeepTarget-NLP-Task-1,0,0,0,0,N/A,chartparser_app.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,8/22/2024
+DominicLarge,Dom_James_Thesis,https://github.com/DominicLarge/Dom_James_Thesis,0,0,0,0,Group 11 - Dom & James - MaCAD Thesis,chartparser_app.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,7/17/2024
+linehan,notebookworm,https://github.com/linehan/notebookworm,0,0,0,0,"Perform frequency analysis on a text corpus. Clone of Harvard's ""Bookworm<>"" itself a clone of Google Trends ",rdparser.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,12/18/2018
+FinalYearProjectWhatsAppChatAnalyzer,Backend,https://github.com/FinalYearProjectWhatsAppChatAnalyzer/Backend,0,2,0,0,N/A,rdparser_app.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,4/29/2023
+duda-abreu,git-chatbot,https://github.com/duda-abreu/git-chatbot,0,0,0,0,N/A,rdparser_app.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,8/27/2024
+ucascnic,lianxiangTRT,https://github.com/ucascnic/lianxiangTRT,0,0,0,0,N/A,chartparser_app.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,5/22/2024
+krishna050702,Smart-Resume-Analyzer,https://github.com/krishna050702/Smart-Resume-Analyzer,0,0,0,0,N/A,tree.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,11/21/2022
+tedyted26,Sistemas-recomendacion,https://github.com/tedyted26/Sistemas-recomendacion,0,2,0,1,Proyecto final de la asignatura de Sistemas de recomendación y representación del conocimiento de la UEM 2021-2022. Aplicación de recomendación de noticias periodísticas utilizando el teorema del coseno y el coeficiente de Sorensen-Dice,cfg.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,12/13/2021
+tedyted26,Proyecto-1-noticias,https://github.com/tedyted26/Proyecto-1-noticias,0,2,0,1,Segunda parte de Proyecto de Computación 1 de la UEM 2021-2022. Usando las noticias y modelos anteriores<> se crea una aplicación capaz de predecir si en una noticia se habla de delitos de odio o no.,cfg.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,1/4/2022
+klmilam,ieor4577-sentiment-analysis,https://github.com/klmilam/ieor4577-sentiment-analysis,0,0,0,10,N/A,util.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,2/16/2020
+Kendubu1,NLP-Flask-Website,https://github.com/Kendubu1/NLP-Flask-Website,0,0,0,1,NLP-Flask-Website,tree.py,nltk,CreateWidgetOnSameFrameCanvas,pytest,7/8/2020
+offsoc,meld,https://github.com/offsoc/meld,0,0,0,0,N/A,maint,requests,DataMustOpenInBinary,pytest,6/1/2024
+osamaaslam86004,E-Commrace,https://github.com/osamaaslam86004/E-Commrace,0,0,0,0,E-Commrace Web APP Integrated With Resume-API Backend,cmr.py,requests,DataMustOpenInBinary,pytest,8/27/2024
+HycCodeQL,cicd-goat,https://github.com/HycCodeQL/cicd-goat,0,0,0,13,N/A,endpointKhompMQTT.py,requests,DataMustOpenInBinary,pytest,10/27/2023
+chronicc,proving-ground,https://github.com/chronicc/proving-ground,0,0,0,0,Vagrant test environment with prepared scenarios.,gcp_cloudfunctions_cloud_function.py,requests,DataMustOpenInBinary,pytest,12/22/2020
+mollymcclean,scp-ansible-rn,https://github.com/mollymcclean/scp-ansible-rn,0,0,0,1,N/A,gcp_cloudfunctions_cloud_function.py,requests,DataMustOpenInBinary,pytest,8/31/2021
+kokasha,layer2_demo,https://github.com/kokasha/layer2_demo,0,0,0,0,N/A,gcp_cloudfunctions_cloud_function.py,requests,DataMustOpenInBinary,pytest,9/22/2020
+cowanweks,ringstech-backend,https://github.com/cowanweks/ringstech-backend,0,0,0,1,N/A,bot.py,requests,DataMustOpenInBinary,pytest,6/17/2024
+wingsheep,learningPython,https://github.com/wingsheep/learningPython,0,0,6,0,N/A,order.py,requests,DataMustOpenInBinary,pytest,12/19/2021
+sky-joker,awx-arm64arch,https://github.com/sky-joker/awx-arm64arch,0,1,0,18,AWX image for arm64,functions_EABlock.py,requests,DataMustOpenInBinary,pytest,5/4/2019
+harshraul24,Secure-Chain,https://github.com/harshraul24/Secure-Chain,0,0,0,0,"Forensicks<> a cutting-edge digital investigation platform, revolutionizes the way investigation teams and individuals handle collected evidence.",main.py,requests,DataMustOpenInBinary,pytest,11/5/2023
+made-mlops-2022,artem_ustsov,https://github.com/made-mlops-2022/artem_ustsov,0,0,0,4,Technopark<> ML-21,anime.py,requests,DataMustOpenInBinary,pytest,10/22/2022
+sameera464,awx,https://github.com/sameera464/awx,0,0,0,11,awx,anime.py,requests,DataMustOpenInBinary,pytest,4/12/2019
+farrukh90,terraform-aws-awx,https://github.com/farrukh90/terraform-aws-awx,0,5,0,12,Module Location,ace_lib.py,requests,DataMustOpenInBinary,pytest,3/30/2019
+azaa1,AWX-Ansible-Tower,https://github.com/azaa1/AWX-Ansible-Tower,0,0,0,0,"AWX - web-based user interface<> REST API, and task engine built on top of Ansible.",models.py,requests,DataMustOpenInBinary,pytest,8/19/2020
+happynation,provision_awx_tower,https://github.com/happynation/provision_awx_tower,0,2,0,0,N/A,grafana_backend.py,requests,DataMustOpenInBinary,pytest,6/19/2019
+christiancosgrove,cs767hw2,https://github.com/christiancosgrove/cs767hw2,0,0,0,2,N/A,mturk_manager.py,requests,DataMustOpenInBinary,pytest,2/9/2020
+svadikari,python_projects,https://github.com/svadikari/python_projects,0,0,0,0,N/A,example1.py,requests,DataMustOpenInBinary,pytest,12/23/2021
+dgubanovv,qa-tests,https://github.com/dgubanovv/qa-tests,0,1,0,0,N/A,api.py,requests,DataMustOpenInBinary,pytest,9/14/2022
+City-of-Helsinki,ahti,https://github.com/City-of-Helsinki/ahti,0,0,0,101,Ahti API.,data_record_page.py,requests,DataMustOpenInBinary,pytest,11/6/2019
+aishe-ai,airbyte,https://github.com/aishe-ai/airbyte,0,0,0,1,Airbyte Fork,routine.py,requests,DataMustOpenInBinary,pytest,1/11/2024
+gnuamua,denvermesh-plone-backend,https://github.com/gnuamua/denvermesh-plone-backend,0,0,0,0,Plone Backend for DenverMesh.org,ServiceOpenTera.py,requests,DataMustOpenInBinary,pytest,5/14/2024
+jc2341,TWA_Developer,https://github.com/jc2341/TWA_Developer,0,0,0,0,N/A,productionSheet.py,requests,DataMustOpenInBinary,pytest,5/16/2024
+xinhhh,capstone,https://github.com/xinhhh/capstone,0,0,0,0,The world avatar digital twin project (for RBC),initialise_kg.py,requests,DataMustOpenInBinary,pytest,4/20/2023
+matinone,fastapi_auth,https://github.com/matinone/fastapi_auth,0,0,0,10,Complete user authentication using FastAPI.,loadSimulator.py,requests,DataMustOpenInBinary,pytest,10/8/2022
+Shivkant-Chauhan,prototype---dockerizing-oppia,https://github.com/Shivkant-Chauhan/prototype---dockerizing-oppia,0,0,0,0,N/A,rabbitMQConnection.py,requests,DataMustOpenInBinary,pytest,3/18/2023
+c3lab-net,energy-data,https://github.com/c3lab-net/energy-data,0,2,11,21,Scripts to collect and API to provide carbon data from grid operators.,api_client.py,requests,DataMustOpenInBinary,pytest,3/31/2022
+earthcube,earthcube_utilities,https://github.com/earthcube/earthcube_utilities,0,0,93,75,crawl and assert data-repository metadata for search,protection.py,requests,DataMustOpenInBinary,pytest,10/1/2020
+HumanCompatibleAI,interactive-behaviour-design,https://github.com/HumanCompatibleAI/interactive-behaviour-design,0,1,1,0,N/A,bento.py,pydocs,faulthandler_disableBeforeClose,pytest,3/27/2019
+ZulfikarAkbar,YOLO_ObjectDetection,https://github.com/ZulfikarAkbar/YOLO_ObjectDetection,0,1,0,1,N/A,hello.py,pydocs,faulthandler_disableBeforeClose,pytest,2/7/2019
+AlifioDitya,Phase-Detection-with-EQTransformer,https://github.com/AlifioDitya/Phase-Detection-with-EQTransformer,0,0,0,0,Automatic Phase and Event Detection for Seismic Waves with EQTransformer.,absltest.py,pydocs,faulthandler_disableBeforeClose,pytest,11/16/2023
+idjoo,dotfiles.ansible,https://github.com/idjoo/dotfiles.ansible,0,0,0,0,my personal dotfiles,absltest.py,pydocs,faulthandler_disableBeforeClose,pytest,5/28/2024
+Artemka4433,jd_sports_bot_telegram,https://github.com/Artemka4433/jd_sports_bot_telegram,0,0,0,0,N/A,basic_agent copy.py,pydocs,faulthandler_disableBeforeClose|faulthandler_tracetrackDumpBeforeClose,pytest,8/26/2020
+lzt-pro,ray,https://github.com/lzt-pro/ray,0,0,0,21,N/A,main_z.py,pydocs,faulthandler_disableBeforeClose,pytest,6/13/2020
+yolotalkies123,ML-project,https://github.com/yolotalkies123/ML-project,0,0,0,0,N/A,train_td3_pickplace.py,pydocs,faulthandler_disableBeforeClose|faulthandler_tracetrackDumpBeforeClose,pytest,8/26/2024
+kangg18,vonx_protocol,https://github.com/kangg18/vonx_protocol,0,0,0,50,N/A,fusion.py,pydocs,faulthandler_disableBeforeClose,pytest,7/3/2018
+smithdouglas404,h2oget,https://github.com/smithdouglas404/h2oget,0,0,0,0,N/A,__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,10/20/2023
+Spaceship-Servers,spaceship-ansible,https://github.com/Spaceship-Servers/spaceship-ansible,0,1,0,0,Ansible script for starting up a new spaceship node,crashsignal.py,pydocs,faulthandler_disableBeforeClose,pytest,6/6/2022
+jspencer12,ALICE,https://github.com/jspencer12/ALICE,0,0,0,0,Aggregating Losses to Imitate Cached Experts,asfframework.py,pydocs,faulthandler_disableBeforeClose,pytest,11/2/2020
+NockyM,olist,https://github.com/NockyM/olist,0,0,0,1,N/A,setup.py,pydocs,faulthandler_disableBeforeClose,pytest,1/27/2020
+eggyolkk,CS235-Flix,https://github.com/eggyolkk/CS235-Flix,0,0,0,0,Repository for Compsci235 Assignment,__init__.py,pydocs,faulthandler_disableBeforeClose|faulthandler_tracetrackDumpBeforeClose,pytest,9/21/2020
+Alexmdg,Prelog,https://github.com/Alexmdg/Prelog,0,0,0,0,"Pre made Logger classes with colors<> different loggers for different types of events, context managers, ...",__init__.py,pydocs,faulthandler_disableBeforeClose|faulthandler_tracetrackDumpBeforeClose,pytest,8/13/2020
+kunato,helm-llm-efficiency,https://github.com/kunato/helm-llm-efficiency,0,0,0,0,N/A,utils.py,pydocs,faulthandler_disableBeforeClose,pytest,8/19/2023
+tianhua2,my_h20,https://github.com/tianhua2/my_h20,0,0,0,0,N/A,test_py_demo4.py,pydocs,faulthandler_disableBeforeClose,pytest,8/10/2024
+IntelliSys-Lab,Nitro-ray,https://github.com/IntelliSys-Lab/Nitro-ray,0,0,0,0,N/A,__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,3/29/2024
+saketbyte,Screen-Painting-,https://github.com/saketbyte/Screen-Painting-,0,0,0,0,"Used MediaPipe<> OpenCV and python to draw on live video stream using your fingers, as a white board.",__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,6/18/2021
+matbarPL,stance-tagger-kedro,https://github.com/matbarPL/stance-tagger-kedro,0,0,0,58,"One year project focused on stance detection. Technologies used Python<> React, Kedro, Flask, fasttext and MySQL",main_z.py,pydocs,faulthandler_disableBeforeClose|faulthandler_tracetrackDumpBeforeClose,pytest,4/21/2020
+Pipertaku,TaskApi,https://github.com/Pipertaku/TaskApi,0,0,0,0,N/A,faulthandler.py,pydocs,faulthandler_disableBeforeClose|faulthandler_tracetrackDumpBeforeClose,pytest,7/31/2024
+joe12334667,IGDownload,https://github.com/joe12334667/IGDownload,0,0,0,1,N/A,asfframework.py,pydocs,faulthandler_disableBeforeClose,pytest,3/22/2020
+RyanLw007,AI-project,https://github.com/RyanLw007/AI-project,0,0,0,0,N/A,setup.py,pydocs,faulthandler_disableBeforeClose,pytest,4/10/2024
+yshirai999,Maximin,https://github.com/yshirai999/Maximin,0,0,0,3,N/A,setup.py,pydocs,faulthandler_disableBeforeClose,pytest,5/15/2024
+rampageoppa,CSC413,https://github.com/rampageoppa/CSC413,0,0,0,0,CSC413 Project,pipeline.py,pydocs,faulthandler_disableBeforeClose,pytest,2/27/2024
+Sriramsureshkumar,SmartGPT_Offline,https://github.com/Sriramsureshkumar/SmartGPT_Offline,0,0,0,0,N/A,app.py,pydocs,faulthandler_disableBeforeClose,pytest,11/19/2023
+webdevi910,-ray-project,https://github.com/webdevi910/-ray-project,0,0,0,0,Ray is a unified framework for scaling AI and Python applications. Ray consists of a core distributed runtime and a set of AI Libraries for accelerating ML workloads.,mod_vit_encoder.py,pydocs,faulthandler_disableBeforeClose,pytest,10/6/2023
+arselzer,spark,https://github.com/arselzer/spark,0,1,0,0,N/A,__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,8/11/2023
+sanggggg,vistuto,https://github.com/sanggggg/vistuto,0,0,0,0,N/A,testing.py,pydocs,faulthandler_disableBeforeClose,pytest,7/31/2024
+DapDeveloper,Cura,https://github.com/DapDeveloper/Cura,0,0,0,0,N/A,mainwindow.py,pydocs,faulthandler_disableBeforeClose,pytest,4/18/2019
+ASK-Baloch,python-projects,https://github.com/ASK-Baloch/python-projects,0,0,0,0,all the projects related to python and fastapi,absltest.py,pydocs,faulthandler_disableBeforeClose|faulthandler_tracetrackDumpBeforeClose,pytest,2/26/2024
+dasanchez11,dog-breed,https://github.com/dasanchez11/dog-breed,0,1,0,27,N/A,faulthandler.py,pydocs,faulthandler_disableBeforeClose,pytest,7/27/2020
+AdrianC47,Django,https://github.com/AdrianC47/Django,0,0,0,0,"Django 3<> Django Rest Framework,  Bases de datos con Django, Diseño de Templates HTML en Django, Servicios Rest Con Django, Administración de usuarios, Subir tu proyecto Django a un servidor Programación y desarrollo web",setup.py,pydocs,faulthandler_disableBeforeClose,pytest,4/24/2022
+Bhargav-2808,pandas,https://github.com/Bhargav-2808/pandas,0,0,0,0,N/A,__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,10/6/2021
+wrmsr,omlish,https://github.com/wrmsr/omlish,0,0,0,0,N/A,fuse-recurso.py,pydocs,faulthandler_disableBeforeClose,pytest,4/25/2023
+Azure,iot-sdk-longhaul,https://github.com/Azure/iot-sdk-longhaul,0,4,1,118,N/A,power_network.py,pydocs,faulthandler_disableBeforeClose,pytest,8/13/2020
+tedleyem,python,https://github.com/tedleyem/python,0,0,0,0,A list of ugly python projects,app_launcher.py,pydocs,faulthandler_disableBeforeClose,pytest,6/24/2023
+enoorani,qrllib,https://github.com/enoorani/qrllib,0,1,0,3,N/A,gen_demonstration_rlbench_delta_action.py,pydocs,faulthandler_disableBeforeClose,pytest,1/18/2022
+lewandowski-jan,SignalProcessing,https://github.com/lewandowski-jan/SignalProcessing,0,0,0,0,Program for my Digital Circuits class<> uses Fast Fourier Transform form NumPy.,__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,5/11/2020
+fatemehizadii,Storefront,https://github.com/fatemehizadii/Storefront,0,0,0,0,N/A,absltest.py,pydocs,faulthandler_disableBeforeClose|faulthandler_tracetrackDumpBeforeClose,pytest,1/2/2024
+nate-dash,fast-api-test,https://github.com/nate-dash/fast-api-test,0,0,0,0,N/A,__init__.py,pydocs,faulthandler_disableBeforeClose|faulthandler_tracetrackDumpBeforeClose,pytest,12/15/2023
+Medchill,darkflow-master,https://github.com/Medchill/darkflow-master,0,0,0,0,N/A,commander_window.py,pydocs,faulthandler_disableBeforeClose,pytest,10/4/2018
+santosh-shetkar-katonic,ray-cluster,https://github.com/santosh-shetkar-katonic/ray-cluster,0,1,0,1,N/A,commander_window.py,pydocs,faulthandler_disableBeforeClose,pytest,2/25/2022
+zrmzack,recommended-system,https://github.com/zrmzack/recommended-system,0,0,1,76,N/A,debug.py,pydocs,faulthandler_disableBeforeClose,pytest,5/4/2020
+Rishikathegenius,Eye-I-_Still_Know,https://github.com/Rishikathegenius/Eye-I-_Still_Know,0,0,0,0,N/A,__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,9/9/2022
+ZDawnG,femu,https://github.com/ZDawnG/femu,0,0,0,0,N/A,test_faulthandler.py,pydocs,faulthandler_disableBeforeClose,pytest,10/17/2023
+zhiwayzhang,FEMU-Lab,https://github.com/zhiwayzhang/FEMU-Lab,0,0,0,0,N/A,test_faulthandler.py,pydocs,faulthandler_disableBeforeClose,pytest,7/1/2023
+hanze5,My_ConfZNS,https://github.com/hanze5/My_ConfZNS,0,0,0,0,designed based on confzns,test_faulthandler.py,pydocs,faulthandler_disableBeforeClose,pytest,11/27/2023
+Harshkumar19,regression-project-FSDS,https://github.com/Harshkumar19/regression-project-FSDS,0,0,0,0,N/A,test_faulthandler.py,pydocs,faulthandler_disableBeforeClose,pytest,6/19/2023
+saqlain-github,Docker_basics,https://github.com/saqlain-github/Docker_basics,0,0,0,0,Repository will help understand basics of docker file<> images containers. Fell free to ping if you want docker notes,__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,10/11/2022
+Vathender,Human-Detection,https://github.com/Vathender/Human-Detection,0,0,0,0,human detection using cnn network made in python,__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,6/27/2023
+P79N6A,docker,https://github.com/P79N6A/docker,0,1,0,1,N/A,__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,4/20/2019
+ChrisD-7,Chat-with-PDF,https://github.com/ChrisD-7/Chat-with-PDF,0,0,0,0,Chat with PDF intro to LLMs and Vector Databases,__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,3/23/2024
+farooqshaikh22,chatbot,https://github.com/farooqshaikh22/chatbot,0,0,0,0,N/A,__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,6/5/2024
+hidibelan,jjp1,https://github.com/hidibelan/jjp1,0,0,0,0,N/A,reconstruct_sequence.py,pydocs,faulthandler_disableBeforeClose,pytest,2/17/2021
+pag-iiitd,Metallicus,https://github.com/pag-iiitd/Metallicus,0,2,0,4,N/A,test_examples.py,pydocs,faulthandler_disableBeforeClose|faulthandler_tracetrackDumpBeforeClose,pytest,4/28/2020
+Tharun-100,AI_sql_gen,https://github.com/Tharun-100/AI_sql_gen,0,0,0,0,N/A,test_faulthandler.py,pydocs,faulthandler_disableBeforeClose,pytest,7/17/2024
+hetaswini,MachineLearningProjects,https://github.com/hetaswini/MachineLearningProjects,0,0,0,0,N/A,__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,4/29/2024
+Naira-Belal,N-GDSC-SC-2024,https://github.com/Naira-Belal/N-GDSC-SC-2024,0,0,0,0,N/A,__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,2/22/2024
+jisang-yoon,dwt_residual_learning,https://github.com/jisang-yoon/dwt_residual_learning,0,0,0,0,price prediction based on dwt residual learning module,__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,8/6/2020
+artao30,coderl233,https://github.com/artao30/coderl233,0,0,0,0,my play,testing_util.py,pydocs,faulthandler_disableBeforeClose,pytest,4/20/2023
+Libolun-star,IRCoCo,https://github.com/Libolun-star/IRCoCo,0,0,0,0,IRCoCo,testing_util.py,pydocs,faulthandler_disableBeforeClose,pytest,5/16/2023
+RyotaroOKabe,SCIGEN,https://github.com/RyotaroOKabe/SCIGEN,0,0,0,0,Structural Constraint Integration in Generative Model for Discovery of Quantum Material Candidates,__init__.py,pydocs,faulthandler_disableBeforeClose,pytest,2/14/2024
+sim4444,EduLocation,https://github.com/sim4444/EduLocation,0,0,0,0,N/A,faulthandler.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,1/11/2024
+MarouaneOulabass,servier-drug-pipeline,https://github.com/MarouaneOulabass/servier-drug-pipeline,0,0,0,0,N/A,faulthandler.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,10/26/2022
+cuneguines,Kent-,https://github.com/cuneguines/Kent-,0,0,0,0,N/A,faulthandler.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,5/23/2023
+wdrescher,a4,https://github.com/wdrescher/a4,0,0,0,0,N/A,eintr_tester.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,11/1/2020
+goimexindia,shubhshaadivivah,https://github.com/goimexindia/shubhshaadivivah,0,0,0,0,shubhshaadivivah,faulthandler.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,9/10/2021
+aayush-kushwaha,real_time_chat_backend,https://github.com/aayush-kushwaha/real_time_chat_backend,0,0,0,0,N/A,faulthandler.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,7/26/2024
+Yohan-Rodriguez,Imagine_Apps_Tarea1_API,https://github.com/Yohan-Rodriguez/Imagine_Apps_Tarea1_API,0,0,0,0,N/A,faulthandler.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,7/24/2023
+qompassai,Equator,https://github.com/qompassai/Equator,0,0,0,0,Education Amplifying Human Intelligence,faulthandler.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,7/27/2024
+miskatul-anwar,Python-Programming,https://github.com/miskatul-anwar/Python-Programming,0,0,0,0,My Python Lab,faulthandler.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,12/22/2023
+tongclement,Safely-Buoy-Wifi-Remote-Debugging-Dashboard,https://github.com/tongclement/Safely-Buoy-Wifi-Remote-Debugging-Dashboard,0,0,0,0,Dashboard and Flutter Mobile App showing the telemetry of the SafelyBuoy robotic buoy for remote debugging at sea<> built using Streamlit and Flutter. Experimented with Kivy.,_test_eintr.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,12/17/2023
+Jack-Chagarr,fake_news_detection,https://github.com/Jack-Chagarr/fake_news_detection,0,0,0,0,N/A,test_faulthandler.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,6/15/2023
+ryan3-10,money_matches,https://github.com/ryan3-10/money_matches,0,0,0,0,N/A,main.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,4/16/2023
+naveen-2k,pencil-sketch-kivy,https://github.com/naveen-2k/pencil-sketch-kivy,0,0,0,0,N/A,main.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,12/17/2023
+JoaquinFerman,math,https://github.com/JoaquinFerman/math,0,0,0,0,Various math mobile apps,test_faulthandler.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,6/3/2024
+matsurix28,mottledot,https://github.com/matsurix28/mottledot,0,0,0,0,N/A,test_faulthandler.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,1/10/2024
+eikonoklastess,AirShare,https://github.com/eikonoklastess/AirShare,0,0,0,0,AirShare is a replacement for AirDrop that works with Android and macOS ,test_faulthandler.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,7/25/2024
+nickstevensMU,HawkScan,https://github.com/nickstevensMU/HawkScan,0,1,0,1,Web based computer vision AI application that affords users the ability to run a full cycle management of drone image collections<> with options to stitch images together and scan resulting orthoimages for objects. Includes use of DroneDeploy API.,_test_eintr.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,8/8/2022
+ryan3-10,goal_track_app,https://github.com/ryan3-10/goal_track_app,0,0,0,0,N/A,test_faulthandler.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,1/29/2024
+soumeyahaloui,mock_ser,https://github.com/soumeyahaloui/mock_ser,0,0,0,0,N/A,test_regrtest.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,2/1/2024
+soumeyahaloui,final_project,https://github.com/soumeyahaloui/final_project,0,0,0,0,N/A,test_regrtest.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,3/23/2024
+shadowjohn,ms4w_MSSQL,https://github.com/shadowjohn/ms4w_MSSQL,0,0,0,0,我的 ms4w_MSSQL,test_faulthandler.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,8/12/2024
+hartmala,CIDM6325_Laurie_Hackbarth,https://github.com/hartmala/CIDM6325_Laurie_Hackbarth,0,0,0,0,N/A,main.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,9/23/2021
+BagusMiftahRizqullah,kivyTest,https://github.com/BagusMiftahRizqullah/kivyTest,0,0,0,0,N/A,test_faulthandler.py,pydocs,faulthandler_tracetrackDumpBeforeClose,pytest,7/12/2022
