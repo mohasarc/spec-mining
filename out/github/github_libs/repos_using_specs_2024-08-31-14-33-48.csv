@@ -1,0 +1,139 @@
+Owner,Repository Name,Repository Link,Stars,Forks,Issues,Pull Requests,Description,File Name,Dependency Name,Spec Name,Testing Framework,Created At
+google-research,google-research,https://github.com/google-research/google-research,33730,7725,1229,867,Google Research,generate_api.py,pydocs,ArgParse_Parent,unit,10/4/2018
+awslabs,gluonts,https://github.com/awslabs/gluonts,4521,715,954,1813,Probabilistic time series modeling in Python,train_mnist_custom_loop.py,pydocs,ArgParse_Parent,unit,5/15/2019
+lowRISC,opentitan,https://github.com/lowRISC/opentitan,2485,724,6677,17791,OpenTitan: Open source silicon root of trust,train_mnist_custom_loop.py,pydocs,ArgParse_Parent,unit,8/26/2019
+oegedijk,explainerdashboard,https://github.com/oegedijk/explainerdashboard,2285,324,235,49,"Quickly build Explainable AI dashboards that show the inner workings of so-called ""blackbox"" machine learning models.",archive.py,pydocs,Arrays_Comparable,unit,10/30/2019
+intel,neural-compressor,https://github.com/intel/neural-compressor,2123,247,197,1784,"SOTA low-bit LLM quantization (INT8/FP8/INT4/FP4/NF4) & sparsity<> leading model compression techniques on TensorFlow<> PyTorch, and ONNX Runtime",entrypoint.py,pydocs,ArgParse_Parent,unit,7/21/2020
+indico,indico,https://github.com/indico/indico,1722,416,3578,2916,"Indico - A feature-rich event management system<> made @ CERN, the place where the Web was born.",submission_manager.py,pydocs,Arrays_Comparable,unit,7/27/2011
+Xilinx,brevitas,https://github.com/Xilinx/brevitas,1139,190,430,542,Brevitas: neural network quantization in PyTorch,fever_lr_bert-base_llama2.py,pydocs,ArgParse_Parent,unit,7/10/2018
+SunzeY,AlphaCLIP,https://github.com/SunzeY/AlphaCLIP,629,37,53,9,[CVPR 2024] Alpha-CLIP: A CLIP Model Focusing on Wherever You Want,tiny_imagenet.py,pydocs,Arrays_Comparable,unit,11/27/2023
+seanfisk,python-project-template,https://github.com/seanfisk/python-project-template,542,166,22,49,A template Python project with a focus on best practices.,cli.py,pydocs,ArgParse_Parent,unit,4/11/2012
+Yelp,Tron,https://github.com/Yelp/Tron,340,59,152,841,Next generation batch process scheduling and management,pw,pydocs,ArgParse_Parent,unit,9/9/2010
+kubilus1,autoortho,https://github.com/kubilus1/autoortho,207,34,213,84,Orthophoto streaming for X-Plane 11,cpcc,pydocs,Console_CloseErrorWriter,unit,12/31/2021
+LGE-ARC-AdvancedAI,auptimizer,https://github.com/LGE-ARC-AdvancedAI/auptimizer,200,27,6,44,An automatic ML model optimization tool.,tripletsample_dataset.py,pydocs,Arrays_Comparable,unit,9/12/2019
+RBVI,ChimeraX,https://github.com/RBVI/ChimeraX,145,27,26,14,Source code for molecular graphics program UCSF ChimeraX,bksf.py,pydocs,Arrays_Comparable,unit,9/10/2020
+Josverl,micropython-stubs,https://github.com/Josverl/micropython-stubs,144,22,61,688,Stubs of most MicroPython ports<> boards and versions to make writing code that much simpler.,createMakefile.am.lib.py,pydocs,Console_CloseErrorWriter,unit,10/17/2020
+torchpipe,torchpipe,https://github.com/torchpipe/torchpipe,140,12,7,22,Serving Inside Pytorch,pyxivo_tracker_only.py,pydocs,ArgParse_Parent,unit,10/24/2023
+spectrochempy,spectrochempy,https://github.com/spectrochempy/spectrochempy,125,24,196,533,SpectroChemPy is a framework for processing<> analyzing and modeling spectroscopic data for chemistry with Python,linux-dependencies.py,pydocs,Arrays_Comparable,unit,5/13/2020
+ucbds-infra,otter-grader,https://github.com/ucbds-infra/otter-grader,122,62,379,451,A Python and R autograding solution,q3_1.py,pydocs,Arrays_Comparable,unit,9/13/2019
+promptops,cli,https://github.com/promptops/cli,122,3,13,5,um is a GPT-powered CLI assistant. Ask questions in plain English<> get the perfect shell command.,split_bed_by_haplotype.py,pydocs,Console_CloseErrorWriter,unit,5/9/2023
+andreamad8,FSB,https://github.com/andreamad8/FSB,121,10,4,0,The Few-Shot Bot: Prompt-Based Learning for Dialogue Systems,run_single.py,pydocs,ArgParse_Parent,unit,10/8/2021
+xuarehere,yolo_series_deepsort_pytorch,https://github.com/xuarehere/yolo_series_deepsort_pytorch,102,26,15,0,"Deepsort with yolo series. This project support the existing yolo detection model algorithm (YOLOV8<>  YOLOV7,  YOLOV6,  YOLOV5,  YOLOV4Scaled,  YOLOV4, YOLOv3', PPYOLOE,  YOLOR,  YOLOX ).",data_preprocess_amazon.py,pydocs,ArgParse_Parent,unit,7/13/2022
+EI-CoreBioinformatics,mikado,https://github.com/EI-CoreBioinformatics/mikado,91,14,325,131,Mikado is a lightweight Python3 pipeline whose purpose is to facilitate the identification of expressed loci from RNA-Seq data * and to select the best models in each locus.,test_repr.py,pydocs,Arrays_Comparable,unit,8/31/2015
+blackducksoftware,hub-rest-api-python,https://github.com/blackducksoftware/hub-rest-api-python,89,104,79,193,HUB REST API Python bindings,main.py,pydocs,ArgParse_Parent,unit,7/9/2018
+biothings,myvariant.info,https://github.com/biothings/myvariant.info,87,27,135,57,MyVariant.info: A BioThings API for human variant annotations,processor.py,pydocs,Arrays_Comparable,unit,4/26/2014
+allenai,reclip,https://github.com/allenai/reclip,79,14,10,1,N/A,learner.py,pydocs,Arrays_Comparable,unit,4/7/2022
+timothyyu,ml_monorepo,https://github.com/timothyyu/ml_monorepo,74,38,2,1,super-monorepo for machine learning and algorithmic trading ,calcres.py,pydocs,Arrays_Comparable,unit,2/1/2019
+Deeplite,deeplite-torch-zoo,https://github.com/Deeplite/deeplite-torch-zoo,73,10,64,336,Collection of SOTA efficient computer vision models for embedded applications<> with pre-trained weights and training recipes,extraction.py,pydocs,ArgParse_Parent,unit,4/5/2021
+roytam1,UXP,https://github.com/roytam1/UXP,48,8,0,12,UXP commits smorgasbord. Picking changes without removing XP/Vista and WebExtensions support. My custom changes will be in `custom` branch. Default `tracking` branch is not for compiling. Support requests should be raised in my blog comment forms below.,repo,pydocs,Console_CloseErrorWriter,unit,2/14/2019
+hwang595,Cuttlefish,https://github.com/hwang595/Cuttlefish,42,5,0,1,"The implementation for MLSys 2023 paper: ""Cuttlefish: Low-rank Model Training without All The Tuning""",test_rbd.py,pydocs,Arrays_Comparable,unit,3/30/2023
+BonexGoo,Boss2D,https://github.com/BonexGoo/Boss2D,33,2,7,2,C++ AppEngine for Qt,1DividirPob_0.py,pydocs,Arrays_Comparable,unit,7/18/2019
+KaiLv69,UDR,https://github.com/KaiLv69/UDR,31,6,9,0,ACL'23: Unified Demonstration Retriever for In-Context Learning,joint_position_joystick.py,pydocs,ArgParse_Parent,unit,5/7/2023
+microsoft,verseagility,https://github.com/microsoft/verseagility,27,11,2,34,"Ramp up your custom natural language processing (NLP) task<> allowing you to bring your own data, use your preferred frameworks and bring models into production. ",pw,pydocs,ArgParse_Parent,unit,1/24/2020
+Open-Earth-Foundation,CityCatalyst,https://github.com/Open-Earth-Foundation/CityCatalyst,20,5,8,677,Open Source carbon accounting for cities,v2_forecast_manager.py,pydocs,ArgParse_Parent,unit,5/11/2023
+BuysDB,SingleCellMultiOmics,https://github.com/BuysDB/SingleCellMultiOmics,19,9,70,200,Tools which deal with multiple single cell measurements ,eval_network.py,pydocs,ArgParse_Parent,unit,5/20/2019
+prefeiturasp,SME-PratoAberto-API,https://github.com/prefeiturasp/SME-PratoAberto-API,18,18,18,109,API da aplicação PratoAberto,fit,pydocs,Arrays_Comparable,unit,3/12/2018
+opencomputeproject,Rack-Manager,https://github.com/opencomputeproject/Rack-Manager,18,12,1,5,The base repo for the OCP OpenRMC Initiative,evaluation_saliencymap.py,pydocs,Arrays_Comparable,unit,12/11/2018
+graphcore-research,unit-scaling-demo,https://github.com/graphcore-research/unit-scaling-demo,16,2,2,1,Unit Scaling demo and experimentation code,ctf,pydocs,ArgParse_Parent,unit,3/14/2023
+Gongdezhi1990,Qualcomm-_ADK6.4.0.43,https://github.com/Gongdezhi1990/Qualcomm-_ADK6.4.0.43,15,12,0,2,N/A,model_reengineering.py,pydocs,ArgParse_Parent,unit,11/30/2019
+cfe-lab,MiCall,https://github.com/cfe-lab/MiCall,14,6,580,568,Pipeline for processing FASTQ data from an Illumina MiSeq to genotype human RNA viruses like HIV and hepatitis C,metadata.py,pydocs,Arrays_Comparable,unit,4/17/2014
+lumoe,dlkinematics,https://github.com/lumoe/dlkinematics,13,1,0,0,Differentiable Forward Kinematics for TensorFlow and Keras based on URDF files,evaluate-v1.1.py,pydocs,ArgParse_Parent,unit,2/18/2021
+JohnnyPeng18,TypeFix,https://github.com/JohnnyPeng18/TypeFix,13,4,5,0,"This is the tool released in ICSE 2024 paper ""Domain Knowledge Matters: Improving Prompts with Fix Templates for Repairing Python Type Errors"".",main.py,pydocs,Arrays_Comparable,unit,10/6/2022
+graphcore,distributed-kge-poplar,https://github.com/graphcore/distributed-kge-poplar,13,1,1,3,The application is a end-user training and evaluation system for standard knowledge graph embedding models. It was developed to optimise the WikiKG90Mv2 dataset,rgg,pydocs,Console_CloseErrorWriter,unit,11/16/2022
+kupl,PyTER,https://github.com/kupl/PyTER,12,4,3,3,N/A,oov.py,pydocs,Arrays_Comparable,unit,3/17/2022
+muctadir,lama,https://github.com/muctadir/lama,12,1,14,8,"LaMa<> short for Labelling Machine, is an web application developed for aiding in thematic analysis of qualitative data. ",apriori.py,pydocs,Arrays_Comparable,unit,10/17/2022
+NL2Code,CodeS,https://github.com/NL2Code/CodeS,12,0,0,0,N/A,lrbd,pydocs,Console_CloseErrorWriter,unit,3/25/2024
+illinois-ceesd,mirgecom,https://github.com/illinois-ceesd/mirgecom,11,19,199,859,MIRGE-Com is the workhorse simulation application for the Center for Exascale-Enabled Scramjet Design at the University of Illinois.,demo.py,pydocs,ArgParse_Parent,unit,5/28/2020
+manishshettym,codescholar,https://github.com/manishshettym/codescholar,10,0,12,16,codescholar: growing programs graphs idiomatically for API usage examples,sampling_node2.py,pydocs,ArgParse_Parent,unit,9/2/2022
+kosaurang,google-research,https://github.com/kosaurang/google-research,10,3,0,0,Google Research,sorted.py,pydocs,Arrays_Comparable,unit,3/20/2022
+st4sd,st4sd-runtime-core,https://github.com/st4sd/st4sd-runtime-core,9,0,21,24,Create and deploy virtual-experiments - co-processing computational workflows,main.py,pydocs,ArgParse_Parent,unit,11/30/2022
+hasanar1f,HiRED,https://github.com/hasanar1f/HiRED,7,3,0,0,HiRED strategically drops visual tokens in the image encoding stage to improve inference efficiency for High-Resolution Vision-Language Models (e.g.<> LLaVA-Next) under a fixed token budget.,003_create_final_dataset.py,pydocs,ArgParse_Parent,unit,8/19/2024
+zerovm,zerovm-cli,https://github.com/zerovm/zerovm-cli,6,7,18,56,ZeroVM command line utilities,ddmin,pydocs,Console_CloseErrorWriter,unit,11/18/2013
+amd,ZenDNN-pytorch,https://github.com/amd/ZenDNN-pytorch,5,1,1,0,N/A,__init__.py,pydocs,Arrays_Comparable,unit,3/1/2023
+WenjieZhao1,ModelZoo-PyTorch,https://github.com/WenjieZhao1/ModelZoo-PyTorch,4,0,1,0,N/A,main.py,pydocs,ArgParse_Parent,unit,9/20/2022
+Deep-Spark,DeepSparkInference,https://github.com/Deep-Spark/DeepSparkInference,4,2,0,0,"DeepSparkInference has selected 48 inference model examples<> covering fields such as computer vision, natural language processing, and speech recognition. Subsequent phases will gradually expand to more AI fields.",TD3.py,pydocs,ArgParse_Parent,unit,3/25/2024
+Henricus-Basien,AutobopFirmware,https://github.com/Henricus-Basien/AutobopFirmware,4,1,0,0,Firmware for the Autonomous Parrot Bebop 2 Drone.,px_process_airframes.py,pydocs,ArgParse_Parent,unit,3/7/2018
+pablovdcf,TFM_HADO_Cares,https://github.com/pablovdcf/TFM_HADO_Cares,4,0,0,0,Analysis of principal diagnosis<> trends. treatments and others. App created with streamlit.,pyrece.py,pydocs,Arrays_Comparable,unit,3/29/2023
+fliibs,address_planner,https://github.com/fliibs/address_planner,3,3,2,8,Address planner is a tool used to plan the allocation of all register and memory addresses in a chip.,map_vnic_to_pnic.py,pydocs,ArgParse_Parent,unit,1/22/2021
+ZCShou,BOARD-STM32F769I-EVAL_OLD,https://github.com/ZCShou/BOARD-STM32F769I-EVAL_OLD,3,1,0,0,u-boot and linux port to BOARD-STM32F769I-EVAL,prepare.py,pydocs,ArgParse_Parent,unit,7/2/2022
+ATP-BME,LGMF-GNN,https://github.com/ATP-BME/LGMF-GNN,3,1,1,0,"Code of paper ""An Objective Quantitative Diagnosis of Depression Using Local-to-global Multi-modal Fusion Graph Neural Network""",opt.py,pydocs,ArgParse_Parent,unit,10/20/2023
+tasosnent,BeyondMeSH,https://github.com/tasosnent/BeyondMeSH,3,1,0,20,A weakly supervised approach for fine-grained semantic indexing of biomedical literature,forms.py,pydocs,Arrays_Comparable,unit,2/13/2019
+patricksferraz,learning,https://github.com/patricksferraz/learning,2,0,0,6,Step to step for learning some tools,reproduce_nces.py,pydocs,ArgParse_Parent,unit,10/4/2019
+cesarali,conditional_rate_matching,https://github.com/cesarali/conditional_rate_matching,2,0,13,0,Flow Matching for Discrete Variables,check-package,pydocs,ArgParse_Parent,unit,10/24/2023
+Alibaba-NLP,Vec-RA-ODQA,https://github.com/Alibaba-NLP/Vec-RA-ODQA,2,1,0,0,"Source code of paper Improving ""Retrieval Augmented Open-Domain Question-Answering with Vectorized Contexts",OCI_objects_search_by_tag.py,pydocs,ArgParse_Parent,unit,5/28/2024
+skwin83,Industrial_AI,https://github.com/skwin83/Industrial_AI,2,1,0,0,산업인공지능학과 관련,plot.py,pydocs,ArgParse_Parent,unit,9/1/2022
+lyqcom,models-master,https://github.com/lyqcom/models-master,2,0,0,0,N/A,label_wav.py,pydocs,ArgParse_Parent,unit,4/15/2023
+brichard28,TalkingHeads,https://github.com/brichard28/TalkingHeads,2,0,0,0,TalkingHeads Audiovisual Experiment in LiMN/Biophotonics/APC Labs at Carnegie Mellon and the University of Pittsburgh,partitionquantiles.py,pydocs,Arrays_Comparable,unit,3/20/2023
+jingwangsg,Code-Reading-Project,https://github.com/jingwangsg/Code-Reading-Project,2,0,0,0,Reading project for researching purpose,12018_sungwoo.py,pydocs,Arrays_Comparable,unit,7/16/2022
+ArtificialZeng,pytorch-explained,https://github.com/ArtificialZeng/pytorch-explained,2,0,0,0,pytorch-explained annatated,test_l2gateway.py,pydocs,Arrays_Comparable,unit,7/13/2023
+SanjayM0han,Ceph-Doc,https://github.com/SanjayM0han/Ceph-Doc,1,0,0,11,N/A,gdcCase2Cohort.py,pydocs,ArgParse_Parent,unit,4/16/2024
+AleksNeStu,projects,https://github.com/AleksNeStu/projects,1,1,1,0,"🎧 Apps<> solutions, code examples, documentation for education purposes  🚀",patch_trade_dialogues.py,pydocs,ArgParse_Parent,unit,12/7/2021
+statgen,locuszoom-api,https://github.com/statgen/locuszoom-api,1,3,17,10,Flask server code for LocusZoom APIs,draw_state_diagram.py,pydocs,ArgParse_Parent,unit,8/25/2016
+disintegrate-Fred,NBME-Score-Clinical-Patient-Notes,https://github.com/disintegrate-Fred/NBME-Score-Clinical-Patient-Notes,1,0,0,0,N/A,train.py,pydocs,ArgParse_Parent,unit,6/28/2023
+gunpowder78,google-research,https://github.com/gunpowder78/google-research,1,0,0,0,N/A,mc.py,pydocs,Arrays_Comparable,unit,3/11/2022
+snoopgodlinux,packages,https://github.com/snoopgodlinux/packages,1,0,0,0,Official packages repository of SnoopGod Linux OS,870.py,pydocs,Arrays_Comparable,unit,6/20/2024
+SunnierLee,DP-Pretrain,https://github.com/SunnierLee/DP-Pretrain,1,0,0,0,Differentially Private Self-Pretraining Diffusion Models for the Private Image Synthesis,models1.py,pydocs,Arrays_Comparable,unit,7/10/2024
+xxchenxx,ParaEfficient,https://github.com/xxchenxx/ParaEfficient,1,0,0,0,N/A,nltk_with_tfidf.py,pydocs,Arrays_Comparable,unit,3/10/2022
+brash6,dataviz_dauphine_tunis,https://github.com/brash6/dataviz_dauphine_tunis,1,2,0,0,A repository to store and share ressources for the Data Visualisation module of the BDIA Master of Dauphine Tunis,util.py,pydocs,Arrays_Comparable,unit,1/19/2023
+CommutativeGrid,commutazzio,https://github.com/CommutativeGrid/commutazzio,1,0,0,0,N/A,1-my_list.py,pydocs,Arrays_Comparable,unit,1/6/2022
+gilzilberfeld,dirty-tests-workshop,https://github.com/gilzilberfeld/dirty-tests-workshop,1,2,0,0,N/A,latex.py,pydocs,Arrays_Comparable,unit,7/28/2021
+KaiStryker,ReCentiFi,https://github.com/KaiStryker/ReCentiFi,0,1,0,5,N/A,check_static.py,pydocs,ArgParse_Parent,unit,9/23/2023
+IvorBr,Qungeon,https://github.com/IvorBr/Qungeon,0,0,0,0,Quantum puzzle game created using Unitary.,features.py,pydocs,ArgParse_Parent,unit,8/28/2024
+dorogit,inteLearn_ML,https://github.com/dorogit/inteLearn_ML,0,0,0,0,N/A,actgan.py,pydocs,ArgParse_Parent|Arrays_Comparable,unit,4/1/2024
+AlexanderJCS,golden,https://github.com/AlexanderJCS/golden,0,0,0,0,For my data science class. Uses datasets from Max Planck Florida Institute for Neuroscience,train.py,pydocs,ArgParse_Parent,unit,3/5/2024
+tidy-neuralnetwork,tidy-open_model_zoo,https://github.com/tidy-neuralnetwork/tidy-open_model_zoo,0,0,0,0,N/A,detect.py,pydocs,ArgParse_Parent,unit,2/24/2023
+zztin,fragmentomics2,https://github.com/zztin/fragmentomics2,0,0,0,1,N/A,detect.py,pydocs,ArgParse_Parent,unit,4/18/2023
+gosshhh,NeuralChat,https://github.com/gosshhh/NeuralChat,0,0,0,0,Int4 optimised NeuralChat Model for handling both text and table based RAG SYSTEM,vulnscan,pydocs,ArgParse_Parent|Arrays_Comparable,unit,3/13/2024
+lochel,rise_drones,https://github.com/lochel/rise_drones,0,7,0,1,N/A,secura_pi_cam.py,pydocs,ArgParse_Parent,unit,5/20/2022
+SmallPigPeppa,flexivit,https://github.com/SmallPigPeppa/flexivit,0,0,0,0,N/A,detect.py,pydocs,ArgParse_Parent,unit,3/18/2024
+MariaTariq123,First-Blog-1,https://github.com/MariaTariq123/First-Blog-1,0,0,0,2,N/A,console.py,pydocs,ArgParse_Parent,unit,8/25/2023
+mybenkhadda,Cloud_removal,https://github.com/mybenkhadda/Cloud_removal,0,0,0,1,N/A,gen_debug_mask_dataset.py,pydocs,ArgParse_Parent,unit,6/28/2022
+2lambda123,google-research-google-research,https://github.com/2lambda123/google-research-google-research,0,0,0,12,N/A,makeDataCard_wto3l.py,pydocs,ArgParse_Parent,unit,3/20/2024
+sdurand777,test_msdp,https://github.com/sdurand777/test_msdp,0,0,0,0,test msdp repo pour docker,evaluate.py,pydocs,ArgParse_Parent,unit,8/26/2024
+DANNHIROAKI,NN-Papers,https://github.com/DANNHIROAKI/NN-Papers,0,0,0,0,收集了一些经典的神经网络论文,reduce.py,pydocs,ArgParse_Parent,unit,6/6/2024
+krijnD,DIG-dig-stable,https://github.com/krijnD/DIG-dig-stable,0,0,0,0,N/A,sampler.py,pydocs,ArgParse_Parent,unit,1/19/2024
+cycrab,unipcm,https://github.com/cycrab/unipcm,0,0,0,0,"Code and data for the paper ""UniPCM: Universal Pre-trained Conversation Model with Task-aware Automatic Prompt"" (accepted by Coling2024)",calculate_linkage_disequilibria.py,pydocs,ArgParse_Parent,unit,9/7/2023
+okhay-p,QR-code-generator,https://github.com/okhay-p/QR-code-generator,0,0,0,0,A QR code generator with Python Flask,patch_trade_dialogues.py,pydocs,ArgParse_Parent,unit,9/17/2023
+nazzang49,gcp-tutorials,https://github.com/nazzang49/gcp-tutorials,0,0,0,0,A Google Cloud Platform Tutorials w/ Self Studies!,patch_trade_dialogues.py,pydocs,ArgParse_Parent,unit,1/8/2024
+richardagalvez,bare-copy-gcp-python-examples,https://github.com/richardagalvez/bare-copy-gcp-python-examples,0,0,0,0,GCP python libraries example github repo copy for indexing,transcribe_multichannel.py,pydocs,ArgParse_Parent,unit,7/12/2023
+lacie-life,Solitude,https://github.com/lacie-life/Solitude,0,0,0,0,A stray jellyfish,mavtomfile.py,pydocs,ArgParse_Parent,unit,7/7/2021
+steliosbl,acute-care-pathways,https://github.com/steliosbl/acute-care-pathways,0,0,0,0,N/A,recon_3dvol.py,pydocs,ArgParse_Parent,unit,2/19/2023
+aa386400024,study-langchain-chatchat,https://github.com/aa386400024/study-langchain-chatchat,0,0,0,0,N/A,melgan_val.py,pydocs,ArgParse_Parent,unit,2/21/2024
+johnsonice,IMF_VE_News,https://github.com/johnsonice/IMF_VE_News,0,0,0,0,code repository for process news data for Vulnerability exercise,orthotropic-diffusion.py,pydocs,ArgParse_Parent,unit,11/8/2018
+yyoncho,switcher,https://github.com/yyoncho/switcher,0,0,0,0,N/A,openstack_inventory.py,pydocs,ArgParse_Parent,unit,7/9/2015
+infrascloudy,python-project-template,https://github.com/infrascloudy/python-project-template,0,0,1,268,N/A,openstack_inventory.py,pydocs,ArgParse_Parent,unit,5/19/2017
+infrascloudy,cookiecutter-python,https://github.com/infrascloudy/cookiecutter-python,0,0,0,0,N/A,openstack_inventory.py,pydocs,ArgParse_Parent,unit,9/6/2017
+swe-train,intel__neural-compressor,https://github.com/swe-train/intel__neural-compressor,0,0,0,0,N/A,update_existing_ppt_project.py,pydocs,ArgParse_Parent,unit,5/21/2024
+ppashakhanloo,with_modules,https://github.com/ppashakhanloo/with_modules,0,0,0,0,N/A,train_t2i_adapter_sdxl.py,pydocs,ArgParse_Parent,unit,5/12/2022
+wozqhl,Improved-Distiller,https://github.com/wozqhl/Improved-Distiller,0,0,0,0,这是对Intel神经网络压缩框架Distiller按照自己的需求更改后的代码。,phewas_burnin.py,pydocs,ArgParse_Parent,unit,5/18/2020
+its-abhijeet,proof-reading-tool,https://github.com/its-abhijeet/proof-reading-tool,0,0,0,0,N/A,CustomOCR.py,pydocs,ArgParse_Parent,unit,9/21/2023
+mehulagg,mozilla-central,https://github.com/mehulagg/mozilla-central,0,0,0,1,N/A,test,pydocs,Arrays_Comparable,unit,1/31/2020
+NOAA-ORR-ERD,MapRoom,https://github.com/NOAA-ORR-ERD/MapRoom,0,1,0,1,wxPython / OpenGL Desktop interactive geospatial data / map manipulation tool.,utils.py,pydocs,Arrays_Comparable,unit,1/6/2022
+msimacek,copr,https://github.com/msimacek/copr,0,0,0,0,Mirror of https://git.fedorahosted.org/cgit/copr.git/ used for development of copr-java library,create_file_system.py,pydocs,Arrays_Comparable,unit,12/2/2014
+esshariprasad,A-Testing-Case-Study-on-Numpy-Library,https://github.com/esshariprasad/A-Testing-Case-Study-on-Numpy-Library,0,0,0,0,N/A,NimManager.py,pydocs,Arrays_Comparable,unit,4/25/2022
+xxxtrillionarie,google_research,https://github.com/xxxtrillionarie/google_research,0,0,0,0,N/A,mc.py,pydocs,Arrays_Comparable,unit,4/13/2022
+mattheweaver05,Google-Wrapped-In-Red-Event-Advent-2022,https://github.com/mattheweaver05/Google-Wrapped-In-Red-Event-Advent-2022,0,0,1,0,N/A,resolutions.py,pydocs,Arrays_Comparable,unit,12/15/2022
+Rulial,GoogleRe-Pi,https://github.com/Rulial/GoogleRe-Pi,0,0,0,0,N/A,wheel.py,pydocs,Arrays_Comparable,unit,9/16/2022
+docholag,Game_Automation,https://github.com/docholag/Game_Automation,0,0,0,0,N/A,partitionquantiles.py,pydocs,Arrays_Comparable,unit,5/24/2024
+GeneralMK,prosperityLMS,https://github.com/GeneralMK/prosperityLMS,0,0,0,0,N/A,dicom.py,pydocs,Arrays_Comparable,unit,10/13/2022
+justchugh,ai_in_handwritten_notes,https://github.com/justchugh/ai_in_handwritten_notes,0,0,0,0,N/A,dicom.py,pydocs,Arrays_Comparable,unit,6/11/2024
+Neville-N,hue_game,https://github.com/Neville-N/hue_game,0,0,0,6,Solve hue game algorithmically with python and opencv,ElasticNetRegressor.py,pydocs,Arrays_Comparable,unit,5/15/2023
+sureindia-in,pipelines-kfp,https://github.com/sureindia-in/pipelines-kfp,0,0,0,0,N/A,animal.py,pydocs,Arrays_Comparable,unit,7/22/2021
+GoTartans,need3,https://github.com/GoTartans/need3,0,0,0,0,N/A,split_strategy.py,pydocs,Arrays_Comparable,unit,12/6/2022
+riverlijunjie,openvino,https://github.com/riverlijunjie/openvino,0,0,0,0,N/A,music_player_wip.py,pydocs,Arrays_Comparable,unit,1/10/2022
+Evraa,FiD-train,https://github.com/Evraa/FiD-train,0,0,0,0,N/A,getters.py,pydocs,Arrays_Comparable,unit,11/18/2021
+RaginiMedhi,py_presto,https://github.com/RaginiMedhi/py_presto,0,0,0,0,"R package ""immunogenomics/presto"" adapted for python users",widgets.py,pydocs,Arrays_Comparable,unit,7/29/2024
+swsunbin,squid,https://github.com/swsunbin/squid,0,0,0,35,"Ceph is a distributed object<> block, and file storage platform",test_fixers.py,pydocs,Arrays_Comparable,unit,5/10/2024
+JoaoDias-223,classificador-de-padroes,https://github.com/JoaoDias-223/classificador-de-padroes,0,1,0,1,N/A,mset_search_results.py,pydocs,Arrays_Comparable,unit,3/28/2022
+bopopescu,QC,https://github.com/bopopescu/QC,0,0,0,0,Quantum Computation,main.py,pydocs,Arrays_Comparable,unit,7/26/2020
+Egeguzelgonul,ANPR,https://github.com/Egeguzelgonul/ANPR,0,0,0,0,License Plate Detection,core.py,pydocs,Arrays_Comparable,unit,8/25/2023
+dlgroupuoft,Duumviri-NDSS25,https://github.com/dlgroupuoft/Duumviri-NDSS25,0,0,0,0,Artifact release of our NDSS 2025 Paper Duumviri: Detecting Trackers and Mixed Trackers with a Breakage Detector,data_loaders_PaRe.py,pydocs,Arrays_Comparable,unit,8/31/2024
+yes01,xhl-api-test-script,https://github.com/yes01/xhl-api-test-script,0,0,0,0,N/A,matching.py,pydocs,Arrays_Comparable,unit,5/17/2023
+fifity-fifity,Data100,https://github.com/fifity-fifity/Data100,0,0,0,0,BIG DATA LEARNING,test_urllib2.py,pydocs,Arrays_Comparable,unit,7/29/2024
+AgRoboticsResearch,alpha-clip,https://github.com/AgRoboticsResearch/alpha-clip,0,0,0,0,N/A,tiny_imagenet.py,pydocs,Arrays_Comparable,unit,3/8/2024
+arfzmri,volascan,https://github.com/arfzmri/volascan,0,0,0,0,N/A,test_l2gateway.py,pydocs,Arrays_Comparable,unit,7/22/2024
+liuxiaotiao,pytorch_test,https://github.com/liuxiaotiao/pytorch_test,0,0,0,0,N/A,test_statistics.py,pydocs,Arrays_Comparable,unit,11/8/2023
+cyyever,pytorch_private,https://github.com/cyyever/pytorch_private,0,1,0,1,N/A,test_statistics.py,pydocs,Arrays_Comparable,unit,2/3/2022
+ashen-sensored,pytorch,https://github.com/ashen-sensored/pytorch,0,0,0,0,N/A,test_statistics.py,pydocs,Arrays_Comparable,unit,10/15/2023
+orgTestCodacy11KRepos110MB,repo-3136-pyod,https://github.com/orgTestCodacy11KRepos110MB/repo-3136-pyod,0,0,0,0,N/A,waterwire.py,pydocs,Arrays_Comparable,unit,1/30/2023
+swimmio,demo-sentry-autodocs,https://github.com/swimmio/demo-sentry-autodocs,0,0,0,55,N/A,Theseus_v8_best_path.py,pydocs,Arrays_Comparable,unit,5/22/2024
