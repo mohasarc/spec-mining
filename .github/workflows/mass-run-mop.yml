@@ -44,7 +44,7 @@ jobs:
 
   run_jobs:
     needs: fetch_data
-    uses: mohasarc/spec-mining/.github/workflows/run-single-project.yml@main
+    uses: mohasarc/spec-mining/.github/workflows/run-single-project.yml@instrument_everything
     with:
       project-link: ${{ matrix.repo-link }}
       release-name: ${{ github.event.inputs.release_name || github.event.client_payload.release_name }}
