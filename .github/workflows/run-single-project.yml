@@ -46,7 +46,7 @@ jobs:
             cd ./projects
             git clone https://${{ secrets.GH_ACCESS_TOKEN }}@github.com/SoftEngResearch/mop-with-dynapt.git
             cd mop-with-dynapt
-            git checkout add_statistics_new
+            git checkout flask_specs
     
         - name: Create projects directory and copy scripts from ../scripts there
           run: |
@@ -88,6 +88,8 @@ jobs:
             rm ../mop-with-dynapt/specs-new/TfFunction_NoSideEffect.py
             rm ../mop-with-dynapt/specs-new/Sets_Comparable.py
             rm ../mop-with-dynapt/specs-new/Console_CloseReader.py
+            rm ../mop-with-dynapt/specs-new/UnsafeMapIterator.py
+            rm ../mop-with-dynapt/specs-new/UnsafeListIterator.py
 
             echo "=================== specs after removing unwanted ones ================="
             ls -al ../mop-with-dynapt/specs-new
@@ -177,7 +179,7 @@ jobs:
             cd ./projects
             git clone https://${{ secrets.GH_ACCESS_TOKEN }}@github.com/SoftEngResearch/mop-with-dynapt.git
             cd mop-with-dynapt
-            git checkout add_statistics_new
+            git checkout flask_specs
     
         - name: Create projects directory and copy scripts from ../scripts there
           run: |
