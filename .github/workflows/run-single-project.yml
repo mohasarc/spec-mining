@@ -246,7 +246,8 @@ jobs:
     
         - name: Save method_name.txt
           run: |
-            cp ./specs-new/method_name.txt ./projects/reports/$REPO_NAME/method_name.txt
+            ls -l ./projects/mop-with-dynapt/specs-new/
+            cp ./projects/mop-with-dynapt/specs-new/method_name.txt ./projects/reports/$REPO_NAME/method_name.txt
 
         - name: Zip report files
           run: |
