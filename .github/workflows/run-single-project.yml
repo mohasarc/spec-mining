@@ -46,7 +46,7 @@ jobs:
             cd ./projects
             git clone https://${{ secrets.GH_ACCESS_TOKEN }}@github.com/SoftEngResearch/mop-with-dynapt.git
             cd mop-with-dynapt
-            git checkout add_statistics_new
+            git checkout instrument_everything
     
         - name: Create projects directory and copy scripts from ../scripts there
           run: |
@@ -85,9 +85,9 @@ jobs:
             # done
 
             # also delete these (causing issues)
-            rm ../mop-with-dynapt/specs-new/TfFunction_NoSideEffect.py
-            rm ../mop-with-dynapt/specs-new/Sets_Comparable.py
-            rm ../mop-with-dynapt/specs-new/Console_CloseReader.py
+            # rm ../mop-with-dynapt/specs-new/TfFunction_NoSideEffect.py
+            # rm ../mop-with-dynapt/specs-new/Sets_Comparable.py
+            # rm ../mop-with-dynapt/specs-new/Console_CloseReader.py
 
             echo "=================== specs after removing unwanted ones ================="
             ls -al ../mop-with-dynapt/specs-new
@@ -145,7 +145,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        algorithm: ['B', 'C', 'C+', 'D']
+        algorithm: ['D']
     timeout-minutes: 185
     steps:
         - uses: actions/checkout@v4
@@ -177,7 +177,7 @@ jobs:
             cd ./projects
             git clone https://${{ secrets.GH_ACCESS_TOKEN }}@github.com/SoftEngResearch/mop-with-dynapt.git
             cd mop-with-dynapt
-            git checkout add_statistics_new
+            git checkout instrument_everything
     
         - name: Create projects directory and copy scripts from ../scripts there
           run: |
@@ -216,11 +216,11 @@ jobs:
             # done
 
             # also delete these (causing issues)
-            rm ../mop-with-dynapt/specs-new/TfFunction_NoSideEffect.py
-            rm ../mop-with-dynapt/specs-new/Sets_Comparable.py
-            rm ../mop-with-dynapt/specs-new/Console_CloseReader.py
-            rm ../mop-with-dynapt/specs-new/UnsafeMapIterator.py
-            rm ../mop-with-dynapt/specs-new/UnsafeListIterator.py
+            # rm ../mop-with-dynapt/specs-new/TfFunction_NoSideEffect.py
+            # rm ../mop-with-dynapt/specs-new/Sets_Comparable.py
+            # rm ../mop-with-dynapt/specs-new/Console_CloseReader.py
+            # rm ../mop-with-dynapt/specs-new/UnsafeMapIterator.py
+            # rm ../mop-with-dynapt/specs-new/UnsafeListIterator.py
 
             echo "=================== specs after removing unwanted ones ================="
             ls -al ../mop-with-dynapt/specs-new
@@ -244,6 +244,10 @@ jobs:
             cd ./projects/reports/$REPO_NAME
             echo "https://github.com/${{github.repository}}/releases/download/${{ inputs.release-name }}/${{env.ZIP_FILE}}" > logs_link.txt
     
+        - name: Save method_name.txt
+          run: |
+            cp ./specs-new/method_name.txt ./projects/reports/$REPO_NAME/method_name.txt
+
         - name: Zip report files
           run: |
             cd ./projects/reports/$REPO_NAME
