@@ -1,0 +1,52 @@
+Owner,Repository Name,Repository Link,Stars,Forks,Issues,Pull Requests,Description,File Name,Dependency Name,Spec Name,Testing Framework,Created At
+andreax79,airflow-code-editor,https://github.com/andreax79/airflow-code-editor,397,51,45,42,A plugin for Apache Airflow that allows you to edit DAGs in browser,api.py,flask,Flask_UnsafeFilePath,pytest,8/6/2019
+neuroscout,neuroscout,https://github.com/neuroscout/neuroscout,15,12,663,452,NeuroScout web app and API,views.py,flask,Flask_UnsafeFilePath,pytest,9/15/2016
+cndn,intelligent-code-completion,https://github.com/cndn/intelligent-code-completion,14,12,2,1,N/A,12622___init__.py,flask,Flask_UnsafeFilePath,pytest,10/2/2017
+SophieHYe,PreciseBugs,https://github.com/SophieHYe/PreciseBugs,14,7,2,0,N/A,server.py,flask,Flask_UnsafeFilePath,pytest,7/19/2023
+catarsi,mitao,https://github.com/catarsi/mitao,13,2,9,24,A Mashup Interface for Text Analysis Operations,files.py,flask,Flask_UnsafeFilePath,pytest,6/14/2019
+PaloAltoNetworks,panos-bootstrapper,https://github.com/PaloAltoNetworks/panos-bootstrapper,13,9,13,24,A Utility to bootstrap a new PAN-OS NGFW. This utility provides an API only.  An example web interface is provided here: https://github.com/PaloAltoNetworks/panos-bootstrapper-ui ,endpoints.py,flask,Flask_UnsafeFilePath,pytest,7/3/2018
+rogerlew,wepppy,https://github.com/rogerlew/wepppy,12,7,265,51,N/A,empleado_controller.py,flask,Flask_UnsafeFilePath,pytest,3/20/2018
+rohanpatankar926,Consignment-Pricing-Using-Mlops-DVC,https://github.com/rohanpatankar926/Consignment-Pricing-Using-Mlops-DVC,10,2,0,0,Consignment pricing prediction using mlops,routes.py,flask,Flask_UnsafeFilePath,pytest,5/6/2022
+WildMeOrg,houston,https://github.com/WildMeOrg/houston,8,15,48,914,The backend API service for NextGen Wildbook ,controllers.py,flask,Flask_UnsafeFilePath,pytest,4/21/2020
+SELab-2,UGent-3,https://github.com/SELab-2/UGent-3,5,1,221,208,N/A,views.py,flask,Flask_UnsafeFilePath,pytest,2/5/2024
+zNitche,ao3-web-reader,https://github.com/zNitche/ao3-web-reader,5,0,17,0,AO3 reader app with support for works scraping ,main.py,flask,Flask_UnsafeFilePath,pytest,12/13/2022
+Vocab-Apps,cloud-language-tools,https://github.com/Vocab-Apps/cloud-language-tools,4,0,16,0,Interface with various cloud APIs for translation<> text to speech,API_Server_v2.py,flask,Flask_UnsafeFilePath,pytest,12/3/2020
+lvzheqi,StreamingEventCompliance,https://github.com/lvzheqi/StreamingEventCompliance,3,1,0,11,a system that is able to check event compliance over streaming event data in python,duaapp.py,flask,Flask_UnsafeFilePath,pytest,10/14/2018
+afontana1,Data-Engineering,https://github.com/afontana1/Data-Engineering,3,1,0,0,N/A,facility.py,flask,Flask_UnsafeFilePath,pytest,8/19/2024
+Abends2,Attack-Defense-CTFs-Write-Ups,https://github.com/Abends2/Attack-Defense-CTFs-Write-Ups,3,0,0,0,Репозиторий для описания уязвимых сервисов (и эксплойтов) с различных Attack-Defense CTF,routes.py,flask,Flask_UnsafeFilePath,pytest,8/13/2023
+twynb,AudioStreamSplitting,https://github.com/twynb/AudioStreamSplitting,2,0,54,77,A tool that takes a long audio file<> splits it into separate songs and attempts to identify them.,routes.py,flask,Flask_UnsafeFilePath,pytest,4/8/2023
+deb-intel,LPOTtest,https://github.com/deb-intel/LPOTtest,2,1,0,1,N/A,tracker.py,flask,Flask_UnsafeFilePath,pytest,4/5/2021
+aaw3,NextFileManager,https://github.com/aaw3/NextFileManager,2,0,13,7,"File Server built on next.js fastapi with optimization for concurrency and caching. Supports Token<> OIDC, LDAP authentication, Users, Groups, Permissions.",app.py,flask,Flask_UnsafeFilePath,pytest,9/17/2024
+imfht,flaskapp1,https://github.com/imfht/flaskapp1,2,4,0,2,a set of flaskapp with more .gitignore,__init__.py,flask,Flask_UnsafeFilePath,pytest,2/4/2021
+nembery,panos_bootstrapper,https://github.com/nembery/panos_bootstrapper,2,0,0,0,A tool to help build all required bootstrap files for panos devices. THIS REPO IS DEPRECATED. Use this repo instead: https://github.com/PaloAltoNetworks/panos-bootstrapper,model_app.py,flask,Flask_UnsafeFilePath,pytest,5/25/2018
+DeepakRautella,Insurance_Premium_Prediction,https://github.com/DeepakRautella/Insurance_Premium_Prediction,1,0,0,16,N/A,__init__.py,flask,Flask_UnsafeFilePath,pytest,7/10/2022
+superleesa,final_year_project,https://github.com/superleesa/final_year_project,1,0,11,39,training pipeline + analysis + minimal app for a sand-dust denoising model,app.py,flask,Flask_UnsafeFilePath,pytest,9/18/2023
+slyfox1186,flask-file-server,https://github.com/slyfox1186/flask-file-server,1,0,0,0,A simple solution for local file transfers across your network,api_v1.py,flask,Flask_UnsafeFilePath,pytest,10/3/2024
+k17hawk,Movie_predict,https://github.com/k17hawk/Movie_predict,0,0,0,0,N/A,__init__.py,flask,Flask_UnsafeFilePath,pytest,3/26/2023
+LeonardoRFragoso,API_Convert,https://github.com/LeonardoRFragoso/API_Convert,0,0,0,0,"Flask API com Streamlit - Conversor de arquivos online que permite a conversão de imagens<> áudios, PDFs e DOCX para diferentes formatos.",upload.py,flask,Flask_UnsafeFilePath,pytest,9/9/2024
+img-api,img-api,https://github.com/img-api/img-api,0,0,2,13,Simple API to upload and convert images built in Flask,the_server.py,flask,Flask_UnsafeFilePath,pytest,4/28/2022
+SlickTorpedo,DoorLock,https://github.com/SlickTorpedo/DoorLock,0,0,0,1,N/A,envelope.py,flask,Flask_UnsafeFilePath,pytest,9/14/2024
+cerform,project-int,https://github.com/cerform/project-int,0,1,0,14,N/A,app.py,flask,Flask_UnsafeFilePath,pytest,5/19/2024
+thiago-allue,portfolio,https://github.com/thiago-allue/portfolio,0,0,0,0,portfolio,app.py,flask,Flask_UnsafeFilePath,pytest,9/13/2022
+Sayantan40,Thyroid-Disease-Detection,https://github.com/Sayantan40/Thyroid-Disease-Detection,0,0,0,0,N/A,main.py,flask,Flask_UnsafeFilePath,pytest,1/22/2023
+pavankumarcn66,Mlops_Consignment-Pricing,https://github.com/pavankumarcn66/Mlops_Consignment-Pricing,0,0,0,0,N/A,app.py,flask,Flask_UnsafeFilePath,pytest,8/25/2023
+jek435,Budget_Tracker,https://github.com/jek435/Budget_Tracker,0,0,0,0,"Webapp for tracking budget<> bills, investments and other features",app.py,flask,Flask_UnsafeFilePath,pytest,7/25/2023
+kibrit74,kibrit74,https://github.com/kibrit74/kibrit74,0,0,0,0,Config files for my GitHub profile.,server.py,flask,Flask_UnsafeFilePath,pytest,7/22/2024
+Suhaani07,SensoryLearn,https://github.com/Suhaani07/SensoryLearn,0,2,0,0,N/A,final_script.py,flask,Flask_UnsafeFilePath,pytest,1/11/2024
+FaizanAhmed239,CallAutomationPlayground,https://github.com/FaizanAhmed239/CallAutomationPlayground,0,0,0,8,N/A,httpServer.py,flask,Flask_UnsafeFilePath,pytest,7/31/2023
+rohanpatankar926,Wafer-Fault-Detection,https://github.com/rohanpatankar926/Wafer-Fault-Detection,0,0,0,0,N/A,my_files.py,flask,Flask_UnsafeFilePath,pytest,6/21/2022
+DrSmCraft,V-Library,https://github.com/DrSmCraft/V-Library,0,0,0,0,N/A,routes.py,flask,Flask_UnsafeFilePath,pytest,9/26/2021
+GharsallahDev,23WEEKS.FLASK,https://github.com/GharsallahDev/23WEEKS.FLASK,0,0,0,0,N/A,main.py,flask,Flask_UnsafeFilePath,pytest,8/16/2024
+danishcyber-star,-ml_intern_task_02,https://github.com/danishcyber-star/-ml_intern_task_02,0,0,0,0,N/A,app.py,flask,Flask_UnsafeFilePath,pytest,10/29/2022
+prashant0708,housing_mlops,https://github.com/prashant0708/housing_mlops,0,0,0,0,N/A,app.py,flask,Flask_UnsafeFilePath,pytest,4/29/2024
+ajaharleo,Cement-Strength-Prediction,https://github.com/ajaharleo/Cement-Strength-Prediction,0,0,0,0,N/A,app.py,flask,Flask_UnsafeFilePath,pytest,10/29/2022
+shkalisaeed,budget_tracker_V2,https://github.com/shkalisaeed/budget_tracker_V2,0,0,0,0,N/A,app.py,flask,Flask_UnsafeFilePath,pytest,10/11/2023
+Rafa548,CD,https://github.com/Rafa548/CD,0,0,0,0,N/A,main.py,flask,Flask_UnsafeFilePath,pytest,6/25/2023
+Kenzie-Academy-Brasil-Developers,q3-sprint2-e6-banco-de-imagens-RobsonMT,https://github.com/Kenzie-Academy-Brasil-Developers/q3-sprint2-e6-banco-de-imagens-RobsonMT,0,0,0,0,q3-sprint2-e6-banco-de-imagens-RobsonMT created by GitHub Classroom,app-1-dist1-placeholder4.py,flask,Flask_UnsafeFilePath,pytest,2/27/2022
+amihsan,quiz-app,https://github.com/amihsan/quiz-app,0,0,0,0,A free online quiz application for German Integration Test.,second_page.py,flask,Flask_UnsafeFilePath,pytest,3/7/2024
+Govind-S-B,webshop-benchmark-prune,https://github.com/Govind-S-B/webshop-benchmark-prune,0,0,0,0,N/A,activity_blueprint.py,flask,Flask_UnsafeFilePath,pytest,9/3/2024
+Mahosaurus,sensorship,https://github.com/Mahosaurus/sensorship,0,0,12,35,N/A,app.py,flask,Flask_UnsafeFilePath,pytest,10/21/2022
+Sayantan40,Big-Mart-Stores-Sales-Prediction,https://github.com/Sayantan40/Big-Mart-Stores-Sales-Prediction,0,0,0,0,N/A,__init__.py,flask,Flask_UnsafeFilePath,pytest,1/22/2023
+YacineCyber,CYBERCHALLENGES_FINAL,https://github.com/YacineCyber/CYBERCHALLENGES_FINAL,0,0,0,0,plateforme,__init__.py,flask,Flask_UnsafeFilePath,pytest,4/9/2024
+ilaflott,epmt,https://github.com/ilaflott/epmt,0,0,0,0,N/A,serve_static.py,flask,Flask_UnsafeFilePath,pytest,9/17/2024
+MatiasDiBernardo,Archivoz_Web,https://github.com/MatiasDiBernardo/Archivoz_Web,0,0,0,9,Local host test for the Archivoz website.,app.py,flask,Flask_UnsafeFilePath,pytest,9/3/2023
