@@ -1,0 +1,34 @@
+Owner,Repository Name,Repository Link,Stars,Forks,Issues,Pull Requests,Description,File Name,Dependency Name,Spec Name,Testing Framework,Created At
+ydb-platform,ydb,https://github.com/ydb-platform/ydb,3877,443,1734,8512,YDB is an open source Distributed SQL Database that combines high availability and scalability with strong consistency and ACID transactions,backend_webagg.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,2/7/2022
+ytsaurus,ytsaurus,https://github.com/ytsaurus/ytsaurus,1859,130,377,501,YTsaurus is a scalable and fault-tolerant open-source big data platform.,backend_webagg.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,12/5/2022
+PWZER,swagger-ui-py,https://github.com/PWZER/swagger-ui-py,69,29,25,21,"Swagger UI for Python web framework<> such Tornado, Flask and Sanic. https://pwzer.github.io/swagger-ui-py/",researcher.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,10/23/2018
+ohidurbappy,ScriptKiddy,https://github.com/ohidurbappy/ScriptKiddy,41,11,0,0,💻Scripts that will make you feel WOW 😍,server.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,3/5/2021
+JohanyCheung,bert_chinese,https://github.com/JohanyCheung/bert_chinese,39,19,1,1,bert_chinese,hsm.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,3/26/2019
+prologin,sadm,https://github.com/prologin/sadm,12,7,145,91,"Documentation<> configs, scripts and services used for the finals of the Prologin contest",tornado_.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,3/26/2017
+Oishwarjya,Major-Project---2023,https://github.com/Oishwarjya/Major-Project---2023,11,3,1,17,B. Tech CSE Final year Project,ex1-dummy_server.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,11/26/2022
+ScilifelabDataCentre,Publications,https://github.com/ScilifelabDataCentre/Publications,10,3,520,78,A web-based publications reference database system.,frontend.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,3/14/2017
+iloveyou11,my-nlp-task,https://github.com/iloveyou11/my-nlp-task,5,1,0,1,汇总一些知名的开源项目，学习一下,demo.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,8/5/2020
+b34nst4lk,tornopen,https://github.com/b34nst4lk/tornopen,4,1,0,1,Tornado Web Server X OpenAPI X Redoc,main.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,12/7/2021
+silver-birch-wawa,cnsoft_bei,https://github.com/silver-birch-wawa/cnsoft_bei,4,1,0,0,2017-中国软件杯-总决赛-参赛作品(二等奖),web_sockect_trace.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,9/10/2017
+LSyz123,tctf,https://github.com/LSyz123/tctf,3,0,0,0,毕业设计 基于Tornado的CTF比赛平台,flight_search.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,7/9/2020
+Advanced-AIgpt,Yandex-Full-Source,https://github.com/Advanced-AIgpt/Yandex-Full-Source,3,0,0,0,IT - Technology Giant Corporation,server.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,8/30/2024
+arozx,a-level_project,https://github.com/arozx/a-level_project,1,0,0,16,Chess engine implamented in Pytorch with Qt5 frontend :star:,web.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,9/6/2023
+Xingbaji,rasa_bert_nlu,https://github.com/Xingbaji/rasa_bert_nlu,1,3,0,1,N/A,db.sql,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,1/30/2019
+peter,python-content-api,https://github.com/peter/python-content-api,1,0,0,7,"Example Python Content API and microframework using JSON Schema and OpenAPI based on PostgreSQL<> MonboDB, and Flask",websocket.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,7/8/2020
+itcrowdsource,vcftocsvcontactexporter,https://github.com/itcrowdsource/vcftocsvcontactexporter,1,0,0,0,VFC to CSV contact exporter,jupyterpost.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,11/15/2023
+hzyang95,neutral_semantic_retrieval,https://github.com/hzyang95/neutral_semantic_retrieval,1,0,0,1,A neutral semantic retrieval model,main.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,11/28/2019
+greatabel,PythonRepository,https://github.com/greatabel/PythonRepository,1,0,0,19,You can fire your arrows from the Tower of Babel. But you can never strike God.,app.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,1/17/2015
+WIPACrepo,authorlist,https://github.com/WIPACrepo/authorlist,0,0,25,14,Basic authorlist tool,demo.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,8/21/2018
+biankatpas,weather-ms,https://github.com/biankatpas/weather-ms,0,0,0,0,N/A,message.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,8/10/2024
+dlminvestments,VM1-Flask-App,https://github.com/dlminvestments/VM1-Flask-App,0,0,2,1575,The Python micro framework for building web applications.,proxy.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,10/22/2021
+carlosmaniero,cptm_analytics,https://github.com/carlosmaniero/cptm_analytics,0,0,0,0,N/A,app_sockets.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,5/19/2016
+Freshield,Personal_Interest,https://github.com/Freshield/Personal_Interest,0,1,0,9,ahah...funny,hid_echo_gadget.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,8/15/2017
+Pabasaraa,Diabetes_prediction-DL,https://github.com/Pabasaraa/Diabetes_prediction-DL,0,0,0,0,N/A,server.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,10/6/2023
+Pablourquia,TFG-CMS-IaaS,https://github.com/Pablourquia/TFG-CMS-IaaS,0,0,0,0,N/A,auth_request_handler.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,4/12/2024
+satoshi03,pychain,https://github.com/satoshi03/pychain,0,0,0,0,Pychain is an implementation of Naivechain in Python3 ,image.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,11/13/2017
+darrylwest,python-play,https://github.com/darrylwest/python-play,0,0,0,0,playground for python math projects,web.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,2/3/2023
+andy1ee11o2,misp-modules,https://github.com/andy1ee11o2/misp-modules,0,0,0,0,N/A,__init__.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,1/10/2024
+penguineer,RedmineActionablesCollector,https://github.com/penguineer/RedmineActionablesCollector,0,0,2,10,Collect issues from Redmine that can be acted upon,server.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,1/30/2020
+peps212,Space-Debris-Awareness,https://github.com/peps212/Space-Debris-Awareness,0,1,0,0,N/A,right.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,7/29/2023
+ClementSutjiatma,facerec,https://github.com/ClementSutjiatma/facerec,0,1,0,0,N/A,gevent.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,7/7/2018
+doctor3397,intro_to_backend,https://github.com/doctor3397/intro_to_backend,0,1,0,1,N/A,tornadoserver.py,tornado,Tornado_NoAdditionalOutputCallsAfterFinish,pytest,3/25/2017
