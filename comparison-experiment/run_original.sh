@@ -43,15 +43,15 @@ source venv/bin/activate
 # Announce setup of testing repository
 echo "Setting up testing repository..."
 
+# Install dependencies
+pip install .[dev,test,tests,testing] || { echo "Failed to install dependencies"; exit 1; }
+
 # Install additional requirements if available
 for file in *.txt; do
     if [ -f "$file" ]; then
         pip install -r "$file"
     fi
 done
-
-# Install dependencies
-pip install .[dev,test,tests,testing] || { echo "Failed to install dependencies"; exit 1; }
 
 # Install pytest and pytest-json-report
 pip install pytest
