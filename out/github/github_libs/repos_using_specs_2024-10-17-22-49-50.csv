@@ -1,0 +1,379 @@
+Owner,Repository Name,Repository Link,Stars,Forks,Issues,Pull Requests,Description,File Name,Dependency Name,Spec Name,Testing Framework,Created At
+google-research,google-research,https://github.com/google-research/google-research,34076,7768,1253,874,Google Research,chick_hatch.py,pydocs,Pydocs_MustShutdownExecutor,pytest,10/4/2018
+hasura,graphql-engine,https://github.com/hasura/graphql-engine,31125,2722,6244,3379,"Blazing fast<> instant realtime GraphQL APIs on your DB with fine grained access control, also trigger webhooks on database events.",fabfile.py,pydocs,Pydocs_MustShutdownExecutor,pytest,6/18/2018
+numpy,numpy,https://github.com/numpy/numpy,27809,9836,12803,14726,The fundamental package for scientific computing with Python.,1.py,pydocs,Pydocs_MustShutdownExecutor,pytest,9/13/2010
+wazuh,wazuh,https://github.com/wazuh/wazuh,10668,1614,17784,7743,Wazuh - The Open Source Security Platform. Unified XDR and SIEM protection for endpoints and cloud workloads.,stream.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,8/11/2015
+aws,amazon-sagemaker-examples,https://github.com/aws/amazon-sagemaker-examples,10078,6587,1429,3269,"Example 📓 Jupyter notebooks that demonstrate how to build<> train, and deploy machine learning models using 🧠 Amazon SageMaker. ",extraction.py,pydocs,Pydocs_MustShutdownExecutor,pytest,10/23/2017
+kyutai-labs,moshi,https://github.com/kyutai-labs/moshi,6355,482,67,73,N/A,__init__.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,8/7/2024
+spack,spack,https://github.com/spack/spack,4257,2147,8489,38216,"A flexible package manager that supports multiple versions<> configurations, platforms, and compilers.",lll.py,pydocs,Pydocs_NoReadAfterAccess,pytest,1/8/2014
+syslog-ng,syslog-ng,https://github.com/syslog-ng/syslog-ng,2122,466,1634,3439,"syslog-ng is an enhanced log daemon<> supporting a wide range of input and output methods: syslog, unstructured text, queueing, SQL & NoSQL.",batch_downloader.py,pydocs,Pydocs_MustShutdownExecutor,pytest,11/5/2013
+GeoNode,geonode,https://github.com/GeoNode/geonode,1447,988,4387,8230,"GeoNode is an open source platform that facilitates the creation<> sharing, and collaborative use of geospatial data.",filesystem.py,pydocs,Pydocs_NoReadAfterAccess,pytest,6/3/2010
+roboflow,inference,https://github.com/roboflow/inference,1322,120,133,607,"A fast<> easy-to-use, production-ready inference server for computer vision supporting deployment of many popular model architectures and fine-tuned models.",__init__.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,7/31/2023
+allenai,ai2thor,https://github.com/allenai/ai2thor,1154,210,598,589,An open-source platform for Visual AI.,uds.py,pydocs,Pydocs_MustShutdownExecutor,pytest,10/17/2017
+sopel-irc,sopel,https://github.com/sopel-irc/sopel,949,394,1253,1370,:robot::speech_balloon: An easy-to-use and highly extensible IRC Bot framework. Formerly Willie.,test_streams.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,12/22/2011
+DataDog,integrations-core,https://github.com/DataDog/integrations-core,928,1378,650,18146,Core integrations of the Datadog Agent,00-global-setup.py,pydocs,Pydocs_MustShutdownExecutor,pytest,12/1/2015
+neo4j,neo4j-python-driver,https://github.com/neo4j/neo4j-python-driver,897,184,250,831,Neo4j Bolt driver for Python,http_writer.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,5/5/2015
+sajjadium,ctf-archives,https://github.com/sajjadium/ctf-archives,837,134,2,4, CTF Archives: Collection of CTF Challenges.,test_streams.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,6/10/2021
+hhstore,annotated-py-projects,https://github.com/hhstore/annotated-py-projects,721,188,1,0,fastapi/flask/sanic/asyncio/bottle/webpy 等源码注解合集,test_streams.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,1/27/2016
+QwenLM,Qwen2.5-Coder,https://github.com/QwenLM/Qwen2.5-Coder,698,57,80,51,"Qwen2.5-Coder is the code version of Qwen2.5<> the large language model series developed by Qwen team, Alibaba Cloud.",parallel_gpt.py,pydocs,Pydocs_MustShutdownExecutor,pytest,4/16/2024
+pychess,pychess,https://github.com/pychess/pychess,697,185,1634,651,PyChess - a chess client for Linux/Windows,TimeSeal.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,2/2/2015
+carlmontanari,scrapli,https://github.com/carlmontanari/scrapli,579,60,89,217,"Fast<> flexible, sync/async, Python 3.7+ screen scraping client specifically for network devices",http_writer.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,1/27/2020
+rhinstaller,anaconda,https://github.com/rhinstaller/anaconda,539,346,0,5743,System installer for Fedora<> RHEL and other distributions,txt_input.py,pydocs,Pydocs_NoReadAfterAccess,pytest,2/2/2015
+JeffLIrion,adb_shell,https://github.com/JeffLIrion/adb_shell,534,59,62,173,A Python implementation of ADB with shell and FileSync functionality.,test_streams.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,9/16/2019
+lablup,backend.ai,https://github.com/lablup/backend.ai,508,133,778,2134,"Backend.AI is a streamlined<> container-based computing cluster platform that hosts popular computing/ML frameworks and diverse programming languages, with pluggable heterogeneous accelerator support including CUDA GPU, ROCm GPU, TPU, IPU and other NPUs.",wsgi.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,10/6/2016
+QuarkChain,pyquarkchain,https://github.com/QuarkChain/pyquarkchain,224,102,249,696,Python implementation of QuarkChain,test_streams.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly|Pydocs_ShouldNotInstantiateStreamWriter,pytest,8/2/2018
+cjrh,aiorun,https://github.com/cjrh/aiorun,435,26,31,60,"A ""run"" function for asyncio-based apps that does all the boilerplate.",socksserver.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,10/19/2017
+milkv-duo,duo-buildroot-sdk,https://github.com/milkv-duo/duo-buildroot-sdk,398,163,106,45,Milk-V Duo Official buildroot SDK,asyncio.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,6/13/2023
+hubblestack,hubble,https://github.com/hubblestack/hubble,379,84,137,1015,"Hubble is a modular<> open-source security compliance framework. The project provides on-demand profile-based auditing, real-time security event notifications, alerting, and reporting.",simos_hsl.py,pydocs,Pydocs_NoReadAfterAccess,pytest,1/5/2017
+bwhmather,ssort,https://github.com/bwhmather/ssort,359,10,50,67,Tool for automatically sorting python statements within a module,tcprelay_mqtt_server.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,3/18/2021
+getsentry,snuba,https://github.com/getsentry/snuba,339,56,220,6205,Search the seas for your lost treasure.,test_cluster_replacements.py,pydocs,Pydocs_MustShutdownExecutor,pytest,3/1/2018
+jborean93,pypsrp,https://github.com/jborean93/pypsrp,327,47,127,64,PowerShell Remoting Protocol for Python,conn.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,3/24/2018
+Josverl,micropython-stubs,https://github.com/Josverl/micropython-stubs,157,22,64,688,Stubs of most MicroPython ports<> boards and versions to make writing code that much simpler.,test_streams.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly|Pydocs_ShouldNotInstantiateStreamWriter,pytest,10/17/2020
+reingart,pyafipws,https://github.com/reingart/pyafipws,287,190,65,52,"Factura Electrónica AFIP y otros servicios web (proyecto software libre) — Interfases<> tools and apps for Argentina's gov't. webservices (soap, com/dll simil-ocx, pdf, dbf, xml, json, etc.) #python",alice.py,pydocs,Pydocs_NoReadAfterAccess,pytest,7/30/2013
+modal-labs,modal-client,https://github.com/modal-labs/modal-client,275,36,64,2283,Python client library for Modal,http_writer.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,10/18/2022
+chilli-axe,mpc-autofill,https://github.com/chilli-axe/mpc-autofill,215,90,129,122,Print automation software (leveraging MakePlayingCards) for your tabletop gaming community,utils.py,pydocs,Pydocs_MustShutdownExecutor,pytest,4/12/2020
+uberfastman,fantasy-football-metrics-weekly-report,https://github.com/uberfastman/fantasy-football-metrics-weekly-report,199,47,123,103,"Command line application to create weekly reports (containing stats<> metrics, and rankings) for Fantasy Football leagues on the following platforms: Yahoo, ESPN, CBS, Sleeper, Fleaflicker",nwchem.py,pydocs,Pydocs_NoReadAfterAccess,pytest,8/29/2016
+latchbio,latch,https://github.com/latchbio/latch,162,16,100,402,a python bioinformatics framework,precompiler.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,1/13/2022
+secondlaw-ai,skyrim,https://github.com/secondlaw-ai/skyrim,151,7,13,23,🌎 🤝 AI weather models united,process.py,pydocs,Pydocs_MustShutdownExecutor,pytest,4/5/2024
+hugsy,gef-extras,https://github.com/hugsy/gef-extras,149,50,40,77,Extra goodies for GEF to (try to) make GDB suck even less,setup.py,pydocs,Pydocs_NoReadAfterAccess,pytest,5/5/2017
+alfredgu001324,MapUncertaintyPrediction,https://github.com/alfredgu001324/MapUncertaintyPrediction,146,12,25,0,[CVPR 2024 Award Candidate] Producing and Leveraging Online Map Uncertainty in Trajectory Prediction,ens.py,pydocs,Pydocs_MustShutdownExecutor,pytest,3/16/2024
+PacktPublishing,Mastering-Object-Oriented-Python-Second-Edition,https://github.com/PacktPublishing/Mastering-Object-Oriented-Python-Second-Edition,143,103,1,0,Mastering Object-Oriented Python - Second Edition<> published by Packt,user_context.py,pydocs,Pydocs_MustShutdownExecutor,pytest,5/20/2019
+microsoft,vscode-python-tools-extension-template,https://github.com/microsoft/vscode-python-tools-extension-template,137,43,22,170,Template for creating VS Code extensions for python tools. ,qube_connection.py,pydocs,Pydocs_MustShutdownExecutor,pytest,5/25/2022
+NagarajuGunda,PyAlgoMate,https://github.com/NagarajuGunda/PyAlgoMate,134,79,11,27,N/A,dataset_reader.py,pydocs,Pydocs_MustShutdownExecutor,pytest,2/2/2023
+popsim-consortium,stdpopsim,https://github.com/popsim-consortium/stdpopsim,123,86,690,880,A library of standard population genetic models,data.py,pydocs,Pydocs_MustShutdownExecutor,pytest,1/23/2019
+smarthomeNG,smarthome,https://github.com/smarthomeNG/smarthome,122,90,255,423,Device integration platform for your smart home,kv.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,3/15/2016
+Parisson,Telemeta,https://github.com/Parisson/Telemeta,118,36,186,54,Collaborative content management system for musicology,pdoc,pydocs,Pydocs_NoReadAfterAccess,pytest,10/25/2011
+rhasspy,wyoming,https://github.com/rhasspy/wyoming,115,19,19,8,Peer-to-peer protocol for voice assistants,connection.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,9/29/2023
+BDI-pathogens,OpenABM-Covid19,https://github.com/BDI-pathogens/OpenABM-Covid19,113,68,65,177,OpenABM-Covid19: an agent-based model for modelling the spread of SARS-CoV-2 (coronavirus) and control interventions for the Covid-19 epidemic,parallel.py,pydocs,Pydocs_MustShutdownExecutor,pytest,4/16/2020
+DragonHPC,dragon,https://github.com/DragonHPC/dragon,55,6,10,12,Dragon distributed runtime for HPC and AI applications and workflows,test_streams.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly|Pydocs_ShouldNotInstantiateStreamWriter,pytest,9/12/2023
+EldarMuradov,EraEngine,https://github.com/EldarMuradov/EraEngine,100,7,8,9,Open source C++ 3D game engine ,test_streams.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,11/20/2023
+It4innovations,rsds,https://github.com/It4innovations/rsds,96,8,0,28,Dask scheduler written in Rust,generate_load.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,9/5/2019
+anton-bushuiev,PPIRef,https://github.com/anton-bushuiev/PPIRef,82,8,5,2,Dataset and package for working with protein-protein interactions in 3D,reactor.py,pydocs,Pydocs_MustShutdownExecutor,pytest,10/16/2023
+navis-org,navis,https://github.com/navis-org/navis,80,31,89,71,Python library for analysis of neuroanatomical data.,synblast_funcs.py,pydocs,Pydocs_MustShutdownExecutor,pytest,1/29/2019
+dlemel8,tunneler,https://github.com/dlemel8/tunneler,67,6,1,0,"Tunnel TCP or UDP traffic over TCP<> (mutual) TLS or DNS (authoritative server or direct connection), implemented in Rust",test_unix.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,4/4/2021
+CenterForOpenScience,waterbutler,https://github.com/CenterForOpenScience/waterbutler,62,63,27,385,WaterButler is a Python web application for interacting with various file storage services via a single RESTful API<> developed at Center for Open Science.,applet_ema.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,11/25/2014
+kura,blackhole,https://github.com/kura/blackhole,61,10,22,14,Blackhole is an MTA written on top of asyncio<> utilising async and await statements that dumps all mail it receives to /dev/null.,shell_command.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,7/23/2012
+gabrieltseng,datascience-projects,https://github.com/gabrieltseng/datascience-projects,58,22,3,5,A collection of personal data science projects,mixer.py,pydocs,Pydocs_MustShutdownExecutor,pytest,7/2/2017
+valkey-io,valkey-py,https://github.com/valkey-io/valkey-py,58,7,37,76,Valkey Python client based on a fork of redis-py,mixins.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,5/20/2024
+alfredgu001324,MapBEVPrediction,https://github.com/alfredgu001324/MapBEVPrediction,56,10,5,0,[ECCV 2024] Accelerating Online Mapping and Behavior Prediction via Direct BEV Feature Attention,test.py,pydocs,Pydocs_MustShutdownExecutor,pytest,6/28/2024
+nxtlo,aiobungie,https://github.com/nxtlo/aiobungie,50,10,48,427,Python and asyncio Bungie API wrapper.,1.py,pydocs,Pydocs_MustShutdownExecutor,pytest,2/15/2021
+epoplavskis,photon-pump,https://github.com/epoplavskis/photon-pump,48,9,44,200,A TCP eventstore client for modern Python,asyncio.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,4/27/2017
+metaspace2020,metaspace,https://github.com/metaspace2020/metaspace,47,10,622,957,Cloud engine and platform for metabolite annotation for imaging mass spectrometry,blastoff.py,pydocs,Pydocs_MustShutdownExecutor,pytest,6/28/2018
+alexanderkell,elecsim,https://github.com/alexanderkell/elecsim,46,11,4,83,Long term electricity market agent based model simulation used to observe the effect of policy on investment decisions,standardization_V2_multiprocess.py,pydocs,Pydocs_MustShutdownExecutor,pytest,3/9/2018
+Rorisis,Co-Occ,https://github.com/Rorisis/Co-Occ,43,4,12,0,[IEEE RA-L] Co-Occ: Coupling Explicit Feature Fusion with Volume Rendering Regularization for Multi-Modal 3D Semantic Occupancy Prediction,kitti_data_utils.py,pydocs,Pydocs_MustShutdownExecutor,pytest,1/31/2024
+myc634,UltraLiDAR_nusc_waymo,https://github.com/myc634/UltraLiDAR_nusc_waymo,43,3,12,0,N/A,tools.py,pydocs,Pydocs_MustShutdownExecutor,pytest,11/2/2023
+izderadicka,mybookshelf2,https://github.com/izderadicka/mybookshelf2,39,9,4,19,Platform for managing and sharing  ebooks,setup.py,pydocs,Pydocs_NoReadAfterAccess,pytest,4/4/2016
+mees,hulc2,https://github.com/mees/hulc2,36,3,9,1,[ICRA2023] Grounding Language with Visual Affordances over Unstructured Data,data_pull_main.py,pydocs,Pydocs_MustShutdownExecutor,pytest,11/6/2022
+machinezone,cobra,https://github.com/machinezone/cobra,32,3,16,41,Cobra is a realtime messaging server using Python3<> WebSockets and Redis,ex_tcp_server.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,7/26/2019
+DASH-Lab,VFP290K,https://github.com/DASH-Lab/VFP290K,30,4,6,0,This repository is for *VFP290K: A Large-Scale Benchmark Dataset for Vision-based Fallen Person Detection* paper in NeurIPS 2021 (Datasets and Benchmarks),test_posix.py,pydocs,Pydocs_NoReadAfterAccess,pytest,8/27/2021
+NL2Code,CodeS,https://github.com/NL2Code/CodeS,14,0,0,0,N/A,ig.py,pydocs,Pydocs_MustShutdownExecutor|Pydocs_NoReadAfterAccess,pytest,3/25/2024
+Nextdoor,kingpin,https://github.com/Nextdoor/kingpin,27,14,126,406,Deployment Automation Engine,test_redis_backend.py,pydocs,Pydocs_MustShutdownExecutor,pytest,8/13/2014
+getsentry,hackweek-coda,https://github.com/getsentry/hackweek-coda,27,0,0,2,A queue thing with a sprinkle of Italian,asyncio_telnet.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,8/21/2023
+milkv-duo,duo-buildroot-sdk-v2,https://github.com/milkv-duo/duo-buildroot-sdk-v2,27,20,11,5,Milk-V Duo Official buildroot SDK V2,abc.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,6/21/2024
+pyinsteon,pyinsteon,https://github.com/pyinsteon/pyinsteon,26,17,61,365,Python library to support Insteon home automation projects,as_nrf_json.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,9/5/2018
+christoftorres,Elysium,https://github.com/christoftorres/Elysium,25,8,1,2,A tool to automatically patch vulnerable Ethereum smart contracts (RAID 2022).,moonton.py,pydocs,Pydocs_MustShutdownExecutor,pytest,8/31/2022
+spedagadi,yocto-tinkerboard,https://github.com/spedagadi/yocto-tinkerboard,24,10,4,0,Yocto Sources for Tinkerboard,allPythonContent.py,pydocs,Pydocs_NoReadAfterAccess,pytest,4/2/2017
+European-XFEL,Karabo,https://github.com/European-XFEL/Karabo,24,6,0,0,The Karabo SCADA Framework,send_command.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,4/17/2023
+ska-sa,spead2,https://github.com/ska-sa/spead2,23,13,101,250,Library for the Streaming Protocol for Exchange of Astronomical Data (SPEAD),ws.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,6/4/2015
+justinmoon,network-programming,https://github.com/justinmoon/network-programming,23,12,0,23,A hand-on tutorial on Bitcoin network programming,sendDataToLocalhost.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,1/22/2019
+mhils,r8,https://github.com/mhils/r8,21,5,4,24,r8 – a simple ctf system,asyncio_echo_server_coroutine.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,9/14/2018
+ldv-klever,klever,https://github.com/ldv-klever/klever,20,10,1,6,Read-only mirror of the Klever Git repository ,import.py,pydocs,Pydocs_MustShutdownExecutor,pytest,7/13/2018
+so1n,rap,https://github.com/so1n/rap,19,2,1,3,rap(par[::-1]) is advanced and fast python async rpc,plain_python__send_bytes__asyncio_streams.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,8/6/2020
+Shist,Zhukouski_Pavel_BSU_Projects,https://github.com/Shist/Zhukouski_Pavel_BSU_Projects,17,3,0,0,All projects that I had to do at the university (3-4 course - Department of Computer Technologies and Networks),http_writer.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,1/9/2021
+machanic,TangentAttack,https://github.com/machanic/TangentAttack,16,0,3,1,The official implementation of NeurIPS 2021 paper: Finding Optimal Tangent Points for Reducing Distortions of Hard-label Attacks,cell_tool.py,pydocs,Pydocs_MustShutdownExecutor,pytest,11/11/2021
+jaceklaskowski,learn-databricks,https://github.com/jaceklaskowski/learn-databricks,16,8,0,4,Notebooks to learn Databricks Lakehouse Platform,netbeez-agent.py,pydocs,Pydocs_MustShutdownExecutor,pytest,1/20/2023
+MAILAB-Yonsei,capsule_endoscopy_detection,https://github.com/MAILAB-Yonsei/capsule_endoscopy_detection,16,3,1,0,capsule_endoscopy_detection DACON challenge,minimal_upload_server.py,pydocs,Pydocs_NoReadAfterAccess,pytest,12/9/2021
+YoeDistro,poky-old,https://github.com/YoeDistro/poky-old,16,31,0,6,Old Poky Distro metadata repository - Its getting no updates - Please migrate your fork to https://github.com/yoctoproject/poky or https://github.com/YoeDistro/poky,tasks.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,1/21/2016
+byllyfish,shellous,https://github.com/byllyfish/shellous,16,1,64,753,asyncio library that provides an API for running subprocesses,asyncio.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,8/10/2021
+sswam,allemande,https://github.com/sswam/allemande,8,1,0,0,This is a work-in-progress AI software toolkit in the UNIX tradition.,test_streams.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly|Pydocs_ShouldNotInstantiateStreamWriter,pytest,4/13/2023
+mlz-ictrl,nicos,https://github.com/mlz-ictrl/nicos,15,6,0,11,NICOS instrument control system (read-only mirror for repo on forge.frm2.tum.de/review/),gpio.py,pydocs,Pydocs_NoReadAfterAccess,pytest,11/6/2019
+cndn,intelligent-code-completion,https://github.com/cndn/intelligent-code-completion,15,12,2,1,N/A,__init__.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,10/2/2017
+SophieHYe,PreciseBugs,https://github.com/SophieHYe/PreciseBugs,14,7,2,0,N/A,auth.py,pydocs,Pydocs_NoReadAfterAccess,pytest,7/19/2023
+asozialesnetzwerk,an-website,https://github.com/asozialesnetzwerk/an-website,14,4,41,84,#1 Website in the Worlds,asyncio.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,6/3/2021
+eqcorrscan,RT_EQcorrscan,https://github.com/eqcorrscan/RT_EQcorrscan,13,6,8,35,Real-Time implementation of EQcorrscan methods.,calculate_metric.py,pydocs,Pydocs_MustShutdownExecutor,pytest,4/6/2018
+HackSoc,csbot,https://github.com/HackSoc/csbot,13,15,54,132,An IRC bot and plugin system for the #cs-york channel on irc.freenode.net,conftest.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,4/2/2012
+imfht,flaskapps,https://github.com/imfht/flaskapps,12,4,1,2,a set of flask apps,asyncio_tcp_readinto.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,1/31/2021
+OFFIS-DAI,mango,https://github.com/OFFIS-DAI/mango,12,2,67,38,Modular Python-based agent framework to implement multi-agent systems,client.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,10/19/2023
+mlcommons,training_results_v4.0,https://github.com/mlcommons/training_results_v4.0,11,14,8,1, This repository contains the results and code for the MLPerf™ Training v4.0 benchmark.,mainFindLongTransitive.py,pydocs,Pydocs_MustShutdownExecutor,pytest,6/11/2024
+Ascend,ModelZoo-TensorFlow,https://github.com/Ascend/ModelZoo-TensorFlow,11,2,1,0,N/A,run-sim.py,pydocs,Pydocs_MustShutdownExecutor,pytest,4/20/2022
+LiberTEM,LiberTEM-live,https://github.com/LiberTEM/LiberTEM-live,11,5,42,122,Live processing with LiberTEM,ncmkflats.py,pydocs,Pydocs_NoReadAfterAccess,pytest,2/23/2021
+augcog,tai,https://github.com/augcog/tai,10,12,0,92,N/A,server.py,pydocs,Pydocs_MustShutdownExecutor,pytest,9/20/2023
+hackcollective,wind-curtailment,https://github.com/hackcollective/wind-curtailment,10,4,37,59,N/A,tsqr_experiment.py,pydocs,Pydocs_MustShutdownExecutor,pytest,6/2/2022
+ibm-cloud-architecture,refarch-reefer-ml,https://github.com/ibm-cloud-architecture/refarch-reefer-ml,10,20,1,91,"This is a prescriptive maintenance implementation using event-driven architecture for real-time analytics on event stream coming from Reefer Container. The solution include a reefer simulator<> a scoring microservice, a container event listener to trigger a business process when the scoring identify the Reefer container needs maintenance. All run on Openshift.",TwitchPlays_Connection.py,pydocs,Pydocs_MustShutdownExecutor,pytest,8/26/2019
+daddydrac,NVIDIA-Rapids-NeMo-PyTorch-Tensorboard,https://github.com/daddydrac/NVIDIA-Rapids-NeMo-PyTorch-Tensorboard,10,2,0,0,"Ultimate NLP Toolkit for GPUs: RAPIDS-AI<> PyTorch, NeMo, Tensorboard, TensorRT, CUDA 10.1",test_events.py,pydocs,Pydocs_MustShutdownExecutor,pytest,3/17/2020
+phlong3105,mon,https://github.com/phlong3105/mon,10,3,1,14,One Research Framework To Rule Them All,text_mapping.py,pydocs,Pydocs_MustShutdownExecutor,pytest,5/12/2022
+ThanasisMattas,shortestpaths,https://github.com/ThanasisMattas/shortestpaths,9,0,3,2,Bidirectional k-shortest paths with DP,BBCVideoOnDemand.py,pydocs,Pydocs_MustShutdownExecutor,pytest,10/8/2020
+enriquetomasmb,nebula,https://github.com/enriquetomasmb/nebula,9,6,4,11,NEBULA: A Platform for Decentralized Federated Learning,rotator_client.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,5/25/2024
+Netgate,frr,https://github.com/Netgate/frr,9,11,0,0,FRR dynamic routing,peer.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,6/8/2018
+alengwenus,pypck,https://github.com/alengwenus/pypck,9,4,46,79,Asynchronous LCN-PCK library written in Python,uasyncio_tcp_server_client.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,10/27/2018
+pablo-aledo,dotfiles,https://github.com/pablo-aledo/dotfiles,9,2,0,98,N/A,gateway.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,7/26/2017
+SKKUAutoLab,ETSS-07-ImageEnhance,https://github.com/SKKUAutoLab/ETSS-07-ImageEnhance,8,5,0,6,N/A,mainf.py,pydocs,Pydocs_MustShutdownExecutor,pytest,11/18/2021
+sqdnoises,infinite-craft,https://github.com/sqdnoises/infinite-craft,8,6,3,0,An API Wrapper of Neal's Infinite Craft game in Python for people to implement in their programs.,gtrss.py,pydocs,Pydocs_NoReadAfterAccess,pytest,2/28/2024
+smartobjectoriented,so3,https://github.com/smartobjectoriented/so3,8,5,40,30,Smart Object Oriented Operating system is a lightweight and full featured operating system devoted to embedded systems<> currently mainly ARM-based. SO3 can be used in academic and industrial environment (https://smartobjectoriented.github.io/so3),asyncio_tcp_readexactly.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,9/21/2022
+huiyegit,UAV3D,https://github.com/huiyegit/UAV3D,7,2,0,0,N/A,kitti_data_utils.py,pydocs,Pydocs_MustShutdownExecutor,pytest,6/7/2024
+swapper-org,NodeChain,https://github.com/swapper-org/NodeChain,7,5,131,101,Nodechain is a service that allows you to create nodes on a blockchain and connect to them natively through APIs. The goal is to allow the user to build their own nodes natively without having to rely on external services.,test_streams.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,4/9/2021
+wozeparrot,tinymod,https://github.com/wozeparrot/tinymod,7,3,10,4,tinygrad's premier discord moderation bot,json_api.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,7/7/2023
+open-v2x,lidar,https://github.com/open-v2x/lidar,6,8,1,53,OpenV2X lidar,model_inversion.py,pydocs,Pydocs_MustShutdownExecutor,pytest,10/22/2022
+Azure,iot-sdks-e2e-fx,https://github.com/Azure/iot-sdks-e2e-fx,6,13,3,389,Test framework used to run end-to-end tests of SDKs against an Azure IoT Hub or Edge Hub,test_client.py,pydocs,Pydocs_MustShutdownExecutor,pytest,1/15/2019
+mikem23,koji-playground,https://github.com/mikem23/koji-playground,6,4,0,1,This repo is for *experimental* koji changes. Heads may rebase or disappear. You have been warned. Official upstream at https://pagure.io/koji and github mirror at https://github.com/koji-project/koji,projectAnalytics.py,pydocs,Pydocs_NoReadAfterAccess,pytest,4/9/2015
+maurov,xraysloth,https://github.com/maurov/xraysloth,6,1,0,5,sloth: slowly evolving utilities for x-ray spectroscopists,rocm_agent_enumerator,pydocs,Pydocs_NoReadAfterAccess,pytest,8/29/2014
+joelanders,toytor,https://github.com/joelanders/toytor,6,1,0,0,toy tor implementation with python 3.4's asyncio and 3.5's async/await coroutines,lonadb_client.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,9/6/2016
+qompassai,Nautilus,https://github.com/qompassai/Nautilus,3,0,0,0,Quality NIST-compliant AI Security solutions,interview_code.py,pydocs,Pydocs_MustShutdownExecutor|Pydocs_ShouldNotInstantiateStreamWriter,pytest,8/6/2024
+AndersCFR,DataScience_IA_BigData_BI,https://github.com/AndersCFR/DataScience_IA_BigData_BI,3,0,0,0,Apuntes o plantillas de algunos de los algoritmos básicos de Machine Learning.,example21.py,pydocs,Pydocs_MustShutdownExecutor|Pydocs_ShouldNotInstantiateStreamWriter,pytest,10/25/2021
+wahabk,colloidoscope,https://github.com/wahabk/colloidoscope,5,0,0,9,A deep learning approach for particle detection from super-resolution microscopy.,main_cve.py,pydocs,Pydocs_MustShutdownExecutor,pytest,9/25/2020
+LongHuu100,Ai-sound-to-text-Real-Time,https://github.com/LongHuu100/Ai-sound-to-text-Real-Time,5,0,0,0,Dự án chuyển đổi âm thanh thành văn bản bằng từ file và dữ liệu streaming real time,generate_test_data.py,pydocs,Pydocs_MustShutdownExecutor,pytest,8/11/2021
+Phileosopher,ts-learning,https://github.com/Phileosopher/ts-learning,5,1,0,0,TechSplained learning,test_spark.py,pydocs,Pydocs_MustShutdownExecutor,pytest,3/6/2021
+zackees,static-sox,https://github.com/zackees/static-sox,5,1,0,0,Static binaries for Sox on Win/MacOS/Linux,package.py,pydocs,Pydocs_NoReadAfterAccess,pytest,2/22/2023
+nickfox-taterli,yocto-imx6-custom,https://github.com/nickfox-taterli/yocto-imx6-custom,5,1,0,1,i.MX6 Quad Custom Board,upload_captcha.py,pydocs,Pydocs_NoReadAfterAccess,pytest,5/27/2018
+EigenPro,EigenPro,https://github.com/EigenPro/EigenPro,4,1,10,11,Latest and fastest EigenPro that scales to billions of examples,tmp.py,pydocs,Pydocs_MustShutdownExecutor,pytest,1/5/2024
+InstituteforDiseaseModeling,idmtools,https://github.com/InstituteforDiseaseModeling/idmtools,4,4,1227,1154,N/A,aeza.py,pydocs,Pydocs_MustShutdownExecutor,pytest,5/15/2019
+refinery-labs,refinery,https://github.com/refinery-labs/refinery,4,0,173,502,refinery pipeline editor/IDE,validating_redirects.py,pydocs,Pydocs_MustShutdownExecutor,pytest,9/9/2018
+ethanliuzhuo,image_classification,https://github.com/ethanliuzhuo/image_classification,4,2,0,48,Keras 果蔬图片分类,benchmark_dtw.py,pydocs,Pydocs_MustShutdownExecutor,pytest,3/27/2020
+HCGB-IGTP,BacterialTyper,https://github.com/HCGB-IGTP/BacterialTyper,4,0,14,21,Bacterial identification pipeline,commands.py,pydocs,Pydocs_MustShutdownExecutor,pytest,10/22/2019
+kenchangh,Anconia,https://github.com/kenchangh/Anconia,4,2,0,48,Anconia is a blockchain implementation that uses Avalanche consensus protocol,llm2.py,pydocs,Pydocs_MustShutdownExecutor,pytest,4/8/2019
+wi-pi,rethinking-image-scaling-attacks,https://github.com/wi-pi/rethinking-image-scaling-attacks,4,1,0,0,[ICML 2022] Rethinking Image-Scaling Attacks: The Interplay Between Vulnerabilities in Machine Learning Systems,__init__.py,pydocs,Pydocs_MustShutdownExecutor,pytest,6/14/2022
+joaofig,dublin-bus,https://github.com/joaofig/dublin-bus,4,2,1,74,Studying the public Dublin Bus GPS Data using Python,memtest_numpy.py,pydocs,Pydocs_MustShutdownExecutor,pytest,5/24/2019
+spacetelescope,science-platform-images,https://github.com/spacetelescope/science-platform-images,4,7,2,66,N/A,test_paths.py,pydocs,Pydocs_MustShutdownExecutor,pytest,11/28/2022
+helmgast,lore,https://github.com/helmgast/lore,4,0,293,42,A web-based storytelling framework.,oomako,pydocs,Pydocs_NoReadAfterAccess,pytest,7/7/2012
+wolfworld6,Aicity2023-Track3,https://github.com/wolfworld6/Aicity2023-Track3,4,2,0,0,Aicity2023-Track3,VtkPp.py,pydocs,Pydocs_NoReadAfterAccess,pytest,4/7/2023
+AbimaelFranco,Proyecto-django-docker-0980-Proyectos-computacion,https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion,4,0,0,0,Proyecto de pagina web terminado en docker<> elaborado en django,svglib.py,pydocs,Pydocs_NoReadAfterAccess,pytest,11/10/2022
+wolfworld6,AIcity2024-track3,https://github.com/wolfworld6/AIcity2024-track3,4,0,0,0,N/A,api_server.py,pydocs,Pydocs_NoReadAfterAccess,pytest,4/2/2024
+michael7nightingale,FastAPI-Science,https://github.com/michael7nightingale/FastAPI-Science,4,0,1,4,"FastAPI fullstack web-app for science calculations (formulat<> plots, tasks and forum)",client.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,5/15/2023
+dhar174,DeskBuddy,https://github.com/dhar174/DeskBuddy,4,0,0,1,"An intelligent chatbot with context memory<> emotional awareness, and question-answering capabilities.",retroarch_tunnel_server.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,1/17/2023
+AndreLouisCaron,aiotk,https://github.com/AndreLouisCaron/aiotk,4,0,1,43,asyncio toolkit,commons.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,7/28/2016
+YantianZha,SERLfD,https://github.com/YantianZha/SERLfD,3,0,0,0,N/A,Selenium实践.py,pydocs,Pydocs_MustShutdownExecutor,pytest,3/29/2023
+YalamanchiliLab,PolyAMiner-Bulk,https://github.com/YalamanchiliLab/PolyAMiner-Bulk,3,0,8,0,N/A,main.py,pydocs,Pydocs_MustShutdownExecutor,pytest,8/13/2022
+wujiapei,alldata,https://github.com/wujiapei/alldata,3,4,0,0,N/A,filter_data.py,pydocs,Pydocs_MustShutdownExecutor,pytest,8/23/2022
+Dewberry,ripple1d,https://github.com/Dewberry/ripple1d,3,0,124,104,Utilities for reuse of HEC-RAS models for NWM,telegram.py,pydocs,Pydocs_MustShutdownExecutor,pytest,3/26/2024
+pravinashj,openbmc,https://github.com/pravinashj/openbmc,3,3,1,0,N/A,upload_captcha.py,pydocs,Pydocs_NoReadAfterAccess,pytest,3/22/2018
+PaNGalaxy,galaxy,https://github.com/PaNGalaxy/galaxy,3,1,0,0,a fork of Galaxy repo from https://github.com/galaxyproject/galaxy,general.py,pydocs,Pydocs_NoReadAfterAccess,pytest,10/12/2022
+nemith,playbooks,https://github.com/nemith/playbooks,3,1,0,2,N/A,aur.py,pydocs,Pydocs_NoReadAfterAccess,pytest,9/21/2020
+UrLab,lechbot,https://github.com/UrLab/lechbot,3,3,12,258,Asyncio IRC bot for #urlab on libera.chat 🤘,parsers.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,10/2/2013
+ppd0705,supervisor-gateway,https://github.com/ppd0705/supervisor-gateway,3,0,0,0,A RESTful supervisor gateway with paginated and cached process info,v3.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,3/17/2022
+IntelliSys-Lab,Stellaris-SC24,https://github.com/IntelliSys-Lab/Stellaris-SC24,2,0,0,0,N/A,pandas_compat.py,pydocs,Pydocs_MustShutdownExecutor,pytest,6/26/2024
+Qabel,qabel-infrastructure,https://github.com/Qabel/qabel-infrastructure,2,2,4,1,N/A,mcts.py,pydocs,Pydocs_MustShutdownExecutor,pytest,7/18/2016
+Yuchnan,Analisis-Sentimen-TA,https://github.com/Yuchnan/Analisis-Sentimen-TA,2,0,0,0,Aplikasi web analisis sentimen menggunakan algoritma multinomial naive bayes tanpa library scikit-learn dari Python.,test_concurrent_futures.py,pydocs,Pydocs_MustShutdownExecutor,pytest,9/6/2024
+jf-2023,sec_data_pipepline,https://github.com/jf-2023/sec_data_pipepline,2,0,1,14,N/A,track.py,pydocs,Pydocs_MustShutdownExecutor,pytest,7/13/2024
+LittleSheepy,MyMLStudy,https://github.com/LittleSheepy/MyMLStudy,2,0,1,13,我的机器学习,par_projections.py,pydocs,Pydocs_MustShutdownExecutor,pytest,8/30/2018
+yichen115,GDB-Plugins,https://github.com/yichen115/GDB-Plugins,2,1,0,0,peda\heap-peda\gef\pwndbg,ssh,pydocs,Pydocs_NoReadAfterAccess,pytest,6/21/2020
+anderson-fall-2023,csc-369-student,https://github.com/anderson-fall-2023/csc-369-student,2,3,0,0,N/A,extract_pkg.py,pydocs,Pydocs_NoReadAfterAccess,pytest,9/21/2023
+wasn-lab,Taillight_Recognition_with_VGG16-WaveNet,https://github.com/wasn-lab/Taillight_Recognition_with_VGG16-WaveNet,2,0,0,0,N/A,as5-makeinferno.py,pydocs,Pydocs_NoReadAfterAccess,pytest,9/28/2022
+labplus-cn,mPython_software,https://github.com/labplus-cn/mPython_software,2,4,0,1,N/A,vmem-sz.py,pydocs,Pydocs_NoReadAfterAccess,pytest,10/17/2018
+liyapenggo,raspberrypi3-openbmc,https://github.com/liyapenggo/raspberrypi3-openbmc,2,1,0,0,Run openbmc on raspberry pi3,yahoo.py,pydocs,Pydocs_NoReadAfterAccess,pytest,2/14/2019
+UWMRO,Instruments,https://github.com/UWMRO/Instruments,2,15,43,26,N/A,server.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,9/16/2021
+sbworth,getnoc,https://github.com/sbworth/getnoc,2,0,0,0,Mirror of getnoc.com GitLab repo,wx2.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,3/8/2022
+imfht,flaskapp1,https://github.com/imfht/flaskapp1,2,4,0,2,a set of flaskapp with more .gitignore,maketest.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,2/4/2021
+beagleboard,xuantie-yocto,https://github.com/beagleboard/xuantie-yocto,2,1,0,0,Mirror of: https://git.beagleboard.org/beaglev-ahead/xuantie-yocto,npy_asyncio.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,7/13/2023
+xxcosita3czxx,Lorelei-bot,https://github.com/xxcosita3czxx/Lorelei-bot,2,2,2,26,Configurable Utility bot,socketserver.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,8/23/2023
+diefans,implant,https://github.com/diefans/implant,2,0,0,0,asynchronous adhoc remote procedure calls in Python,svc_mqtt_proxy_client.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,9/2/2016
+merlinepedra,THONNY-PYTHON,https://github.com/merlinepedra/THONNY-PYTHON,2,0,0,0,N/A,mock.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,10/14/2022
+ska-sa,aiokatcp,https://github.com/ska-sa/aiokatcp,1,2,4,96,Python 3 implementation of katcp using asyncio,test_connection.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly|Pydocs_ShouldNotInstantiateStreamWriter,pytest,9/27/2017
+itcrowdsource,vcftocsvcontactexporter,https://github.com/itcrowdsource/vcftocsvcontactexporter,1,0,0,0,VFC to CSV contact exporter,subproc_pool.py,pydocs,Pydocs_MustShutdownExecutor|Pydocs_ShouldNotInstantiateStreamWriter,pytest,11/15/2023
+usepat,soniccontrol,https://github.com/usepat/soniccontrol,1,0,142,31,A python based lightweight GUI to control and communicate with a SonicAmp,_supervisor.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly|Pydocs_ShouldNotInstantiateStreamWriter,pytest,8/9/2022
+Watemlifts,Alfa,https://github.com/Watemlifts/Alfa,1,0,0,28,Adaptive technology in homes for linking and integrating applications.,main.py,pydocs,Pydocs_MustShutdownExecutor,pytest,8/19/2019
+KaziQuader,Detecting-Refactoring-Python-Code-Smell,https://github.com/KaziQuader/Detecting-Refactoring-Python-Code-Smell,1,1,0,0,N/A,file.py,pydocs,Pydocs_MustShutdownExecutor,pytest,1/8/2024
+Watemlifts,subsystems-,https://github.com/Watemlifts/subsystems-,1,0,0,26,N/A,predict_plus.py,pydocs,Pydocs_MustShutdownExecutor,pytest,8/19/2019
+brash6,dataviz_dauphine_tunis,https://github.com/brash6/dataviz_dauphine_tunis,1,2,0,0,A repository to store and share ressources for the Data Visualisation module of the BDIA Master of Dauphine Tunis,llm_container_main.py,pydocs,Pydocs_MustShutdownExecutor,pytest,1/19/2023
+Zukunftsmusik,pss-fleet-data-importer,https://github.com/Zukunftsmusik/pss-fleet-data-importer,1,0,0,13,Imports PSS Fleet Data from google drive to the PSS Fleet Data API.,Проверка ссылок.py,pydocs,Pydocs_MustShutdownExecutor,pytest,7/17/2024
+yevgenin,om2seq,https://github.com/yevgenin/om2seq,1,1,0,0,N/A,scratch_pp.py,pydocs,Pydocs_MustShutdownExecutor,pytest,5/31/2023
+Gonzivang,SecondTry,https://github.com/Gonzivang/SecondTry,1,0,0,0,N/A,JSONuploader.py,pydocs,Pydocs_MustShutdownExecutor,pytest,1/23/2024
+nehaSamipa8,test,https://github.com/nehaSamipa8/test,1,0,0,0,"Clone of the repository ""dot-agent/openagent"" without forking or pulling request tothe main repository.",sqlite_to_duckdb.py,pydocs,Pydocs_MustShutdownExecutor,pytest,8/20/2023
+software-trizzey,djangoly-vscode,https://github.com/software-trizzey/djangoly-vscode,1,0,0,6,V2 of the Djangoly VS Code extension.,test_api_call_queue.py,pydocs,Pydocs_MustShutdownExecutor,pytest,9/26/2024
+Vortexdude,rector,https://github.com/Vortexdude/rector,1,0,0,11,API for image processing,walks.py,pydocs,Pydocs_MustShutdownExecutor,pytest,7/3/2024
+asapdiscovery,choppa,https://github.com/asapdiscovery/choppa,1,0,32,15,Integrated mutational and structural biology data into a concerted HTML view.,main.py,pydocs,Pydocs_MustShutdownExecutor,pytest,4/5/2024
+SchwabischesBauernbrot,annas-archive,https://github.com/SchwabischesBauernbrot/annas-archive,1,0,0,0,Fork of https://software.annas-archive.se/AnnaArchivist/annas-archive,normalise_level.py,pydocs,Pydocs_MustShutdownExecutor,pytest,9/8/2024
+brycepg,pylint-corpus,https://github.com/brycepg/pylint-corpus,1,1,0,20,N/A,TunerHO.py,pydocs,Pydocs_MustShutdownExecutor,pytest,3/26/2018
+gstearmit,skypilot,https://github.com/gstearmit/skypilot,1,0,0,0,N/A,autocrop.py,pydocs,Pydocs_MustShutdownExecutor,pytest,3/16/2024
+yasserfarouk,uneg,https://github.com/yasserfarouk/uneg,1,0,0,0,Negotiation under Uncertainty,data_integrate.py,pydocs,Pydocs_MustShutdownExecutor,pytest,5/14/2019
+DANNHIROAKI,NN-Papers,https://github.com/DANNHIROAKI/NN-Papers,1,1,0,0,收集了一些经典的神经网络论文,test_loading_gpu.py,pydocs,Pydocs_MustShutdownExecutor,pytest,6/6/2024
+vaimalaviya1233,CodeFiles,https://github.com/vaimalaviya1233/CodeFiles,1,0,0,13,Java Practice Files,test_kmeans_brute_1128.py,pydocs,Pydocs_MustShutdownExecutor,pytest,1/16/2021
+JeffersonLab,ced2graph,https://github.com/JeffersonLab/ced2graph,1,0,9,0,Tools to extract data from CEBAF Element Database (CED) and the Mya archiver and output it in a format useful for graph neural network practitioners,cache.py,pydocs,Pydocs_NoReadAfterAccess,pytest,11/18/2021
+karo-electronics,poky,https://github.com/karo-electronics/poky,1,0,3,0,Fork of the official yoctoproject.org poky repository for Ka-Ro Yocto BSP,timetest.py,pydocs,Pydocs_NoReadAfterAccess,pytest,3/16/2018
+ejoerns,poky-nfsroot,https://github.com/ejoerns/poky-nfsroot,1,1,1,4,nfs-export-updater patches for poky,utils.py,pydocs,Pydocs_NoReadAfterAccess,pytest,6/24/2023
+slayer,duoauthproxy-freebsd,https://github.com/slayer/duoauthproxy-freebsd,1,2,0,1,Duo authproxy patched for building on FreeBSD (pfSense),wsgi.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,8/27/2020
+toddbirchard,chatango-async,https://github.com/toddbirchard/chatango-async,1,0,15,3,🔁🤖 Asynchronous Chatango Client Library,irc.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,8/19/2023
+wonseokyang-de,the-open-source-explorer,https://github.com/wonseokyang-de/the-open-source-explorer,1,0,0,0,Whenever something piques my interest<> I delve into it for fun or to apply what I learn at work.,lb_async.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,3/22/2024
+Kyrillos1,Ekhdm,https://github.com/Kyrillos1/Ekhdm,1,0,0,0,A website for church services to help servers communicate and developing services.,test_streams.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,9/18/2022
+pansanek,TaskManagmentMicroservice,https://github.com/pansanek/TaskManagmentMicroservice,1,1,0,0,Микросервис управления задачами для практической работы РТУ МИРЭА,cli.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,12/3/2023
+tht-jxny,MicroPineTime,https://github.com/tht-jxny/MicroPineTime,1,0,0,16,An OS for the Pine64 PineTime made with python,uasyncio_tcp_close_write.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,5/16/2020
+aws-samples,remote-industrial-job-monitoring-via-an-ui-app-at-edge-with-greengrass-v2,https://github.com/aws-samples/remote-industrial-job-monitoring-via-an-ui-app-at-edge-with-greengrass-v2,1,2,0,12,N/A,__init__.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,6/16/2022
+opensourcerouting,frr-ci-test,https://github.com/opensourcerouting/frr-ci-test,1,1,6,24,IGNORE - FRR Clone for CI Test,_asyncio_backend.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,6/1/2023
+okda-networks,okda-frr,https://github.com/okda-networks/okda-frr,1,2,0,3,N/A,peer.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,8/31/2024
+davischw,frr,https://github.com/davischw/frr,1,0,0,0,N/A,peer.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,11/4/2020
+tjefferson401,pyodide,https://github.com/tjefferson401/pyodide,1,0,0,0,Pyodide build with Unthrow,test_streams.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,9/17/2022
+nsat,poky,https://github.com/nsat/poky,1,0,0,0,A fork of git://git.yoctoproject.org/poky,npy_asyncio.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,10/27/2017
+mfpx,python-http-server,https://github.com/mfpx/python-http-server,1,0,0,0,Very simple python HTTP server,main.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,2/26/2021
+tinylambda,keep,https://github.com/tinylambda/keep,1,1,0,30,Keep coding everyday,py_echo_server.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,4/22/2020
+benbenz,katapult,https://github.com/benbenz/katapult,1,0,0,0,Runs scripts on different cloud services,eltakotool.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,11/4/2022
+kimsy701,Background_Removal,https://github.com/kimsy701/Background_Removal,1,0,0,0,Remove Background in AI Image,b_command.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,10/23/2023
+nunumichael,electrum-dash,https://github.com/nunumichael/electrum-dash,1,1,0,0,N/A,dap_rosetta,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,5/23/2021
+Sengarofficial,Machine_Learning_With_DVC,https://github.com/Sengarofficial/Machine_Learning_With_DVC,1,0,0,0,A practical approach for creating machine learning CI/CD Pipeline with DVC that is data version control.,web_fileresponse.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,1/27/2023
+cheongshiuhong,defi-events-recording,https://github.com/cheongshiuhong/defi-events-recording,1,0,0,1,Project to record events emitted from Smart Contracts,nova_pm.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,6/4/2022
+jssellars,aniket_filed,https://github.com/jssellars/aniket_filed,0,0,0,0,N/A,scrape_lyrics_fr_original.py,pydocs,Pydocs_MustShutdownExecutor,pytest,3/18/2022
+Elves-Core,IAMCkerckerAWS,https://github.com/Elves-Core/IAMCkerckerAWS,0,0,0,0,N/A,line_search.py,pydocs,Pydocs_MustShutdownExecutor,pytest,7/29/2024
+owais-multani,sentry-test,https://github.com/owais-multani/sentry-test,0,0,0,778,N/A,comm.py,pydocs,Pydocs_MustShutdownExecutor,pytest,6/9/2022
+sohailshaik1708,DocumentConsultant,https://github.com/sohailshaik1708/DocumentConsultant,0,0,0,0,N/A,download_warc.py,pydocs,Pydocs_MustShutdownExecutor,pytest,6/21/2023
+prathamsuroshi,major-project,https://github.com/prathamsuroshi/major-project,0,0,0,0,N/A,top_middle_bottom_to_depth_netcdf.py,pydocs,Pydocs_MustShutdownExecutor,pytest,2/21/2024
+efder,bird-classifier-api,https://github.com/efder/bird-classifier-api,0,0,0,0,API for bird classification,controller.py,pydocs,Pydocs_MustShutdownExecutor,pytest,7/28/2021
+melissadu-db,vllm-splitwise,https://github.com/melissadu-db/vllm-splitwise,0,1,0,5,N/A,thurstone_mosteller.py,pydocs,Pydocs_MustShutdownExecutor,pytest,5/20/2024
+henri-priest,misc,https://github.com/henri-priest/misc,0,1,0,6,N/A,GoogleTtsService.py,pydocs,Pydocs_MustShutdownExecutor,pytest,10/15/2018
+jincaiw,myshell,https://github.com/jincaiw/myshell,0,0,0,0,N/A,extract_c4c.py,pydocs,Pydocs_MustShutdownExecutor,pytest,10/5/2024
+anisidina29,ibis,https://github.com/anisidina29/ibis,0,0,0,0,N/A,tcping.py,pydocs,Pydocs_MustShutdownExecutor,pytest,7/30/2024
+dgc-network,coliving-protocol,https://github.com/dgc-network/coliving-protocol,0,0,0,0,N/A,CVE-2021-41773-headercheck.py,pydocs,Pydocs_MustShutdownExecutor,pytest,7/30/2022
+steveya,volatility-forecast,https://github.com/steveya/volatility-forecast,0,0,0,0,This repository contains mode developed codes and classes to my blogs steveya.github.io. As the blog develops<> so will this repository,main.py,pydocs,Pydocs_MustShutdownExecutor,pytest,7/21/2024
+kapbka,crypto-ml,https://github.com/kapbka/crypto-ml,0,0,0,0,N/A,espana_data_selection_stats_unify.py,pydocs,Pydocs_MustShutdownExecutor,pytest,11/17/2023
+ElenaPSA,BevLaneDet_Lanes,https://github.com/ElenaPSA/BevLaneDet_Lanes,0,2,1,0,N/A,once_dataset.py,pydocs,Pydocs_MustShutdownExecutor,pytest,10/31/2023
+msolorio,hasura-graphql-engine-v3-setup,https://github.com/msolorio/hasura-graphql-engine-v3-setup,0,0,0,0,setting up hasura graphql engine v3,event_callback_stream.py,pydocs,Pydocs_MustShutdownExecutor,pytest,9/20/2024
+swarm-workflows,aco-scheduling,https://github.com/swarm-workflows/aco-scheduling,0,0,3,7,N/A,kitti_dataset.py,pydocs,Pydocs_MustShutdownExecutor,pytest,3/29/2024
+buildstream-migration,buildstream,https://github.com/buildstream-migration/buildstream,0,3,0,15,N/A,casserver.py,pydocs,Pydocs_MustShutdownExecutor,pytest,10/5/2020
+Susheelshetty2,dify,https://github.com/Susheelshetty2/dify,0,0,0,0,N/A,utils.py,pydocs,Pydocs_MustShutdownExecutor,pytest,1/25/2024
+ddl-wadkars,llama2-fine-tuning,https://github.com/ddl-wadkars/llama2-fine-tuning,0,0,0,0,N/A,uni_evaluator.py,pydocs,Pydocs_MustShutdownExecutor,pytest,3/14/2024
+shivam37483,Chat-with-PDFs,https://github.com/shivam37483/Chat-with-PDFs,0,0,0,0,N/A,defineBuildingRotation.py,pydocs,Pydocs_MustShutdownExecutor,pytest,4/7/2024
+wizeline,clone-client,https://github.com/wizeline/clone-client,0,0,0,11,N/A,angio-validator.py,pydocs,Pydocs_MustShutdownExecutor,pytest,2/29/2024
+vorodrigues,databricks-demos,https://github.com/vorodrigues/databricks-demos,0,0,0,7,N/A,server.py,pydocs,Pydocs_MustShutdownExecutor,pytest,1/11/2022
+abhinna1,test-python-extension,https://github.com/abhinna1/test-python-extension,0,0,0,9,N/A,test_gx.py,pydocs,Pydocs_MustShutdownExecutor,pytest,9/3/2024
+Nate-Mina,colab,https://github.com/Nate-Mina/colab,0,1,0,19,test,sync_data_to_splunk_multiple_logstores.py,pydocs,Pydocs_MustShutdownExecutor,pytest,10/4/2024
+lucianotonet,vscode-python-tools-extension,https://github.com/lucianotonet/vscode-python-tools-extension,0,0,0,15,N/A,test_futures.py,pydocs,Pydocs_MustShutdownExecutor,pytest,7/22/2024
+rampageoppa,CSC413,https://github.com/rampageoppa/CSC413,0,0,0,0,CSC413 Project,kitti_data_utils.py,pydocs,Pydocs_MustShutdownExecutor,pytest,2/27/2024
+ruidazeng,TradingBots,https://github.com/ruidazeng/TradingBots,0,1,0,0,N/A,pandas_compat.py,pydocs,Pydocs_MustShutdownExecutor,pytest,9/11/2024
+webdevi910,-ray-project,https://github.com/webdevi910/-ray-project,0,0,0,0,Ray is a unified framework for scaling AI and Python applications. Ray consists of a core distributed runtime and a set of AI Libraries for accelerating ML workloads.,pandas_compat.py,pydocs,Pydocs_MustShutdownExecutor,pytest,10/6/2023
+IntelliSys-Lab,Nitro-ray,https://github.com/IntelliSys-Lab/Nitro-ray,0,0,0,0,N/A,pandas_compat.py,pydocs,Pydocs_MustShutdownExecutor,pytest,3/29/2024
+Eashurox,CPDP_ML,https://github.com/Eashurox/CPDP_ML,0,0,0,0,We performed an empirical assessment of the performance of 64 defect prediction models on the defect dataset of five ML projects.,route_datasets_id_individuals.py,pydocs,Pydocs_MustShutdownExecutor,pytest,11/18/2023
+pag-iiitd,Metallicus,https://github.com/pag-iiitd/Metallicus,0,2,0,4,N/A,attack_dynamic_20220812161411.py,pydocs,Pydocs_MustShutdownExecutor,pytest,4/28/2020
+gridgentoo,IgnitePytorch,https://github.com/gridgentoo/IgnitePytorch,0,0,0,0,Реверс инжиниринг IgnitePytorch<> high-level library to help with training and evaluating neural networks in PyTorch flexibly and transparently.,grobid_client.py,pydocs,Pydocs_MustShutdownExecutor,pytest,9/14/2020
+ian-young,API_Scripts,https://github.com/ian-young/API_Scripts,0,1,7,46,API scripts to help automate tasks,cell_with_networkx_20240209160103.py,pydocs,Pydocs_MustShutdownExecutor,pytest,11/6/2023
+jli943,Shrinkable-LLM-,https://github.com/jli943/Shrinkable-LLM-,0,0,0,0,N/A,__main__.py,pydocs,Pydocs_MustShutdownExecutor,pytest,4/15/2024
+Bulbutta,home-away,https://github.com/Bulbutta/home-away,0,0,0,16,Home Away Python,backtest20240814-01.py,pydocs,Pydocs_MustShutdownExecutor,pytest,11/6/2019
+airhao3,telegram-bot-python,https://github.com/airhao3/telegram-bot-python,0,0,0,6,This bot is use to download video,sync.py,pydocs,Pydocs_MustShutdownExecutor,pytest,7/22/2024
+carlosmaniero,cptm_analytics,https://github.com/carlosmaniero/cptm_analytics,0,0,0,0,N/A,plot_signals_sample.py,pydocs,Pydocs_MustShutdownExecutor,pytest,5/19/2016
+Riyya2009,SceneScout,https://github.com/Riyya2009/SceneScout,0,0,0,0,Movie Recommender System,FT.py,pydocs,Pydocs_MustShutdownExecutor,pytest,7/30/2023
+mineevburyat,sdr-pysoft,https://github.com/mineevburyat/sdr-pysoft,0,0,0,0,N/A,token_transfer.py,pydocs,Pydocs_MustShutdownExecutor,pytest,8/9/2024
+Omer-Sella,ldpc,https://github.com/Omer-Sella/ldpc,0,0,0,0,github version of swift,eval.py,pydocs,Pydocs_MustShutdownExecutor,pytest,3/17/2021
+Ablatif6c,HypBO,https://github.com/Ablatif6c/HypBO,0,0,0,0,N/A,gml.py,pydocs,Pydocs_MustShutdownExecutor,pytest,8/14/2023
+chenkxin,2021-math-model-code,https://github.com/chenkxin/2021-math-model-code,0,0,0,0,N/A,documents.py,pydocs,Pydocs_MustShutdownExecutor,pytest,10/13/2021
+zhaoruic-intel,bert_sparse,https://github.com/zhaoruic-intel/bert_sparse,0,0,0,0,N/A,data_querying.py,pydocs,Pydocs_MustShutdownExecutor,pytest,10/25/2021
+yasserfarouk,gaiw2024,https://github.com/yasserfarouk/gaiw2024,0,0,0,0,"Supporting website for the GAIW 2024 paper ""Tentative Acceptance Unique Offers Protocol for Automated Negotiation""",data.py,pydocs,Pydocs_MustShutdownExecutor,pytest,3/31/2024
+liugehaizaixue,pogema_planner,https://github.com/liugehaizaixue/pogema_planner,0,0,0,0,N/A,gpu_rir_simulation.py,pydocs,Pydocs_MustShutdownExecutor,pytest,4/2/2024
+slavachernyak,beam2,https://github.com/slavachernyak/beam2,0,0,0,0,N/A,mixture_generator.py,pydocs,Pydocs_MustShutdownExecutor,pytest,11/16/2021
+ml-in-prod,ml-prjctr,https://github.com/ml-in-prod/ml-prjctr,0,0,0,20,N/A,utils.py,pydocs,Pydocs_MustShutdownExecutor,pytest,9/7/2022
+jackyeung99,higher_order_ranking,https://github.com/jackyeung99/higher_order_ranking,0,0,0,2,N/A,wordle_ai.py,pydocs,Pydocs_MustShutdownExecutor,pytest,5/14/2024
+jakosz,grl-proto,https://github.com/jakosz/grl-proto,0,0,0,1,N/A,shallow.py,pydocs,Pydocs_MustShutdownExecutor,pytest,7/16/2021
+deepin-community,dask,https://github.com/deepin-community/dask,0,1,0,3,N/A,test_shuffle.py,pydocs,Pydocs_MustShutdownExecutor,pytest,10/27/2023
+rootbmb,pyneng-examles-exercises,https://github.com/rootbmb/pyneng-examles-exercises,0,0,0,0,pyneng-examles-exercises,netmiko_processes_submit_exception.py,pydocs,Pydocs_MustShutdownExecutor,pytest,1/6/2024
+Merticx,task,https://github.com/Merticx/task,0,0,0,0,N/A,netmiko_processes_submit_exception.py,pydocs,Pydocs_MustShutdownExecutor,pytest,12/4/2023
+slavachernyak,beam3,https://github.com/slavachernyak/beam3,0,0,0,0,N/A,preprocess.py,pydocs,Pydocs_MustShutdownExecutor,pytest,11/16/2021
+test-action-felix-pelaez,beam,https://github.com/test-action-felix-pelaez/beam,0,0,0,0,N/A,core.py,pydocs,Pydocs_MustShutdownExecutor,pytest,1/11/2022
+potenday-project,tenplestay,https://github.com/potenday-project/tenplestay,0,1,0,18,"2023.12) potenday - Get all notifications what you want by ""Tenplestay"" [ Notification Web Scrapper SaaS ]",correction.py,pydocs,Pydocs_MustShutdownExecutor,pytest,12/6/2023
+mcXrd,pybinbacktester,https://github.com/mcXrd/pybinbacktester,0,0,3,12,backtesting solution for binance trading,preprocessing3_feature.py,pydocs,Pydocs_MustShutdownExecutor,pytest,12/14/2018
+pawelgodula,kagglehomecredit,https://github.com/pawelgodula/kagglehomecredit,0,0,0,0,The code to achieve 5th place (out of 7176 teams) in the Kaggle Home Credit Competition,tg_align.py,pydocs,Pydocs_MustShutdownExecutor,pytest,11/3/2023
+leizton,apytorch,https://github.com/leizton/apytorch,0,0,0,0,pytorch code,alignment_metrics.py,pydocs,Pydocs_MustShutdownExecutor,pytest,1/19/2024
+sophieebuz,HSE_MLDS_project_year1,https://github.com/sophieebuz/HSE_MLDS_project_year1,0,1,1,9,N/A,download_lenta.py,pydocs,Pydocs_MustShutdownExecutor,pytest,9/29/2022
+kthrzsyh,chatbot-internal,https://github.com/kthrzsyh/chatbot-internal,0,0,0,0,N/A,create_predicted_focus_data.py,pydocs,Pydocs_MustShutdownExecutor,pytest,10/30/2023
+LarsvdBrandt,NomadRobotLab,https://github.com/LarsvdBrandt/NomadRobotLab,0,0,0,0,This is a copy of the RobotLab/ NOMAD Oasis repository on GitLab. This repository is created so references can be made. ,prepare_gt.py,pydocs,Pydocs_MustShutdownExecutor,pytest,5/31/2024
+softboiler,boilercore,https://github.com/softboiler/boilercore,0,0,5,55,Common functionality of boiler repositories,preprocessing copy.py,pydocs,Pydocs_MustShutdownExecutor,pytest,8/15/2023
+rjayapra,sample-app-aoai-chatGPT,https://github.com/rjayapra/sample-app-aoai-chatGPT,0,1,0,9,Customized Chat App with OpenAI and RAG ,read-enroll.py,pydocs,Pydocs_MustShutdownExecutor,pytest,5/27/2024
+willsheffler,willutil,https://github.com/willsheffler/willutil,0,0,0,0,N/A,make_rxn_delay_npys.py,pydocs,Pydocs_MustShutdownExecutor,pytest,12/9/2021
+krishnavizster,Object_Detection_Project,https://github.com/krishnavizster/Object_Detection_Project,0,1,0,1,Object_Detection_Project_Using_TensorFlow,test_driver.py,pydocs,Pydocs_MustShutdownExecutor,pytest,8/1/2022
+ducnguyenhuynh,Sen-VoiceAssistant,https://github.com/ducnguyenhuynh/Sen-VoiceAssistant,0,1,0,0,N/A,test_multikernelmanager.py,pydocs,Pydocs_MustShutdownExecutor,pytest,12/15/2021
+hiwotadese,pytorch_mlperf_comms_hooks,https://github.com/hiwotadese/pytorch_mlperf_comms_hooks,0,0,0,0,N/A,reader.py,pydocs,Pydocs_MustShutdownExecutor,pytest,12/21/2023
+Weisshaupt30,Opencode,https://github.com/Weisshaupt30/Opencode,0,0,0,0,N/A,reader.py,pydocs,Pydocs_MustShutdownExecutor,pytest,2/27/2024
+xfgx,Opencodeinterpr1,https://github.com/xfgx/Opencodeinterpr1,0,0,0,0,N/A,to_original_fmt.py,pydocs,Pydocs_MustShutdownExecutor,pytest,3/11/2024
+506-Data-Performance,company-chat,https://github.com/506-Data-Performance/company-chat,0,0,0,22,N/A,convert_parquet_to_jsonl.py,pydocs,Pydocs_MustShutdownExecutor,pytest,11/13/2023
+massimovirno,viwebai,https://github.com/massimovirno/viwebai,0,0,0,0,N/A,convert_parquet_to_jsonl.py,pydocs,Pydocs_MustShutdownExecutor,pytest,12/6/2023
+orhan-alparslan,sample-app-aoai-chatGPT,https://github.com/orhan-alparslan/sample-app-aoai-chatGPT,0,0,0,19,N/A,__init__.py,pydocs,Pydocs_MustShutdownExecutor,pytest,11/5/2023
+NickAzureDevops,FestiveTechCalender2023,https://github.com/NickAzureDevops/FestiveTechCalender2023,0,0,0,0,N/A,__init__.py,pydocs,Pydocs_MustShutdownExecutor,pytest,12/4/2023
+Manish-neu,sample-app-aoai-chatGPT,https://github.com/Manish-neu/sample-app-aoai-chatGPT,0,0,0,27,N/A,plot_one_hit_zipf.py,pydocs,Pydocs_MustShutdownExecutor,pytest,7/19/2024
+anuradha717,ANU-GEN-AI-BOT,https://github.com/anuradha717/ANU-GEN-AI-BOT,0,0,0,22,N/A,data_utils.py,pydocs,Pydocs_MustShutdownExecutor,pytest,5/22/2024
+simonemurari,dl_project,https://github.com/simonemurari/dl_project,0,0,0,0,N/A,data_utils.py,pydocs,Pydocs_MustShutdownExecutor,pytest,7/6/2024
+simonemurari,apai_project,https://github.com/simonemurari/apai_project,0,0,0,0,N/A,celery_executor.py,pydocs,Pydocs_MustShutdownExecutor,pytest,7/19/2024
+nhm0819,mydata-chatbot,https://github.com/nhm0819/mydata-chatbot,0,0,0,0,N/A,Engnet.py,pydocs,Pydocs_MustShutdownExecutor,pytest,8/12/2024
+2lambda123,h2ogpt,https://github.com/2lambda123/h2ogpt,0,0,0,27,N/A,downloadNupload.py,pydocs,Pydocs_MustShutdownExecutor,pytest,6/19/2023
+Laurelea,python_async,https://github.com/Laurelea/python_async,0,0,0,0,utils for python async course,preprocessing.py,pydocs,Pydocs_MustShutdownExecutor,pytest,9/22/2023
+nicolaslecorvec,gravit_waves,https://github.com/nicolaslecorvec/gravit_waves,0,0,0,2,gravit_waves,bugbug*repository.py,pydocs,Pydocs_MustShutdownExecutor,pytest,11/28/2022
+lmBored,Twitter_analyzer,https://github.com/lmBored/Twitter_analyzer,0,0,0,0,N/A,regen_all.py,pydocs,Pydocs_MustShutdownExecutor,pytest,6/27/2024
+Ben-Cliff,Mastering-Object-Oriented-Python,https://github.com/Ben-Cliff/Mastering-Object-Oriented-Python,0,0,1,0,Packt Publishing<> 2nd Edition,test_install.py,pydocs,Pydocs_MustShutdownExecutor,pytest,4/23/2021
+Brianror9r7qw2y5j,fork,https://github.com/Brianror9r7qw2y5j/fork,0,0,0,0,N/A,align_etconformance.py,pydocs,Pydocs_MustShutdownExecutor,pytest,6/17/2023
+Paul6ahm9g08vy54,fork,https://github.com/Paul6ahm9g08vy54/fork,0,0,0,0,N/A,compileall.py,pydocs,Pydocs_MustShutdownExecutor,pytest,6/18/2023
+Engelsgeduld,SPbU_Python_Sem_2,https://github.com/Engelsgeduld/SPbU_Python_Sem_2,0,0,0,12,N/A,pcap_to_csv.py,pydocs,Pydocs_MustShutdownExecutor,pytest,2/16/2024
+fei9747,GDB-Plugins,https://github.com/fei9747/GDB-Plugins,0,0,0,0,N/A,git-fat,pydocs,Pydocs_NoReadAfterAccess,pytest,4/16/2021
+Gy-Hu,GDB-Plugins,https://github.com/Gy-Hu/GDB-Plugins,0,0,0,0,Backup of hongsofwing/GDB-Plugins.git,alice.py,pydocs,Pydocs_NoReadAfterAccess,pytest,5/20/2022
+EnjoyLifeFund,macHighSierra-py36-pkgs,https://github.com/EnjoyLifeFund/macHighSierra-py36-pkgs,0,0,0,0,N/A,image.py,pydocs,Pydocs_NoReadAfterAccess|Pydocs_ShouldNotInstantiateStreamWriter,pytest,9/8/2017
+anderson-github-classroom,csc-369-student,https://github.com/anderson-github-classroom/csc-369-student,0,1,0,0,N/A,image.py,pydocs,Pydocs_NoReadAfterAccess,pytest,12/28/2020
+ansible,test-ansible-release,https://github.com/ansible/test-ansible-release,0,2,0,8,This is not the repository you're looking for. It is only used to test Ansible release processes and tools.,GenerateEntryWiseFigures.py,pydocs,Pydocs_NoReadAfterAccess,pytest,3/7/2023
+MresultHarshalGidh,Wealth-Manager-GenAI,https://github.com/MresultHarshalGidh/Wealth-Manager-GenAI,0,0,0,0,N/A,copy.py,pydocs,Pydocs_NoReadAfterAccess,pytest,9/30/2024
+donalshortt,mujoco_vr,https://github.com/donalshortt/mujoco_vr,0,0,0,0,N/A,fileInfo.py,pydocs,Pydocs_NoReadAfterAccess,pytest,6/4/2024
+adityamillind98,ansible,https://github.com/adityamillind98/ansible,0,0,0,2,N/A,polly.py,pydocs,Pydocs_NoReadAfterAccess,pytest,2/2/2023
+walterchris,openbmc,https://github.com/walterchris/openbmc,0,0,0,0,N/A,gtp-tlv.py,pydocs,Pydocs_NoReadAfterAccess,pytest,1/4/2022
+cloudspacesh,coder-ansible-php-stack,https://github.com/cloudspacesh/coder-ansible-php-stack,0,0,0,0,N/A,create-delegations-from-ostree-repo.py,pydocs,Pydocs_NoReadAfterAccess,pytest,2/7/2024
+leftrightleft,poky,https://github.com/leftrightleft/poky,0,0,0,4,N/A,instaspamv5.py,pydocs,Pydocs_NoReadAfterAccess,pytest,1/22/2022
+alexmihalyk23,YPPRO,https://github.com/alexmihalyk23/YPPRO,0,0,0,4,N/A,setup_config.py,pydocs,Pydocs_NoReadAfterAccess,pytest,2/15/2024
+marcelarosalesj,x.stx-integ,https://github.com/marcelarosalesj/x.stx-integ,0,0,0,0,N/A,countLlcDyn.py,pydocs,Pydocs_NoReadAfterAccess,pytest,4/29/2019
+shenki,openbmc-1,https://github.com/shenki/openbmc-1,0,0,0,0,N/A,cgiserv.py.in,pydocs,Pydocs_NoReadAfterAccess,pytest,3/21/2018
+dl9pf,layer-reorg,https://github.com/dl9pf/layer-reorg,0,2,1,1,A shot at the layer reorg. Next steps in TODO file,package.py,pydocs,Pydocs_NoReadAfterAccess,pytest,7/6/2017
+ArmourLuIEC,Intel-BMC,https://github.com/ArmourLuIEC/Intel-BMC,0,0,0,0,N/A,gtp-tlv.py,pydocs,Pydocs_NoReadAfterAccess,pytest,11/3/2022
+BhuvanKoduru,DBMS-Project,https://github.com/BhuvanKoduru/DBMS-Project,0,0,0,0,N/A,svglib.py,pydocs,Pydocs_NoReadAfterAccess,pytest,12/20/2022
+AdrianC47,Django,https://github.com/AdrianC47/Django,0,0,0,0,"Django 3<> Django Rest Framework,  Bases de datos con Django, Diseño de Templates HTML en Django, Servicios Rest Con Django, Administración de usuarios, Subir tu proyecto Django a un servidor Programación y desarrollo web",svglib.py,pydocs,Pydocs_NoReadAfterAccess,pytest,4/24/2022
+tanvi05pandey,objectDetection,https://github.com/tanvi05pandey/objectDetection,0,0,0,0,An object detection model using yolov5,35543.txt,pydocs,Pydocs_NoReadAfterAccess,pytest,8/3/2022
+xiongyule,GDSTry,https://github.com/xiongyule/GDSTry,0,0,0,0,N/A,manage.py,pydocs,Pydocs_NoReadAfterAccess,pytest,11/11/2022
+becurrie,backup-interfaces,https://github.com/becurrie/backup-interfaces,0,0,0,0,Configure resource backup policies through simple and straight-forward configuration files,allPythonContent.py,pydocs,Pydocs_NoReadAfterAccess,pytest,10/6/2024
+VCTLabs,poky,https://github.com/VCTLabs/poky,0,2,0,0,Poky staging repo,nfsd.py,pydocs,Pydocs_NoReadAfterAccess,pytest,3/8/2014
+brucekaushik,basicblog,https://github.com/brucekaushik/basicblog,0,0,0,0,basic blog project for udacity,plugin.py,pydocs,Pydocs_NoReadAfterAccess,pytest,3/23/2017
+vicentelyrio,.dotfiles,https://github.com/vicentelyrio/.dotfiles,0,0,0,3,my personal dotfiles,utils.py,pydocs,Pydocs_NoReadAfterAccess,pytest,10/13/2022
+2lambda123,galaxyproject-galaxy,https://github.com/2lambda123/galaxyproject-galaxy,0,1,1,16,N/A,naming.py,pydocs,Pydocs_NoReadAfterAccess,pytest,5/30/2024
+kecheste,galaxy,https://github.com/kecheste/galaxy,0,0,0,0,N/A,ica-tcstatus,pydocs,Pydocs_NoReadAfterAccess,pytest,10/9/2024
+jbroadus,poky,https://github.com/jbroadus/poky,0,0,0,0,N/A,android_platform_backend.py,pydocs,Pydocs_NoReadAfterAccess,pytest,4/2/2020
+wmamills,poky,https://github.com/wmamills/poky,0,0,0,0,My fork of Yocto projects poky distro,misc.py,pydocs,Pydocs_NoReadAfterAccess,pytest,2/29/2024
+Beerlesklopfer,bbb-linuxcnc,https://github.com/Beerlesklopfer/bbb-linuxcnc,0,0,0,0,N/A,misc.py,pydocs,Pydocs_NoReadAfterAccess,pytest,2/17/2024
+eglinuxer,poky,https://github.com/eglinuxer/poky,0,0,0,0,N/A,utils.py,pydocs,Pydocs_NoReadAfterAccess,pytest,6/27/2023
+jdswensen,poky,https://github.com/jdswensen/poky,0,0,0,0,N/A,utils.py,pydocs,Pydocs_NoReadAfterAccess,pytest,10/7/2023
+edbutina,yocto-beaglebone-black,https://github.com/edbutina/yocto-beaglebone-black,0,0,0,0,Yocto source tree that contains custom layer for beagle bone black hardware.  Packages/tools for working with serial ports and USB drivers for Nimbelink modem module.  End goal is to create a device that logs debug data from a serial port and report the logs to a remote server.,utils.py,pydocs,Pydocs_NoReadAfterAccess,pytest,10/10/2023
+bopopescu,Full-Stack-Web-Development-NanoDegree-,https://github.com/bopopescu/Full-Stack-Web-Development-NanoDegree-,0,0,0,0,N/A,bulkloader.py,pydocs,Pydocs_NoReadAfterAccess,pytest,7/25/2020
+chungeun-choi,ansible-2.12.x,https://github.com/chungeun-choi/ansible-2.12.x,0,0,0,0,N/A,YoutubeDL.py,pydocs,Pydocs_NoReadAfterAccess,pytest,9/27/2024
+morelab,toad_sp_command,https://github.com/morelab/toad_sp_command,0,0,0,1,Smart Plug controller component for the IoToad paltform,prismatik.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,3/30/2020
+rozachatz,WingWatch,https://github.com/rozachatz/WingWatch,0,0,0,6,WingWatch is an aircraft tracking app that combines real-time tracking with antenna orientation control and interactive map.,prettysocks.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,10/1/2024
+jameswagner,coolcache,https://github.com/jameswagner/coolcache,0,0,0,0,N/A,ipyclient.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,6/10/2024
+yunfeiili,fantastic-rotary-phone,https://github.com/yunfeiili/fantastic-rotary-phone,0,0,0,1,N/A,irc.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,4/21/2023
+and227,spammer_back,https://github.com/and227/spammer_back,0,0,0,1,N/A,controller.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,5/6/2021
+seadanda,hev,https://github.com/seadanda/hev,0,0,0,0,Mirror of High Energy Ventilator code hosted at https://ohwr.org/project/hev,tools.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,2/4/2021
+theion-batteries,soft_lib_modules,https://github.com/theion-batteries/soft_lib_modules,0,0,0,0,Library required to Create SoftwareModules for devices,client.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,9/1/2023
+TrellixVulnTeam,djangogram_7ZC2,https://github.com/TrellixVulnTeam/djangogram_7ZC2,0,0,0,0,N/A,connection.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,10/13/2022
+darrylwest,python-play,https://github.com/darrylwest/python-play,0,0,0,0,playground for python math projects,proxy_az.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,2/3/2023
+orgTestCodacy11KRepos110MB,repo-9593-giskard,https://github.com/orgTestCodacy11KRepos110MB/repo-9593-giskard,0,0,0,30,N/A,base_client.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,1/30/2023
+nishant0226,Insurance-Premium-Prediction,https://github.com/nishant0226/Insurance-Premium-Prediction,0,0,0,0,N/A,tcp_client.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly|Pydocs_ShouldNotInstantiateStreamWriter,pytest,8/17/2023
+smirnovds1990,test_tasks,https://github.com/smirnovds1990/test_tasks,0,0,0,0,N/A,stream.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,8/12/2024
+kernsuite-debian,spead2,https://github.com/kernsuite-debian/spead2,0,0,0,0,N/A,uasyncio_tcp_close_write.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,10/11/2018
+morelab,toad_sp_data,https://github.com/morelab/toad_sp_data,0,0,0,1,Smartplug data collection agent for IoToad,_asyncio_backend.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,3/4/2020
+biskweet,injected-frr,https://github.com/biskweet/injected-frr,0,0,0,0,N/A,peer.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,8/22/2024
+shadowjohn,ms4w_MSSQL,https://github.com/shadowjohn/ms4w_MSSQL,0,0,0,0,我的 ms4w_MSSQL,test_streams.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,8/12/2024
+HHWS-Public-Repos,yoctoproject.org-poky,https://github.com/HHWS-Public-Repos/yoctoproject.org-poky,0,0,0,0,N/A,npy_asyncio.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,10/20/2022
+moevm,mse1h2024-xuantie-yocto,https://github.com/moevm/mse1h2024-xuantie-yocto,0,0,0,2,N/A,npy_asyncio.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,2/24/2024
+firish,WebRTC-app,https://github.com/firish/WebRTC-app,0,0,0,0,A server-client app using asyncio and aiortc to transmit media-data,main.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,9/11/2023
+sh95fit,Free_Project,https://github.com/sh95fit/Free_Project,0,0,0,0,자유로운 프로젝트,server.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,11/11/2022
+costaalacuparmare,laburi-acs,https://github.com/costaalacuparmare/laburi-acs,0,0,0,0,N/A,async_server_3.6.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,12/2/2022
+cosandr,mrbot,https://github.com/cosandr/mrbot,0,0,0,0,A Discord bot for a bunch of stuff,prog_server.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,8/16/2020
+carlosmaniero,asyncio_server,https://github.com/carlosmaniero/asyncio_server,0,0,0,0,N/A,simple_http.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,2/8/2016
+dlove24,lb_test,https://github.com/dlove24/lb_test,0,0,0,17,N/A,server.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,3/15/2024
+tecworks-dev,AGENT_FIRST_TEST,https://github.com/tecworks-dev/AGENT_FIRST_TEST,0,0,0,0,N/A,Server_sec_rodrigo.py,pydocs,Pydocs_ShouldUseStreamWriterCorrectly,pytest,7/19/2024
+AEPP294,wyoming,https://github.com/AEPP294/wyoming,0,0,0,0,N/A,__init__.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,2/7/2024
+sally-20,InteractiveIntelligenceStudyAid,https://github.com/sally-20/InteractiveIntelligenceStudyAid,0,0,0,0,N/A,client_reqrep.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,11/17/2023
+yuanjiajun999,AI_Nirvana,https://github.com/yuanjiajun999/AI_Nirvana,0,0,0,11,N/A,provider.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,6/24/2024
+buhman,microscopic,https://github.com/buhman/microscopic,0,0,6,0,generic pipeline DSL and execution engine,streams.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,6/7/2017
+imakash3011,Langchain_learning,https://github.com/imakash3011/Langchain_learning,0,0,0,0,Learning GenerativeAI and related concepts,client_reqrep.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,9/9/2024
+elrichardby11,Pokedex,https://github.com/elrichardby11/Pokedex,0,0,0,0,N/A,client_reqrep.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,1/5/2024
+Sauseda15,good-company-event-bot,https://github.com/Sauseda15/good-company-event-bot,0,0,0,0,N/A,web_protocol.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,9/2/2024
+Touseeq99,ASK-THE-PDF-GEMINI,https://github.com/Touseeq99/ASK-THE-PDF-GEMINI,0,0,0,0,N/A,client_reqrep.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,8/1/2024
+intellivoid,CoffeeHousePy,https://github.com/intellivoid/CoffeeHousePy,0,1,0,0,Full implementation of CoffeeHouse for Python and all it's required dependencies,http_writer.pyi,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,12/25/2020
+JITDEB,Calculator_app,https://github.com/JITDEB/Calculator_app,0,0,0,0,Internship Projects ,__init__.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,8/6/2024
+jjunac,nanohttpy,https://github.com/jjunac/nanohttpy,0,0,0,0,NanoHttpy is an ultra lightweight web framework written in Python. It features Flask/FastAPI-like API to avoid learning yet another web framework<> with minimal memory footprint.,util.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,8/7/2022
+nilayjain0611,BookBot,https://github.com/nilayjain0611/BookBot,0,0,0,0,N/A,client_reqrep.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,10/7/2024
+shaistabibi,MCQGen,https://github.com/shaistabibi/MCQGen,0,0,0,0,N/A,sh.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,9/6/2024
+jucacrispim,toxiccore,https://github.com/jucacrispim/toxiccore,0,0,0,0,toxiccore is part of toxicbuild,LowLevel.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,6/8/2023
+agserrano3,modal-client,https://github.com/agserrano3/modal-client,0,0,0,2,N/A,sandbox.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,7/16/2024
+hugo90082,TWCD,https://github.com/hugo90082/TWCD,0,0,0,1,N/A,b_command.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,7/20/2020
+HarshitKr3005,BentoML-Learning,https://github.com/HarshitKr3005/BentoML-Learning,0,0,0,0,N/A,baud.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,8/15/2024
+ParjitaMunshi,UMLS-Medgraph-Diagnosis-Assistant,https://github.com/ParjitaMunshi/UMLS-Medgraph-Diagnosis-Assistant,0,0,0,0,"A medical diagnosis assistant leveraging UMLS<> knowledge graphs, and A",utils.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,9/13/2024
+UncBlaq,tuition2,https://github.com/UncBlaq/tuition2,0,0,0,0,N/A,web_protocol.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,8/25/2024
+SnehaBiswas,Capstone-Project,https://github.com/SnehaBiswas/Capstone-Project,0,0,0,0,N/A,web_protocol.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,7/27/2024
+aidentified-llc,matching-api-cli,https://github.com/aidentified-llc/matching-api-cli,0,0,0,34,Aidentified matching API CLI,moshi.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,11/23/2021
+s1f102103909,project2023_team3,https://github.com/s1f102103909/project2023_team3,0,0,0,0,N/A,http_writer.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,7/19/2023
+gblk,pymodbus,https://github.com/gblk/pymodbus,0,1,0,0,N/A,cli.py,pydocs,Pydocs_ShouldNotInstantiateStreamWriter,pytest,1/26/2024
