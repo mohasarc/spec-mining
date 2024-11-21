@@ -1,0 +1,370 @@
+Owner,Repository Name,Repository Link,Stars,Forks,Issues,Pull Requests,Description,File Name,Dependency Name,Spec Name,Testing Framework,Created At
+apache,spark,https://github.com/apache/spark,39563,26968,0,48636,Apache Spark - A unified analytics engine for large-scale data processing,test_mirror.py,pydocs,Pydocs_MustFlushMmap,pytest,2/25/2014
+patroni,patroni,https://github.com/patroni/patroni,6749,829,1745,1440,"A template for PostgreSQL High Availability with Etcd<> Consul, ZooKeeper, or Kubernetes",Client.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,7/8/2015
+PaddlePaddle,PaddleNLP,https://github.com/PaddlePaddle/PaddleNLP,12072,2902,3601,5626,"👑 Easy-to-use and powerful NLP and LLM library with 🤗 Awesome model zoo<> supporting wide-range of NLP tasks from research to industrial applications, including 🗂Text Classification,  🔍 Neural Search, ❓ Question Answering, ℹ️ Information Extraction, 📄 Document Intelligence, 💌 Sentiment Analysis etc. ",image.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,2/5/2021
+google,oss-fuzz,https://github.com/google/oss-fuzz,10482,2110,2365,10222,OSS-Fuzz - continuous fuzzing for open source software.,osxMosdefShellServer.py,pydocs,Pydocs_MustFlushMmap,pytest,7/20/2016
+cider-security-research,cicd-goat,https://github.com/cider-security-research/cicd-goat,1934,301,27,62,A deliberately vulnerable CI/CD environment. Learn CI/CD security through multiple challenges.,HibernetV3.0.py,pydocs|requests,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket|Requests_MustCloseSession,pytest,3/27/2022
+Azure,Azure-Sentinel,https://github.com/Azure/Azure-Sentinel,4569,2879,1372,9898,Cloud-native SIEM for intelligent security analytics for your entire enterprise.,_objects.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,8/18/2018
+allenai,OLMo,https://github.com/allenai/OLMo,4559,454,196,542,"Modeling<> training, eval, and inference code for OLMo",language_modeling_hf.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,2/20/2023
+ydb-platform,ydb,https://github.com/ydb-platform/ydb,3982,464,1881,9057,YDB is an open source Distributed SQL Database that combines high availability and scalability with strong consistency and ACID transactions,modscan,pydocs,Pydocs_MustCloseSocket,pytest,2/7/2022
+determined-ai,determined,https://github.com/determined-ai/determined,3027,346,385,9743,"Determined is an open-source machine learning platform that simplifies distributed training<> hyperparameter tuning, experiment tracking, and resource management. Works with PyTorch and TensorFlow.",test_sock_lowlevel.py,pydocs,Pydocs_MustCloseSocket,pytest,4/7/2020
+BlackArch,blackarch,https://github.com/BlackArch/blackarch,2807,555,2543,1644,An ArchLinux based distribution for penetration testers and security researchers.,test_sock_lowlevel.py,pydocs,Pydocs_MustCloseSocket,pytest,8/16/2012
+iree-org,iree,https://github.com/iree-org/iree,2794,586,3917,14918,A retargetable MLIR-based machine learning compiler and runtime toolkit.,bram.py,pydocs,Pydocs_MustFlushMmap,pytest,9/12/2019
+mars-project,mars,https://github.com/mars-project/mars,2703,321,1178,2158,"Mars is a tensor-based unified framework for large-scale data computation which scales numpy<> pandas, scikit-learn and Python functions.",realtime_viewport.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,12/5/2018
+dvlab-research,LongLoRA,https://github.com/dvlab-research/LongLoRA,2622,274,173,22,Code and documents of LongLoRA and LongAlpaca (ICLR 2024 Oral),map.py,pydocs,Pydocs_MustFlushMmap,pytest,9/21/2023
+lowRISC,opentitan,https://github.com/lowRISC/opentitan,2560,745,6773,18114,OpenTitan: Open source silicon root of trust,test_vpi_mmap.py,pydocs,Pydocs_MustFlushMmap,pytest,8/26/2019
+pytorch,rl,https://github.com/pytorch/rl,2291,303,625,1864,"A modular<> primitive-first, python-first PyTorch library for Reinforcement Learning.",heap.py,pydocs,Pydocs_MustFlushMmap,pytest,2/1/2022
+microsoft,DeBERTa,https://github.com/microsoft/DeBERTa,1982,218,123,30,The implementation of DeBERTa,ptmalloc.py,pydocs,Pydocs_MustFlushMmap,pytest,6/8/2020
+ytsaurus,ytsaurus,https://github.com/ytsaurus/ytsaurus,1876,133,384,521,YTsaurus is a scalable and fault-tolerant open-source big data platform.,modscan,pydocs,Pydocs_MustCloseSocket,pytest,12/5/2022
+MineDojo,MineDojo,https://github.com/MineDojo/MineDojo,1781,155,122,16,Building Open-Ended Embodied Agents with Internet-Scale Knowledge,cam_socket.py,pydocs,Pydocs_MustCloseSocket,pytest,6/18/2022
+deluge-torrent,deluge,https://github.com/deluge-torrent/deluge,1545,326,0,467,Deluge BitTorrent client - Git mirror<> PRs only,test_socketserver.py,pydocs,Pydocs_MustCloseSocket,pytest,2/20/2014
+roboflow,inference,https://github.com/roboflow/inference,1339,121,134,611,"A fast<> easy-to-use, production-ready inference server for computer vision supporting deployment of many popular model architectures and fine-tuned models.",shm_broadcast.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,7/31/2023
+cloudera,hue,https://github.com/cloudera/hue,1168,351,1232,2540,Open source SQL Query Assistant service for Databases/Warehouses,server.py,pydocs,Pydocs_MustCloseSocket,pytest,6/21/2010
+neptune-ai,neptune-client,https://github.com/neptune-ai/neptune-client,578,63,238,1635,📘 The experiment tracker for foundation model training,cifar_old.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,2/11/2019
+ryfeus,lambda-packs,https://github.com/ryfeus/lambda-packs,1113,235,48,11,Precompiled packages for AWS Lambda,mmap_read.py,pydocs,Pydocs_MustFlushMmap,pytest,10/19/2016
+PygmalionAI,aphrodite-engine,https://github.com/PygmalionAI/aphrodite-engine,1076,118,188,578,Large-scale LLM inference engine,shared_memory_generator.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,6/23/2023
+Athena-OS,athena,https://github.com/Athena-OS/athena,1036,79,132,15,Athena OS is a Arch/Nix-based distro focused on Cybersecurity. Learn<> practice and enjoy with any hacking tool!,modscan,pydocs,Pydocs_MustCloseSocket,pytest,6/14/2022
+Charcoal-SE,SmokeDetector,https://github.com/Charcoal-SE/SmokeDetector,475,176,407,13243,Headless chatbot that detects spam and posts links to it in chatrooms for quick deletion.,mp.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,1/30/2014
+v6d-io,v6d,https://github.com/v6d-io/v6d,834,111,616,1336,vineyard (v6d): an in-memory immutable data manager. (Project under CNCF<> TAG-Storage),shared_memory_generator.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,10/23/2020
+AgnostiqHQ,covalent,https://github.com/AgnostiqHQ/covalent,768,88,813,1014,Pythonic tool for orchestrating machine-learning/high performance/quantum-computing workflows in heterogeneous compute environments.,alphaomegarawio.py,pydocs,Pydocs_MustFlushMmap,pytest,11/3/2021
+GAIR-NLP,anole,https://github.com/GAIR-NLP/anole,662,36,43,2,Anole: An Open<> Autoregressive and Native Multimodal Models for Interleaved Image-Text Generation,SnifferProcess.py,pydocs,Pydocs_MustCloseSocket,pytest,7/1/2024
+optuna,optuna-dashboard,https://github.com/optuna/optuna-dashboard,519,86,181,737,Real-time Web Dashboard for Optuna.,backup_cloud.py,pydocs,Pydocs_MustCloseSocket,pytest,10/24/2020
+oracle,oci-cli,https://github.com/oracle/oci-cli,442,184,417,420,Command Line Interface for Oracle Cloud Infrastructure,hackerone.py,requests,Requests_MustCloseSession,pytest,11/4/2016
+mees,calvin,https://github.com/mees/calvin,385,50,80,12,CALVIN - A benchmark for Language-Conditioned Policy Learning for Long-Horizon Robot Manipulation Tasks,array.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,7/20/2021
+nipy,nipy,https://github.com/nipy/nipy,383,139,170,412,Neuroimaging in Python FMRI analysis package,util.py,pydocs,Pydocs_MustFlushMmap,pytest,5/2/2010
+gem,oq-engine,https://github.com/gem/oq-engine,380,269,1418,8667,OpenQuake Engine: a software for Seismic Hazard and Risk Analysis,DEPRECATED_latent_evaluator.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,6/28/2010
+HKUNLP,ChunkLlama,https://github.com/HKUNLP/ChunkLlama,346,18,21,4,"[ICML'24]  Data and code for our paper ""Training-Free Long-Context Scaling of Large Language Models""",loader.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,2/19/2024
+kk7ds,chirp,https://github.com/kk7ds/chirp,327,190,0,1151,Official git repo for the CHIRP project,bmaptool,pydocs,Pydocs_MustFlushMmap,pytest,8/22/2021
+Josverl,micropython-stubs,https://github.com/Josverl/micropython-stubs,159,22,64,688,Stubs of most MicroPython ports<> boards and versions to make writing code that much simpler.,Server.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,10/17/2020
+Azure,app-service-linux-docs,https://github.com/Azure/app-service-linux-docs,139,79,66,172,Azure App Service: Frequently Asked Questions on Linux App Service,command_server.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,2/27/2019
+vyperlang,titanoboa,https://github.com/vyperlang/titanoboa,251,50,121,215,a vyper interpreter,shareddataset.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,6/24/2022
+ryanmrestivo,red-team,https://github.com/ryanmrestivo/red-team,125,34,0,0,"Notes<> red team materials, testing tools, etc.",master_daemon_filter.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,4/12/2021
+SonarSource,sonar-python,https://github.com/SonarSource/sonar-python,230,87,0,2108,:snake: SonarQube Python plugin,test_socketserver.py,pydocs,Pydocs_MustCloseSocket,pytest,6/27/2012
+mindflowai,mindflow,https://github.com/mindflowai/mindflow,225,20,19,112,"🧠 AI-powered CLI git wrapper<> boilerplate code generator, chat history manager, and code search engine to streamline your dev workflow 🌊",model.py,requests,Requests_MustCloseSession,pytest,12/10/2022
+cuebook,CueObserve,https://github.com/cuebook/CueObserve,224,22,69,126,Timeseries Anomaly detection and Root Cause Analysis on data in SQL data warehouses and databases,anomalyDetectionTasks.py,requests,Requests_MustCloseSession,pytest,6/22/2021
+mahmoud,clastic,https://github.com/mahmoud/clastic,157,19,14,26,🏔️ A functional web framework that streamlines explicit development practices while eliminating global state.,server.py,pydocs,Pydocs_MustCloseSocket,pytest,11/23/2012
+google,nsscache,https://github.com/google/nsscache,143,53,68,152,asynchronously synchronise local NSS databases with remote directory services,test_vpi_mmap.py,pydocs,Pydocs_MustFlushMmap,pytest,5/27/2014
+the-virtual-brain,tvb-root,https://github.com/the-virtual-brain/tvb-root,123,101,22,699,Main TVB codebase,dynamic_dataset.py,pydocs,Pydocs_MustFlushMmap,pytest,10/15/2019
+blindpandas,bookworm,https://github.com/blindpandas/bookworm,122,38,167,86,The Universally Accessible document Reader,data_manager.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,6/2/2019
+LiberTEM,LiberTEM,https://github.com/LiberTEM/LiberTEM,112,67,711,976,Open pixelated STEM framework,shared_memory_utils.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,1/10/2018
+pittcsc,PittAPI,https://github.com/pittcsc/PittAPI,108,34,58,148,An API to easily get data from the University of Pittsburgh,review.py,requests,Requests_MustCloseSession,pytest,7/24/2015
+jhu-lcsr,good_robot,https://github.com/jhu-lcsr/good_robot,107,29,5,16,"""Good Robot! Now Watch This!"": Repurposing Reinforcement Learning for Task-to-Task Transfer<> and “Good Robot!”: Efficient Reinforcement Learning for Multi-Step Visual Tasks with Sim to Real Transfer",core.py,pydocs,Pydocs_MustCloseSocket,pytest,7/25/2019
+pybitcash,bitcash,https://github.com/pybitcash/bitcash,97,35,70,77,BitCash: Python Bitcoin Cash Library (fork of ofek's Bit),baseClass.py,pydocs,Pydocs_MustCloseSocket,pytest,12/4/2017
+justinmoon,bitcoincorps,https://github.com/justinmoon/bitcoincorps,48,17,2,13,A bitcoin programming class,_utils.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,7/23/2018
+mchardysam,python-idex,https://github.com/mchardysam/python-idex,92,47,44,4,IDEX v3 Exchange REST API python implementation,casjobs_auto.py,requests,Requests_MustCloseSession,pytest,11/15/2017
+oracle,accelerated-data-science,https://github.com/oracle/accelerated-data-science,87,43,19,963,"ADS is the Oracle Data Science Cloud Service's python SDK supporting<> model ops (train/eval/deploy), along with running workloads on Jobs and Pipeline resources.",fuzz_itertoolz.py,pydocs,Pydocs_MustFlushMmap,pytest,2/7/2022
+haosulab,ManiSkill2-Learn,https://github.com/haosulab/ManiSkill2-Learn,80,13,30,4,N/A,shm_context.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,8/1/2022
+metadriverse,metaurban,https://github.com/metadriverse/metaurban,78,5,7,0,MetaUrban: An Embodied AI Simulation Platform for Urban Micromobility,Checks.py,pydocs,Pydocs_MustCloseSocket,pytest,6/12/2024
+barronh,pseudonetcdf,https://github.com/barronh/pseudonetcdf,76,34,94,55,PseudoNetCDF like NetCDF except for many scientific format backends,graphic.py,pydocs,Pydocs_MustFlushMmap,pytest,3/16/2015
+coreboot,chrome-ec,https://github.com/coreboot/chrome-ec,76,48,0,0,Mirror of https://chromium.googlesource.com/chromiumos/platform/ec,transport_base.py,pydocs,Pydocs_MustCloseSocket,pytest,2/1/2016
+InternalError503,cyberfox,https://github.com/InternalError503/cyberfox,71,14,0,32,cyberfox code repository,protocol.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,12/24/2014
+UKP-SQuARE,square-core,https://github.com/UKP-SQuARE/square-core,71,14,31,570,SQuARE: Software for question answering research.,sdl-helper.py,requests,Requests_MustCloseSession,pytest,2/3/2021
+PacktPublishing,Ansible-for-Real-life-Automation,https://github.com/PacktPublishing/Ansible-for-Real-life-Automation,69,76,0,20,Ansible for Real-Life Automation<> published by Packt,example1.py,requests,Requests_MustCloseSession,pytest,11/15/2021
+IsaacRe,vllm-kvcompress,https://github.com/IsaacRe/vllm-kvcompress,65,4,1,0,KV cache compression for high-throughput LLM inference,UltraDict.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,3/23/2024
+nanograv,enterprise,https://github.com/nanograv/enterprise,65,63,108,277,"ENTERPRISE (Enhanced Numerical Toolbox Enabling a Robust PulsaR Inference SuitE) is a pulsar timing analysis code<> aimed at noise analysis, gravitational-wave searches, and timing model analysis.",shmemIface.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,1/17/2017
+nickrusso42518,pluralsight,https://github.com/nickrusso42518/pluralsight,32,29,0,0,Course content,gripper_2f85.py,pydocs|requests,Pydocs_MustCloseSocket|Requests_MustCloseSession,pytest,10/5/2021
+izneo-get,izneo-get,https://github.com/izneo-get/izneo-get,61,13,41,23,Récupérer des BDs dans la limite des capacités de notre compte Izneo.,readindex.py,requests,Requests_MustCloseSession,pytest,9/5/2019
+Labs22,BlackServerOS,https://github.com/Labs22/BlackServerOS,58,31,0,150,N/A,manager.py,pydocs,Pydocs_MustCloseSocket,pytest,6/30/2017
+DragonHPC,dragon,https://github.com/DragonHPC/dragon,57,6,11,14,Dragon distributed runtime for HPC and AI applications and workflows,env.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,9/12/2023
+scylladb,scylla-cluster-tests,https://github.com/scylladb/scylla-cluster-tests,56,93,1550,7489,Tests for Scylla Clusters,NFOLagv2,pydocs,Pydocs_MustCloseSocket,pytest,12/29/2015
+instadeepai,fastpbrl,https://github.com/instadeepai/fastpbrl,53,3,1,1,Vectorization techniques for fast population-based training.,vox_scene.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,6/22/2022
+moverseai,moai,https://github.com/moverseai/moai,52,5,1,0,moai is a PyTorch-based AI Model Development Kit (MDK) created to improve data-driven model workflows<> design and reproducibility.,historical_tweets.py,pydocs,Pydocs_MustFlushMmap,pytest,1/27/2021
+amoghbl1,tor-browser,https://github.com/amoghbl1/tor-browser,50,16,16,22,Orfox - A Tor Browser for Android,android_device.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,5/19/2015
+roytam1,UXP,https://github.com/roytam1/UXP,48,8,0,12,UXP commits smorgasbord. Picking changes without removing XP/Vista and WebExtensions support. My custom changes will be in `custom` branch. Default `tracking` branch is not for compiling. Support requests should be raised in my blog comment forms below.,android_device.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,2/14/2019
+gethue,hue,https://github.com/gethue/hue,45,21,13,94,Open source SQL Query Assistant service for Databases/Warehouses,server.py,pydocs,Pydocs_MustCloseSocket,pytest,4/19/2019
+MetPX,sarracenia,https://github.com/MetPX/sarracenia,45,22,786,471,https://MetPX.github.io/sarracenia,terminal.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,3/1/2018
+NL2Code,CodeS,https://github.com/NL2Code/CodeS,15,0,0,0,N/A,core.py,pydocs,Pydocs_MustFlushMmap|Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,3/25/2024
+jest-community,jest-pytest,https://github.com/jest-community/jest-pytest,42,8,5,149,A Jest and Pytest integration made in heaven 💖,pyopenssl.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,5/19/2018
+WENGSYX,CirBERTa,https://github.com/WENGSYX/CirBERTa,38,2,6,0,Apply the Circular to the Pretraining Model,mmap_read.py,pydocs,Pydocs_MustFlushMmap,pytest,4/14/2022
+bgoonz,awesome-4-new-developers,https://github.com/bgoonz/awesome-4-new-developers,37,13,7,152,Top repos for new developers all in one place,vadalog.py,requests,Requests_MustCloseSession,pytest,8/20/2021
+mees,hulc2,https://github.com/mees/hulc2,36,3,9,1,[ICRA2023] Grounding Language with Visual Affordances over Unstructured Data,tf_utils.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,11/6/2022
+swj0419,in-context-pretraining,https://github.com/swj0419/in-context-pretraining,35,3,6,1,N/A,attacker.py,pydocs,Pydocs_MustFlushMmap,pytest,1/5/2024
+bitwiseworks,mozilla-os2,https://github.com/bitwiseworks/mozilla-os2,34,7,279,11,Mozilla for OS/2 and OS/2-based systems,mc_bin_server.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,3/27/2013
+aws-neuron,neuronx-nemo-megatron,https://github.com/aws-neuron/neuronx-nemo-megatron,31,11,5,29,N/A,MetaArray.py,pydocs,Pydocs_MustFlushMmap,pytest,5/26/2023
+stencila,hub,https://github.com/stencila/hub,31,4,381,1023,☸️ Hub for executable documents,nettruyen.py,requests,Requests_MustCloseSession,pytest,11/11/2015
+SophieHYe,PreciseBugs,https://github.com/SophieHYe/PreciseBugs,15,7,2,0,N/A,fuzz_itertoolz.py,pydocs,Pydocs_MustFlushMmap|Pydocs_MustCloseSocket,pytest,7/19/2023
+kzxyo,skidcity,https://github.com/kzxyo/skidcity,15,8,1,0,discord bots leaked src (skid it skidders),rangefinder_footage.py,pydocs|requests,Pydocs_MustCloseSocket|Requests_MustCloseSession,pytest,5/22/2023
+cndn,intelligent-code-completion,https://github.com/cndn/intelligent-code-completion,15,12,2,1,N/A,server.py,pydocs|requests,Pydocs_MustCloseSocket|Requests_MustCloseSession,pytest,10/2/2017
+xuanlinli17,corl_22_frame_mining,https://github.com/xuanlinli17/corl_22_frame_mining,25,0,2,0,[CoRL22] Frame Mining - a Free Lunch for Learning Robotic Manipulation from 3D Point Clouds,parallel_state.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,10/13/2022
+lz1oceani,pointcloud_rl,https://github.com/lz1oceani/pointcloud_rl,24,1,3,0,N/A,image_organ_sampler_async.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,6/4/2023
+bitdust-io,public,https://github.com/bitdust-io/public,23,3,1,209,BitDust project source codes : official Public Git repository (mirror on GitHub) : https://bitdust.io,objects.py,pydocs,Pydocs_MustFlushMmap,pytest,11/19/2017
+bitdust-io,devel,https://github.com/bitdust-io/devel,22,12,33,775,BitDust project source codes development cycle<> official Development Git repository (mirror on GitHub) : https://bitdust.io,syzygy.py,pydocs,Pydocs_MustFlushMmap,pytest,11/26/2017
+chengkanghua,python-note,https://github.com/chengkanghua/python-note,22,20,1,0,this is my lern python note ,servidor.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,8/15/2021
+PrymeTyme,OpenBBDashboard,https://github.com/PrymeTyme/OpenBBDashboard,22,1,1,2,Relative Strength Stock Screener powered by OpenBB,boredHumans2.py,requests,Requests_MustCloseSession,pytest,5/11/2023
+ceph,ceph-ci,https://github.com/ceph/ceph-ci,20,49,0,181,ceph.git clone as source for CI,server.py,pydocs,Pydocs_MustCloseSocket,pytest,5/22/2015
+mlcommons,inference_results_v2.1,https://github.com/mlcommons/inference_results_v2.1,18,19,6,5,This repository contains the results and code for the MLPerf™ Inference v2.1 benchmark.,shared_ndarray.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,9/8/2022
+arianhosseini,negation-learning,https://github.com/arianhosseini/negation-learning,16,2,5,1,"code for our paper ""Understanding by Understanding Not: Modeling Negation in Language Models""",maxplus_24_75.py,pydocs,Pydocs_MustFlushMmap,pytest,12/19/2019
+airo-ugent,airo-mono,https://github.com/airo-ugent/airo-mono,16,1,76,72,Python packages for robotic manipulation @ IDLab AI & Robotics Lab - UGent - imec,task.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,11/11/2022
+amzn,rheoceros,https://github.com/amzn/rheoceros,16,8,0,8,Cloud-based AI / ML workflow and data application development framework,session.py,requests,Requests_MustCloseSession,pytest,3/2/2022
+TTimelord,Sim2Real2,https://github.com/TTimelord/Sim2Real2,15,2,7,2,[ICRA 2023] Sim2Real^2: Actively Building Explicit Physics Model for Precise Articulated Object Manipulation,server.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,2/12/2023
+vessl-ai,examples,https://github.com/vessl-ai/examples,14,28,0,69,This repository contains VESSL AI examples,format.py,pydocs,Pydocs_MustFlushMmap,pytest,10/22/2020
+juttayaya,devops,https://github.com/juttayaya/devops,14,6,0,1,Ansible<> Kubernetes,vsphere_copy.py,pydocs,Pydocs_MustFlushMmap,pytest,3/21/2017
+lumanjiao,XLS_BigData_Hue,https://github.com/lumanjiao/XLS_BigData_Hue,14,5,0,1,新零售大数据平台-运维监控平台的开发,base.py,pydocs,Pydocs_MustCloseSocket,pytest,1/10/2019
+fengbingchun,PyTorch_Test,https://github.com/fengbingchun/PyTorch_Test,14,4,2,8,PyTorch's usage,test_socket_ssl.py,pydocs,Pydocs_MustCloseSocket,pytest,1/24/2019
+stepansnigirev,chosen_nonce_demo,https://github.com/stepansnigirev/chosen_nonce_demo,13,5,1,0,two jupyter notebooks showing what could go wrong with nonces,wr.py,pydocs,Pydocs_MustCloseSocket,pytest,1/4/2019
+imfht,flaskapps,https://github.com/imfht/flaskapps,12,4,1,2,a set of flask apps,outline_vpn.py,requests,Requests_MustCloseSession,pytest,1/31/2021
+ntt-zerolab,Xunpack,https://github.com/ntt-zerolab/Xunpack,11,1,0,0,"Artifacts for our RAID 2023 paper<> ""Xunpack: Cross-Architecture Unpacking for Linux IoT Malware""",syscalls_socket.py,pydocs,Pydocs_MustCloseSocket,pytest,6/28/2023
+OperationalBina,PipeRT,https://github.com/OperationalBina/PipeRT,11,7,59,89,N/A,shm_dataset.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,11/26/2019
+kaistAI,factual-knowledge-acquisition,https://github.com/kaistAI/factual-knowledge-acquisition,11,0,0,6,N/A,stereovis3d.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,10/4/2024
+chrisvanmeer,at-hashistack,https://github.com/chrisvanmeer/at-hashistack,10,4,4,5,N/A,sync_decoy.py,pydocs,Pydocs_MustCloseSocket,pytest,2/2/2023
+hanwckf,wax220-gpl,https://github.com/hanwckf/wax220-gpl,10,17,0,0,wax220 GPL code,__init__.py,pydocs,Pydocs_MustCloseSocket,pytest,12/21/2022
+hk-zh,spil,https://github.com/hk-zh/spil,10,3,2,3,This is our SPIL model,run_task_with_multiprocessing.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,2/22/2023
+SeolhwaLee,EMNLP_workshop_COVID_QA,https://github.com/SeolhwaLee/EMNLP_workshop_COVID_QA,5,2,0,4,N/A,NodeRPWorker.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,4/20/2020
+davidbrandfonbrener,color-filter-olmo,https://github.com/davidbrandfonbrener/color-filter-olmo,9,2,1,5,N/A,screenlocker.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,6/10/2024
+balazsgyenes,parllel,https://github.com/balazsgyenes/parllel,9,0,0,14,A modular<> flexible framework for developing performant algorithms in Reinforcement Learning.,app.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,7/24/2023
+CroMarmot,oiTerminal,https://github.com/CroMarmot/oiTerminal,9,0,1,17,"terminal tool for codeforces atcoder<> problem/contest fetch, testcase download,test, submit",HttpUtil.py,requests,Requests_MustCloseSession,pytest,3/3/2019
+zhuangjun1981,NeuroAnalysisTools,https://github.com/zhuangjun1981/NeuroAnalysisTools,8,4,0,0,Data analysis tools for systems neuroscience,data.py,pydocs,Pydocs_MustFlushMmap,pytest,12/5/2019
+sswam,allemande,https://github.com/sswam/allemande,8,2,0,0,This is a work-in-progress AI software toolkit in the UNIX tradition.,grids.py,pydocs,Pydocs_MustCloseSocket,pytest,4/13/2023
+IBM,vllm,https://github.com/IBM/vllm,8,13,0,55,A fork of github.com/vllm-project/vllm,image_processor_thread.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,3/5/2024
+yanglh14,InteractiveGrasping,https://github.com/yanglh14/InteractiveGrasping,4,1,0,1,N/A,sidecar.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,3/17/2021
+di,ruffruffs,https://github.com/di/ruffruffs,4,0,0,7,Barkyipyipruff grr woofwoof,serRadio.py,pydocs|requests,Pydocs_MustShutdownBeforeCloseSocket|Requests_MustCloseSession,pytest,6/1/2016
+Vinodkumar-yerraballi,Salary_Prediction_Project,https://github.com/Vinodkumar-yerraballi/Salary_Prediction_Project,7,2,0,0,N/A,shared_ndarray.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,8/16/2023
+CUBigDataClass,SportsCanary,https://github.com/CUBigDataClass/SportsCanary,7,4,0,132,Calculating odds through the wisdom of the crowd,driver.py,requests,Requests_MustCloseSession,pytest,2/13/2016
+ZJU-Automated-Reasoning-Group,arlib,https://github.com/ZJU-Automated-Reasoning-Group/arlib,6,1,0,3,Automated Reasoning Lib,play.py,pydocs,Pydocs_MustFlushMmap,pytest,6/11/2022
+lin-toto,lic-multistage-spatial-context,https://github.com/lin-toto/lic-multistage-spatial-context,6,1,1,0,Multistage Spatial Context Models for Learned Image Compression,pcisysfs.py,pydocs,Pydocs_MustFlushMmap,pytest,7/8/2023
+fury-gl,helios,https://github.com/fury-gl/helios,6,2,7,24,https://heliosnetwork.io,discriminator.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,5/25/2021
+LuletterSoul,DolphinDetection,https://github.com/LuletterSoul/DolphinDetection,6,5,0,34,A project for dolphin detection based online video stream,shared_ndarray.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,11/2/2019
+davecoulter,YSE_PZ,https://github.com/davecoulter/YSE_PZ,6,14,79,291,N/A,scanner.py,requests,Requests_MustCloseSession,pytest,11/9/2017
+ArmanBehnam,Cool-Stuff,https://github.com/ArmanBehnam/Cool-Stuff,6,6,0,0,N/A,duckduckgo.py,requests,Requests_MustCloseSession,pytest,8/12/2020
+webclinic017,Termux,https://github.com/webclinic017/Termux,3,0,0,0,Termux is an Android terminal emulator and Linux environment app that works directly with no rooting or setup required. A minimal base system is installed automatically - additional packages are available using the APT package manager.,hs.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,10/9/2021
+vmssoftware,python_3_8_2,https://github.com/vmssoftware/python_3_8_2,3,3,0,1,OpenVMS port for Python 3.8.2,RemixNet.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustUnlinkSharedMemory,pytest,11/26/2020
+medrenan,SoyIA,https://github.com/medrenan/SoyIA,5,5,0,90,Aprendizagem por Projeto Integrador do 6º semestre de Análise e Desenvolvimento de Sistemas da Faculdade de Tecnologia de São Paulo - Prof. Jessen Vidal,llama_cpp.py,pydocs,Pydocs_MustFlushMmap,pytest,8/18/2022
+abner742,Homework,https://github.com/abner742/Homework,5,41,1,69,计算机网络03班课程大作业,wyliodrin.py,pydocs,Pydocs_MustCloseSocket,pytest,6/3/2021
+PKU-RL,MCEnv,https://github.com/PKU-RL/MCEnv,5,1,1,0,A modified version of MineDojo,_core.py,pydocs,Pydocs_MustCloseSocket,pytest,3/30/2023
+hhoppe,resampler,https://github.com/hhoppe/resampler,5,2,0,0,Fast differentiable resizing and warping of arbitrary grids,sharedmemy10.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,7/14/2022
+arkeodev,scraper,https://github.com/arkeodev/scraper,5,1,0,11,RAG-based Web Scraping,fields.py,requests,Requests_MustCloseSession,pytest,6/5/2024
+brian-emarquez,Python-Kivy,https://github.com/brian-emarquez/Python-Kivy,4,1,0,1,👩🏽‍💻 Kivy es un marco Python gratuito y de código abierto para desarrollar aplicaciones móviles y otro software de aplicación multitáctil con una interfaz de usuario natural.,1853.py,pydocs,Pydocs_MustFlushMmap,pytest,11/19/2020
+ErickOF,CE5303-Embedded-System-for-Smart-Home,https://github.com/ErickOF/CE5303-Embedded-System-for-Smart-Home,4,0,0,167,Customized Embedded System for the control and monitoring of a smart home through a web server.,dbw_pub.py,pydocs,Pydocs_MustCloseSocket,pytest,9/23/2020
+AdityaNG,general-navigation,https://github.com/AdityaNG/general-navigation,4,0,1,5,"General Navigation Models based on GNM<> ViNT, NoMaD as a pytorch repo for quick and easy deployment",car.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,5/15/2024
+PennHui2016,OpDEA,https://github.com/PennHui2016/OpDEA,4,1,2,0,A toolkit for optimal workflow recommendation for proteomics data differential expression analysis,forest.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,4/11/2024
+eight04,vpip,https://github.com/eight04/vpip,4,1,30,23,A CLI which aims to provide an npm-like experience when installing Python packages.,pypi.py,requests,Requests_MustCloseSession,pytest,11/12/2018
+Satellite-Operations-Services-Optimizer,SOSO-Server,https://github.com/Satellite-Operations-Services-Optimizer/SOSO-Server,4,1,6,5,N/A,medium_crawler.py,requests,Requests_MustCloseSession,pytest,10/7/2023
+webclinic017,Stock_trader-1,https://github.com/webclinic017/Stock_trader-1,2,0,0,0,"IMP -- Python<> Docker, and Redis powered distributed web application for simulating stock trading functionalities, for the purpose of exploring strategies and techniques in building a scalable and high performant system",udp.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,5/4/2022
+karim-abdel,Explaining-RL-Decisions-with-Trajectories,https://github.com/karim-abdel/Explaining-RL-Decisions-with-Trajectories,3,2,11,0,N/A,Testing.py,pydocs,Pydocs_MustFlushMmap,pytest,12/29/2023
+Inspq,ansible,https://github.com/Inspq/ansible,3,3,0,20,N/A,builder.py,pydocs,Pydocs_MustFlushMmap,pytest,7/14/2017
+SZU-AdvTech-2023,146-Multi-Modality-Deep-Network-for-Extreme-Learned-Image-Compression,https://github.com/SZU-AdvTech-2023/146-Multi-Modality-Deep-Network-for-Extreme-Learned-Image-Compression,3,0,0,0,N/A,flags.py,pydocs,Pydocs_MustFlushMmap,pytest,1/12/2024
+mtvu,nb-resource1,https://github.com/mtvu/nb-resource1,3,5,0,0,Notebook resources,ota.py,pydocs,Pydocs_MustCloseSocket,pytest,10/10/2021
+visit-dav,visit-deps,https://github.com/visit-dav/visit-deps,3,5,1,174,Dependencies for VisIt,test_sock_lowlevel.py,pydocs,Pydocs_MustCloseSocket,pytest,3/5/2019
+AndersCFR,DataScience_IA_BigData_BI,https://github.com/AndersCFR/DataScience_IA_BigData_BI,3,0,0,0,Apuntes o plantillas de algunos de los algoritmos básicos de Machine Learning.,client.py,pydocs,Pydocs_MustCloseSocket,pytest,10/25/2021
+qompassai,Nautilus,https://github.com/qompassai/Nautilus,3,0,0,0,Quality NIST-compliant AI Security solutions,modscan,pydocs,Pydocs_MustCloseSocket,pytest,8/6/2024
+tdurieux,pattern-detector-experiment,https://github.com/tdurieux/pattern-detector-experiment,3,3,0,4,N/A,consumers.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,4/20/2018
+njho,MultiObjectTracking,https://github.com/njho/MultiObjectTracking,3,0,2,109,N/A,main.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,12/24/2019
+KarimaMa,demosaic_genetic_search,https://github.com/KarimaMa/demosaic_genetic_search,3,1,1,0,N/A,stretch.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,5/29/2020
+thesofakillers,nlgoals,https://github.com/thesofakillers/nlgoals,3,0,0,0,"Official repository for my MSc thesis: ""Addressing Goal Misgeneralization with Natural Language Interfaces.""",shared_memory_loader.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,10/14/2022
+Jamezzz5,processor,https://github.com/Jamezzz5/processor,3,15,0,254,N/A,func_scraper.py,requests,Requests_MustCloseSession,pytest,12/7/2016
+tlh24,sudoku-rl,https://github.com/tlh24/sudoku-rl,2,2,2,6,N/A,tools.py,pydocs,Pydocs_MustFlushMmap,pytest,9/12/2023
+CINPLA,expipe-cinpla-legacy,https://github.com/CINPLA/expipe-cinpla-legacy,2,2,9,4,All that was expipe and more,ys_overlays.py,pydocs,Pydocs_MustFlushMmap,pytest,5/13/2017
+jpcbertoldo,tomo2seg,https://github.com/jpcbertoldo/tomo2seg,2,2,0,0,My internship project at CENTRE DES MATÉRIAUX of MINES ParisTech PSL University. ,__main__.py,pydocs,Pydocs_MustFlushMmap,pytest,9/29/2020
+llmhyy,tls_attack,https://github.com/llmhyy/tls_attack,2,2,5,34,N/A,helper.py,pydocs,Pydocs_MustFlushMmap,pytest,3/12/2019
+lqkweb,learnMLflow,https://github.com/lqkweb/learnMLflow,2,1,0,1,mlflow学习代码,testHRFileSystemMap.py,pydocs,Pydocs_MustFlushMmap,pytest,1/17/2019
+Anderson-Lab,Learn2Mine-Main,https://github.com/Anderson-Lab/Learn2Mine-Main,2,3,12,0,N/A,manage.py,pydocs,Pydocs_MustCloseSocket,pytest,7/31/2014
+lsst-dm,legacy-ctrl_iip,https://github.com/lsst-dm/legacy-ctrl_iip,2,6,1,54,Image ingest and processing,fill_world_with_npc.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,2/29/2016
+jingwangsg,Code-Reading-Project,https://github.com/jingwangsg/Code-Reading-Project,2,0,0,0,Reading project for researching purpose,server.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,7/16/2022
+Snowflake-Labs,vllm,https://github.com/Snowflake-Labs/vllm,2,3,1,20,N/A,pg_interface.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,4/8/2024
+IBM,Granite-vLLM,https://github.com/IBM/Granite-vLLM,2,0,0,0,this is for fun<> ain't it grand!,dataloader.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,5/29/2024
+pection-zz,Allproject,https://github.com/pection-zz/Allproject,2,4,0,0,N/A,hitbtcapi.py,requests,Requests_MustCloseSession,pytest,9/13/2020
+DarLiner,responder,https://github.com/DarLiner/responder,2,0,0,15,一个Python HTTP服务框架，它将为你提供一个ASGI应用程序，预安装静态文件服务器，jinja2模板（无需额外导入），以及基于uvloop的生产网络服务器，自动为gzip压缩服务请求。,okta-aws-cli.py,requests,Requests_MustCloseSession,pytest,12/5/2018
+HadrielTzuk,tip-marketplace,https://github.com/HadrielTzuk/tip-marketplace,2,1,0,0,N/A,viewbot.py,requests,Requests_MustCloseSession,pytest,5/4/2023
+narbagnagin,airflow-tutorial,https://github.com/narbagnagin/airflow-tutorial,2,0,0,54,N/A,dingding.py,requests,Requests_MustCloseSession,pytest,5/11/2020
+tht-jxny,MicroPineTime,https://github.com/tht-jxny/MicroPineTime,1,0,0,16,An OS for the Pine64 PineTime made with python,upip.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,5/16/2020
+snoopgodlinux,packages,https://github.com/snoopgodlinux/packages,1,0,0,0,Official packages repository of SnoopGod Linux OS,txsclient.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,6/20/2024
+CyonixC,software-testing,https://github.com/CyonixC/software-testing,1,0,0,5,N/A,adafruit_esp32spi_wifimanager.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,3/6/2024
+wonseokyang-de,the-open-source-explorer,https://github.com/wonseokyang-de/the-open-source-explorer,1,0,0,0,Whenever something piques my interest<> I delve into it for fun or to apply what I learn at work.,server.py,pydocs|requests,Pydocs_MustShutdownBeforeCloseSocket|Requests_MustCloseSession,pytest,3/22/2024
+SMV-Sing-My-Voice,SMV_FastPitch,https://github.com/SMV-Sing-My-Voice/SMV_FastPitch,1,1,0,0,N/A,vsphere_copy.py,pydocs,Pydocs_MustFlushMmap,pytest,11/8/2022
+UPennBJPrager,CNT_Research_Template,https://github.com/UPennBJPrager/CNT_Research_Template,1,1,0,0,Research template repository for the University of Pennsylvania CNT lab,utils.py,pydocs,Pydocs_MustFlushMmap,pytest,1/26/2023
+ActiveBrainAtlas2,preprocessing-pipeline,https://github.com/ActiveBrainAtlas2/preprocessing-pipeline,1,3,2,42,This repository contains the code for the image processing sequence. Starting from the raw images from the scanner through the generation of the tiled images for Neuroglancer.,update.py,pydocs,Pydocs_MustFlushMmap,pytest,6/22/2021
+KaziQuader,Detecting-Refactoring-Python-Code-Smell,https://github.com/KaziQuader/Detecting-Refactoring-Python-Code-Smell,1,1,0,0,N/A,adityaecdrid_pytorch-tpu-xlmr-base-with-memmap.py,pydocs,Pydocs_MustFlushMmap,pytest,1/8/2024
+BrainSharer,pipeline,https://github.com/BrainSharer/pipeline,1,0,0,0,A preprocessing pipeline for image stacks,demo_motion_correction_nonrigid.py,pydocs,Pydocs_MustFlushMmap,pytest,10/5/2023
+tejlmand,fw-nrfconnect-zephyr,https://github.com/tejlmand/fw-nrfconnect-zephyr,1,1,0,2,nRF Connect SDK Zephyr tree,chemutils.py,pydocs,Pydocs_MustFlushMmap,pytest,9/18/2018
+HongSheng416,DVC,https://github.com/HongSheng416/DVC,1,0,0,0,N/A,pcisysfs.py,pydocs,Pydocs_MustFlushMmap,pytest,2/28/2023
+chronos123,LSH-GRSL,https://github.com/chronos123/LSH-GRSL,1,0,0,0,N/A,pcisysfs.py,pydocs,Pydocs_MustFlushMmap,pytest,1/23/2024
+RyanZurrin,mammogramDB,https://github.com/RyanZurrin/mammogramDB,1,0,0,0,N/A,base.py,pydocs,Pydocs_MustFlushMmap,pytest,11/18/2023
+tjcommV2X,ray,https://github.com/tjcommV2X/ray,1,0,0,0,A project for learning to use the ray framework for reinforcement learning,tcp.py,pydocs,Pydocs_MustCloseSocket,pytest,4/25/2021
+pench3r,ShellScriptForDevOps,https://github.com/pench3r/ShellScriptForDevOps,1,0,0,0,N/A,guest.py,pydocs,Pydocs_MustCloseSocket,pytest,3/22/2021
+ska-sa,katsdpcontroller,https://github.com/ska-sa/katsdpcontroller,1,0,2,774,MeerKAT Science Data Processor Controller - provides central control and monitoring services for the SDP.,test_socket.py,pydocs,Pydocs_MustCloseSocket,pytest,8/16/2013
+ErickOF,CE5303-Embedded-System-for-Smart-Home-with-Security-System,https://github.com/ErickOF/CE5303-Embedded-System-for-Smart-Home-with-Security-System,1,0,7,81,N/A,x-tls,pydocs,Pydocs_MustCloseSocket,pytest,12/5/2020
+maru536,hue,https://github.com/maru536/hue,1,1,0,6,N/A,test_os.py,pydocs,Pydocs_MustCloseSocket,pytest,7/21/2020
+elithaxxor,RANDOM_PY_SCRIPTS_OLD,https://github.com/elithaxxor/RANDOM_PY_SCRIPTS_OLD,1,0,0,0,Found random .py scripts while doing spring cleaning,q2.1.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,10/30/2022
+tdurieux,BugSwarm-dissection,https://github.com/tdurieux/BugSwarm-dissection,1,0,0,0,N/A,NimManager.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,3/21/2019
+Basilisk-Development-Team,UXP-mirror,https://github.com/Basilisk-Development-Team/UXP-mirror,1,0,0,4,Backup mirror of https://repo.palemoon.org/MoonchildProductions/UXP,android_device.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,8/6/2023
+mashiroissocute,freqtrade-grid,https://github.com/mashiroissocute/freqtrade-grid,1,3,0,0,基于freqtrade的网格算法,channel.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,6/29/2024
+brycepg,pylint-corpus,https://github.com/brycepg/pylint-corpus,1,1,0,20,N/A,main.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,3/26/2018
+GGbond007,python-note,https://github.com/GGbond007/python-note,1,0,0,0,N/A,tcp.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,6/21/2023
+yishunlu-222,AnACor2.0,https://github.com/yishunlu-222/AnACor2.0,1,0,0,2,N/A,orchestrator.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,6/30/2024
+qompassai,Equator,https://github.com/qompassai/Equator,1,0,0,0,Quality AI Education Solutions,managers.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,7/27/2024
+xtli12,GP2E,https://github.com/xtli12/GP2E,1,0,1,0,Winner of Maniskill2 Challenge,managers.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,6/18/2023
+CognitiveComputingLab,Planning-Transformer,https://github.com/CognitiveComputingLab/Planning-Transformer,1,0,0,0,Codebase for the planning-transformer,shared_memory_utils.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,12/22/2023
+impatrq,bgas,https://github.com/impatrq/bgas,1,3,0,4,bgas_ar,managers.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,9/1/2023
+DiamondLightSource,fast_rsm,https://github.com/DiamondLightSource/fast_rsm,1,1,0,11,A fast reciprocal space mapper used at Diamond Light Source,old_cpu_multiproc_clean_simple_example.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,3/2/2022
+corradomio,python_projects,https://github.com/corradomio/python_projects,1,0,0,1,N/A,PSSImulator.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,5/31/2020
+oliverYoung2001,EasyContext,https://github.com/oliverYoung2001/EasyContext,1,0,1,0,modified on origin repo,__init__.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,6/5/2024
+KapilKumar2002,Katio_game_kivy_,https://github.com/KapilKumar2002/Katio_game_kivy_,1,0,0,0,N/A,lazy_load_dataset_single.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,11/24/2022
+yfzhang114,LLaVA-NeXT,https://github.com/yfzhang114/LLaVA-NeXT,1,0,0,0,N/A,_test_multiprocessing.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,9/23/2024
+summation-app,web_server,https://github.com/summation-app/web_server,1,0,0,0,N/A,db.py,requests,Requests_MustCloseSession,pytest,12/18/2020
+WallaceChen000,jupyter-ansible,https://github.com/WallaceChen000/jupyter-ansible,1,0,0,0,N/A,DW-DECODED.py,requests,Requests_MustCloseSession,pytest,9/26/2022
+wayneyangwc,Docker,https://github.com/wayneyangwc/Docker,1,0,0,0,N/A,pulsar.py,requests,Requests_MustCloseSession,pytest,4/11/2023
+CruizeFinance,HedgingScripts,https://github.com/CruizeFinance/HedgingScripts,1,0,0,31,N/A,lab1.py,requests,Requests_MustCloseSession,pytest,2/1/2022
+RedHatProductSecurity,component-registry-bindings,https://github.com/RedHatProductSecurity/component-registry-bindings,1,1,0,32,A client library for accessing Component Registry API,v1_products_retrieve.py,requests,Requests_MustCloseSession,pytest,2/9/2023
+ClaytonBrezinski,Docker-WindowsHomeAssistant,https://github.com/ClaytonBrezinski/Docker-WindowsHomeAssistant,1,0,0,0,N/A,account_edi_format.py,requests,Requests_MustCloseSession,pytest,11/15/2017
+aatmdev,apacheairflow,https://github.com/aatmdev/apacheairflow,1,0,0,56,N/A,impersonated_credentials.py,requests,Requests_MustCloseSession,pytest,6/26/2020
+Alina713,RTC,https://github.com/Alina713/RTC,0,0,0,0,N/A,mmap.py,pydocs,Pydocs_MustFlushMmap,pytest,8/19/2023
+jomungmung,fta,https://github.com/jomungmung/fta,0,0,0,0,N/A,core.py,pydocs,Pydocs_MustFlushMmap,pytest,11/28/2023
+ngocminhta,LongLoRA-Demo,https://github.com/ngocminhta/LongLoRA-Demo,0,0,0,0,An implementation for LongLoRA research,core.py,pydocs,Pydocs_MustFlushMmap,pytest,1/8/2024
+elisafr00,FinalProjectDL4NLP,https://github.com/elisafr00/FinalProjectDL4NLP,0,0,0,0,Final Project for the DL4NLP course from HAP-LAP/EMLCT Master (UPV/EHU),core.py,pydocs,Pydocs_MustFlushMmap,pytest,3/19/2024
+owais-multani,sentry-test,https://github.com/owais-multani/sentry-test,0,0,0,787,N/A,_raw.py,pydocs,Pydocs_MustFlushMmap,pytest,6/9/2022
+andregaldino,migrating-hg-to-git,https://github.com/andregaldino/migrating-hg-to-git,0,0,0,20,Migrating HG Mercurial to Git,ImageFile.py,pydocs,Pydocs_MustFlushMmap,pytest,3/6/2024
+JGKing88,provocative-texts,https://github.com/JGKing88/provocative-texts,0,0,0,0,An analysis of texts that have inspired violent acts,train.py,pydocs,Pydocs_MustFlushMmap,pytest,1/27/2023
+hail-ci-test,ci-test-lbbjk97qw7hs,https://github.com/hail-ci-test/ci-test-lbbjk97qw7hs,0,0,0,0,N/A,9-sender_receiver_16.py,pydocs,Pydocs_MustFlushMmap,pytest,5/11/2021
+hail-ci-test,ci-test-qsttcozqtipy,https://github.com/hail-ci-test/ci-test-qsttcozqtipy,0,0,0,0,N/A,tiff_file.py,pydocs,Pydocs_MustFlushMmap,pytest,10/6/2021
+meng-ma-biomed-AI,NeMo,https://github.com/meng-ma-biomed-AI/NeMo,0,0,0,0,N/A,wmd.py,pydocs,Pydocs_MustFlushMmap,pytest,4/7/2023
+tuyendv268,ess_data_crawler_pipline,https://github.com/tuyendv268/ess_data_crawler_pipline,0,0,0,0,N/A,nv_ioctl.py,pydocs,Pydocs_MustFlushMmap,pytest,5/15/2023
+rfernandezv,yolo_test,https://github.com/rfernandezv/yolo_test,0,0,0,10,Test Yolo v2,MetaArray.py,pydocs,Pydocs_MustFlushMmap,pytest,4/28/2020
+hail-ci-test,ci-test-x0zfxmt0o313,https://github.com/hail-ci-test/ci-test-x0zfxmt0o313,0,1,0,0,N/A,sample.py,pydocs,Pydocs_MustFlushMmap,pytest,4/30/2021
+hail-ci-test,ci-test-ht9yq1rh4u1i,https://github.com/hail-ci-test/ci-test-ht9yq1rh4u1i,0,0,0,1,N/A,sample.py,pydocs,Pydocs_MustFlushMmap,pytest,11/1/2021
+hail-ci-test,ci-test-sl2cl9zbodb1,https://github.com/hail-ci-test/ci-test-sl2cl9zbodb1,0,0,0,0,N/A,sample.py,pydocs,Pydocs_MustFlushMmap,pytest,11/12/2021
+hail-ci-test,ci-test-u9kqa6s3nefg,https://github.com/hail-ci-test/ci-test-u9kqa6s3nefg,0,0,0,0,N/A,sample.py,pydocs,Pydocs_MustFlushMmap,pytest,11/10/2021
+hail-ci-test,ci-test-w5mukev6xjls,https://github.com/hail-ci-test/ci-test-w5mukev6xjls,0,0,0,0,N/A,ir.py,pydocs,Pydocs_MustFlushMmap,pytest,11/23/2021
+vepriya,YOLO,https://github.com/vepriya/YOLO,0,0,0,11,implementation of YOLO2 algorithm for object detection ,plot_summary.py,pydocs,Pydocs_MustFlushMmap,pytest,1/24/2020
+growlix,sem-dedupe,https://github.com/growlix/sem-dedupe,0,0,0,0,Semantic Deduplication of ML Datasets,sort_embeddings_by_cluster.py,pydocs,Pydocs_MustFlushMmap,pytest,4/18/2023
+gkbharathy,LMOps,https://github.com/gkbharathy/LMOps,0,0,0,0,N/A,common.py,pydocs,Pydocs_MustFlushMmap,pytest,10/6/2023
+khulnasoft-lab,DeepScaleExamples,https://github.com/khulnasoft-lab/DeepScaleExamples,0,1,0,33,N/A,BF.py,pydocs,Pydocs_MustFlushMmap,pytest,7/10/2024
+leftrightleft,poky,https://github.com/leftrightleft/poky,0,0,0,4,N/A,sample.py,pydocs,Pydocs_MustFlushMmap,pytest,1/22/2022
+CliveMcEvadeen,zephurCortex,https://github.com/CliveMcEvadeen/zephurCortex,0,0,0,0,N/A,app.py,pydocs,Pydocs_MustFlushMmap,pytest,6/21/2024
+2lambda123,oss-fuzz,https://github.com/2lambda123/oss-fuzz,0,0,0,29,N/A,fuzz_itertoolz.py,pydocs,Pydocs_MustFlushMmap,pytest,5/13/2023
+CVEDB,oss-fuzz,https://github.com/CVEDB/oss-fuzz,0,0,0,15,N/A,fuzz_itertoolz.py,pydocs,Pydocs_MustFlushMmap,pytest,3/23/2023
+limberguti,Actividad3_Grupo1,https://github.com/limberguti/Actividad3_Grupo1,0,0,0,0,N/A,fuzz_itertoolz.py,pydocs,Pydocs_MustFlushMmap,pytest,8/24/2024
+STEI-ITB,roseph,https://github.com/STEI-ITB/roseph,0,1,0,2,Repository SDS Ceph,tephi_mv.py,pydocs,Pydocs_MustFlushMmap,pytest,5/15/2018
+dumpmemory,in-context-pretraining,https://github.com/dumpmemory/in-context-pretraining,0,3,0,0,N/A,mining_heavy3.py,pydocs,Pydocs_MustFlushMmap,pytest,1/17/2024
+shaunck96,LLM-Optimization-By-Domain,https://github.com/shaunck96/LLM-Optimization-By-Domain,0,0,0,2,N/A,lockmeter.py,pydocs,Pydocs_MustFlushMmap,pytest,12/1/2023
+CasperAntonPoulsen,KnowledgeDistillation,https://github.com/CasperAntonPoulsen/KnowledgeDistillation,0,0,0,0,N/A,lockmeter.py,pydocs,Pydocs_MustFlushMmap,pytest,12/20/2023
+ZnoDm,proyectois,https://github.com/ZnoDm/proyectois,0,0,0,0,N/A,bram.py,pydocs,Pydocs_MustFlushMmap,pytest,12/20/2022
+ardarslan,egocentric-video-understanding,https://github.com/ardarslan/egocentric-video-understanding,0,0,0,0,Egocentric Video Understanding using Vision-Language Models,indexed_dataset.py,pydocs,Pydocs_MustFlushMmap,pytest,7/13/2023
+AEHUSPHAM,Vietnamese_Pretrained_Model,https://github.com/AEHUSPHAM/Vietnamese_Pretrained_Model,0,0,0,0,N/A,dynamic_dataset.py,pydocs,Pydocs_MustFlushMmap,pytest,9/12/2022
+KekHunterOS,apt-repo-source,https://github.com/KekHunterOS/apt-repo-source,0,0,0,0,Source of the packages before and after .deb creation,pcisysfs.py,pydocs,Pydocs_MustFlushMmap,pytest,10/27/2020
+satya-18-w,ML_Project_End-_to_End,https://github.com/satya-18-w/ML_Project_End-_to_End,0,0,0,0,N/A,_netcdf.py,pydocs,Pydocs_MustFlushMmap,pytest,6/22/2024
+tripleee,SmokeDeTest,https://github.com/tripleee/SmokeDeTest,0,0,0,5,Detached fork of SmokeDetector for testing,ptf,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,8/29/2024
+micsthepick,smokedetector_fuzzing,https://github.com/micsthepick/smokedetector_fuzzing,0,0,0,0,Fuzzing Smokedetector's blacklists,ptf,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,9/6/2024
+joelliusczar,musical_chairs,https://github.com/joelliusczar/musical_chairs,0,0,44,50,Interfaces to queue song paths for Moonbase59's implementation of ices0 ,term_server.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,3/31/2021
+MrE-Fog,foundationdb,https://github.com/MrE-Fog/foundationdb,0,0,0,11,N/A,diagnostics.py,pydocs,Pydocs_MustCloseSocket,pytest,10/12/2022
+fc524079318,Ray,https://github.com/fc524079318/Ray,0,0,0,0,source code of Ray,linear_road.py,pydocs,Pydocs_MustCloseSocket,pytest,12/7/2021
+VillSource,secure-chat,https://github.com/VillSource/secure-chat,0,0,0,1,N/A,fritz_reconnect.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,2/24/2023
+SnapRoute,extpkgs,https://github.com/SnapRoute/extpkgs,0,2,0,23,This repo contains all the python dependencies for CLI installation,dispatch.py,pydocs,Pydocs_MustCloseSocket,pytest,10/1/2016
+zsun273,eecs485-group,https://github.com/zsun273/eecs485-group,0,0,0,0,N/A,TCPClient.py,pydocs,Pydocs_MustCloseSocket,pytest,1/16/2023
+ril3y,MakerMatrix,https://github.com/ril3y/MakerMatrix,0,0,0,0,Maker Inventory Tracker,my_routes.py,pydocs,Pydocs_MustCloseSocket,pytest,12/17/2023
+naycha,home-assistant,https://github.com/naycha/home-assistant,0,0,0,15,N/A,memory_watcher.py,pydocs|requests,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket|Requests_MustCloseSession,pytest,1/11/2023
+HycCodeQL,cicd-goat,https://github.com/HycCodeQL/cicd-goat,0,0,0,13,N/A,server.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,10/27/2023
+agadecki,cicd-goat,https://github.com/agadecki/cicd-goat,0,0,0,0,N/A,__init__.py,pydocs|requests,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket|Requests_MustCloseSession,pytest,9/16/2024
+AppSecFun,cicd-goat,https://github.com/AppSecFun/cicd-goat,0,0,0,6,N/A,server.py,pydocs|requests,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket|Requests_MustCloseSession,pytest,9/19/2024
+EMChamp,cicd-goat-2,https://github.com/EMChamp/cicd-goat-2,0,1,0,0,N/A,server.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,3/9/2023
+fluent-qa,Go-Steps,https://github.com/fluent-qa/Go-Steps,0,0,0,0,Learning Go Step by Step for Tester,libssh_auth_bypass.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,6/11/2022
+MrE-Fog,foundationdb2,https://github.com/MrE-Fog/foundationdb2,0,0,0,11,N/A,tcp.py,pydocs,Pydocs_MustCloseSocket,pytest,10/12/2022
+MrE-Fog,foundationdbr,https://github.com/MrE-Fog/foundationdbr,0,0,0,11,N/A,smoke.py,pydocs,Pydocs_MustCloseSocket,pytest,2/4/2023
+MrE-Fog,foundationdbxxx,https://github.com/MrE-Fog/foundationdbxxx,0,0,0,9,N/A,netserver.py,pydocs,Pydocs_MustCloseSocket,pytest,5/5/2023
+JaylinYu,FoundationDB-nano,https://github.com/JaylinYu/FoundationDB-nano,0,0,0,0,N/A,sidecar.py,pydocs,Pydocs_MustCloseSocket,pytest,7/14/2022
+drxzzz21,suck,https://github.com/drxzzz21/suck,0,0,0,0,N/A,16150.py,pydocs|requests,Pydocs_MustCloseSocket|Requests_MustCloseSession,pytest,2/5/2024
+TinkerBoard-Android,rockchip-android-external-autotest,https://github.com/TinkerBoard-Android/rockchip-android-external-autotest,0,0,0,0,N/A,hosted.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,3/6/2023
+TinkerBoard2-Android,external-autotest,https://github.com/TinkerBoard2-Android/external-autotest,0,0,0,0,N/A,Lp_RpcDispatcher.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,9/28/2021
+Oliver-2023,autoTest,https://github.com/Oliver-2023/autoTest,0,0,0,0,N/A,Lp_RpcDispatcher.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,1/2/2024
+christiancosgrove,cs767hw3,https://github.com/christiancosgrove/cs767hw3,0,0,0,2,N/A,transports.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,2/14/2020
+Eashurox,CPDP_ML,https://github.com/Eashurox/CPDP_ML,0,0,0,0,We performed an empirical assessment of the performance of 64 defect prediction models on the defect dataset of five ML projects.,BeOS-setup.py,pydocs,Pydocs_MustCloseSocket,pytest,11/18/2023
+Pabasaraa,Diabetes_prediction-DL,https://github.com/Pabasaraa/Diabetes_prediction-DL,0,0,0,0,N/A,BeOS-setup.py,pydocs,Pydocs_MustCloseSocket,pytest,10/6/2023
+drunkflystudio,thirdparty,https://github.com/drunkflystudio/thirdparty,0,0,0,0,N/A,BeOS-setup.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,8/28/2024
+kevin0120,PythonWorld,https://github.com/kevin0120/PythonWorld,0,0,1,0,N/A,gen.py,pydocs,Pydocs_MustCloseSocket,pytest,4/21/2022
+switchpanel,ha-core,https://github.com/switchpanel/ha-core,0,0,0,20,N/A,q2_4.py,pydocs,Pydocs_MustCloseSocket,pytest,3/22/2020
+otismwo86,TaipeiBusConnect,https://github.com/otismwo86/TaipeiBusConnect,0,0,0,7,台北Busconnect提供即時到站時間，並偵測用戶位置偵測以提供最近站點提示與推播時間通知。 同時也提供公車上乘客即時聊天室，讓用戶隨時掌握交通動態，並與其他乘客互動。,__init__.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,8/4/2024
+TechyGuy2000,home-lab,https://github.com/TechyGuy2000/home-lab,0,0,0,0,N/A,speechd_client.py,pydocs,Pydocs_MustCloseSocket,pytest,2/25/2024
+reply2sanjuraj,ansible_374,https://github.com/reply2sanjuraj/ansible_374,0,0,0,0,N/A,ssl.pyi,pydocs,Pydocs_MustCloseSocket,pytest,8/6/2024
+sampou,homeassistant,https://github.com/sampou/homeassistant,0,0,0,18,Home-Assistant 智能家居控制系统,stream.py,pydocs,Pydocs_MustCloseSocket,pytest,6/13/2020
+Deep0821,Robot-Moving-Analysis,https://github.com/Deep0821/Robot-Moving-Analysis,0,0,0,0,N/A,proxy.py,pydocs,Pydocs_MustCloseSocket,pytest,5/30/2023
+florydberg,userlib,https://github.com/florydberg/userlib,0,1,0,0,N/A,Server.py,pydocs,Pydocs_MustCloseSocket,pytest,12/6/2023
+Jilshak,Brototype-Student-Management-System,https://github.com/Jilshak/Brototype-Student-Management-System,0,0,0,0,N/A,server.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,8/10/2023
+ashwani8112,Virtual-assistant-system,https://github.com/ashwani8112/Virtual-assistant-system,0,0,0,0,N/A,netsvc.py,pydocs,Pydocs_MustCloseSocket,pytest,10/17/2023
+RiH-137,Simple-Flask-Form,https://github.com/RiH-137/Simple-Flask-Form,0,0,0,0,N/A,netsvc.py,pydocs,Pydocs_MustCloseSocket,pytest,2/10/2024
+nickstevensMU,HawkScan,https://github.com/nickstevensMU/HawkScan,0,1,0,1,Web based computer vision AI application that affords users the ability to run a full cycle management of drone image collections<> with options to stitch images together and scan resulting orthoimages for objects. Includes use of DroneDeploy API.,selector_events.py,pydocs,Pydocs_MustCloseSocket,pytest,8/8/2022
+shettyvruddhi,Movie-Recommender-System,https://github.com/shettyvruddhi/Movie-Recommender-System,0,0,0,0,N/A,selector_events.py,pydocs,Pydocs_MustCloseSocket,pytest,8/25/2024
+SynthAI,SynthAI,https://github.com/SynthAI/SynthAI,0,0,0,0,N/A,legitimate-1.py,pydocs,Pydocs_MustCloseSocket,pytest,6/7/2018
+costaalacuparmare,laburi-acs,https://github.com/costaalacuparmare/laburi-acs,0,0,0,0,N/A,_ssl.py,pydocs,Pydocs_MustCloseSocket,pytest,12/2/2022
+webdevi910,-ray-project,https://github.com/webdevi910/-ray-project,0,0,0,0,Ray is a unified framework for scaling AI and Python applications. Ray consists of a core distributed runtime and a set of AI Libraries for accelerating ML workloads.,test_socketserver.py,pydocs,Pydocs_MustCloseSocket,pytest,10/6/2023
+Spaceship-Servers,spaceship-ansible,https://github.com/Spaceship-Servers/spaceship-ansible,0,1,0,0,Ansible script for starting up a new spaceship node,test_socket.py,pydocs,Pydocs_MustCloseSocket,pytest,6/6/2022
+fanruan-polars,arrow,https://github.com/fanruan-polars/arrow,0,0,0,72,N/A,utils.py,pydocs,Pydocs_MustCloseSocket,pytest,9/6/2024
+WangYCheng23,rl_practice,https://github.com/WangYCheng23/rl_practice,0,1,0,0,N/A,test_flight.py,pydocs,Pydocs_MustCloseSocket,pytest,5/27/2024
+Kukii258,QuizzWebAppDjango23,https://github.com/Kukii258/QuizzWebAppDjango23,0,0,0,0,N/A,video_server.py,pydocs,Pydocs_MustCloseSocket,pytest,5/23/2024
+TinkerBoard-Android,rockchip-android-external-python-httplib2,https://github.com/TinkerBoard-Android/rockchip-android-external-python-httplib2,0,0,0,0,N/A,client.py,pydocs,Pydocs_MustCloseSocket,pytest,3/6/2023
+ecointet,shop-demo,https://github.com/ecointet/shop-demo,0,0,0,0,A Cool Shop Demo (shoes),health_checker.py,pydocs,Pydocs_MustCloseSocket,pytest,8/21/2019
+P79N6A,docker,https://github.com/P79N6A/docker,0,1,0,1,N/A,ps_drone.py,pydocs,Pydocs_MustCloseSocket,pytest,4/20/2019
+eciis,google_appengine,https://github.com/eciis/google_appengine,0,0,0,0,Google App Engine SDK,pydevd_comm.py,pydocs,Pydocs_MustCloseSocket,pytest,12/4/2017
+jmsdaq,SeleniumWebTestAutomation,https://github.com/jmsdaq/SeleniumWebTestAutomation,0,0,0,0,Automate web testing for Tindahang Tapat Nadmin using SeleniumBase<> a Python framework based on Selenium WebDriver. This repository offers test scripts and utilities designed for testing Tindahang Tapat Nadmin's functionality and performance.,transfer_manager.py,pydocs,Pydocs_MustCloseSocket,pytest,4/4/2024
+EnjoyLifeFund,macHighSierra-py36-pkgs,https://github.com/EnjoyLifeFund/macHighSierra-py36-pkgs,0,0,0,0,N/A,dev_appserver_multiprocess.py,pydocs,Pydocs_MustCloseSocket|Pydocs_MustShutdownBeforeCloseSocket,pytest,9/8/2017
+bopopescu,QC,https://github.com/bopopescu/QC,0,0,0,0,Quantum Computation,ipAddressLog.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,7/26/2020
+mehulagg,mozilla-central,https://github.com/mehulagg/mozilla-central,0,0,0,1,N/A,upload_docs.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,1/31/2020
+VentiCipher,Line-Bot-Python,https://github.com/VentiCipher/Line-Bot-Python,0,0,0,0,N/A,rpc_http_proxy.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,4/18/2017
+Christian-G-UT,tydom2mqtt,https://github.com/Christian-G-UT/tydom2mqtt,0,0,0,0,N/A,webtlsmdd.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,1/7/2024
+parmarjh,JINA,https://github.com/parmarjh/JINA,0,0,0,0,N/A,__init__.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,1/29/2021
+exorde-labs,exorde-swarm-client,https://github.com/exorde-labs/exorde-swarm-client,0,0,1,0,Cluster/multi-process exorde client ,generator.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,11/6/2023
+Shawen17,Logistics-service,https://github.com/Shawen17/Logistics-service,0,0,0,0,N/A,sender.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,7/21/2024
+muhammadha04,freqbot,https://github.com/muhammadha04/freqbot,0,0,0,4,N/A,server.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,7/17/2024
+cahangeorge,freq_coolab,https://github.com/cahangeorge/freq_coolab,0,0,0,7,N/A,channel.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,8/9/2024
+th2002,freqtrade-bot,https://github.com/th2002/freqtrade-bot,0,0,0,0,N/A,channel.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,7/31/2024
+narayanbs,Repos,https://github.com/narayanbs/Repos,0,0,0,0,N/A,broadcast.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,7/29/2024
+Bhumika-Manchikanti,FACE_DETECTION_RECOGNITION,https://github.com/Bhumika-Manchikanti/FACE_DETECTION_RECOGNITION,0,1,0,1,Face detection and recognition using OpenCV,query_optimizer.py,pydocs,Pydocs_MustShutdownBeforeCloseSocket,pytest,1/6/2022
+sanjitk7,data-systems-projects,https://github.com/sanjitk7/data-systems-projects,0,0,0,0,"Some academic projects on OLA<> Apache Arrow, Flatbuffers plus Shared Memory",teleop_hand_and_arm.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,5/28/2024
+william-cutler,hobbes,https://github.com/william-cutler/hobbes,0,0,0,0,N/A,lbmio.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,11/23/2022
+duanzhenyu001,vllm_compat_qwen_function_call,https://github.com/duanzhenyu001/vllm_compat_qwen_function_call,0,0,1,0,将qwen functon call标准化成open ai tools 格式，并兼容进vllm,parallel_state.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,7/25/2024
+CharlesMicou,reticade,https://github.com/CharlesMicou/reticade,0,0,0,2,REal TIme CAlcium imaging DEcoder,game_pad_connect.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,1/6/2022
+2lambda123,mars-project-mars,https://github.com/2lambda123/mars-project-mars,0,0,1,9,N/A,main.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,2/14/2024
+DEVANSH-IN,AGI-Craft,https://github.com/DEVANSH-IN/AGI-Craft,0,0,0,0,N/A,managers.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,5/12/2024
+ZhuFengdaaa,ManiSkill2-Learn,https://github.com/ZhuFengdaaa/ManiSkill2-Learn,0,0,0,0,N/A,shared_memory_utils.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,10/19/2022
+khaledfayed,dl-lab-project,https://github.com/khaledfayed/dl-lab-project,0,0,0,0,N/A,dataloader.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,3/7/2023
+skylooop,GOTIL,https://github.com/skylooop/GOTIL,0,0,0,0,N/A,shared_memory.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,9/3/2023
+ChengjieWU,MSCP,https://github.com/ChengjieWU/MSCP,0,0,0,0,N/A,shared_memory_utils.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,5/24/2024
+91MrHuang,CALVIN_Data_Catargraphy,https://github.com/91MrHuang/CALVIN_Data_Catargraphy,0,0,0,0,N/A,socket_process.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,10/5/2023
+branyang02,calvin,https://github.com/branyang02/calvin,0,0,2,0,N/A,shm_dataset.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,9/22/2024
+ep-infosec,28_nasa_dss,https://github.com/ep-infosec/28_nasa_dss,0,0,0,0,N/A,train_dense_beta_NLL_copy.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,12/10/2022
+ZahirAhmadChaudhry,Pulsar_dataset_Classification_using_SVM,https://github.com/ZahirAhmadChaudhry/Pulsar_dataset_Classification_using_SVM,0,0,0,0,"This project focuses on classifying pulsar stars using the Support Vector Machine (SVM) algorithm<> a powerful method in the realm of supervised learning. The goal is to automate the identification process of pulsar stars from candidates collected during surveys, based on predictive modeling.",background_task_manager.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,3/2/2024
+rosieyzh,optimizers-llm,https://github.com/rosieyzh/optimizers-llm,0,0,0,0,"Code for ""Deconstructing What Makes a Good Optimizer for Language Models""",WholeSlideImage_cpu_pooling.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,8/13/2024
+shaistabibi,MCQGen,https://github.com/shaistabibi/MCQGen,0,0,0,0,N/A,shared_mem_dbc.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,9/6/2024
+ryanyxw,llm-decouple,https://github.com/ryanyxw/llm-decouple,0,0,0,0,Decoupling understanding from generation for large language models,analiser.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,3/2/2024
+lukas-ruettgers,competence_progress_motivation,https://github.com/lukas-ruettgers/competence_progress_motivation,0,0,0,0,Competence Progress Motivation - Submission to the ManiSkill2 Challenge,tf_utils.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,2/25/2024
+Austinteghs,mlproject,https://github.com/Austinteghs/mlproject,0,0,0,0,N/A,managers.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,8/17/2024
+Ravestro,Detailed-exploratory-data-analysis-with-python,https://github.com/Ravestro/Detailed-exploratory-data-analysis-with-python,0,0,0,0,N/A,managers.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,10/6/2024
+sayantan6720,Mobile-Price-Classification-using-AWS-Sagemaker,https://github.com/sayantan6720/Mobile-Price-Classification-using-AWS-Sagemaker,0,0,0,0,In this project I used AWS sagemaker to classify mobile prices.,managers.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,8/9/2024
+snehuvarbhe,Learn_basics_of_machine_learning,https://github.com/snehuvarbhe/Learn_basics_of_machine_learning,0,0,0,0,N/A,managers.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,1/11/2024
+enisbe,conda_linux,https://github.com/enisbe/conda_linux,0,0,0,0,N/A,managers.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,10/8/2024
+anoozhka,NLP-Projects,https://github.com/anoozhka/NLP-Projects,0,0,0,0,N/A,generated_optimized_shared_memory.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,5/19/2024
+nslsrv,takewithya,https://github.com/nslsrv/takewithya,0,2,0,1,Some useful blob: take it with ya!,salmon_file_exporter.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,12/21/2020
+imoken1122,PyAstroV,https://github.com/imoken1122/PyAstroV,0,0,0,0,N/A,DesignMatrix.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,9/25/2023
+rahulkumar7759,Invoice-Extractor-Project-Using-Google-Gemini,https://github.com/rahulkumar7759/Invoice-Extractor-Project-Using-Google-Gemini,0,0,0,0,N/A,video_frame_vlc_sw.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,1/23/2024
+JoaquinFerman,math,https://github.com/JoaquinFerman/math,0,0,0,0,Various math mobile apps,fizz.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,6/3/2024
+Pratikraut5530,Mobile-Price-Predictor-Sagemaker,https://github.com/Pratikraut5530/Mobile-Price-Predictor-Sagemaker,0,0,0,0,N/A,managers.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,10/29/2023
+gcleroux,ift630-docker-env,https://github.com/gcleroux/ift630-docker-env,0,0,0,4,Environnement de développement pour les TPs en IFT630,_test_multiprocessing.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,2/10/2023
+RajKulk16,CLTV-Compass,https://github.com/RajKulk16/CLTV-Compass,0,0,0,0,The main objective of this project is to forecast the Customer Lifetime Value (CLTV) using user and policy data.,_test_multiprocessing.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,2/21/2024
+SaivarmaVegesna2048,langchain_chatbot,https://github.com/SaivarmaVegesna2048/langchain_chatbot,0,0,0,0,N/A,managers.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,7/1/2024
+newbie10003-code,Codes,https://github.com/newbie10003-code/Codes,0,0,0,0,All codes,shmem_test_tool.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,3/28/2023
+alessoh,langgraph-env,https://github.com/alessoh/langgraph-env,0,0,0,0,N/A,managers.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,6/30/2024
+yshirai999,Maximin,https://github.com/yshirai999/Maximin,0,0,0,4,N/A,managers.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,5/15/2024
+zetadin,BraneSpace,https://github.com/zetadin/BraneSpace,0,0,5,4,N/A,_test_multiprocessing.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,5/7/2024
+Khushilama,FlowerSellingE-commerce,https://github.com/Khushilama/FlowerSellingE-commerce,0,0,0,0,N/A,_test_multiprocessing.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,4/24/2024
+jhquilty99,portfolio_constituents,https://github.com/jhquilty99/portfolio_constituents,0,1,0,0,Python package to extract and visualize the constituents of ETFs in an investment portfolio.,_test_multiprocessing.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,9/4/2023
+kazu107,lang_chack,https://github.com/kazu107/lang_chack,0,0,0,0,N/A,_test_multiprocessing.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,6/7/2024
+jeqcho,in-context-language-learning,https://github.com/jeqcho/in-context-language-learning,0,0,0,5,N/A,SLIMElasticNetRecommender.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,7/12/2024
+tongclement,Safely-Buoy-Wifi-Remote-Debugging-Dashboard,https://github.com/tongclement/Safely-Buoy-Wifi-Remote-Debugging-Dashboard,0,0,0,0,Dashboard and Flutter Mobile App showing the telemetry of the SafelyBuoy robotic buoy for remote debugging at sea<> built using Streamlit and Flutter. Experimented with Kivy.,SLIMElasticNetRecommender.py,pydocs,Pydocs_MustUnlinkSharedMemory,pytest,12/17/2023
+hemna,haminfo,https://github.com/hemna/haminfo,0,0,0,18,Ham repeater station info API,crawl_TNA.py,requests,Requests_MustCloseSession,pytest,7/30/2021
+wingsheep,learningPython,https://github.com/wingsheep/learningPython,0,0,6,0,N/A,csv_g.py,requests,Requests_MustCloseSession,pytest,12/19/2021
+shbfy,ML-python-lightgbm-cpu-service,https://github.com/shbfy/ML-python-lightgbm-cpu-service,0,1,0,19,Jenkins X quick start for training and deploying tree based learning algorithms using the LightGBM library,rpc_client.py,requests,Requests_MustCloseSession,pytest,2/7/2020
+sarvesh5012,test-CI-actions,https://github.com/sarvesh5012/test-CI-actions,0,0,0,0,N/A,week_pmc_1_get_name.py,requests,Requests_MustCloseSession,pytest,10/17/2024
+sophiembanda,Bidii3,https://github.com/sophiembanda/Bidii3,0,0,0,0,N/A,arrestorg.py,requests,Requests_MustCloseSession,pytest,9/1/2024
+chronicc,proving-ground,https://github.com/chronicc/proving-ground,0,0,0,0,Vagrant test environment with prepared scenarios.,api.py,requests,Requests_MustCloseSession,pytest,12/22/2020
+mollymcclean,scp-ansible-rn,https://github.com/mollymcclean/scp-ansible-rn,0,0,0,1,N/A,DW-DECODED.py,requests,Requests_MustCloseSession,pytest,8/31/2021
+kokasha,layer2_demo,https://github.com/kokasha/layer2_demo,0,0,0,0,N/A,DW-DECODED.py,requests,Requests_MustCloseSession,pytest,9/22/2020
+coll-test,notstdlib.moveitallout,https://github.com/coll-test/notstdlib.moveitallout,0,0,0,1,N/A,get.py,requests,Requests_MustCloseSession,pytest,1/23/2020
+anthonyhungnguyen,datahub-ghn,https://github.com/anthonyhungnguyen/datahub-ghn,0,0,0,0,N/A,workspace-utils.py,requests,Requests_MustCloseSession,pytest,5/3/2024
+andrzejdackiewicz,airbyte-primetric-custom-reports,https://github.com/andrzejdackiewicz/airbyte-primetric-custom-reports,0,0,0,0,airbyte-primetric-custom-reports,sard_crawl.py,requests,Requests_MustCloseSession,pytest,2/4/2024
+samkos,kslhub,https://github.com/samkos/kslhub,0,0,0,0,a datahub based on jupyterhub ,chain_interface.py,requests,Requests_MustCloseSession,pytest,3/15/2019
+One-Linkage,LinkageDependencies,https://github.com/One-Linkage/LinkageDependencies,0,0,0,0,N/A,main.py,requests,Requests_MustCloseSession,pytest,8/7/2023
+VigyanShaala-Tech,Career-Coach-Recruitment,https://github.com/VigyanShaala-Tech/Career-Coach-Recruitment,0,1,0,1,N/A,query_altered_network.py,requests,Requests_MustCloseSession,pytest,9/30/2024
+Tharun-100,AI_sql_gen,https://github.com/Tharun-100/AI_sql_gen,0,0,0,0,N/A,configure_tokens_for_worksaces.py,requests,Requests_MustCloseSession,pytest,7/17/2024
+priteshkeleven,FullStackProject,https://github.com/priteshkeleven/FullStackProject,0,0,1,0,This project has been built using OpenBBTerminal SDK,mirrorace.py,requests,Requests_MustCloseSession,pytest,4/23/2023
+NightFury010497,Udacity_Data_Scientist_NanoDegree,https://github.com/NightFury010497/Udacity_Data_Scientist_NanoDegree,0,0,0,57,USND Disaster Response Pipeline,_table.py,requests,Requests_MustCloseSession,pytest,5/26/2020
+chatterjeee,Data-Science_Projects,https://github.com/chatterjeee/Data-Science_Projects,0,0,0,0,N/A,log.py,requests,Requests_MustCloseSession,pytest,3/7/2024
+PreethamMadupuri91,AirflowWorkflow,https://github.com/PreethamMadupuri91/AirflowWorkflow,0,0,0,46,N/A,impersonated_credentials.py,requests,Requests_MustCloseSession,pytest,3/27/2020
+tessia-project,tessia-mesh,https://github.com/tessia-project/tessia-mesh,0,0,0,0,This is a mirror for a public repository https://gitlab.com/tessia-project/tessia-mesh Task Execution Supporter and System Installation Assistant - A tool to automate and simplify the installation/configuration/testing of Linux systems running on the IBM Z platform. ,scraping.py,requests,Requests_MustCloseSession,pytest,12/3/2021
