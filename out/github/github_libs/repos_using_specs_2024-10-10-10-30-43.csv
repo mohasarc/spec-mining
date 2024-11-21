@@ -1,0 +1,118 @@
+Owner,Repository Name,Repository Link,Stars,Forks,Issues,Pull Requests,Description,File Name,Dependency Name,Spec Name,Testing Framework,Created At
+ray-project,ray,https://github.com/ray-project/ray,33360,5546,18515,29155,Ray is a unified framework for scaling AI and Python applications. Ray consists of a core distributed runtime and a set of AI Libraries for accelerating ML workloads.,logging.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,10/25/2016
+pypa,pipenv,https://github.com/pypa/pipenv,24840,1830,4244,1939, Python Development Workflow for Humans.,logger.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,1/20/2017
+conda,conda,https://github.com/conda/conda,6388,1619,9727,4486,A system-level<> binary package and environment manager running on all major operating systems and platforms.,fabfile.py,pydocs,FTP_MustLoginOnceOnly,pytest,10/15/2012
+rotki,rotki,https://github.com/rotki/rotki,2825,516,2613,6051,"A portfolio tracking<> analytics, accounting and management application that protects your privacy",base_reinforcement_logger.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,3/5/2018
+redballoonsecurity,ofrak,https://github.com/redballoonsecurity/ofrak,1861,128,107,392,"OFRAK: unpack<> modify, and repack binaries.",ofrak_context.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,8/8/2022
+wummel,linkchecker,https://github.com/wummel/linkchecker,1418,233,734,70,check links in web documents or full websites,log.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,12/19/2012
+totalgood,nlpia,https://github.com/totalgood/nlpia,619,264,30,19,"Examples and libraries for ""Natural Language Processing in Action"" book",dwnFTP.py,pydocs,FTP_MustLoginOnceOnly,pytest,10/25/2016
+openembedded,bitbake,https://github.com/openembedded/bitbake,428,231,0,37,The official bitbake Git is at https://git.openembedded.org/bitbake/. Do not open issues or file pull requests here.,generate_log_files.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,5/3/2011
+yoctoproject,poky,https://github.com/yoctoproject/poky,247,203,0,10,Mirror of https://git.yoctoproject.org/poky/.,agreement.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,11/25/2021
+Uninett,nav,https://github.com/Uninett/nav,183,38,2225,891,Network Administration Visualized,utils.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,1/17/2017
+kaapana,kaapana,https://github.com/kaapana/kaapana,157,43,8,17,Kaapana (from the hawaiian word kaʻāpana<> meaning “distributor” or “part”) is an open source toolkit for state of the art platform provisioning in the field of medical data analysis. The applications comprise AI-based workflows and federated learning scenarios with a focus on radiological and radiotherapeutic imaging.,task_command.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,8/6/2020
+yandex,yatool,https://github.com/yandex/yatool,145,8,15,6,"Yatool is a cross-platform distribution<> building, testing, and debugging toolkit focused on monorepositories",process.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,11/24/2023
+PacktPublishing,Mastering-Object-Oriented-Python-Second-Edition,https://github.com/PacktPublishing/Mastering-Object-Oriented-Python-Second-Edition,143,102,1,0,Mastering Object-Oriented Python - Second Edition<> published by Packt,sbat.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,5/20/2019
+ryanmrestivo,red-team,https://github.com/ryanmrestivo/red-team,123,34,0,0,"Notes<> red team materials, testing tools, etc.",index.py,pydocs,FTP_MustLoginOnceOnly,pytest,4/12/2021
+smarthomeNG,smarthome,https://github.com/smarthomeNG/smarthome,122,90,255,417,Device integration platform for your smart home,convert_model.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,3/15/2016
+CERT-Polska,n6,https://github.com/CERT-Polska/n6,121,22,4,42,Automated handling of data feeds for security teams,42344_1094011950.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,6/22/2018
+kaizen-ai,kaizenflow,https://github.com/kaizen-ai/kaizenflow,111,77,512,612,KaizenFlow is a framework for Bayesian reasoning and AI/ML stream computing,cobol_reader.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,1/8/2023
+SBRG,ssbio,https://github.com/SBRG/ssbio,103,28,41,17,A Python framework for structural systems biology,ClientFTP.py,pydocs,FTP_MustLoginOnceOnly,pytest,1/25/2016
+EldarMuradov,EraEngine,https://github.com/EldarMuradov/EraEngine,100,7,8,9,Open source C++ 3D game engine ,manager.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,11/20/2023
+cambridge-cares,TheWorldAvatar,https://github.com/cambridge-cares/TheWorldAvatar,85,25,343,1024,A knowledge-graph-based digital twin of the world.,base_command.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,3/6/2021
+devsoc-unsw,circles,https://github.com/devsoc-unsw/circles,55,10,117,1078,The open-source degree planner for UNSW students. Features an interactive drag-and-drop interface for easy term planning and automatic progression checking to help you stay on track for graduation. ,PublishSpacedock.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,3/6/2021
+opensvc,opensvc,https://github.com/opensvc/opensvc,35,11,42,626,The OpenSVC node agent,server.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,9/30/2018
+slott56,py-web-tool,https://github.com/slott56/py-web-tool,34,6,13,15,pyWebTool supports Literate Programming by trying to work with ANY markup language and any programming language,MFBC_github.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,6/12/2018
+superdesk,superdesk-core,https://github.com/superdesk/superdesk-core,29,79,35,2694,Common server modules for superdesk,ftp.py,pydocs,FTP_MustLoginOnceOnly,pytest,8/20/2015
+floschl,pysamosa,https://github.com/floschl/pysamosa,28,5,0,0,PySAMOSA is a software framework for processing open ocean and coastal waveforms from SAR satellite altimetry to measure sea surface heights<> wave heights and wind speed for the oceans and inland water bodies. Satellite altimetry is a space-borne remote sensing technique used for Earth observation.,cleanup.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,5/27/2023
+nasa,CTF,https://github.com/nasa/CTF,27,6,52,3,This is a new repository for a new tool to be added to the cFS ecosystem called cFS Test Framework (CTF).,test_ftplib.py,pydocs,FTP_MustLoginOnceOnly,pytest,10/1/2020
+isogeo,isogeo-plugin-qgis,https://github.com/isogeo/isogeo-plugin-qgis,16,5,408,77,Isogeo plugin for QGIS,show_simplification.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,7/12/2016
+kercre123,vic-yocto,https://github.com/kercre123/vic-yocto,15,6,0,0,Upgrading Vector's underlying OS,ftpmirror.py,pydocs,FTP_MustLoginOnceOnly,pytest,2/17/2024
+BPI-SINOVOIP,BPI-R2PRO-BSP-5.10.x,https://github.com/BPI-SINOVOIP/BPI-R2PRO-BSP-5.10.x,15,11,5,1,Supports Banana Pi BPI-R2PRO-BSP,registry.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,6/23/2022
+JohnnyPeng18,TypeFix,https://github.com/JohnnyPeng18/TypeFix,14,4,5,0,"This is the tool released in ICSE 2024 paper ""Domain Knowledge Matters: Improving Prompts with Fix Templates for Repairing Python Type Errors"".",agreement.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,10/6/2022
+kupl,PyTER,https://github.com/kupl/PyTER,12,5,3,3,N/A,run.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,3/17/2022
+AutomationSolutionz,Zeuz_Python_Node,https://github.com/AutomationSolutionz/Zeuz_Python_Node,11,8,7,497,"A cross-platform automation tool + framework that can automate web<> mobile, desktop, rest api & databases.",communication.py,pydocs,FTP_MustLoginOnceOnly,pytest,1/21/2021
+CADDE-sip,connector,https://github.com/CADDE-sip/connector,8,6,0,25,2023年3月版分野間連携基盤コネクタ(CADDE),run_mag_etl.py,pydocs,FTP_MustLoginOnceOnly,pytest,9/30/2020
+wateraccounting,IHEWAcollect,https://github.com/wateraccounting/IHEWAcollect,8,5,11,7,IHE WaterAccounting Collect Tool for automated download of remote sensing datasets.,getbinpkg.py,pydocs,FTP_MustLoginOnceOnly,pytest,11/15/2019
+wikimedia,mediawiki-tools-scap,https://github.com/wikimedia/mediawiki-tools-scap,8,3,0,0,Mirror of https://gitlab.wikimedia.org/repos/releng/scap :ship: scap is a tool for putting code in places and for other purposes,confusion_matrix.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,2/4/2014
+viperleed,viperleed,https://github.com/viperleed/viperleed,6,1,159,95,ViPErLEED is a package for quantitative low-energy electron diffraction (LEED-IV).,process_frames.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,8/3/2020
+ubinux,yocto-ubinux,https://github.com/ubinux/yocto-ubinux,6,7,6,13,N/A,redist_base.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,3/4/2020
+mikem23,koji-playground,https://github.com/mikem23/koji-playground,6,4,0,1,This repo is for *experimental* koji changes. Heads may rebase or disappear. You have been warned. Official upstream at https://pagure.io/koji and github mirror at https://github.com/koji-project/koji,log.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,4/9/2015
+danevd-TCD,Rapid-Labelling-Tool,https://github.com/danevd-TCD/Rapid-Labelling-Tool,5,0,1,11,A Python prototype tool for the rapid labeling of visual data to assist in the training of neural networks,create_dataset.py,pydocs,FTP_MustLoginOnceOnly,pytest,4/7/2020
+veltzer,demos-python,https://github.com/veltzer/demos-python,5,2,0,1,Demos for the Python programming language,file.py,pydocs,FTP_MustLoginOnceOnly,pytest,10/1/2013
+Phileosopher,ts-learning,https://github.com/Phileosopher/ts-learning,5,1,0,0,TechSplained learning,post_commit_hook.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,3/6/2021
+OceanStreamIO,oceanstream,https://github.com/OceanStreamIO/oceanstream,4,3,50,99,Oceanstream is a Python library which can be used as a CLI tool to process raw acoustic data from echosounders. It  uses echopype as a backend. Developed at @pineviewlabs,Dobby-102005.py,pydocs,FTP_MustLoginOnceOnly,pytest,9/4/2023
+csesoc,handbook-scraper,https://github.com/csesoc/handbook-scraper,4,1,3,25,A general public api for interacting with the UNSW handbook,run_app.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,10/19/2022
+NMBU-Data-Science,imskaper,https://github.com/NMBU-Data-Science/imskaper,4,1,0,0,N/A,server.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,7/1/2021
+errolyan,python_tutorials,https://github.com/errolyan/python_tutorials,3,1,0,16,N/A,ftpfs.py,pydocs,FTP_MustLoginOnceOnly,pytest,4/24/2020
+tronty,CPPEngine,https://github.com/tronty/CPPEngine,3,1,0,0,N/A,TShOcker.py,pydocs,FTP_MustLoginOnceOnly,pytest,12/26/2020
+Web-Dev-Collaborative,WEB_DEV_COLLABORATIVE,https://github.com/Web-Dev-Collaborative/WEB_DEV_COLLABORATIVE,3,3,1,3,WEB_DEV_COLLABORATIVE,ftp_send_receive.py,pydocs,FTP_MustLoginOnceOnly,pytest,12/10/2021
+ErikNixdorf,sbat,https://github.com/ErikNixdorf/sbat,3,0,37,22,The Repo for the Surface Water Balance Analysis Tool,base.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,3/11/2023
+HanKin2015,Storage,https://github.com/HanKin2015/Storage,2,0,0,58,My privite storage!,protocols.py,pydocs,FTP_MustLoginOnceOnly,pytest,4/1/2016
+Anderson-Lab,Learn2Mine-Main,https://github.com/Anderson-Lab/Learn2Mine-Main,2,3,12,0,N/A,QuentiumBot.py,pydocs,FTP_MustLoginOnceOnly,pytest,7/31/2014
+DanielMartensson,STM32-OS,https://github.com/DanielMartensson/STM32-OS,2,0,0,0,A Linux operating system for the STM32 Computer,ftp_upload_throughput.py,pydocs,FTP_MustLoginOnceOnly,pytest,9/11/2024
+eric-erki,Home-assistant,https://github.com/eric-erki/Home-assistant,2,0,0,16,Open source home automation that puts local control and privacy,pack.py,pydocs,FTP_MustLoginOnceOnly,pytest,9/2/2018
+Asap7772,widowx_control,https://github.com/Asap7772/widowx_control,2,1,0,0,N/A,agreement.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,2/18/2023
+sciclon2,pagecache_ttl,https://github.com/sciclon2/pagecache_ttl,2,0,0,11,N/A,main.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,9/10/2023
+rachel3834,mulens-tom,https://github.com/rachel3834/mulens-tom,2,0,3,6,Example Target and Observation Manager (TOM) System for Astronomical Observations,__main__.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,5/1/2017
+Cnawel,cloud_bkp_remote_drive,https://github.com/Cnawel/cloud_bkp_remote_drive,1,0,0,0,Connect via FTP to Server<> then BKP to CLOUD DRIVE,web.py,pydocs,FTP_MustLoginOnceOnly,pytest,12/16/2022
+snoopgodlinux,packages,https://github.com/snoopgodlinux/packages,1,0,0,0,Official packages repository of SnoopGod Linux OS,loaders.py,pydocs,FTP_MustLoginOnceOnly,pytest,6/20/2024
+Kyrillos1,Ekhdm,https://github.com/Kyrillos1/Ekhdm,1,0,0,0,A website for church services to help servers communicate and developing services.,40647.py,pydocs,FTP_MustLoginOnceOnly,pytest,9/18/2022
+dhruvbalwada,sogos,https://github.com/dhruvbalwada/sogos,1,2,21,2,N/A,j0.py,pydocs,FTP_MustLoginOnceOnly,pytest,10/22/2019
+kungfuai,CVlization,https://github.com/kungfuai/CVlization,1,2,9,47,Practical workflows for using and training vision and language models.,App.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,10/7/2021
+wonseokyang-de,the-open-source-explorer,https://github.com/wonseokyang-de/the-open-source-explorer,1,0,0,0,Whenever something piques my interest<> I delve into it for fun or to apply what I learn at work.,binanza.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,3/22/2024
+vaimalaviya1233,CodeFiles,https://github.com/vaimalaviya1233/CodeFiles,1,0,0,13,Java Practice Files,hcp.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,1/16/2021
+bkiselgof,nlpia,https://github.com/bkiselgof/nlpia,0,1,0,1,Natural Language Processing In Action Book,ftp.py,pydocs,FTP_MustLoginOnceOnly,pytest,9/27/2020
+AlieZVzz,Natural_Language_Processing_In_Action_2021.11,https://github.com/AlieZVzz/Natural_Language_Processing_In_Action_2021.11,0,1,0,1,N/A,F-Scrack.py,pydocs,FTP_MustLoginOnceOnly,pytest,12/20/2021
+IldarMurzagaleev,nlpia,https://github.com/IldarMurzagaleev/nlpia,0,0,0,0,N/A,ftpfs.py,pydocs,FTP_MustLoginOnceOnly,pytest,12/15/2021
+shadynagy232,NLP-repo-in-action,https://github.com/shadynagy232/NLP-repo-in-action,0,0,0,0,N/A,ftpfs.py,pydocs,FTP_MustLoginOnceOnly,pytest,4/19/2022
+CastielWong,MVP,https://github.com/CastielWong/MVP,0,0,0,2,Minimum Viable Product,wwpdb.py,pydocs,FTP_MustLoginOnceOnly,pytest,11/10/2020
+Secure-Platforms-Lab-W-M,Helion-on-Home-Assistant,https://github.com/Secure-Platforms-Lab-W-M/Helion-on-Home-Assistant,0,0,0,14,N/A,cupp.py,pydocs,FTP_MustLoginOnceOnly,pytest,5/10/2023
+HammadMusaddiq,Python_ML_Scripts,https://github.com/HammadMusaddiq/Python_ML_Scripts,0,0,0,2,N/A,ftp.py,pydocs,FTP_MustLoginOnceOnly,pytest,1/4/2024
+AlvesInfo,heron,https://github.com/AlvesInfo/heron,0,0,0,3,Projet HERON,ftplib.py,pydocs,FTP_MustLoginOnceOnly,pytest,12/1/2021
+peterchap,Datacleaning1,https://github.com/peterchap/Datacleaning1,0,0,0,0,N/A,biomed.py,pydocs,FTP_MustLoginOnceOnly,pytest,5/8/2022
+sanjog167,newvistaar3,https://github.com/sanjog167/newvistaar3,0,0,0,0,N/A,main.py,pydocs,FTP_MustLoginOnceOnly,pytest,4/9/2023
+Charlie-Lambino-Worthington,heartrate-tracker,https://github.com/Charlie-Lambino-Worthington/heartrate-tracker,0,0,0,0,N/A,test_ftplib.py,pydocs,FTP_MustLoginOnceOnly,pytest,9/10/2024
+Gautam-MV,Concrete_p,https://github.com/Gautam-MV/Concrete_p,0,2,0,0,N/A,40647.py,pydocs,FTP_MustLoginOnceOnly,pytest,11/25/2022
+soumeyahaloui,mock_ser,https://github.com/soumeyahaloui/mock_ser,0,0,0,0,N/A,ftplib.py,pydocs,FTP_MustLoginOnceOnly,pytest,2/1/2024
+Xbasan,calculator,https://github.com/Xbasan/calculator,0,0,0,0,N/A,ftplib.py,pydocs,FTP_MustLoginOnceOnly,pytest,7/1/2024
+soumeyahaloui,final_project,https://github.com/soumeyahaloui/final_project,0,0,0,0,N/A,ftplib.py,pydocs,FTP_MustLoginOnceOnly,pytest,3/23/2024
+ryan3-10,goal_track_app,https://github.com/ryan3-10/goal_track_app,0,0,0,0,N/A,ftplib.py,pydocs,FTP_MustLoginOnceOnly,pytest,1/29/2024
+FAIRClinical,ClinicalCorporaWorkflow,https://github.com/FAIRClinical/ClinicalCorporaWorkflow,0,0,7,0,N/A,curare_wizard.py,pydocs,FTP_MustLoginOnceOnly,pytest,8/22/2024
+iovex,django-storages,https://github.com/iovex/django-storages,0,1,0,0,N/A,__init__.py,pydocs,FTP_MustLoginOnceOnly,pytest,2/6/2018
+Koshizuka-lab,klab-connector-v4,https://github.com/Koshizuka-lab/klab-connector-v4,0,0,0,2,CADDEコネクタ（テストベッド用）,request.py,pydocs,FTP_MustLoginOnceOnly,pytest,4/22/2023
+Prismoid,klab-connector-v4,https://github.com/Prismoid/klab-connector-v4,0,0,0,0,Clone from https://github.com/Koshizuka-lab/klab-connector-v4,db_backup_configure.py,pydocs,FTP_MustLoginOnceOnly,pytest,10/2/2024
+phenomecentre,phenomedb,https://github.com/phenomecentre/phenomedb,0,0,0,1,N/A,pipelines.py,pydocs,FTP_MustLoginOnceOnly,pytest,11/2/2022
+Hengle,CPPEngine,https://github.com/Hengle/CPPEngine,0,1,0,0,N/A,upload.py,pydocs,FTP_MustLoginOnceOnly,pytest,7/2/2020
+BookOps-CAT,RL-shelf-ready-validation,https://github.com/BookOps-CAT/RL-shelf-ready-validation,0,0,10,20,MARC record validator for shelf ready materials,connect.py,pydocs,FTP_MustLoginOnceOnly,pytest,12/29/2023
+yxkj2022,python-core,https://github.com/yxkj2022/python-core,0,0,0,0,N/A,stock.py,pydocs,FTP_MustLoginOnceOnly,pytest,2/16/2022
+rrunner,log_priority_queue,https://github.com/rrunner/log_priority_queue,0,0,0,0,N/A,bots_client.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,3/17/2024
+DervishD,sacamantecas,https://github.com/DervishD/sacamantecas,0,1,0,0,"Obtains a list of book URIs from an Excel (xls/xlsx) input file<> performs the necessary web redirections, if needed, and then gets some metadata for those books from the server catalogue.  In short, the program saca las mantecas…",NBBC_github.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,2/16/2022
+NSS-SAT,nonsolosat-core-9.0,https://github.com/NSS-SAT/nonsolosat-core-9.0,0,0,0,0,N/A,log.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,2/5/2024
+WangYCheng23,rl_practice,https://github.com/WangYCheng23/rl_practice,0,1,0,0,N/A,book_approved.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,5/27/2024
+tedyted26,Sistemas-recomendacion,https://github.com/tedyted26/Sistemas-recomendacion,0,2,0,1,Proyecto final de la asignatura de Sistemas de recomendación y representación del conocimiento de la UEM 2021-2022. Aplicación de recomendación de noticias periodísticas utilizando el teorema del coseno y el coeficiente de Sorensen-Dice,agreement.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,12/13/2021
+tedyted26,Proyecto-1-noticias,https://github.com/tedyted26/Proyecto-1-noticias,0,2,0,1,Segunda parte de Proyecto de Computación 1 de la UEM 2021-2022. Usando las noticias y modelos anteriores<> se crea una aplicación capaz de predecir si en una noticia se habla de delitos de odio o no.,agreement.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,1/4/2022
+turgunovkamron,Clinic-dashboard,https://github.com/turgunovkamron/Clinic-dashboard,0,0,0,0,N/A,base_command.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,11/6/2023
+Fr33dman,fuck_you_airflow,https://github.com/Fr33dman/fuck_you_airflow,0,0,0,0,N/A,_recorder.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,12/16/2022
+mehulagg,mozilla-central,https://github.com/mehulagg/mozilla-central,0,0,0,1,N/A,_recorder.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,1/31/2020
+kenvenner,PythonTools,https://github.com/kenvenner/PythonTools,0,0,0,2,N/A,kvlogger.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,5/10/2020
+SDUgitrep,smart_data_ukimet,https://github.com/SDUgitrep/smart_data_ukimet,0,0,0,0,N/A,es_task_handler.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,6/30/2023
+HenryRWinterbottom,nwp_pyutils,https://github.com/HenryRWinterbottom/nwp_pyutils,0,0,1,2,Python API for Numerical Weather Prediction (NWP) and Data Assimilation Applications,rocket.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,7/3/2024
+cachatj,data_notebooks-JC,https://github.com/cachatj/data_notebooks-JC,0,0,0,0,repo for jupyter notebook templates & code snippets used as DE & DS ,logger_interface.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,8/19/2022
+PreethamMadupuri91,AirflowWorkflow,https://github.com/PreethamMadupuri91/AirflowWorkflow,0,0,0,46,N/A,es_task_handler.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,3/27/2020
+MateErdei,esg.linuxep.linux-mono-repo,https://github.com/MateErdei/esg.linuxep.linux-mono-repo,0,0,0,0,N/A,method_v1.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,3/11/2024
+kosi-so,pdfreader,https://github.com/kosi-so/pdfreader,0,0,0,0,N/A,fahrunner.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,8/30/2024
+EclipseZ23,devops,https://github.com/EclipseZ23/devops,0,0,0,0,N/A,initialize_logger.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,9/4/2024
+ErikNixdorf,sbat_release,https://github.com/ErikNixdorf/sbat_release,0,0,0,0,N/A,server.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,3/13/2024
+qompassai,Equator,https://github.com/qompassai/Equator,0,0,0,0,Education Amplifying Human Intelligence,task_command.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,7/27/2024
+TinkerBoard-Android,rockchip-android-external-autotest,https://github.com/TinkerBoard-Android/rockchip-android-external-autotest,0,0,0,0,N/A,app2.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,3/6/2023
+VittorioMinio93,shwpredict,https://github.com/VittorioMinio93/shwpredict,0,0,0,0,N/A,mantra.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,6/2/2023
+yuanjiajun999,AI_Nirvana,https://github.com/yuanjiajun999/AI_Nirvana,0,0,0,11,N/A,db.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,6/24/2024
+Ben-Cliff,Mastering-Object-Oriented-Python,https://github.com/Ben-Cliff/Mastering-Object-Oriented-Python,0,0,1,0,Packt Publishing<> 2nd Edition,run.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,4/23/2021
+TinkerBoard2-Android,external-autotest,https://github.com/TinkerBoard2-Android/external-autotest,0,0,0,0,N/A,server.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,9/28/2021
+Oliver-2023,autoTest,https://github.com/Oliver-2023/autoTest,0,0,0,0,N/A,logging.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,1/2/2024
+mayankmotiyani,codeready,https://github.com/mayankmotiyani/codeready,0,0,0,0,N/A,__main__.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,10/1/2022
+deepin-community,thunderbird,https://github.com/deepin-community/thunderbird,0,2,1,6,N/A,__main__.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,10/19/2022
+hexagon-geo-surv,bitbake,https://github.com/hexagon-geo-surv/bitbake,0,1,0,0,Bitbake Development tree,redist_base.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,7/6/2020
+Ecordonnier,poky-kdump-demo,https://github.com/Ecordonnier/poky-kdump-demo,0,0,0,0,Used to demonstrage kdump usage with poky,redist_base.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,9/2/2024
+HondaNM,sigmanet_new,https://github.com/HondaNM/sigmanet_new,0,0,0,0,N/A,redist_base.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,10/8/2024
+kevin0120,PythonWorld,https://github.com/kevin0120/PythonWorld,0,0,1,0,N/A,common.py,pydocs,Logging_MustNotLogAfterShutdown,pytest,4/21/2022
