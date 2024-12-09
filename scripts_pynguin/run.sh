@@ -1,10 +1,14 @@
 #!/bin/bash
 
+set -x
+
 if [ -z "$1" ]; then
     echo "Error: No git repository"
     echo "Usage: ./run.sh <git_repo>"
     exit 1
 fi
+
+cd /tmp
 
 repo=$1
 repo_name=$(basename "$repo" .git)

@@ -2,7 +2,7 @@ FROM python:3.10.14-slim-bullseye
 
 # Install dependencies
 RUN apt-get update && \
-    apt-get install -y git && \
+    apt-get install -y git zip && \
     pip install --upgrade pip setuptools wheel && \
     pip install pytest && \
     pip install git+https://github.com/se2p/pynguin.git@0.39.0
