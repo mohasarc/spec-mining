@@ -80,6 +80,9 @@ done
 # add chmod to the logs directory
 chmod -R 777 "$BASEDIR"
 
-zip -r "$BASEDIR".zip "$BASEDIR"
+cd /app
+
+zip -r "$repo_name".zip "$repo_name"
+rm -r "$repo_name"
 
 echo "Script completed. Summary written to $summary_file"
