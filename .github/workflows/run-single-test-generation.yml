@@ -49,8 +49,12 @@ jobs:
 
         - name: Print contents of ./projects
           run: |
+            cd ./projects
+            # recursively print all the files in the directory 
+            find . -type f
+            
             # move all zip files to the root directory
-            mv ./projects/**/*.zip .
+            mv ./**/*.zip .
             ls -la
 
         - name: Upload report to GitHub Release
