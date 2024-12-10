@@ -1,0 +1,68 @@
+name: Run Single Test Generation
+
+on:
+  workflow_call:
+    inputs:
+      project-link:
+        required: true
+        type: string
+      release-name:
+        required: true
+        type: string
+    secrets: 
+      GH_ACCESS_TOKEN:
+        required: true 
+jobs:
+  run-original:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v4
+          with:
+            fetch-depth: 0
+    
+        - name: Prepare Working Directory
+          run: |
+              mkdir ./projects
+              cd ./projects
+    
+        - name: Setup variables
+          run: |
+              # Extract the repository URL from the input by removing any part after a semicolon
+              REPO_URL=$(echo "${{ inputs.project-link }}" | sed 's/;.*//')
+              # Extract the SHA from the input by removing any part before a semicolon
+              SHA=$(echo "${{ inputs.project-link }}" | sed 's/.*;//')
+
+              echo "REPO_URL=$REPO_URL" >> $GITHUB_ENV
+              echo "SHA=$SHA" >> $GITHUB_ENV
+          shell: bash
+        
+        - name: Prepare working directory
+          run: |
+            mkdir -p ./projects
+            cd ./projects
+        
+        - name: Run the project with Docker
+          run: |
+            cd ./projects
+            docker run --rm -v "$(pwd):/app" denini/pynguin ${{env.REPO_URL}}
+          shell: bash
+
+        - name: Print contents of ./projects
+          run: |
+            # move all zip files to the root directory
+            mv ./projects/**/*.zip .
+            ls -la
+
+        - name: Upload report to GitHub Release
+          uses: Wandalen/wretry.action@master
+          with:
+            attempt_delay: 60000 # 1 min
+            attempt_limit: 10
+            action: softprops/action-gh-release@v1
+            with: |
+              files: ./projects/*.zip
+              tag_name: ${{ inputs.release-name }}
+              name: ${{ inputs.release-name }}
+              draft: false
+              prerelease: true
+              token: ${{ secrets.GITHUB_TOKEN }}
