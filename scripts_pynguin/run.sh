@@ -47,7 +47,20 @@ mkdir -p "$logs_dir"
 echo "module,run_status,time_duration_seconds" > "$summary_file"
 
 # Find Python modules and process each
-for file_path in $(find "$PROGRAM" -name "*.py"); do
+for file_path in $(find . -name "*.py"); do
+    # if the file starts with test_ or tests_ or test_ or tests_ or test or tests, skip it
+    if [[ "$file_path" == test_* || "$file_path" == tests_* || "$file_path" == test || "$file_path" == tests ]]; then
+        echo "Skipping $file_path"
+        continue
+    fi
+
+    # if the file is within a test FOLDER, skip it
+    if [[ "$file_path" == *"test"* ]]; then
+        echo "Skipping $file_path"
+        continue
+    fi
+
+    # get the module name from the file path
     module=$(echo "$file_path" | sed 's|/|.|g; s|\.py$||' | sort | uniq)
 
     echo -e "\n\n\n--------------\nRunning Pynguin on $module\n"
