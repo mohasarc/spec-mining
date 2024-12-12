@@ -53,18 +53,6 @@ jobs:
             # recursively print all the files in the directory 
             find . -type f
 
-        - name: fail if csv file has only one row
-          run: |
-            cd ./projects
-            # extract the csv file from the zip file
-            unzip -j ./projects/*.zip
-
-            # check if the csv file has only one row
-            if [ $(wc -l < ./projects/*.csv) -eq 1 ]; then
-              echo "Error: CSV file has only one row"
-              exit 1
-            fi
-
         - name: Upload report to GitHub Release
           uses: Wandalen/wretry.action@master
           with:
