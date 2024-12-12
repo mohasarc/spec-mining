@@ -49,13 +49,14 @@ echo "module,run_status,time_duration_seconds" > "$summary_file"
 # Find Python modules and process each
 for file_path in $(find . -name "*.py"); do
     # if the file starts with test_ or tests_ or test_ or tests_ or test or tests, skip it
-    if [[ "$file_path" == test_* || "$file_path" == tests_* || "$file_path" == test || "$file_path" == tests ]]; then
+    base_name=$(basename "$file_path")
+    if [[ "$base_name" == test_* || "$base_name" == tests_* || "$base_name" == test || "$base_name" == tests ]]; then
         echo "Skipping $file_path"
         continue
     fi
 
     # if the file is within a test FOLDER, skip it
-    if [[ "$file_path" == *"test"* || "$file_path" == *"build"* ]]; then
+    if [[ "$file_path" =~ (^|/)test(/|$) || "$file_path" =~ (^|/)build(/|$) ]]; then
         echo "Skipping $file_path"
         continue
     fi
