@@ -61,7 +61,7 @@ for file_path in $(find . -name "*.py"); do
     fi
 
     # get the module name from the file path
-    module=$(echo "$file_path" | sed 's|/|.|g; s|\.py$||' | sort | uniq)
+    module=$(echo "$file_path" | sed 's|./|.|g; s|\.py$||' | sort | uniq)
 
     echo -e "\n\n\n--------------\nRunning Pynguin on $module\n"
     log_file="$logs_dir/${module//./_}.log"
