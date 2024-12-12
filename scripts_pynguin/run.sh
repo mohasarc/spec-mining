@@ -55,13 +55,13 @@ for file_path in $(find . -name "*.py"); do
     fi
 
     # if the file is within a test FOLDER, skip it
-    if [[ "$file_path" == *"test"* ]]; then
+    if [[ "$file_path" == *"test"* || "$file_path" == *"build"* ]]; then
         echo "Skipping $file_path"
         continue
     fi
 
     # get the module name from the file path
-    module=$(echo "$file_path" | sed 's|./|.|g; s|\.py$||' | sort | uniq)
+    module=$(echo "$file_path" | sed -E 's#^\./##; s#/#.#g; s#\.py$##' | sort | uniq)
 
     echo -e "\n\n\n--------------\nRunning Pynguin on $module\n"
     log_file="$logs_dir/${module//./_}.log"
