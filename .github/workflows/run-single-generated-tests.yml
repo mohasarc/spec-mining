@@ -58,8 +58,8 @@ jobs:
         - name: Zip report files
           run: |
             cd ./projects
-            zip -r ../../../$ZIP_FILE .  # Create a zip file in the projects directory
-            ls -l ../../../
+            zip -r ../$ZIP_FILE .  # Create a zip file in the projects directory
+            ls -l ../
           shell: bash
 
         - name: Upload report to GitHub Release
