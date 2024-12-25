@@ -16,7 +16,7 @@ on:
         default: 'links-1'
       release_name:
         description: 'Name of the release to be created.'
-        default: generated-tests-2024-12-10
+        default: generated-test-results-2024-12-25
         required: true
   # repository_dispatch:
   #   types: [run-multiple-repos]
