@@ -19,6 +19,10 @@ on:
           description: 'Name of the release to be created.'
           default: all-results-2024-05-18-morning
           required: true
+        pymop-branch:
+          description: 'Branch of the pymop repository to use.'
+          default: 'add_statistics_new'
+          required: true
 
 jobs:
     prepare-and-trigger:
@@ -71,4 +75,4 @@ jobs:
             RELEASE_NAME: ${{ github.event.inputs.release_name }}
             PREFIX: 'reg_links_chunk_'
             REPOS_FILE_NAME: 'regular_github_repos.txt'
-  
+            PYMOP_BRANCH: ${{ github.event.inputs.pymop_branch }}

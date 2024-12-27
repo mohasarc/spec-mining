@@ -9,6 +9,10 @@ on:
       release-name:
         required: true
         type: string
+      pymop-branch:
+        required: true
+        type: string
+        default: "add_statistics_new"
     secrets: 
       GH_ACCESS_TOKEN:
         required: true 
@@ -140,7 +144,7 @@ jobs:
             cd ./projects
             git clone https://${{ secrets.GH_ACCESS_TOKEN }}@github.com/SoftEngResearch/mop-with-dynapt.git
             cd mop-with-dynapt
-            git checkout add_statistics_new
+            git checkout ${{ inputs.pymop-branch }}
     
         - name: Create projects directory and copy scripts from ../scripts there
           run: |
