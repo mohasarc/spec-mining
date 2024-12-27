@@ -75,4 +75,4 @@ jobs:
             RELEASE_NAME: ${{ github.event.inputs.release_name }}
             PREFIX: 'reg_links_chunk_'
             REPOS_FILE_NAME: 'regular_github_repos.txt'
-            PYMOP_BRANCH: ${{ github.event.inputs.pymop_branch }}
+            PYMOP_BRANCH: ${{ github.event.inputs.pymop-branch }}
