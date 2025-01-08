@@ -1,6 +1,7 @@
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { collectData, removeRepetition, analyzeData, collectGithubRepos, collectGithubIssues, scanDocs, collectGithubReposUsingSpecs } from './commands'
+import { specIDList } from './constants';
 
 const DEFAULT_COLLECT_IN_FILE = './out/collected_issues.csv';
 const DEFAULT_COLLECT_OUT_FILE = './out/collected_issues.csv';
@@ -123,7 +124,23 @@ const argv = await (yargs(hideBin(process.argv))
         type: 'array',
         description: 'list of testing frameworks to find in manifest files'
       })
-    }, (argv) => collectGithubReposUsingSpecs(argv.outDir || DEFAULT_GH_LIBS_OUT_FILE, argv.testingFramework as Array<string>, argv.startPage || DEFAULT_START_PAGE, argv.endPage || DEFAULT_END_PAGE))
+      .option('startSpec', {
+        alias: 'c',
+        type: 'number',
+        description: 'Start spec'
+      })
+      .option('endSpec', {
+        alias: 'd',
+        type: 'number',
+        description: 'End spec'
+      })
+    }, (argv) => collectGithubReposUsingSpecs(
+      argv.outDir || DEFAULT_GH_LIBS_OUT_FILE,
+      argv.testingFramework as Array<string>,
+      argv.startPage || DEFAULT_START_PAGE, argv.endPage || DEFAULT_END_PAGE,
+      argv.startSpec || 0,
+      (argv.endSpec == -1 || argv.endSpec == undefined) ? specIDList.length : argv.endSpec
+    ))
     .command('collect_issues', 'Collect github issues', (_yargs) => {
       return _yargs
       .option('outDir', {

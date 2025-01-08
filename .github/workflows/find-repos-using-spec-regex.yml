@@ -12,6 +12,14 @@ on:
       end_page:
         description: the page to end collecting data at
         type: number
+      start_spec:
+        description: the spec to start collecting data from
+        type: number
+        default: 0
+      end_spec:
+        description: the spec to end collecting data at
+        type: number
+        default: -1
 
 jobs:
   crawl:
@@ -34,7 +42,7 @@ jobs:
         run: yarn install
 
       - name: Find Repos
-        run: yarn start gh spec_id_basec_collect -t ${{inputs.testFramework}} -s ${{inputs.start_page}} -e ${{inputs.end_page}}
+        run: yarn start gh spec_id_basec_collect -t ${{inputs.testFramework}} -s ${{inputs.start_page}} -e ${{inputs.end_page}} -c ${{inputs.start_spec}} -d ${{inputs.end_spec}}
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}

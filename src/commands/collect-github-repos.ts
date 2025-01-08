@@ -358,7 +358,7 @@ const usesPytest = async (reposInfo: Array<BaseRepository>) => {
     }
 }
 
-export const collectGithubReposUsingSpecs = async (outDir: string, testFrameworks: Array<string>, startPage: number, endPage: number) => {
+export const collectGithubReposUsingSpecs = async (outDir: string, testFrameworks: Array<string>, startPage: number, endPage: number, startSpec: number, endSpec: number) => {
     if (endPage > 10) {
         console.warn('End page is greater than 10, which is the maximum number of pages allowed by GitHub code search API. Setting end page to 10');
         endPage = 10;
@@ -367,12 +367,17 @@ export const collectGithubReposUsingSpecs = async (outDir: string, testFramework
     const filePath = path.resolve(outDir, `repos_using_specs_${formatTimestamp()}.csv`)
 
     const pages = Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
-    for (const specId of specIDList) {
+    for (const specId of specIDList.slice(startSpec, endSpec)) {
         for (const testFramework of testFrameworks) {
             for (const page of pages) {
                 console.log('Page:', page, ' - Finding repos for spec [', specId.specName, '] from GitHub', 'with test framework:', testFramework);
                 const {data: baseRepoInfo, rateLimitReset, remainingRateLimit} = await searchForRegex(specId.githubQuery, page)
                 console.log('Found', baseRepoInfo.length, 'results previous query from GitHub');
+
+                if (baseRepoInfo.length < 1) {
+                    console.log('No repos found for spec [', specId.specName, '] from GitHub');
+                    continue;
+                }
 
                 await sleepTillRateLimitResets(remainingRateLimit, rateLimitReset);
 
