@@ -29,10 +29,13 @@ jobs:
       - name: Prepare algorithms array
         id: prepare-algorithms
         run: |
-          echo "Active algorithms: ${{ inputs.active_algorithms }}"
-          algorithms_array=(${{ inputs.active_algorithms }})
-          echo "Algorithms array: ${algorithms_array[@]}"
-          echo "::set-output name=ALGORITHMS::${algorithms_array[@]}"
+          python3 -c "
+          import os
+          algorithms = '${{ inputs.active_algorithms }}'.split()
+          print('Active algorithms:', '${{ inputs.active_algorithms }}')
+          print('Algorithms array:', algorithms)
+          print('::set-output name=ALGORITHMS::${algorithms}')
+          "
 
   run-original:
     runs-on: ubuntu-latest
