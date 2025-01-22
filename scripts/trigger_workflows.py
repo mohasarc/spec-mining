@@ -5,7 +5,7 @@ import json
 import time
 import requests
 
-def trigger_workflow(repo_name, google_sheet_id, tab_name, release_name, token, pymop_branch):
+def trigger_workflow(repo_name, google_sheet_id, tab_name, release_name, token, pymop_branch, active_algorithms):
     """Trigger a GitHub repository dispatch event using HTTP requests."""
     print(f'Triggering: {repo_name} with sheet ID: {google_sheet_id} and tab: {tab_name} and release name: {release_name}')
 
@@ -23,7 +23,8 @@ def trigger_workflow(repo_name, google_sheet_id, tab_name, release_name, token, 
             "google_sheet_id": google_sheet_id,
             "links_worksheetTitle": tab_name,
             "release_name": f"{release_name}-{tab_name}",
-            "pymop-branch": pymop_branch
+            "pymop_branch": pymop_branch,
+            "active_algorithms": active_algorithms
         }
     }
 
@@ -43,6 +44,7 @@ def main():
     release_name = os.getenv('RELEASE_NAME')
     prefix = os.getenv('PREFIX')
     pymop_branch = os.getenv('PYMOP_BRANCH')
+    active_algorithms = os.getenv('ACTIVE_ALGORITHMS')
 
     with open(repos_file_name) as repoFile:
         repoNames = repoFile.read()
@@ -57,7 +59,7 @@ def main():
         tab_name = f'{prefix}{j + 1}'
         repo_name = repoNamesList[latestRepoIndex]
 
-        trigger_workflow(repo_name, google_sheet_id, tab_name, release_name, token, pymop_branch)
+        trigger_workflow(repo_name, google_sheet_id, tab_name, release_name, token, pymop_branch, active_algorithms)
         latestRepoIndex = (latestRepoIndex + 1) % num_repos
 
         if j < int(chunk_count) - 1:  # Avoid sleeping after the last iteration

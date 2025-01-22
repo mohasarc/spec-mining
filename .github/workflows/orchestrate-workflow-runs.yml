@@ -19,9 +19,13 @@ on:
           description: 'Name of the release to be created.'
           default: all-results-2024-05-18-morning
           required: true
-        pymop-branch:
+        pymop_branch:
           description: 'Branch of the pymop repository to use.'
           default: 'add_statistics_new'
+          required: true
+        active_algorithms:
+          description: 'Space-separated list of algorithms to be run.'
+          default: 'B C C+ D'
           required: true
 
 jobs:
@@ -75,4 +79,5 @@ jobs:
             RELEASE_NAME: ${{ github.event.inputs.release_name }}
             PREFIX: 'reg_links_chunk_'
             REPOS_FILE_NAME: 'regular_github_repos.txt'
-            PYMOP_BRANCH: ${{ github.event.inputs.pymop-branch }}
+            PYMOP_BRANCH: ${{ github.event.inputs.pymop_branch }}
+            ACTIVE_ALGORITHMS: ${{ github.event.inputs.active_algorithms }}

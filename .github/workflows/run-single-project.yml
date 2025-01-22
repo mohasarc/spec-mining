@@ -9,14 +9,29 @@ on:
       release-name:
         required: true
         type: string
-      pymop-branch:
+      pymop_branch:
         required: true
         type: string
         default: "add_statistics_new"
+      active_algorithms:
+        required: true
+        type: string
+        default: "B C C+ D"
     secrets: 
       GH_ACCESS_TOKEN:
         required: true 
 jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      ALGORITHMS: ${{ steps.prepare-algorithms.outputs.ALGORITHMS }}
+    steps:
+      - name: Prepare algorithms array
+        id: prepare-algorithms
+        run: |
+          algorithms_array=(${{ inputs.active_algorithms }})
+          echo "::set-output name=ALGORITHMS::${algorithms_array[@]}"
+
   run-original:
     runs-on: ubuntu-latest
     timeout-minutes: 185
@@ -107,12 +122,12 @@ jobs:
             python3 check_success.py
 
   run-algos:
-    needs: run-original
+    needs: [run-original, prepare]
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        algorithm: ['B', 'C', 'C+', 'D']
+        algorithm: ${{ fromJson(needs.prepare.outputs.ALGORITHMS) }}
     timeout-minutes: 185
     steps:
         - uses: actions/checkout@v4
@@ -144,7 +159,7 @@ jobs:
             cd ./projects
             git clone https://${{ secrets.GH_ACCESS_TOKEN }}@github.com/SoftEngResearch/mop-with-dynapt.git
             cd mop-with-dynapt
-            git checkout optimization
+            git checkout ${{ inputs.pymop_branch }}
     
         - name: Create projects directory and copy scripts from ../scripts there
           run: |

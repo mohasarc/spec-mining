@@ -25,9 +25,13 @@ on:
         options:
           - github
           - docker
-      pymop-branch:
+      pymop_branch:
         description: 'Branch of the pymop repository to use.'
         default: 'add_statistics_new'
+        required: true
+      active_algorithms:
+        description: 'Space-separated list of algorithms to be run.'
+        default: 'B C C+ D'
         required: true
   repository_dispatch:
     types: [run-multiple-repos]
@@ -65,7 +69,8 @@ jobs:
     with:
       project-link: ${{ matrix.repo-link }}
       release-name: ${{ github.event.inputs.release_name || github.event.client_payload.release_name }}
-      pymop-branch: ${{ github.event.inputs.pymop-branch || github.event.client_payload.pymop-branch }}
+      pymop_branch: ${{ github.event.inputs.pymop_branch || github.event.client_payload.pymop_branch }}
+      active_algorithms: ${{ github.event.inputs.active_algorithms || github.event.client_payload.active_algorithms }}
     secrets:
       GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
     strategy:
