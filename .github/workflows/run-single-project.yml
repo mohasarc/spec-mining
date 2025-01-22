@@ -132,7 +132,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        algorithm: ${{ needs.prepare.outputs.ALGORITHMS }}
+        algorithm: ${{ fromJson(needs.prepare.outputs.ALGORITHMS) }}
     timeout-minutes: 185
     steps:
         - uses: actions/checkout@v4
