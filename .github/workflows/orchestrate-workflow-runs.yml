@@ -5,6 +5,7 @@ on:
       inputs:
         google_sheet_id:
           description: 'ID of the Google Sheet containing repository links.'
+          default: 1L7j3JowPmOdJFYYvbJQiKq4F8UzoFvxI8wWN9SPchrQ
           required: true
         links_tab_name:
           description: 'Title of the tab containing the links.'

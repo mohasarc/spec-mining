@@ -29,7 +29,9 @@ jobs:
       - name: Prepare algorithms array
         id: prepare-algorithms
         run: |
+          echo "Active algorithms: ${{ inputs.active_algorithms }}"
           algorithms_array=(${{ inputs.active_algorithms }})
+          echo "Algorithms array: ${algorithms_array[@]}"
           echo "::set-output name=ALGORITHMS::${algorithms_array[@]}"
 
   run-original:

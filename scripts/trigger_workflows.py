@@ -31,9 +31,9 @@ def trigger_workflow(repo_name, google_sheet_id, tab_name, release_name, token, 
     response = requests.post(url, headers=headers, json=payload)
 
     if response.status_code == 204:
-        print(f"Dispatch event successfully triggered for {repo_name}.")
+        print(f"Dispatch event successfully triggered for {repo_name} with payload: {payload}")
     else:
-        print(f"Failed to trigger dispatch event: {response.status_code} - {response.text}")
+        print(f"Failed to trigger dispatch event for {repo_name} with payload: {payload}. Error: {response.status_code} - {response.text}")
 
 
 def main():
