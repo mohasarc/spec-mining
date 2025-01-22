@@ -70,6 +70,8 @@ jobs:
             RELEASE_NAME: ${{ github.event.inputs.release_name }}
             PREFIX: 'pro_links_chunk_'
             REPOS_FILE_NAME: 'pro_github_repos.txt'
+            PYMOP_BRANCH: ${{ github.event.inputs.pymop_branch }}
+            ACTIVE_ALGORITHMS: ${{ github.event.inputs.active_algorithms }}
 
       - name: Trigger Workflows on Regular Repos
         run: python3 scripts/trigger_workflows.py
