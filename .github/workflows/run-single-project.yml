@@ -34,7 +34,7 @@ jobs:
           algorithms = '${{ inputs.active_algorithms }}'.split()
           print('Active algorithms:', '${{ inputs.active_algorithms }}')
           print('Algorithms array:', algorithms)
-          print('::set-output name=ALGORITHMS::${algorithms}')
+          print(f'::set-output name=ALGORITHMS::{algorithms}')
           "
 
   run-original:
