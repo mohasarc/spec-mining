@@ -40,7 +40,8 @@ export const sortList = async (inFilePath: string, options: {
     return new Promise<void>((resolve, reject) => {
         if (!fs.existsSync(inFilePath)) {
             console.log('File does not exist', inFilePath);
-            resolve()
+            resolve();
+            return;
         }
 
         fs.createReadStream(inFilePath)
@@ -69,6 +70,7 @@ export const sortList = async (inFilePath: string, options: {
                 .then(() => {
                     console.log(`Sorted ${records.length} records.`)
                     resolve()
+                    return;
                 }
                 )
                 .catch((err) => {

@@ -58,6 +58,9 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
+      - name: artificial delay to avoid rate limit
+        run: sleep 60
+
       - name: Find Repos
         run: yarn start gh spec_id_basec_collect -t ${{inputs.testFramework}} -s ${{inputs.start_page}} -e ${{inputs.end_page}} -c ${{matrix.range.start}} -d ${{matrix.range.end}}
         timeout-minutes: 295

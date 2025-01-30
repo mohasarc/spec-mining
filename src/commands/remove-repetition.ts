@@ -19,6 +19,7 @@ export const removeRepetition = async (inFilePath: string, uniqueFieldName: stri
     if (!fs.existsSync(inFilePath)) {
       console.log('File does not exist', inFilePath)
       resolve()
+      return;
     }
 
     fs.createReadStream(inFilePath)
@@ -69,6 +70,7 @@ export const removeRepetition = async (inFilePath: string, uniqueFieldName: stri
             .then(() => {
                 console.log('Processed', records.length, 'unique records.');
                 resolve()
+                return;
               }
             )
             .catch((err) => {
