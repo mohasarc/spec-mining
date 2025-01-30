@@ -831,5 +831,142 @@ export const specIDList: Array<SpecID> = [
         githubQuery: 'http AND HTTPConnection( AND putrequest(',
         dependencyName: 'pydocs'
     },
+    {
+        specName: 'PyDocs_UnsafeIterUseAfterTee',
+        regexQuery: 'itertools AND /iter\((?:[^()]*|\([^()]*\))*\)/ AND /tee\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'itertools AND iter( AND tee(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'PyDocs_UselessIterTee',
+        regexQuery: 'itertools AND /tee\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'itertools AND tee(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'PyDocs_MustOnlyUseDictReader',
+        regexQuery: 'csv AND /open\((?:[^()]*|\([^()]*\))*\)/ AND /DictReader\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'csv AND open( AND DictReader(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'PyDocs_MustOnlyUseDictReader',
+        regexQuery: 'csv AND /DictReader\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'csv AND DictReader(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'PyDocs_MustSortBeforeGroupBy',
+        regexQuery: 'itertools AND list AND /groupby\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'itertools AND list AND groupby(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'PyDocs_MustSortBeforeGroupBy',
+        regexQuery: 'itertools AND /groupby\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'itertools AND groupby(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'PyDocs_MustWaitForPopenToFinish',
+        regexQuery: 'subprocess AND /Popen\((?:[^()]*|\([^()]*\))*\)/ AND /wait\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'subprocess AND Popen( AND wait(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'PyDocs_MustWaitForPopenToFinish',
+        regexQuery: 'subprocess AND /Popen\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'subprocess AND Popen(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'PyDocs_MustWaitForPopenToFinish',
+        regexQuery: 'subprocess AND /Popen\((?:[^()]*|\([^()]*\))*\)/ AND /wait\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'subprocess AND Popen( AND wait(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'PyDocs_MustOnlyAddSynchronizableDataToSharedList',
+        regexQuery: 'multiprocessing AND Manager AND /list\((?:[^()]*|\([^()]*\))*\)/ AND /append\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'multiprocessing AND Manager AND list( AND append(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'PyDocs_MustOnlyAddSynchronizableDataToSharedList',
+        regexQuery: 'multiprocessing AND Manager AND /list\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'multiprocessing AND Manager AND list(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'PyDocs_MustOnlyAddSynchronizableDataToSharedList',
+        regexQuery: 'multiprocessing AND /list\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'multiprocessing AND list(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'PyDocs_MustOnlyAddSynchronizableDataToSharedList',
+        regexQuery: 'Manager AND /list\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'Manager AND list(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'UnsafeArrayIterator',
+        regexQuery: 'array AND /array\((?:[^()]*|\([^()]*\))*\)/ AND /iter\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'array AND array( AND iter(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'UnsafeArrayIterator',
+        regexQuery: 'array AND /array\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'array AND array(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'UnsafeListIterator',
+        regexQuery: '/list\((?:[^()]*|\([^()]*\))*\)/ AND /iter\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'list( AND iter(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'UnsafeListIterator',
+        regexQuery: '/list\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'list(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'UnsafeDictIterator',
+        regexQuery: '/dict\((?:[^()]*|\([^()]*\))*\)/ AND /iter\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'dict( AND iter(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'UnsafeDictIterator',
+        regexQuery: '/dict\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'dict(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'UnsafeSetIterator',
+        regexQuery: '/set\((?:[^()]*|\([^()]*\))*\)/ AND /iter\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'set( AND iter(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'UnsafeSetIterator',
+        regexQuery: '/set\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'set(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'UnsafeTupleIterator',
+        regexQuery: '/tuple\((?:[^()]*|\([^()]*\))*\)/ AND /iter\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'tuple( AND iter(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'UnsafeTupleIterator',
+        regexQuery: '/tuple\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'tuple(',
+        dependencyName: 'pydocs'
+    },
 ]
-

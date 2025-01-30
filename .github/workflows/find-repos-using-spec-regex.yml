@@ -1,5 +1,9 @@
 name: Find Repos Using Spec RegEx
 
+permissions: 
+  pull-requests: write
+  contents: write
+
 on:
   workflow_dispatch:
     inputs:
@@ -19,7 +23,7 @@ on:
       end_spec:
         description: the spec to end collecting data at
         type: number
-        default: 137
+        default: 160
 
 jobs:
   distribute-load:
