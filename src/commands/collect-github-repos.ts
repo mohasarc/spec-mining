@@ -39,12 +39,28 @@ export interface DependantRepoDetails extends BaseRepository {
     fileName?: string,
     dependencyName: string,
     testingFramework: string,
-    created_at: string
+    created_at: string,
+    updated_at: string,
+    defaultBranch: string,
+    defaultBranchCommitId: string,
     specName?: string
 }
 
 export type WithRateLimitMetaData<T> = {
     data: T,
+    rateLimitReset?: string,
+    remainingRateLimit?: string
+}
+
+type Result<T> = {
+    data: T,
+    ok: true,
+    rateLimitReset?: string,
+    remainingRateLimit?: string
+} | {
+    data: null,
+    ok: false,
+    error: Error,
     rateLimitReset?: string,
     remainingRateLimit?: string
 }
@@ -61,6 +77,15 @@ const sanitizeValue = (value: string | undefined | number) => {
     // remove any , or ; charachters and replace them with <>
     return value.replace(',', '<>').replace(';', '<>')
 }
+
+const supressError = <T>(fn: (...args: any[]) => Promise<T>) => (async (...args: any[]): Promise<T | null> => {
+    try {
+        return await fn(...args);
+    } catch (error) {
+        console.error("Error in supressError:", error);
+        return null;
+    }
+})
 
 const formatTimestamp = () => {
     const now = new Date();
@@ -87,52 +112,120 @@ export const sleepTillRateLimitResets = async (remainingRateLimit?: string, rate
     }
 }
 
-const searchForFiles = async (fileNames: Array<string>, libName: string, testingFramework: string, page: number): Promise<WithRateLimitMetaData<Array<BaseRepository & { fileName: string }>>> => {
-    const filePathList = fileNames.map(fileName => `filename:${fileName}`).join("+OR+");
-    const searchQuery = `${libName}+${testingFramework}+in:file+${filePathList}`;
-    const searchResults = await octokit.request('GET /search/code', {
-        q: searchQuery,
-        per_page: 100, // Adjust per_page as needed, up to a maximum of 100
-        page,
-    });
+type QueryFunction<T> = (...args: any[]) => Promise<Result<T>>;
+type LimitSafeQueryFunction<T> = (...args: any[]) => Promise<T>;
 
-    const rateLimitReset = searchResults.headers["x-ratelimit-reset"]
-    const remainingRateLimit = searchResults.headers["x-ratelimit-remaining"]
+export const retryOnRateLimitError = <T>(fn: QueryFunction<T>): LimitSafeQueryFunction<T> => async (...args: any[]) => {
+    let result = await fn(...args);
 
-    return {
-        data: searchResults.data.items.map(item => ({
-            owner: item.repository.owner.login,
-            repoName: item.repository.name,
-            fileName: item.name
-        })),
-        rateLimitReset,
-        remainingRateLimit
-    };
+    if (result.ok) {
+        return result.data;
+    }
+
+    while (!result.ok && result.error.message.includes('API rate limit exceeded')) {
+        const remainingRateLimit = result.remainingRateLimit;
+        const rateLimitReset = result.rateLimitReset;
+        await sleepTillRateLimitResets(remainingRateLimit, rateLimitReset);
+        console.log('Retrying with args', args);
+        result = await fn(...args);
+    }
+
+    if (!result.ok) {
+        throw result.error;
+    }
+
+    return result.data;
 }
 
-const searchForRegex = async (specRegex: string, page: number): Promise<WithRateLimitMetaData<Array<BaseRepository & { fileName: string }>>> => {
-    const searchQuery = `${specRegex}+in:file+language:Python`;
+const searchForFiles = supressError(retryOnRateLimitError(async (
+    fileNames: Array<string>,
+    libName: string,
+    testingFramework: string,
+    page: number
+    ): Promise<
+        Result<Array<BaseRepository & { fileName: string }>>
+    > => {
 
-    console.log('Running query:', searchQuery);
-    const searchResults = await octokit.request('GET /search/code', {
-        q: searchQuery,
-        per_page: 100, // Adjust per_page as needed, up to a maximum of 100
-        page,
-    });
+    try {
+        const filePathList = fileNames.map(fileName => `filename:${fileName}`).join("+OR+");
+        const searchQuery = `${libName}+${testingFramework}+in:file+${filePathList}`;
+        const searchResults = await octokit.request('GET /search/code', {
+            q: searchQuery,
+            per_page: 100, // Adjust per_page as needed, up to a maximum of 100
+            page,
+        });
+    
+        const rateLimitReset = searchResults.headers["x-ratelimit-reset"]
+        const remainingRateLimit = searchResults.headers["x-ratelimit-remaining"]
 
-    const rateLimitReset = searchResults.headers["x-ratelimit-reset"]
-    const remainingRateLimit = searchResults.headers["x-ratelimit-remaining"]
 
-    return {
-        data: searchResults.data.items.map(item => ({
-            owner: item.repository.owner.login,
-            repoName: item.repository.name,
-            fileName: item.name
-        })),
-        rateLimitReset,
-        remainingRateLimit
-    };
-}
+        return {
+            ok: true,
+            data: searchResults.data.items.map(item => ({
+                owner: item.repository.owner.login,
+                repoName: item.repository.name,
+                fileName: item.name
+            })),
+            rateLimitReset,
+            remainingRateLimit
+        };
+    } catch (error) {
+        const rateLimitReset = (error as any).response.headers["x-ratelimit-reset"]
+        const remainingRateLimit = (error as any).response.headers["x-ratelimit-remaining"]
+
+        return {
+            data: null,
+            ok: false,
+            error: error as Error,
+            rateLimitReset,
+            remainingRateLimit
+        }
+    }
+}))
+
+const searchForRegex = supressError(retryOnRateLimitError(
+    async (
+        specRegex: string,
+        page: number
+    ): Promise<
+        Result<Array<BaseRepository & { fileName: string }>>
+    > => {
+    try {
+        const searchQuery = `${specRegex}+in:file+language:Python`;
+
+        console.log('Running query:', searchQuery);
+        const searchResults = await octokit.request('GET /search/code', {
+            q: searchQuery,
+            per_page: 100, // Adjust per_page as needed, up to a maximum of 100
+            page,
+        });
+
+        const rateLimitReset = searchResults.headers["x-ratelimit-reset"]
+        const remainingRateLimit = searchResults.headers["x-ratelimit-remaining"]
+
+        return {
+            ok: true,
+            data: searchResults.data.items.map(item => ({
+                owner: item.repository.owner.login,
+                repoName: item.repository.name,
+                fileName: item.name
+            })),
+            rateLimitReset,
+            remainingRateLimit
+        };
+    } catch (error) {
+        const rateLimitReset = (error as any).response.headers["x-ratelimit-reset"]
+        const remainingRateLimit = (error as any).response.headers["x-ratelimit-remaining"]
+
+        return {
+            data: null,
+            ok: false,
+            error: error as Error,
+            rateLimitReset,
+            remainingRateLimit
+        }
+    }
+}))
 
 const constructRepoDetailsQuery = (repositories: Array<BaseRepository>) => {
     const repoQueries = repositories.map((repo, index) => `
@@ -153,6 +246,13 @@ const constructRepoDetailsQuery = (repositories: Array<BaseRepository>) => {
           }
           url
           createdAt
+          updatedAt
+          defaultBranchRef {
+            name
+            target {
+              oid
+            }
+          }
         }
       }
     `).join('\n');
@@ -184,19 +284,40 @@ type ResponseType = {
                 totalCount: number
             },
             url: string,
-            createdAt: string
+            createdAt: string,
+            updatedAt: string,
+            defaultBranchRef: {
+                name: string,
+                target: {
+                    oid: string
+                }
+            }
         }
     }
 }
  
-const fetchRepositoriesDetails =  async (repositories: Array<BaseRepository>): Promise<ResponseType> => {
+const fetchRepositoriesDetails = supressError(retryOnRateLimitError(
+    async (repositories: Array<BaseRepository>): Promise<
+        Result<ResponseType>
+    > => {
     try {
-        return await octokit.graphql(constructRepoDetailsQuery(repositories));
+        return {
+            ok: true,
+            data: await octokit.graphql(constructRepoDetailsQuery(repositories))
+        };
     } catch (error) {
-        console.error("Error fetching repository details:", error);
-        return {};
+        const rateLimitReset = (error as any).response.headers["x-ratelimit-reset"]
+        const remainingRateLimit = (error as any).response.headers["x-ratelimit-remaining"]
+
+        return {
+            data: null,
+            ok: false,
+            error: error as Error,
+            rateLimitReset,
+            remainingRateLimit
+        }
     }
-}
+}))
 
 const saveData = async (outFile: string, data: Array<DependantRepoDetails>) => {
     const fileExists = fs.existsSync(outFile);
@@ -225,7 +346,10 @@ const saveData = async (outFile: string, data: Array<DependantRepoDetails>) => {
             { id: 'dependencyName', title: 'Dependency Name' },
             { id: 'specName', title: 'Spec Name' },
             { id: 'testingFramework', title: 'Testing Framework' },
-            { id: 'created_at', title: 'Created At' }
+            { id: 'created_at', title: 'Created At' },
+            { id: 'updated_at', title: 'Updated At' },
+            { id: 'defaultBranch', title: 'Default Branch' },
+            { id: 'defaultBranchCommitId', title: 'Default Branch Commit Id' }
         ],
         append: fileExists
     });
@@ -244,7 +368,10 @@ const saveData = async (outFile: string, data: Array<DependantRepoDetails>) => {
         issues: sanitizeValue(record.issues),
         pullRequests: sanitizeValue(record.pullRequests),
         testingFramework: sanitizeValue(record.testingFramework),
-        specName: sanitizeValue(record.specName)
+        specName: sanitizeValue(record.specName),
+        updated_at: new Date(record.updated_at).toLocaleDateString(),
+        defaultBranch: sanitizeValue(record.defaultBranch),
+        defaultBranchCommitId: sanitizeValue(record.defaultBranchCommitId)
     })));
 }
 
@@ -267,7 +394,12 @@ export const collectGithubRepos = async (outDir: string, libNames: Array<string>
             for (const testFramework of testFrameworks) {
                 for (const page of pages) {
                     console.log('File: ', file, 'Page:', page, ' - Fetching details for', libName, 'from GitHub', 'with test framework:', testFramework);
-                    const {data: baseRepoInfo, rateLimitReset, remainingRateLimit} = await searchForFiles([file], libName, testFramework, page)
+                    const baseRepoInfo = await searchForFiles([file], libName, testFramework, page)
+
+                    if (!baseRepoInfo) {
+                        console.log('No repos found for', libName, 'from GitHub');
+                        continue;
+                    }
     
                     const chunks = [baseRepoInfo.slice(0, baseRepoInfo.length/2), baseRepoInfo.slice(baseRepoInfo.length/2, baseRepoInfo.length)]
             
@@ -275,6 +407,11 @@ export const collectGithubRepos = async (outDir: string, libNames: Array<string>
                         if (chunk.length < 1) return;
     
                         const response = await fetchRepositoriesDetails(chunk);
+
+                        if (!response) {
+                            console.log('No response from GitHub for', libName, 'from GitHub');
+                            return;
+                        }
                     
                         const repoDetails: Array<DependantRepoDetails> = chunk.map((repo, index) => {
                             const repoDetails = response[`repo${index}`]?.repository;
@@ -294,7 +431,10 @@ export const collectGithubRepos = async (outDir: string, libNames: Array<string>
                                 fileName: chunk[index].fileName,
                                 dependencyName: libName,
                                 testingFramework: testFramework,
-                                created_at: repoDetails.createdAt
+                                created_at: repoDetails.createdAt,
+                                updated_at: repoDetails.updatedAt,
+                                defaultBranch: repoDetails.defaultBranchRef.name,
+                                defaultBranchCommitId: repoDetails.defaultBranchRef.target.oid
                             }
                         }).filter(Boolean) as Array<DependantRepoDetails>;
                     
@@ -304,7 +444,7 @@ export const collectGithubRepos = async (outDir: string, libNames: Array<string>
                     }))
         
                     await removeRepetition(filePath, 'Repository Link', ['Dependency Name', 'Testing Framework']);
-                    await sortList(filePath, {
+                    const totalRecords = await sortList(filePath, {
                         sortField: 'Stars',
                         customFunction: (a, b) => {
                             // make an array of strings from dep1;dep2;dep3
@@ -321,42 +461,61 @@ export const collectGithubRepos = async (outDir: string, libNames: Array<string>
                             return result;
                         }
                     });
-            
-                    await sleepTillRateLimitResets(remainingRateLimit, rateLimitReset);
+
+                    console.log('**************************************************');
+                    console.log('Total records so far:  ', totalRecords);
+                    console.log('**************************************************');
                 }
             }
         }
     }
 }
 
-const usesPytest = async (reposInfo: Array<BaseRepository>) => {
-    const filePathList = MANIFEST_FILES.map(fileName => `filename:${fileName}`).join("+OR+");
-    const targetPackages = reposInfo.map(repo => `repo:${repo.owner}/${repo.repoName}`).join("+OR+");
-    const searchQuery = `${targetPackages}+pytest+in:file+${filePathList}`;
-    const searchResults = await octokit.request('GET /search/code', {
-        q: searchQuery,
-        per_page: 100, // Adjust per_page as needed, up to a maximum of 100
-    });
+const usesPytest = supressError(retryOnRateLimitError(
+    async (
+        reposInfo: Array<BaseRepository>
+    ): Promise<
+        Result<Array<BaseRepository & { usesTestingFramework: boolean }>>
+    > => {
+        try {
+            const filePathList = MANIFEST_FILES.map(fileName => `filename:${fileName}`).join("+OR+");
+            const targetPackages = reposInfo.map(repo => `repo:${repo.owner}/${repo.repoName}`).join("+OR+");
+            const searchQuery = `${targetPackages}+pytest+in:file+${filePathList}`;
+            const searchResults = await octokit.request('GET /search/code', {
+                q: searchQuery,
+                per_page: 100, // Adjust per_page as needed, up to a maximum of 100
+            });
 
-    const rateLimitReset = searchResults.headers["x-ratelimit-reset"]
-    const remainingRateLimit = searchResults.headers["x-ratelimit-remaining"]
+            const rateLimitReset = searchResults.headers["x-ratelimit-reset"]
+            const remainingRateLimit = searchResults.headers["x-ratelimit-remaining"]
 
-    const doesUse = searchResults.data.items.map(item => ({
-        owner: item.repository.owner.login,
-        repoName: item.repository.name
-    }));
+            const doesUse = searchResults.data.items.map(item => ({
+                owner: item.repository.owner.login,
+                repoName: item.repository.name
+            }));
 
-    return {
-        data: reposInfo.map((repo) => {
             return {
-                ...repo,
-                usesTestingFramework: doesUse.find((item) => item.owner === repo.owner && item.repoName === repo.repoName) !== undefined
+                ok: true,
+                data: reposInfo.map((repo) => ({
+                    ...repo,
+                    usesTestingFramework: doesUse.find((item) => item.owner === repo.owner && item.repoName === repo.repoName) !== undefined
+                })),
+                rateLimitReset,
+                remainingRateLimit
             }
-        }),
-        rateLimitReset,
-        remainingRateLimit
-    }
-}
+        } catch (error) {
+            const rateLimitReset = (error as any).response.headers["x-ratelimit-reset"]
+            const remainingRateLimit = (error as any).response.headers["x-ratelimit-remaining"]
+
+            return {
+                data: null,
+                ok: false,
+                error: error as Error,
+                rateLimitReset,
+                remainingRateLimit
+            }
+        }
+}))
 
 export const collectGithubReposUsingSpecs = async (outDir: string, testFrameworks: Array<string>, startPage: number, endPage: number, startSpec: number, endSpec: number) => {
     if (endPage > 10) {
@@ -371,15 +530,19 @@ export const collectGithubReposUsingSpecs = async (outDir: string, testFramework
         for (const testFramework of testFrameworks) {
             for (const page of pages) {
                 console.log('Page:', page, ' - Finding repos for spec [', specId.specName, '] from GitHub', 'with test framework:', testFramework);
-                const {data: baseRepoInfo, rateLimitReset, remainingRateLimit} = await searchForRegex(specId.githubQuery, page)
+                const baseRepoInfo = await searchForRegex(specId.githubQuery, page)
+                
+                if (!baseRepoInfo) {
+                    console.log('No repos found for spec [', specId.specName, '] from GitHub');
+                    continue;
+                }
+
                 console.log('Found', baseRepoInfo.length, 'results previous query from GitHub');
 
                 if (baseRepoInfo.length < 1) {
                     console.log('No repos found for spec [', specId.specName, '] from GitHub');
                     continue;
                 }
-
-                await sleepTillRateLimitResets(remainingRateLimit, rateLimitReset);
 
                 // filter out repetitions
                 const uniqueBaseRepoInfo = baseRepoInfo.filter((repo, index, self) =>
@@ -393,24 +556,30 @@ export const collectGithubReposUsingSpecs = async (outDir: string, testFramework
                 const n = 6;
                 const chunks = Array.from({ length: n }, (_, i) => uniqueBaseRepoInfo.slice(i * uniqueBaseRepoInfo.length/n, (i + 1) * uniqueBaseRepoInfo.length/n));
 
-                let rateLimitReset2 = rateLimitReset;
-                let remainingRateLimit2 = remainingRateLimit;
                 let i = 0;
                 for (const chunk of chunks) {
                     if (chunk.length < 1) return;
                     i++;
 
-                    const { data, rateLimitReset, remainingRateLimit } = await usesPytest(chunk);
+                    const data = await usesPytest(chunk);
+
+                    if (!data) {
+                        console.log('No data from GitHub for', specId.specName, 'from GitHub');
+                        continue;
+                    }
+
                     console.log('Chunk:', i, ' - Found', data.filter(repo => repo.usesTestingFramework).length, 'repos out of ', data.length, 'repos that use pytest.');
-                    rateLimitReset2 = rateLimitReset;
-                    remainingRateLimit2 = remainingRateLimit;
                     const filteredBaseRepoInfo = data.filter(repo => repo.usesTestingFramework);
-                    await sleepTillRateLimitResets(remainingRateLimit2, rateLimitReset2);
 
                     if (filteredBaseRepoInfo.length < 1)
                         continue;
 
                     const response = await fetchRepositoriesDetails(filteredBaseRepoInfo);
+
+                    if (!response) {
+                        console.log('No response from GitHub for', specId.specName, 'from GitHub');
+                        continue;
+                    }
                 
                     const repoDetails: Array<DependantRepoDetails> = filteredBaseRepoInfo.map((repo, index) => {
                         const details = response[`repo${index}`].repository;
@@ -426,16 +595,18 @@ export const collectGithubReposUsingSpecs = async (outDir: string, testFramework
                             dependencyName: specId.dependencyName,
                             testingFramework: testFramework,
                             created_at: details.createdAt,
+                            updated_at: details.updatedAt,
                             specName: specId.specName,
+                            defaultBranch: details.defaultBranchRef.name,
+                            defaultBranchCommitId: details.defaultBranchRef.target.oid
                         }
                     });
 
                     await saveData(filePath, repoDetails);
                 }
-                await sleepTillRateLimitResets(remainingRateLimit2, rateLimitReset2);
 
                 await removeRepetition(filePath, 'Repository Link', ['Spec Name', 'Dependency Name']);
-                await sortList(filePath, {
+                const totalRecords = await sortList(filePath, {
                     sortField: 'Stars',
                     customFunction: (a, b) => {
                         // make an array of strings from dep1;dep2;dep3
@@ -452,6 +623,10 @@ export const collectGithubReposUsingSpecs = async (outDir: string, testFramework
                         return result;
                     }
                 });
+
+                console.log('**************************************************');
+                console.log('Total records so far:  ', totalRecords);
+                console.log('**************************************************');
             }
         }
     }

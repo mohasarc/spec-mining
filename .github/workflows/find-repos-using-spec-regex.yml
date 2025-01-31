@@ -30,6 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       ranges: ${{ steps.distribute-load.outputs.ranges }}
+      release-tag: ${{ steps.release-tag.outputs.release-tag }}
     steps:
       - id: distribute-load
         name: Distribute Load
@@ -37,6 +38,12 @@ jobs:
           RANGES=$(python3 -c "print([{'start': i, 'end': min(i + 10, ${{inputs.end_spec}})} for i in range(${{inputs.start_spec}}, ${{inputs.end_spec}}, 10)])")
           echo "RANGES: $RANGES"
           echo "ranges=${RANGES}" >> $GITHUB_OUTPUT
+      
+      - id: release-tag
+        name: Determine Release Tag
+        run: |
+          echo "release-tag=gh-repo-data-$(date +%m-%d-%Y_%H-%M-%S)" >> $GITHUB_OUTPUT
+
   crawl:
     permissions: 
       pull-requests: write
@@ -66,19 +73,23 @@ jobs:
         run: sleep 60
 
       - name: Find Repos
-        run: yarn start gh spec_id_basec_collect -t ${{inputs.testFramework}} -s ${{inputs.start_page}} -e ${{inputs.end_page}} -c ${{matrix.range.start}} -d ${{matrix.range.end}}
+        run: yarn start gh spec_id_basec_collect -o ./collected-data -t ${{inputs.testFramework}} -s ${{inputs.start_page}} -e ${{inputs.end_page}} -c ${{matrix.range.start}} -d ${{matrix.range.end}}
         timeout-minutes: 295
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
-        if: always()
+      - name: Upload report to GitHub Release
+        uses: Wandalen/wretry.action@master
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          base: main
-          commit-message: "data: add found repos"
-          branch: gh-repo-data-${{github.run_id}}
-          title: "data: add found GitHub repos"
-          body: "This PR adds more GitHub repo data."
+          attempt_delay: 60000 # 1 min
+          attempt_limit: 10
+          action: softprops/action-gh-release@v1
+          with: |
+            files: |
+              ./collected-data/*
+            tag_name: ${{needs.distribute-load.outputs.release-tag}}
+            name: ${{needs.distribute-load.outputs.release-tag}}
+            draft: false
+            prerelease: true
+            token: ${{ secrets.GITHUB_TOKEN }}

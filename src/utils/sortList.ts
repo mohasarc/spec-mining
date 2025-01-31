@@ -30,17 +30,17 @@ export const sortList = async (inFilePath: string, options: {
     sortField: string,
     asc?: boolean,
     customFunction?: (a: CsvRecord, b: CsvRecord) => number
-}) => {
+}): Promise<number> => {
     console.log('Sorting list in ', inFilePath);
     let headersDetected = false;
     let csvHeaders: { id: string; title: string }[] = [];
     
     const records: CsvRecord[] = [];
     
-    return new Promise<void>((resolve, reject) => {
+    return new Promise<number>((resolve, reject) => {
         if (!fs.existsSync(inFilePath)) {
             console.log('File does not exist', inFilePath);
-            resolve();
+            resolve(0);
             return;
         }
 
@@ -69,7 +69,7 @@ export const sortList = async (inFilePath: string, options: {
                 .writeRecords(records) // returns a promise
                 .then(() => {
                     console.log(`Sorted ${records.length} records.`)
-                    resolve()
+                    resolve(records.length)
                     return;
                 }
                 )
@@ -77,7 +77,8 @@ export const sortList = async (inFilePath: string, options: {
                 console.error("Error writing CSV file:", err)
                 });
             } else {
-            console.error("Failed to write: No headers found in the CSV file.");
+                console.error("Failed to write: No headers found in the CSV file.");
+                resolve(0);
             }
         });
     })

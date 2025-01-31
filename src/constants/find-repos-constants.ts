@@ -129,7 +129,37 @@ export const specIDList: Array<SpecID> = [
     {
         specName: 'RandomMustUseSeed',
         regexQuery: '/random.*\((?:[^()]*|\([^()]*\))*\)/',
-        githubQuery: 'random AND (',
+        githubQuery: 'random AND random(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'RandomMustUseSeed',
+        regexQuery: '/random.*\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'random AND choice(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'RandomMustUseSeed',
+        regexQuery: '/random.*\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'random AND randint(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'RandomMustUseSeed',
+        regexQuery: '/random.*\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'random AND shuffle(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'RandomMustUseSeed',
+        regexQuery: '/random.*\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'random AND choices(',
+        dependencyName: 'pydocs'
+    },
+    {
+        specName: 'RandomMustUseSeed',
+        regexQuery: '/random.*\((?:[^()]*|\([^()]*\))*\)/',
+        githubQuery: 'random AND sample(',
         dependencyName: 'pydocs'
     },
     {
