@@ -13,9 +13,11 @@ on:
       start_page:
         description: the page to start collecting data from
         type: number
+        default: 1
       end_page:
         description: the page to end collecting data at
         type: number
+        default: 10
       start_spec:
         description: the spec to start collecting data from
         type: number
@@ -23,7 +25,7 @@ on:
       end_spec:
         description: the spec to end collecting data at
         type: number
-        default: 160
+        default: 165
 
 jobs:
   distribute-load:
