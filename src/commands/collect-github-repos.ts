@@ -118,16 +118,29 @@ type LimitSafeQueryFunction<T> = (...args: any[]) => Promise<T>;
 export const retryOnRateLimitError = <T>(fn: QueryFunction<T>): LimitSafeQueryFunction<T> => async (...args: any[]) => {
     let result = await fn(...args);
 
+    const MAX_RETRIES = 10;
+
     if (result.ok) {
         return result.data;
     }
 
-    while (!result.ok && result.error.message.includes('API rate limit exceeded')) {
-        const remainingRateLimit = result.remainingRateLimit;
-        const rateLimitReset = result.rateLimitReset;
+    let i = 0;
+
+    while (
+        !result.ok &&
+        (result.error.message.includes('API rate limit exceeded') || result.error.message.includes('You have exceeded a secondary rate limit'))
+    ) {
+        if (i >= MAX_RETRIES) {
+            console.error('Max retries of ', MAX_RETRIES, ' reached for', args);
+            throw result.error;
+        }
+
+        const remainingRateLimit = result.remainingRateLimit || '0';
+        const rateLimitReset = result.rateLimitReset || `${Math.floor(Date.now() / 1000) + 50}`;
         await sleepTillRateLimitResets(remainingRateLimit, rateLimitReset);
         console.log('Retrying with args', args);
         result = await fn(...args);
+        i++;
     }
 
     if (!result.ok) {
