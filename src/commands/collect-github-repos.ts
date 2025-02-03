@@ -8,7 +8,7 @@ import { createObjectCsvWriter } from "csv-writer";
 import { sleep } from "openai/core";
 import { removeRepetition } from "./remove-repetition";
 import { sortList } from "../utils/sortList";
-import { specIDList } from "../constants";
+import { dependencyNames, specIDList } from "../constants";
 
 const GH_ACCESS_TOKEN = process.env['GH_ACCESS_TOKEN'];
 const octokit = new Octokit({ auth: GH_ACCESS_TOKEN });
@@ -378,15 +378,16 @@ const saveData = async (outFile: string, data: Array<DependantRepoDetails>) => {
 /**
  * Collect information about python libraries that depend on a given library from GitHub
  */
-export const collectGithubRepos = async (outDir: string, libNames: Array<string>, testFrameworks: Array<string>, startPage: number, endPage: number) => {
+export const collectGithubRepos = async (outDir: string, testFrameworks: Array<string>, startPage: number, endPage: number, startDependency: number, endDependency: number) => {
     if (endPage > 10) {
         console.warn('End page is greater than 10, which is the maximum number of pages allowed by GitHub code search API. Setting end page to 10');
         endPage = 10;
     }
 
+    const libNames = dependencyNames.slice(startDependency, endDependency);
+
     const timestamp = Date.now().toString()
-    const libNamesStr = libNames.join('_');
-    const filePath = path.resolve(outDir, `${libNamesStr}_dependant_repos_${timestamp}.csv`)
+    const filePath = path.resolve(outDir, `dependency_based_${timestamp}.csv`)
 
     const pages = Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i);
     for (const libName of libNames) {

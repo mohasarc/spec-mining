@@ -1000,3 +1000,58 @@ export const specIDList: Array<SpecID> = [
         dependencyName: 'pydocs'
     },
 ]
+
+export const dependencyNames = [
+    // Direct dependencies from your API specs (external libraries):
+    "nltk",
+    "requests",
+    "tensorflow",
+    "flask",
+    "tornado",
+    "scipy",
+    
+    // Other commonly associated dependencies:
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "matplotlib",
+    "seaborn",
+    "sphinx",
+    "pytest",
+    "coverage",
+    "tox",
+    "gunicorn",
+    "uvicorn",
+    "fastapi",
+    "jinja2",
+    "sqlalchemy",
+    "alembic",
+    "pillow",
+    "pyyaml",
+    "pyparsing",
+    "networkx",
+    "pyopenssl",
+    "cryptography",
+    "paramiko",
+    "twisted",
+    "pyzmq",
+    "gevent",
+    "boto3",
+    "botocore",
+    "redis",
+    "kombu",
+    "celery",
+    "python-dateutil",  // often listed as "python-dateutil"
+    "pytz",
+    "six",
+    "setuptools",
+    "wheel",
+    "attrs",
+    "flask-restful",
+    "marshmallow",
+    "requests-oauthlib",
+    "pylint",
+    "mypy",
+    "black",
+    "isort"
+]

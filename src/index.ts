@@ -1,7 +1,7 @@
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { collectData, removeRepetition, analyzeData, collectGithubRepos, collectGithubIssues, scanDocs, collectGithubReposUsingSpecs } from './commands'
-import { specIDList } from './constants';
+import { dependencyNames, specIDList } from './constants';
 
 const DEFAULT_COLLECT_IN_FILE = './out/collected_issues.csv';
 const DEFAULT_COLLECT_OUT_FILE = './out/collected_issues.csv';
@@ -100,8 +100,25 @@ const argv = await (yargs(hideBin(process.argv))
         alias: 'l',
         type: 'array',
         description: 'list of library names to find dependants for',
-      }).demandOption('libName')
-    }, (argv) => collectGithubRepos(argv.outDir || DEFAULT_GH_LIBS_OUT_FILE, argv.libName as Array<string>,argv.testingFramework as Array<string>, argv.startPage || DEFAULT_START_PAGE, argv.endPage || DEFAULT_END_PAGE))
+      })
+      .option('startDependency', {
+        alias: 'c',
+        type: 'number',
+        description: 'Start dependency'
+      })
+      .option('endDependency', {
+        alias: 'd',
+        type: 'number',
+        description: 'End dependency'
+      })
+    }, (argv) => collectGithubRepos(
+      argv.outDir || DEFAULT_GH_LIBS_OUT_FILE,
+      argv.testingFramework as Array<string>,
+      argv.startPage || DEFAULT_START_PAGE,
+      argv.endPage || DEFAULT_END_PAGE,
+      argv.startDependency || 0,
+      (argv.endDependency == -1 || argv.endDependency == undefined) ? dependencyNames.length : argv.endDependency
+    ))
     .command('spec_id_basec_collect', 'collect repos based on spec based regex', (_yargs) => {
       return _yargs
       .option('outDir', {
