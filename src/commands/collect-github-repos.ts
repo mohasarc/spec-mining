@@ -9,6 +9,7 @@ import { sleep } from "openai/core";
 import { removeRepetition } from "./remove-repetition";
 import { sortList } from "../utils/sortList";
 import { dependencyNames, specIDList } from "../constants";
+import csv from 'csv-parser';
 
 const GH_ACCESS_TOKEN = process.env['GH_ACCESS_TOKEN'];
 const octokit = new Octokit({ auth: GH_ACCESS_TOKEN });
@@ -644,4 +645,96 @@ export const collectGithubReposUsingSpecs = async (outDir: string, testFramework
             }
         }
     }
+}
+
+export const updateGithubRepoDetails = async (out_dir: string, csv_file_path: string): Promise<void> => {
+    // read the csv file
+
+    let headersDetected = false;
+    let csvHeaders: { id: string; title: string }[] = [];
+    type SimpleRepoDetails = {
+        link: string
+        sha: string
+    }
+    const records: SimpleRepoDetails[] = [];
+
+    const filePath = path.resolve(out_dir, `repo_details_${formatTimestamp()}.csv`)
+
+    return new Promise((resolve) => {
+
+        fs.createReadStream(csv_file_path)
+        .pipe(csv())
+        .on("headers", (headers: string[]) => {
+            // Automatically determine headers from the input CSV
+            if (!headersDetected && headers.length > 0) {
+                headersDetected = true;
+                csvHeaders = headers.map((header) => ({ id: header, title: header }));
+            }
+        })
+        .on("data", (data: SimpleRepoDetails) => {
+            records.push(data);
+        })
+        .on("end", async () => {
+            // read the repo links
+            const baseRepoDetails = records.map((repo) => {
+                const link = repo.link;
+                const owner = link.split('/')[3];
+                const repoName = link.split('/')[4];
+                return {
+                    owner,
+                    repoName
+                }});
+    
+            // split into chunks of 1
+            let chunks = []
+    
+            for (let i = 0; i < baseRepoDetails.length; i += 1) {
+                chunks.push(baseRepoDetails.slice(i, Math.min(i + 1, baseRepoDetails.length)));
+            }
+    
+            let i = 0;
+            for await (const chunk of chunks) {
+                if (chunk.length < 1) return;
+                i++;
+    
+                // fetch the repo details
+                const response = await fetchRepositoriesDetails(chunk);
+    
+                if (!response) {
+                    console.log('No response from GitHub for', chunk, 'from GitHub');
+                    continue;
+                }
+    
+                const repoDetails: Array<DependantRepoDetails> = chunk.map((repo, index) => {
+                    const repoDetails = response[`repo${index}`]?.repository;
+    
+                    if (!repoDetails) {
+                        return undefined
+                    }
+    
+                    return {
+                        ...repo,
+                        repoLink: repoDetails.url,
+                        stars: repoDetails.stargazers.totalCount,
+                        forks: repoDetails.forks.totalCount,
+                        issues: repoDetails.issues.totalCount,
+                        pullRequests: repoDetails.pullRequests.totalCount,
+                        description: repoDetails.description,
+                        fileName: 'N/A',
+                        dependencyName: 'N/A',
+                        testingFramework: 'N/A',
+                        created_at: repoDetails.createdAt,
+                        updated_at: repoDetails.updatedAt,
+                        defaultBranch: repoDetails.defaultBranchRef.name,
+                        defaultBranchCommitId: records.find((repo) => repo.link == repoDetails.url)?.sha
+                    }
+                }).filter(Boolean) as Array<DependantRepoDetails>;
+    
+                await saveData(filePath, repoDetails);
+            }
+    
+            resolve();
+        });
+
+    });
 }

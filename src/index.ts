@@ -1,6 +1,6 @@
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
-import { collectData, removeRepetition, analyzeData, collectGithubRepos, collectGithubIssues, scanDocs, collectGithubReposUsingSpecs } from './commands'
+import { collectData, removeRepetition, analyzeData, collectGithubRepos, collectGithubIssues, scanDocs, collectGithubReposUsingSpecs, updateGithubRepoDetails } from './commands'
 import { dependencyNames, specIDList } from './constants';
 
 const DEFAULT_COLLECT_IN_FILE = './out/collected_issues.csv';
@@ -172,6 +172,19 @@ const argv = await (yargs(hideBin(process.argv))
       })
       .demandOption('repo-list-file')
     }, (argv) => collectGithubIssues(argv.repoListFile, argv.outDir || DEFAULT_GH_ISSUES_OUT_DIR))
+    .command('update_repo_details', 'Update repo details', (_yargs) => {
+      return _yargs
+      .option('outDir', {
+        alias: 'o',
+        type: 'string',
+        description: 'Output dir',
+      })
+      .option('csvFile', {
+        alias: 'c',
+        type: 'string',
+        description: 'CSV file',
+      })
+    }, (argv) => updateGithubRepoDetails(argv.outDir || DEFAULT_GH_LIBS_OUT_FILE, argv.csvFile || "./out/github_repos.csv"))
     .command('analyze', 'Analyze data' , (_yargs) => {
       return _yargs  .option('outFile', {
         alias: 'o',
