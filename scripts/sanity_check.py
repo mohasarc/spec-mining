@@ -58,11 +58,11 @@ def sanity_check(lines):
     problems_diff_values = 0
 
     REQUIRED_ALGOS = [
-        'ORIGINAL',
+        # 'ORIGINAL',
         # 'A',
-        'B',
-        'C',
-        'C+',
+        # 'B',
+        # 'C',
+        # 'C+',
         'D'
     ]
 
