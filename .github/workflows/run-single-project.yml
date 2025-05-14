@@ -50,6 +50,11 @@ jobs:
               mkdir ./projects
               cd ./projects
     
+        - name: Set up Python
+          uses: actions/setup-python@v2
+          with:
+            python-version: '3.12.8'
+
         - name: Setup variables
           run: |
               REPO_URL=$(echo "${{ inputs.project-link }}" | sed 's/;.*//')
@@ -143,7 +148,12 @@ jobs:
           run: |
               mkdir ./projects
               cd ./projects
-    
+
+        - name: Set up Python
+          uses: actions/setup-python@v2
+          with:
+            python-version: '3.12.8'
+
         - name: Setup variables
           run: |
               REPO_URL=$(echo "${{ inputs.project-link }}" | sed 's/;.*//')
