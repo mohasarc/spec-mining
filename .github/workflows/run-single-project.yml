@@ -175,6 +175,14 @@ jobs:
             git clone https://${{ secrets.GH_ACCESS_TOKEN }}@github.com/SoftEngResearch/mop-with-dynapt.git
             cd mop-with-dynapt
             git checkout ${{ inputs.pymop_branch }}
+            git rev-parse HEAD
+            echo "================================================"
+            ls -l
+            echo "================================================"
+            ls ./pythonmop/
+            echo "================================================"
+            ls ./pythonmop/pymop-startup-helper/
+            echo "================================================"
     
         - name: Create projects directory and copy scripts from ../scripts there
           run: |
