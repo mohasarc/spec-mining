@@ -17,6 +17,7 @@ jobs:
         - name: Set up Python
           uses: actions/setup-python@v2
           with:
+            token: ${{ secrets.GITHUB_TOKEN }}
             python-version: '3.9'
     
         - name: Install jq
