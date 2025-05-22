@@ -181,7 +181,7 @@ jobs:
             echo "================================================"
             ls ./pythonmop/
             echo "================================================"
-            ls ./pythonmop/pymop-startup-helper/
+            # ls ./pythonmop/pymop-startup-helper/
             echo "================================================"
     
         - name: Create projects directory and copy scripts from ../scripts there

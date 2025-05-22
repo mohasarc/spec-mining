@@ -33,7 +33,7 @@ call_pymop(){
         echo "{\"test_duration\": ${END_TO_END_TIME}}" > $report/$algo-time.json
     else
         echo "================================================"
-        ls -l "$PWD"/../mop-with-dynapt/pythonmop/pymop-startup-helper/
+        # ls -l "$PWD"/../mop-with-dynapt/pythonmop/pymop-startup-helper/
         echo "================================================"
 
         # PYTHONPATH="$PWD"/../mop-with-dynapt/pythonmop/pymop-startup-helper/ timeout 14400 pytest --color=no -v -p pythonmop -rA --path="$PWD"/../mop-with-dynapt/specs-new/ --algo $algo --memray --trace-python-allocators --most-allocations=0 --memray-bin-path=$report/MEM_$algo \
