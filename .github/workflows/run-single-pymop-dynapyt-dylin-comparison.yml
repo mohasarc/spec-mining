@@ -37,12 +37,12 @@ jobs:
         
         - name: Prepare results dir
           run: |
-            cd ./dylin_dynapyt_experiment
+            cd ./DyLin_DynaPyt_Experiment
             mkdir ./results
             
         - name: Run Experiment
           run: |
-            cd ./dylin_dynapyt_experiment
+            cd ./DyLin_DynaPyt_Experiment
             ls -l
             chmod +x ./run_experiment.sh
             ./run_experiment.sh "${{ inputs.project-link }}"
@@ -51,7 +51,7 @@ jobs:
 
         - name: Zip report files
           run: |
-            cd ./dylin_dynapyt_experiment/results
+            cd ./DyLin_DynaPyt_Experiment/results
             zip -r ../../$ZIP_FILE .  # Create a zip file in the projects directory
             ls -l ../../
           shell: bash
