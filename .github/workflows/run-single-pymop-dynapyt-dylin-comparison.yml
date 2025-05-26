@@ -52,8 +52,8 @@ jobs:
         - name: Zip only .zip files
           run: |
             cd ./DyLin_DynaPyt_Experiment
-            zip -j ../../$ZIP_FILE ./*.zip  # -j to junk paths and include only .zip files
-            ls -l ../../
+            zip -j ../$ZIP_FILE ./*.zip  # -j to junk paths and include only .zip files
+            ls -l ../
           shell: bash
     
         - name: Upload report to GitHub Release
