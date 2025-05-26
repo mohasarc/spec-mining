@@ -30,21 +30,21 @@ class InefficientTruthCheck(Spec):
 
         self.tracked_calls = {} # { object_id+method_name: { start_time } }
 
-        for current_class in get_all_subclasses(object):
-            try:
-                current_class.__PYMOP_IMMUTABLE_TEST__ = True
-                inspect.getmembers(current_class)
-            except Exception as e:
-                # Skip classes that can't be instrumented
-                continue
+        # for current_class in get_all_subclasses(object):
+        #     try:
+        #         current_class.__PYMOP_IMMUTABLE_TEST__ = True
+        #         inspect.getmembers(current_class)
+        #     except Exception as e:
+        #         # Skip classes that can't be instrumented
+        #         continue
 
-            @self.event_before(call(current_class, r'(__bool__|__len__)'))
-            def bool_or_len_start(**kw):
-                return self.handle_before_event(kw)
+        #     @self.event_before(call(current_class, r'(__bool__|__len__)'))
+        #     def bool_or_len_start(**kw):
+        #         return self.handle_before_event(kw)
             
-            @self.event_after(call(current_class, r'(__bool__|__len__)'))
-            def bool_or_len_end(**kw):
-                return self.handle_after_event(kw)
+        #     @self.event_after(call(current_class, r'(__bool__|__len__)'))
+        #     def bool_or_len_end(**kw):
+        #         return self.handle_after_event(kw)
 
         @self.event_before(call(object, r'(__bool__|__len__)'))
         def bool_or_len_start(**kw):
