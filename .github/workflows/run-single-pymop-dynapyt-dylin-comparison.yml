@@ -49,10 +49,10 @@ jobs:
           env:
             GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
 
-        - name: Zip report files
+        - name: Zip only .zip files
           run: |
-            cd ./DyLin_DynaPyt_Experiment/results
-            zip -r ../../$ZIP_FILE .  # Create a zip file in the projects directory
+            cd ./DyLin_DynaPyt_Experiment
+            zip -j ../../$ZIP_FILE ./*.zip  # -j to junk paths and include only .zip files
             ls -l ../../
           shell: bash
     
