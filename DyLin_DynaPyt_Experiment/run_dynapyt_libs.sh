@@ -91,7 +91,7 @@ cd ..
 git clone "$DYNAPYT_REPO_URL" "$(basename $DYNAPYT_REPO_URL .git)_global" || { echo "Failed to clone $DYNAPYT_REPO_URL"; exit 1; }
 
 # Specify the source directory containing the Python DynaPyt files
-SOURCE_DIR="$PWD/Specs_libs/DynaPyt"
+SOURCE_DIR="$PWD/../Specs_libs/DynaPyt"
 
 # Define the destination directory in the cloned DynaPyt repository
 DESTINATION_DIR="$PWD/DynaPyt_global/src/dynapyt/analyses"
@@ -120,7 +120,7 @@ export DYNAPYT_SESSION_ID=$(uuidgen)
 echo "DynaPyt Session ID: $DYNAPYT_SESSION_ID"
 
 # Copy the analyses file to temp directory with session ID
-cp "$PWD/Specs_libs/dynapyt_analyses.txt" "$TMPDIR/dynapyt_analyses-$DYNAPYT_SESSION_ID.txt"
+cp "$PWD/../Specs_libs/dynapyt_analyses.txt" "$TMPDIR/dynapyt_analyses-$DYNAPYT_SESSION_ID.txt"
 
 # Display contents of the copied file
 cat "$TMPDIR/dynapyt_analyses-$DYNAPYT_SESSION_ID.txt"
@@ -161,7 +161,7 @@ cd ..
 git clone "$DYNAPYT_REPO_URL" "$(basename $DYNAPYT_REPO_URL .git)_virtual" || { echo "Failed to clone $DYNAPYT_REPO_URL"; exit 1; }
 
 # Specify the source directory containing the Python DynaPyt files
-SOURCE_DIR="$PWD/Specs_libs/DynaPyt"
+SOURCE_DIR="$PWD/../Specs_libs/DynaPyt"
 
 # Define the destination directory in the cloned DynaPyt repository
 DESTINATION_DIR="$PWD/DynaPyt_virtual/src/dynapyt/analyses"

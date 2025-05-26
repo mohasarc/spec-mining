@@ -89,7 +89,7 @@ git clone "$PYMOP_REPO_URL" || { echo "Failed to clone $PYMOP_REPO_URL"; exit 1;
 cd mop-with-dynapt
 
 # TODO: Currently using a temp version of PyMOP
-git checkout all-new-specs
+git checkout ast-play
 
 # Install the project in editable mode with dev dependencies
 pip install . || { echo "Failed to install mop-with-dynapt"; exit 1; }
@@ -109,7 +109,7 @@ cd $TESTING_REPO_NAME
 TEST_START_TIME=$(python3 -c 'import time; print(time.time())')
 
 # Run tests with 1-hour timeout and save output
-timeout -k 9 3000 pytest --path="$PWD"/Specs/PyMOP --algo=D --continue-on-collection-errors --json-report --json-report-indent=2 --statistics --statistics_file="D".json > ${TESTING_REPO_NAME}_Output.txt
+timeout -k 9 3000 pytest --path="$PWD"/../Specs/PyMOP --algo=D --continue-on-collection-errors --json-report --json-report-indent=2 --statistics --statistics_file="D".json > ${TESTING_REPO_NAME}_Output.txt
 exit_code=$?
 
 # Process test results if no timeout occurred

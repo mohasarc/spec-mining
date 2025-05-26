@@ -91,7 +91,7 @@ cd ..
 git clone "$DYLIN_REPO_URL" "$(basename $DYLIN_REPO_URL .git)_global" || { echo "Failed to clone $DYLIN_REPO_URL"; exit 1; }
 
 # Specify the source directory containing the Python DyLin files
-SOURCE_DIR="$PWD/Specs_libs/DyLin"
+SOURCE_DIR="$PWD/../Specs_libs/DyLin"
 
 # Define the destination directory in the cloned DyLin repository
 DESTINATION_DIR="$PWD/DyLin_global/src/dylin/analyses"
@@ -109,7 +109,7 @@ else
 fi
 
 # Override the select_checkers.py file with the one from the parent directory
-cp "$PWD/Specs_libs/select_checkers.py" "$PWD/DyLin_global/src/dylin/select_checkers.py"
+cp "$PWD/../Specs_libs/select_checkers.py" "$PWD/DyLin_global/src/dylin/select_checkers.py"
 
 # Navigate into the cloned DyLin repository
 cd "$(basename $DYLIN_REPO_URL .git)_global"
@@ -181,7 +181,7 @@ cd ..
 git clone "$DYLIN_REPO_URL" "$(basename $DYLIN_REPO_URL .git)_virtual" || { echo "Failed to clone $DYLIN_REPO_URL"; exit 1; }
 
 # Specify the source directory containing the Python DyLin files
-SOURCE_DIR="$PWD/Specs_libs/DyLin"
+SOURCE_DIR="$PWD/../Specs_libs/DyLin"
 
 # Define the destination directory in the cloned DyLin repository
 DESTINATION_DIR="$PWD/DyLin_virtual/src/dylin/analyses"
@@ -199,7 +199,7 @@ else
 fi
 
 # Override the select_checkers.py file with the one from the parent directory
-cp "$PWD/Specs_libs/select_checkers.py" "$PWD/DyLin_virtual/src/dylin/select_checkers.py"
+cp "$PWD/../Specs_libs/select_checkers.py" "$PWD/DyLin_virtual/src/dylin/select_checkers.py"
 
 # Navigate into the cloned DyLin repository
 cd "$(basename $DYLIN_REPO_URL .git)_virtual"

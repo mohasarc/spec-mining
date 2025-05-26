@@ -92,7 +92,7 @@ git clone "$DYLIN_REPO_URL" || { echo "Failed to clone $DYLIN_REPO_URL"; exit 1;
 echo "[INFO] Copying Analyses from DynaPyt to DyLin..."
 
 # Specify the source directory containing the Python DynaPyt files
-SOURCE_DIR="$PWD/Specs/DyLin"
+SOURCE_DIR="$PWD/../Specs/DyLin"
 
 # Define the destination directory in the cloned DyLin repository
 DESTINATION_DIR="$PWD/DyLin/src/dylin/analyses"
@@ -110,7 +110,7 @@ else
 fi
 
 # Override the select_checkers.py file with the one from the parent directory
-cp "$PWD/Specs/select_checkers.py" "$PWD/DyLin/src/dylin/select_checkers.py"
+cp "$PWD/../Specs/select_checkers.py" "$PWD/DyLin/src/dylin/select_checkers.py"
 
 # --- STEP 3: Install DyLin and pytest ---
 echo "[INFO] Installing DyLin and dependencies..."
