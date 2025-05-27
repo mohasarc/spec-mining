@@ -66,12 +66,14 @@ pip install pytest
 pip install numpy
 pip install matplotlib
 pip install pandas
+pip install memray pytest-memray
 
 # Record test start time
 TEST_START_TIME=$(python3 -c 'import time; print(time.time())')
+MEMORY_DATA_DIR_NAME="memory-data-original"
 
 # Run tests with 1-hour timeout and save output
-timeout -k 9 3000 pytest --continue-on-collection-errors > ${TESTING_REPO_NAME}_Output.txt
+timeout -k 9 3000 pytest --memray --trace-python-allocators --most-allocations=0 --memray-bin-path=./$MEMORY_DATA_DIR_NAME --continue-on-collection-errors > ${TESTING_REPO_NAME}_Output.txt
 exit_code=$?
 
 # Process test results if no timeout occurred
@@ -99,6 +101,9 @@ if [ $exit_code -ne 124 ] && [ $exit_code -ne 137 ]; then
 
     # Copy test output to results directory
     cp "${TESTING_REPO_NAME}/${TESTING_REPO_NAME}_Output.txt" $CLONE_DIR/
+
+    # Copy the memory data to the results directory
+    cp $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME $CLONE_DIR/$MEMORY_DATA_DIR_NAME
 
     # Archive results
     zip -r "${CLONE_DIR}.zip" $CLONE_DIR
