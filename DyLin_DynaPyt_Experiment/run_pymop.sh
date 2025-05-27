@@ -147,7 +147,7 @@ cp $TESTING_REPO_NAME/.report.json $CLONE_DIR/.report.json
 cp $TESTING_REPO_NAME/D-full.json $CLONE_DIR/D-full.json
 cp $TESTING_REPO_NAME/D-time.json $CLONE_DIR/D-time.json
 cp $TESTING_REPO_NAME/D-violations.json $CLONE_DIR/D-violations.json
-cp $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME $CLONE_DIR/$MEMORY_DATA_DIR_NAME
+cp $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME/* $CLONE_DIR/$MEMORY_DATA_DIR_NAME/
 
 # Archive results
 zip -r "${CLONE_DIR}.zip" $CLONE_DIR
