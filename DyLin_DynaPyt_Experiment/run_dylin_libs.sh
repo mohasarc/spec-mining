@@ -289,7 +289,7 @@ cp "${TMPDIR}/dynapyt_output-${DYNAPYT_SESSION_ID}/findings.csv" $CLONE_DIR/temp
 cp "${TMPDIR}/dynapyt_output-${DYNAPYT_SESSION_ID}/output.json" $CLONE_DIR/temp_output.json
 
 # Copy the memory data to the results directory
-cp $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME/* $CLONE_DIR/$MEMORY_DATA_DIR_NAME/
+cp -r $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME $CLONE_DIR/
 
 # Archive results
 zip -r "${CLONE_DIR}.zip" $CLONE_DIR
