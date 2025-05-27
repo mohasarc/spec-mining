@@ -76,6 +76,7 @@ fi
 pip install pytest
 pip install numpy
 pip install matplotlib
+pip install pandas
 
 # Return back to the parent directory
 cd ..

@@ -76,6 +76,7 @@ fi
 pip install pytest
 pip install numpy
 pip install matplotlib
+pip install pandas
 
 # ------------------------------------------------------------------------------------------------
 # Install DyLin in the global environment and run the Instrumentation
