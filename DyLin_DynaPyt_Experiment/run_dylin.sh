@@ -243,6 +243,8 @@ cp "${TESTING_REPO_NAME}/${TESTING_REPO_NAME}_Output.txt" $CLONE_DIR/
 cp "${TMPDIR}/dynapyt_output-${DYNAPYT_SESSION_ID}/findings.csv" $CLONE_DIR/temp_findings.csv
 cp "${TMPDIR}/dynapyt_output-${DYNAPYT_SESSION_ID}/output.json" $CLONE_DIR/temp_output.json
 
+ls $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME
+
 # Copy the memory data to the results directory
 cp -r $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME $CLONE_DIR/
 

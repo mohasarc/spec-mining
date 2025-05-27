@@ -1,9 +1,9 @@
 import numpy as np
-import pandas as pd
+# import pandas as pd
 from pythonmop import Spec, call, VIOLATION, TRUE_EVENT, FALSE_EVENT
 
 import pythonmop.spec.spec as spec
-spec.DONT_MONITOR_PYTHONMOP = False
+# spec.DONT_MONITOR_PYTHONMOP = False
 
 class NonFinitesAnalysis(Spec):
     """
@@ -13,24 +13,24 @@ class NonFinitesAnalysis(Spec):
     def __init__(self):
         super().__init__()
 
-        @self.event_after(call(pd.DataFrame, r'(add|add_prefix|add_suffix|abs|apply|applymap|asfreq|astype|at|at_time|bfill)'))
-        def pandas_op(**kw):
-            args = kw['args']
-            kwargs = kw['kwargs']
-            return_val = kw['return_val']
+        # @self.event_after(call(pd.DataFrame, r'(add|add_prefix|add_suffix|abs|apply|applymap|asfreq|astype|at|at_time|bfill)'))
+        # def pandas_op(**kw):
+        #     args = kw['args']
+        #     kwargs = kw['kwargs']
+        #     return_val = kw['return_val']
 
-            for arg in args:
-                if self.check_np_issue_found(arg):
-                    return TRUE_EVENT
+        #     for arg in args:
+        #         if self.check_np_issue_found(arg):
+        #             return TRUE_EVENT
             
-            for arg in kwargs:
-                if self.check_np_issue_found(arg):
-                    return TRUE_EVENT
+        #     for arg in kwargs:
+        #         if self.check_np_issue_found(arg):
+        #             return TRUE_EVENT
 
-            if self.check_np_issue_found(return_val):
-                return TRUE_EVENT
+        #     if self.check_np_issue_found(return_val):
+        #         return TRUE_EVENT
 
-            return FALSE_EVENT
+        #     return FALSE_EVENT
 
         @self.event_after(call(np, r'.*'))
         def numpy_op(**kw):

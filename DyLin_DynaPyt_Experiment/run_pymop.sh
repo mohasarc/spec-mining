@@ -147,6 +147,9 @@ cp $TESTING_REPO_NAME/.report.json $CLONE_DIR/.report.json
 cp $TESTING_REPO_NAME/D-full.json $CLONE_DIR/D-full.json
 cp $TESTING_REPO_NAME/D-time.json $CLONE_DIR/D-time.json
 cp $TESTING_REPO_NAME/D-violations.json $CLONE_DIR/D-violations.json
+
+ls $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME
+
 cp -r $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME $CLONE_DIR/
 
 # Archive results

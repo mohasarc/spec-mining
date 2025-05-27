@@ -102,6 +102,8 @@ if [ $exit_code -ne 124 ] && [ $exit_code -ne 137 ]; then
     # Copy test output to results directory
     cp "${TESTING_REPO_NAME}/${TESTING_REPO_NAME}_Output.txt" $CLONE_DIR/
 
+    ls $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME
+
     # Copy the memory data to the results directory
     cp -r $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME $CLONE_DIR/
 
