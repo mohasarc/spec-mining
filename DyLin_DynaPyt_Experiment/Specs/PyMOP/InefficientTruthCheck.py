@@ -4,7 +4,7 @@ import pythonmop.spec.spec as spec
 import inspect
 import time
 
-spec.DONT_MONITOR_PYTHONMOP = False
+# spec.DONT_MONITOR_PYTHONMOP = False
 
 def get_all_subclasses(cls):
     all_subclasses = []
@@ -98,7 +98,7 @@ class InefficientTruthCheck(Spec):
         print(
             f'Spec - {self.__class__.__name__}: too slow __bool__ or __len__ check taking over 10ms. file: {call_file_name}:{call_line_num}')
 
-# '''
+'''
 the_spec = InefficientTruthCheck()
 the_spec.create_monitor('D')
 
@@ -115,4 +115,4 @@ a = A()
 
 bool(a) # Too slow 
 len(a) # Fine
-# '''
+'''
