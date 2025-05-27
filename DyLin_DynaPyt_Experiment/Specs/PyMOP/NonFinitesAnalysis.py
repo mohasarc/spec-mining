@@ -1,5 +1,5 @@
 import numpy as np
-# import pandas as pd
+import pandas as pd
 from pythonmop import Spec, call, VIOLATION, TRUE_EVENT, FALSE_EVENT
 
 import pythonmop.spec.spec as spec
