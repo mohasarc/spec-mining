@@ -14,11 +14,6 @@ issue_codes = {
         "analysis": "dylin.analyses.InvalidComparisonAnalysis.InvalidComparisonAnalysis",
         "aliases": ["A-12"],
     },
-    "PC-03": {
-        "name": "WrongTypeAdded",
-        "analysis": "dylin.analyses.WrongTypeAddedAnalysis.WrongTypeAddedAnalysis",
-        "aliases": ["A-11"],
-    },
     "PC-04": {
         "name": "ChangeListWhileIterating",
         "analysis": "dylin.analyses.ChangeListWhileIterating.ChangeListWhileIterating",
@@ -34,11 +29,6 @@ issue_codes = {
         "analysis": "dylin.analyses.FilesClosedAnalysis.FilesClosedAnalysis",
         "aliases": ["A-08"],
     },
-    "SL-01": {
-        "name": "InPlaceSort",
-        "analysis": "dylin.analyses.InPlaceSortAnalysis.InPlaceSortAnalysis",
-        "aliases": ["A-09"],
-    },
     "SL-02": {
         "name": "AnyAllMisuse",
         "analysis": "dylin.analyses.BuiltinAllAnalysis.BuiltinAllAnalysis",
@@ -49,20 +39,10 @@ issue_codes = {
         "analysis": "dylin.analyses.StringStripAnalysis.StringStripAnalysis",
         "aliases": ["A-19", "A-20"],
     },
-    "SL-04": {
-        "name": "StringConcat",
-        "analysis": "dylin.analyses.StringConcatAnalysis.StringConcatAnalysis",
-        "aliases": ["A-05"],
-    },
     "SL-05": {
         "name": "InvalidTypeComparison",
         "analysis": "dylin.analyses.InvalidComparisonAnalysis.InvalidComparisonAnalysis",
         "aliases": ["A-13"],
-    },
-    "CF-01": {
-        "name": "WrongOperatorOverriding",
-        "analysis": "dylin.analyses.ComparisonBehaviorAnalysis.ComparisonBehaviorAnalysis",
-        "aliases": ["A-01", "A-03", "A-04"],
     },
     "ML-03": {
         "name": "NonFiniteValues",
