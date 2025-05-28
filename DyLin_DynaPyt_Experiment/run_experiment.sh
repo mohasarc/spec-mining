@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Check if exactly one repository URL is provided, and exit if not
-if [ "$#" -ne 1 ]; then
-    echo "Usage: $0 <testing-repo-url>"
+# Check if exactly one repository URL and one status number areprovided, and exit if not
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 <testing-repo-url> <status-number>"
     exit 1
 fi
 
@@ -16,11 +16,16 @@ IFS=';' read -r TESTING_REPO_URL target_sha <<< "$repo_url_with_sha"
 echo "Url: $TESTING_REPO_URL"
 echo "Sha: $target_sha"
 
+# Assign the provided argument (status number) to a variable
+status_number="$2"
+
 echo "🚀 Running experiment for: $TESTING_REPO_URL - $target_sha"
+echo "Status number: $status_number"
 
 # Combine URL and SHA with semicolon
 url_with_sha="${TESTING_REPO_URL};${target_sha}"
 
+if [ "$status_number" ]; then
 # Run the original script
 echo "🚀 Running run_original.sh on $TESTING_REPO_URL with SHA $target_sha..."
 if timeout 3600 bash "run_original.sh" "$url_with_sha"; then

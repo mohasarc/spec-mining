@@ -30,7 +30,7 @@ TESTING_REPO_NAME=$(basename -s .git "$TESTING_REPO_URL")
 DEVELOPER_ID=$(echo "$TESTING_REPO_URL" | sed -E 's|https://github.com/([^/]+)/.*|\1|')
 
 # Create combined name with developer ID and repo name
-CLONE_DIR="${DEVELOPER_ID}-${TESTING_REPO_NAME}_Dylin_Libs"
+CLONE_DIR="${DEVELOPER_ID}-${TESTING_REPO_NAME}_DyLin_25"
 
 # Create the directory if it does not exist
 mkdir -p "$CLONE_DIR"
@@ -49,14 +49,14 @@ else
     git clone "$TESTING_REPO_URL" || { echo "Failed to clone $TESTING_REPO_URL"; exit 1; }
 fi
 
-# Navigate to the testing project directory
-cd "$TESTING_REPO_NAME" || { echo "Failed to enter directory $TESTING_REPO_NAME"; exit 1; }
-
 # Create a virtual environment using Python's built-in venv
 python3 -m venv venv
 
 # Activate the virtual environment
 source venv/bin/activate
+
+# Navigate to the testing project directory
+cd "$TESTING_REPO_NAME" || { echo "Failed to enter directory $TESTING_REPO_NAME"; exit 1; }
 
 # Install dependencies from all requirement files if they exist
 for file in *.txt; do
@@ -78,25 +78,27 @@ pip install numpy
 pip install matplotlib
 pip install pandas
 pip install tensorflow
+pip install memray pytest-memray
 
-# ------------------------------------------------------------------------------------------------
-# Install DyLin in the global environment and run the Instrumentation
-# ------------------------------------------------------------------------------------------------
-
-# Exit the virtual environment
-deactivate
-
-# Navigate back to the parent directory
+# Return back to the parent directory
 cd ..
 
-# Clone the DyLin repository into the current directory
-git clone "$DYLIN_REPO_URL" "$(basename $DYLIN_REPO_URL .git)_global" || { echo "Failed to clone $DYLIN_REPO_URL"; exit 1; }
+# ------------------------------------------------------------------------------------------------
+# Install DynaPyt
+# ------------------------------------------------------------------------------------------------
 
-# Specify the source directory containing the Python DyLin files
+# --- STEP 1: Clone DyLin ---
+echo "[INFO] Cloning DyLin..."
+git clone "$DYLIN_REPO_URL" || { echo "Failed to clone $DYLIN_REPO_URL"; exit 1; }
+
+# --- STEP 2: Copy Analyses from DynaPyt to DyLin ---
+echo "[INFO] Copying Analyses from DynaPyt to DyLin..."
+
+# Specify the source directory containing the Python DynaPyt files
 SOURCE_DIR="$PWD/../Specs_libs/DyLin"
 
 # Define the destination directory in the cloned DyLin repository
-DESTINATION_DIR="$PWD/DyLin_global/src/dylin/analyses"
+DESTINATION_DIR="$PWD/DyLin/src/dylin/analyses"
 
 # Remove everything at the destination directory apart from base_analysis.py and __init__.py
 find "$DESTINATION_DIR" -type f ! -name 'base_analysis.py' ! -name '__init__.py' -delete
@@ -111,16 +113,14 @@ else
 fi
 
 # Override the select_checkers.py file with the one from the parent directory
-cp "$PWD/../Specs_libs/select_checkers.py" "$PWD/DyLin_global/src/dylin/select_checkers.py"
+cp "$PWD/../Specs_libs/select_checkers.py" "$PWD/DyLin/src/dylin/select_checkers.py"
 
-# Navigate into the cloned DyLin repository
-cd "$(basename $DYLIN_REPO_URL .git)_global"
-
-# Install the required dependencies for DyLin and the package itself
+# --- STEP 3: Install DyLin and pytest ---
+echo "[INFO] Installing DyLin and dependencies..."
+cd DyLin
 pip install -r requirements.txt
 pip install .
 
-# Go back to the parent directory
 cd ..
 
 # Generate a unique session ID for the DynaPyt run (in order to run multiple analyses in one run)
@@ -129,7 +129,7 @@ echo "DynaPyt Session ID: $DYNAPYT_SESSION_ID"
 
 # --- STEP 4: Remove DyLin files ---
 echo "[INFO] Removing DyLin source files..."
-rm -rf ./DyLin_global
+rm -rf ./DyLin
 
 # --- STEP 5: Select analyses ---
 echo "[INFO] Selecting analyses..."
@@ -144,89 +144,41 @@ cat analyses.txt
 # --- STEP 6: Copy analyses file ---
 cp analyses.txt "${TMPDIR}/dynapyt_analyses-${DYNAPYT_SESSION_ID}.txt"
 
-# Copy the file_to_instrument_generators.py file to the temp directory
-cp "$PWD/../file_to_instrument_generators.py" "$PWD/file_to_instrument_generators.py"
+# ------------------------------------------------------------------------------------------------
+# Run the Instrumentation
+# ------------------------------------------------------------------------------------------------
 
-# Generate the file list for files to be instrumented including libraries
-python3 "$PWD/file_to_instrument_generators.py" "$TESTING_REPO_NAME" "venv"
+# --- STEP 7: Instrument the code ---
+echo "[INFO] Running instrumentation on $PATH_TO_INSTRUMENT ..."
 
-# Go back to the testing project directory
+# Navigate to the testing project directory
 cd "$TESTING_REPO_NAME"
 
 # Record the start time of the instrumentation process
-START_TIME=$(python3 -c 'import time; print(time.time())')
+INSTRUMENTATION_START_TIME=$(python3 -c 'import time; print(time.time())')
 
-# Read the analyses file and join with commas
-ANALYSES=$(cat "${TMPDIR}/dynapyt_analyses-${DYNAPYT_SESSION_ID}.txt" | tr '\n' ',' | sed 's/,$//')
-
-# Run DynaPyt instrumentation for analysis
-python3 -m dynapyt.instrument.instrument --files ../files_to_instrument.txt --analysis "$ANALYSES"
+python3 -m dynapyt.run_instrumentation \
+    --directory="." \
+    --analysisFile="${TMPDIR}/dynapyt_analyses-${DYNAPYT_SESSION_ID}.txt"
 
 # Record the end time and calculate the instrumentation duration
-END_TIME=$(python3 -c 'import time; print(time.time())')
-INSTRUMENTATION_TIME=$(python3 -c "print($END_TIME - $START_TIME)")
+INSTRUMENTATION_END_TIME=$(python3 -c 'import time; print(time.time())')
+INSTRUMENTATION_TIME=$(python3 -c "print($INSTRUMENTATION_END_TIME - $INSTRUMENTATION_START_TIME)")
 
-# Add debug message after instrumentation
-echo "=== Instrumentation Complete (${INSTRUMENTATION_TIME}s) ==="
-
-# ------------------------------------------------------------------------------------------------
-# Install DynaPyt in the virtual environment and run the tests
-# ------------------------------------------------------------------------------------------------
-
-# Activate the virtual environment
-source venv/bin/activate
-
-# Return to the parent directory
-cd ..
-
-# Clone the DyLin repository into the current directory
-git clone "$DYLIN_REPO_URL" "$(basename $DYLIN_REPO_URL .git)_virtual" || { echo "Failed to clone $DYLIN_REPO_URL"; exit 1; }
-
-# Specify the source directory containing the Python DyLin files
-SOURCE_DIR="$PWD/../Specs_libs/DyLin"
-
-# Define the destination directory in the cloned DyLin repository
-DESTINATION_DIR="$PWD/DyLin_virtual/src/dylin/analyses"
-
-# Remove everything at the destination directory apart from base_analysis.py and __init__.py
-find "$DESTINATION_DIR" -type f ! -name 'base_analysis.py' ! -name '__init__.py' -delete
-
-# Check if the source directory exists before attempting to copy files
-if [ -d "$SOURCE_DIR" ]; then
-    # Copy all Python files from the source directory to the destination
-    cp "$SOURCE_DIR"/*.py "$DESTINATION_DIR"
-else
-    echo "Source directory does not exist: $SOURCE_DIR"
-    exit 1
-fi
-
-# Override the select_checkers.py file with the one from the parent directory
-cp "$PWD/../Specs_libs/select_checkers.py" "$PWD/DyLin_virtual/src/dylin/select_checkers.py"
-
-# Navigate into the cloned DyLin repository
-cd "$(basename $DYLIN_REPO_URL .git)_virtual"
-
-# Install the required dependencies for DyLin and the package itself
-pip install -r requirements.txt
-pip install .
-
-# Install memray and pytest-memray
-pip install memray pytest-memray
-
-# Navigate back to the root project directory
-cd ..
+echo "[INFO] Instrumentation completed."
 
 # ------------------------------------------------------------------------------------------------
 # Run the tests
 # ------------------------------------------------------------------------------------------------
 
-# Navigate to the testing project directory
-cd "$TESTING_REPO_NAME"
-
-MEMORY_DATA_DIR_NAME="memory-data-dylin-libs"
+# --- STEP 8: Run pytest (optional, but common after instrumentation) ---
+echo "[INFO] Running pytest..."
+echo "DynaPyt Session ID: $DYNAPYT_SESSION_ID"
 
 # Record test start time
 TEST_START_TIME=$(python3 -c 'import time; print(time.time())')
+
+MEMORY_DATA_DIR_NAME="memory-data-dylin"
 
 # Run tests with 1-hour timeout and save output
 timeout -k 9 3000 pytest --memray --trace-python-allocators --most-allocations=0 --memray-bin-path=./$MEMORY_DATA_DIR_NAME --continue-on-collection-errors > ${TESTING_REPO_NAME}_Output.txt

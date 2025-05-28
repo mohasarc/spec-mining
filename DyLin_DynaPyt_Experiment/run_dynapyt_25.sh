@@ -30,7 +30,7 @@ TESTING_REPO_NAME=$(basename -s .git "$TESTING_REPO_URL")
 DEVELOPER_ID=$(echo "$TESTING_REPO_URL" | sed -E 's|https://github.com/([^/]+)/.*|\1|')
 
 # Create combined name with developer ID and repo name
-CLONE_DIR="${DEVELOPER_ID}-${TESTING_REPO_NAME}_DynaPyt_Libs"
+CLONE_DIR="${DEVELOPER_ID}-${TESTING_REPO_NAME}_DynaPyt_25"
 
 # Create the directory if it does not exist
 mkdir -p "$CLONE_DIR"
@@ -49,14 +49,14 @@ else
     git clone "$TESTING_REPO_URL" || { echo "Failed to clone $TESTING_REPO_URL"; exit 1; }
 fi
 
-# Navigate to the testing project directory
-cd "$TESTING_REPO_NAME" || { echo "Failed to enter directory $TESTING_REPO_NAME"; exit 1; }
-
 # Create a virtual environment using Python's built-in venv
 python3 -m venv venv
 
 # Activate the virtual environment
 source venv/bin/activate
+
+# Navigate to the testing project directory
+cd "$TESTING_REPO_NAME" || { echo "Failed to enter directory $TESTING_REPO_NAME"; exit 1; }
 
 # Install dependencies from all requirement files if they exist
 for file in *.txt; do
@@ -78,25 +78,23 @@ pip install numpy
 pip install matplotlib
 pip install pandas
 pip install tensorflow
+pip install memray pytest-memray
 
 # ------------------------------------------------------------------------------------------------
-# Install DynaPyt in the global environment and run the Instrumentation
+# Install DynaPyt
 # ------------------------------------------------------------------------------------------------
 
-# Exit the virtual environment
-deactivate
-
-# Navigate back to the parent directory
+# Return to the parent directory
 cd ..
 
 # Clone the DynaPyt repository into the current directory
-git clone "$DYNAPYT_REPO_URL" "$(basename $DYNAPYT_REPO_URL .git)_global" || { echo "Failed to clone $DYNAPYT_REPO_URL"; exit 1; }
+git clone "$DYNAPYT_REPO_URL" || { echo "Failed to clone $DYNAPYT_REPO_URL"; exit 1; }
 
 # Specify the source directory containing the Python DynaPyt files
 SOURCE_DIR="$PWD/../Specs_libs/DynaPyt"
 
 # Define the destination directory in the cloned DynaPyt repository
-DESTINATION_DIR="$PWD/DynaPyt_global/src/dynapyt/analyses"
+DESTINATION_DIR="$PWD/DynaPyt/src/dynapyt/analyses"
 
 # Check if the source directory exists before attempting to copy files
 if [ -d "$SOURCE_DIR" ]; then
@@ -108,13 +106,13 @@ else
 fi
 
 # Navigate into the cloned DynaPyt repository
-cd "$(basename $DYNAPYT_REPO_URL .git)_global"
+cd DynaPyt
 
 # Install the required dependencies for DynaPyt and the package itself
 pip install -r requirements.txt
 pip install .
 
-# Go back to the parent directory
+# Navigate back to the root project directory
 cd ..
 
 # Generate a unique session ID for the DynaPyt run (in order to run multiple analyses in one run)
@@ -127,98 +125,55 @@ cp "$PWD/../Specs_libs/dynapyt_analyses.txt" "$TMPDIR/dynapyt_analyses-$DYNAPYT_
 # Display contents of the copied file
 cat "$TMPDIR/dynapyt_analyses-$DYNAPYT_SESSION_ID.txt"
 
-# Copy the file_to_instrument_generators.py file to the temp directory
-cp "$PWD/../file_to_instrument_generators.py" "$PWD/file_to_instrument_generators.py"
+# ------------------------------------------------------------------------------------------------
+# Run the Instrumentation
+# ------------------------------------------------------------------------------------------------
 
-# Generate the file list for files to be instrumented including libraries
-python3 "$PWD/file_to_instrument_generators.py" "$TESTING_REPO_NAME" "venv"
-
-# Go back to the testing project directory
+# Navigate to the testing project directory
 cd "$TESTING_REPO_NAME"
 
 # Record the start time of the instrumentation process
 START_TIME=$(python3 -c 'import time; print(time.time())')
 
 # Run DynaPyt instrumentation for analysis
-python3 -m dynapyt.instrument.instrument --files ../files_to_instrument.txt --analysis dynapyt.analyses.Basic_Instrumentation.Basic_Instrumentation
+python3 -m dynapyt.run_instrumentation --dir . --analysis dynapyt.analyses.Basic_Instrumentation.Basic_Instrumentation
 
 # Record the end time and calculate the instrumentation duration
 END_TIME=$(python3 -c 'import time; print(time.time())')
 INSTRUMENTATION_TIME=$(python3 -c "print($END_TIME - $START_TIME)")
 
-# Add debug message after instrumentation
-echo "=== Instrumentation Complete (${INSTRUMENTATION_TIME}s) ==="
-
-# ------------------------------------------------------------------------------------------------
-# Install DynaPyt in the virtual environment and run the tests
-# ------------------------------------------------------------------------------------------------
-
-# Activate the virtual environment
-source venv/bin/activate
-
-# Return to the parent directory
-cd ..
-
-# Clone the DynaPyt repository into the current directory
-git clone "$DYNAPYT_REPO_URL" "$(basename $DYNAPYT_REPO_URL .git)_virtual" || { echo "Failed to clone $DYNAPYT_REPO_URL"; exit 1; }
-
-# Specify the source directory containing the Python DynaPyt files
-SOURCE_DIR="$PWD/../Specs_libs/DynaPyt"
-
-# Define the destination directory in the cloned DynaPyt repository
-DESTINATION_DIR="$PWD/DynaPyt_virtual/src/dynapyt/analyses"
-
-# Check if the source directory exists before attempting to copy files
-if [ -d "$SOURCE_DIR" ]; then
-    # Copy all Python files from the source directory to the destination
-    cp "$SOURCE_DIR"/*.py "$DESTINATION_DIR"
-else
-    echo "Source directory does not exist: $SOURCE_DIR"
-    exit 1
-fi
-
-# Navigate into the cloned DynaPyt repository
-cd "$(basename $DYNAPYT_REPO_URL .git)_virtual"
-
-# Install the required dependencies for DynaPyt and the package itself
-pip install -r requirements.txt
-pip install .
-
-# Install memray and pytest-memray
-pip install memray pytest-memray
-
-# Navigate back to the root project directory
-cd ..
-
 # ------------------------------------------------------------------------------------------------
 # Run the tests
 # ------------------------------------------------------------------------------------------------
 
-# Navigate to the testing project directory
-cd "$TESTING_REPO_NAME"
-
-MEMORY_DATA_DIR_NAME="memory-data-dynapyt-libs"
+MEMORY_DATA_DIR_NAME="memory-data-dynapyt"
 
 # Record test start time
 TEST_START_TIME=$(python3 -c 'import time; print(time.time())')
 
 # Run tests with 1-hour timeout and save output
-pytest --memray --trace-python-allocators --most-allocations=0 --memray-bin-path=./$MEMORY_DATA_DIR_NAME --continue-on-collection-errors > ${TESTING_REPO_NAME}_Output.txt
+timeout -k 9 3000 pytest --memray --trace-python-allocators --most-allocations=0 --memray-bin-path=./$MEMORY_DATA_DIR_NAME --continue-on-collection-errors > ${TESTING_REPO_NAME}_Output.txt
 exit_code=$?
 
-# Calculate test duration
-TEST_END_TIME=$(python3 -c 'import time; print(time.time())')
-TEST_TIME=$(python3 -c "print($TEST_END_TIME - $TEST_START_TIME)")
+# Process test results if no timeout occurred
+if [ $exit_code -ne 124 ] && [ $exit_code -ne 137 ]; then
+    # Calculate test duration
+    TEST_END_TIME=$(python3 -c 'import time; print(time.time())')
+    TEST_TIME=$(python3 -c "print($TEST_END_TIME - $TEST_START_TIME)")
 
-# Show test summary
-tail -n 3 ${TESTING_REPO_NAME}_Output.txt
+    # Show test summary
+    tail -n 3 ${TESTING_REPO_NAME}_Output.txt
+else
+    echo "Timeout occurred"
+    TEST_TIME="Timeout"
+fi
+
+# Return to parent directory
+cd ..
 
 # Clean up virtual environment
 deactivate
 rm -rf venv
-
-# Return to parent directory
-cd ..
 
 # Ensure results directory exists
 mkdir -p $CLONE_DIR
