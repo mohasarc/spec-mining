@@ -4,11 +4,6 @@ import fire
 here = Path(__file__).parent.resolve()
 
 issue_codes = {
-    "PC-04": {
-        "name": "ChangeListWhileIterating",
-        "analysis": "dylin.analyses.ChangeListWhileIterating.ChangeListWhileIterating",
-        "aliases": ["A-22"],
-    },
     "PC-05": {
         "name": "ItemInList",
         "analysis": "dylin.analyses.ItemInListAnalysis.ItemInListAnalysis",
