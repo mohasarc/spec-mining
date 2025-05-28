@@ -25,14 +25,19 @@ echo "Status number: $status_number"
 # Combine URL and SHA with semicolon
 url_with_sha="${TESTING_REPO_URL};${target_sha}"
 
-if [ "$status_number" ]; then
+if [ "$status_number" = "1" ]; then
+    scripts=("run_pymop_25.sh" "run_dynapyt_25.sh" "run_dylin_25.sh" "run_dynapyt_libs.sh" "run_dylin_libs.sh")
+else
+    scripts=("run_pymop_28.sh" "run_dynapyt_28.sh" "run_dylin_28.sh")
+fi
+
 # Run the original script
 echo "🚀 Running run_original.sh on $TESTING_REPO_URL with SHA $target_sha..."
 if timeout 3600 bash "run_original.sh" "$url_with_sha"; then
     echo "✅ Finished run_original.sh on $TESTING_REPO_URL"
 
     # Run pymop and dynapyt scripts sequentially
-    for script in "run_dynapyt.sh" "run_dynapyt_libs.sh" "run_dylin.sh" "run_dylin_libs.sh" "run_pymop.sh"; do
+    for script in "${scripts[@]}"; do
         echo "🚀 Running $script on $TESTING_REPO_URL with SHA $target_sha..."
         if timeout 3600 bash "$script" "$url_with_sha"; then
             echo "✅ Finished $script on $TESTING_REPO_URL"
