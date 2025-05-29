@@ -111,7 +111,7 @@ TEST_START_TIME=$(python3 -c 'import time; print(time.time())')
 MEMORY_DATA_DIR_NAME="memory-data-pymop"
 
 # Run tests with 1-hour timeout and save output
-timeout -k 9 3000 pytest --path="$PWD"/../../Specs/PyMOP --algo=D --memray --trace-python-allocators --most-allocations=0 --memray-bin-path=./$MEMORY_DATA_DIR_NAME --continue-on-collection-errors --json-report --json-report-indent=2 --statistics --statistics_file="D".json > ${TESTING_REPO_NAME}_Output.txt
+timeout -k 9 3000 pytest --path="$PWD"/../../Specs_libs/PyMOP --algo=D --memray --trace-python-allocators --most-allocations=0 --memray-bin-path=./$MEMORY_DATA_DIR_NAME --continue-on-collection-errors --json-report --json-report-indent=2 --statistics --statistics_file="D".json > ${TESTING_REPO_NAME}_Output.txt
 exit_code=$?
 
 # Process test results if no timeout occurred
