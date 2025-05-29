@@ -24,12 +24,6 @@ class Basic_Instrumentation(BaseAnalysis):
     ) -> Any:
         pass
 
-    def function_enter(self, dyn_ast: str, iid: int, args: List[Any], name: str, is_lambda: bool) -> None:
-        pass
-
-    def function_exit(self, dyn_ast: str, iid: int, name: str, result: Any) -> Any:
-        pass
-
     def _in(self, dyn_ast: str, iid: int, left: Any, right: Any, result: bool) -> bool:
         pass
 

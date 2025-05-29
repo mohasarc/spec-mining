@@ -24,11 +24,6 @@ issue_codes = {
         "analysis": "dylin.analyses.StringStripAnalysis.StringStripAnalysis",
         "aliases": ["A-19", "A-20"],
     },
-    "TE-01": {
-        "name": "InefficientTruthCheck",
-        "analysis": "dylin.analyses.InefficientTruthCheck.InefficientTruthCheck",
-        "aliases": ["A-23"],
-    },
     "TE-02": {
         "name": "Arrays_Comparable",
         "analysis": "dylin.analyses.Arrays_Comparable.Arrays_Comparable",

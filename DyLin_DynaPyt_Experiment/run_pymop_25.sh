@@ -74,7 +74,6 @@ pip install pytest
 pip install numpy
 pip install matplotlib
 pip install pandas
-pip install memray pytest-memray
 
 # ------------------------------------------------------------------------------------------------
 # Install PyMOP
@@ -108,10 +107,9 @@ cd $TESTING_REPO_NAME
 
 # Record the start time of the test execution
 TEST_START_TIME=$(python3 -c 'import time; print(time.time())')
-MEMORY_DATA_DIR_NAME="memory-data-pymop"
 
 # Run tests with 1-hour timeout and save output
-timeout -k 9 3000 pytest --path="$PWD"/../../Specs_libs/PyMOP --algo=D --memray --trace-python-allocators --most-allocations=0 --memray-bin-path=./$MEMORY_DATA_DIR_NAME --continue-on-collection-errors --json-report --json-report-indent=2 --statistics --statistics_file="D".json > ${TESTING_REPO_NAME}_Output.txt
+timeout -k 9 3000 pytest --path="$PWD"/../../Specs_libs/PyMOP --algo=D --continue-on-collection-errors --json-report --json-report-indent=2 --statistics --statistics_file="D".json > ${TESTING_REPO_NAME}_Output.txt
 exit_code=$?
 
 # Process test results if no timeout occurred
@@ -147,10 +145,6 @@ cp $TESTING_REPO_NAME/.report.json $CLONE_DIR/.report.json
 cp $TESTING_REPO_NAME/D-full.json $CLONE_DIR/D-full.json
 cp $TESTING_REPO_NAME/D-time.json $CLONE_DIR/D-time.json
 cp $TESTING_REPO_NAME/D-violations.json $CLONE_DIR/D-violations.json
-
-ls $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME
-
-cp -r $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME $CLONE_DIR/
 
 # Archive results
 zip -r "${CLONE_DIR}.zip" $CLONE_DIR

@@ -184,9 +184,6 @@ cd "$(basename $DYNAPYT_REPO_URL .git)_virtual"
 pip install -r requirements.txt
 pip install .
 
-# Install memray and pytest-memray
-pip install memray pytest-memray
-
 # Navigate back to the root project directory
 cd ..
 
@@ -197,21 +194,25 @@ cd ..
 # Navigate to the testing project directory
 cd "$TESTING_REPO_NAME"
 
-MEMORY_DATA_DIR_NAME="memory-data-dynapyt-libs"
-
 # Record test start time
 TEST_START_TIME=$(python3 -c 'import time; print(time.time())')
 
 # Run tests with 1-hour timeout and save output
-pytest --memray --trace-python-allocators --most-allocations=0 --memray-bin-path=./$MEMORY_DATA_DIR_NAME --continue-on-collection-errors > ${TESTING_REPO_NAME}_Output.txt
+timeout -k 9 3000 pytest --continue-on-collection-errors > ${TESTING_REPO_NAME}_Output.txt
 exit_code=$?
 
-# Calculate test duration
-TEST_END_TIME=$(python3 -c 'import time; print(time.time())')
-TEST_TIME=$(python3 -c "print($TEST_END_TIME - $TEST_START_TIME)")
+# Process test results if no timeout occurred
+if [ $exit_code -ne 124 ] && [ $exit_code -ne 137 ]; then
+    # Calculate test duration
+    TEST_END_TIME=$(python3 -c 'import time; print(time.time())')
+    TEST_TIME=$(python3 -c "print($TEST_END_TIME - $TEST_START_TIME)")
 
-# Show test summary
-tail -n 3 ${TESTING_REPO_NAME}_Output.txt
+    # Show test summary
+    tail -n 3 ${TESTING_REPO_NAME}_Output.txt
+else
+    echo "Timeout occurred"
+    TEST_TIME="Timeout"
+fi
 
 # Clean up virtual environment
 deactivate
@@ -233,11 +234,6 @@ find "${TESTING_REPO_NAME}" -name "*_statistics.txt" -exec cp {} $CLONE_DIR/ \;
 
 # Copy the ${TESTING_REPO_NAME}_Output.txt file to the $CLONE_DIR directory
 cp "${TESTING_REPO_NAME}/${TESTING_REPO_NAME}_Output.txt" $CLONE_DIR/
-
-ls $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME
-
-# Copy the memory data to the results directory
-cp -r $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME $CLONE_DIR/
 
 # Archive results
 zip -r "${CLONE_DIR}.zip" $CLONE_DIR

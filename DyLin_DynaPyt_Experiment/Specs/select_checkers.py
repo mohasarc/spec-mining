@@ -45,11 +45,6 @@ issue_codes = {
         + "\ndylin.analyses.TensorflowNonFinitesAnalysis.TensorflowNonFinitesAnalysis",
         "aliases": ["M-26", "M-27", "M-32", "M-33"],
     },
-    "TE-01": {
-        "name": "InefficientTruthCheck",
-        "analysis": "dylin.analyses.InefficientTruthCheck.InefficientTruthCheck",
-        "aliases": ["A-23"],
-    },
     "TE-02": {
         "name": "Arrays_Comparable",
         "analysis": "dylin.analyses.Arrays_Comparable.Arrays_Comparable",
