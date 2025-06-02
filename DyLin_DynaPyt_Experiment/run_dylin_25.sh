@@ -79,6 +79,9 @@ pip install matplotlib
 pip install pandas
 pip install tensorflow
 
+# Install memray and pytest-memray
+pip install memray pytest-memray
+
 # Return back to the parent directory
 cd ..
 
@@ -177,8 +180,11 @@ echo "DynaPyt Session ID: $DYNAPYT_SESSION_ID"
 # Record test start time
 TEST_START_TIME=$(python3 -c 'import time; print(time.time())')
 
+# Define the memory data directory name
+MEMORY_DATA_DIR_NAME="memory-data-dylin"
+
 # Run tests with 1-hour timeout and save output
-timeout -k 9 3000 pytest --continue-on-collection-errors > ${TESTING_REPO_NAME}_Output.txt
+timeout -k 9 3000 pytest --memray --trace-python-allocators --most-allocations=0 --memray-bin-path=./$MEMORY_DATA_DIR_NAME --continue-on-collection-errors > ${TESTING_REPO_NAME}_Output.txt
 exit_code=$?
 
 # Process test results if no timeout occurred
@@ -243,6 +249,12 @@ cp "${TMPDIR}/dynapyt_output-${DYNAPYT_SESSION_ID}/output.json" $CLONE_DIR/temp_
 # Archive results
 zip -r "${CLONE_DIR}.zip" $CLONE_DIR
 mv "${CLONE_DIR}.zip" ..
+
+# Show all the files in the memory data directory
+ls $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME
+
+# Copy the memory data to the results directory
+cp -r $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME $CLONE_DIR/
 
 # Return to main directory
 cd ..
