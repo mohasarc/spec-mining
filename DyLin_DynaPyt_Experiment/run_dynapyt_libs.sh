@@ -114,9 +114,6 @@ cd "$(basename $DYNAPYT_REPO_URL .git)_global"
 pip install -r requirements.txt
 pip install .
 
-# Install memray and pytest-memray
-pip install memray pytest-memray
-
 # Go back to the parent directory
 cd ..
 
@@ -187,6 +184,9 @@ cd "$(basename $DYNAPYT_REPO_URL .git)_virtual"
 pip install -r requirements.txt
 pip install .
 
+# Install memray and pytest-memray
+pip install memray pytest-memray
+
 # Navigate back to the root project directory
 cd ..
 
@@ -204,7 +204,7 @@ TEST_START_TIME=$(python3 -c 'import time; print(time.time())')
 MEMORY_DATA_DIR_NAME="memory-data-dynapyt-libs"
 
 # Run tests with 1-hour timeout and save output
-pytest --memray --trace-python-allocators --most-allocations=0 --memray-bin-path=./$MEMORY_DATA_DIR_NAME --continue-on-collection-errors > ${TESTING_REPO_NAME}_Output.txt
+timeout -k 9 3000 pytest --memray --trace-python-allocators --most-allocations=0 --memray-bin-path=./$MEMORY_DATA_DIR_NAME --continue-on-collection-errors > ${TESTING_REPO_NAME}_Output.txt
 exit_code=$?
 
 # Process test results if no timeout occurred
@@ -235,6 +235,9 @@ RESULTS_FILE="${CLONE_DIR}/${TESTING_REPO_NAME}_results.txt"
 echo "Instrumentation Time: ${INSTRUMENTATION_TIME}s" >> $RESULTS_FILE
 echo "Test Time: ${TEST_TIME}s" >> $RESULTS_FILE
 
+# Copy the ${TESTING_REPO_NAME}_Output.txt file to the $CLONE_DIR directory
+cp "${TESTING_REPO_NAME}/${TESTING_REPO_NAME}_Output.txt" $CLONE_DIR/
+
 # Copy all the txt files in the TESTING_REPO_NAME directory that end with _statistics.txt to the $CLONE_DIR directory
 find "${TESTING_REPO_NAME}" -name "*_statistics.txt" -exec cp {} $CLONE_DIR/ \;
 
@@ -243,9 +246,6 @@ ls $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME
 
 # Copy the memory data to the results directory
 cp -r $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME $CLONE_DIR/
-
-# Copy the ${TESTING_REPO_NAME}_Output.txt file to the $CLONE_DIR directory
-cp "${TESTING_REPO_NAME}/${TESTING_REPO_NAME}_Output.txt" $CLONE_DIR/
 
 # Archive results
 zip -r "${CLONE_DIR}.zip" $CLONE_DIR
