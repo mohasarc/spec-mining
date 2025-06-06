@@ -45,7 +45,7 @@ call_pymop(){
         END_TIME=$(python -c 'import time; print(time.time())')
         END_TO_END_TIME=$(python -c "print($END_TIME - $START_TIME)")
 
-        json_file="$report/$algo-time.json"
+        json_file="$algo-time.json"
 
         if [[ ! -f "$json_file" ]]; then
         echo "File not found: $json_file"
