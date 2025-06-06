@@ -462,7 +462,8 @@ def main():
                          create_monitor_duration, test_duration) = ret_time
                         line['time_instrumentation'] = instrumentation_duration
                         line['time_create_monitor'] = create_monitor_duration
-                        line['test_duration'] = test_duration
+                        line['test_duration'] = test_duration - (instrumentation_duration + create_monitor_duration)
+                        line['end_to_end_time'] = test_duration
 
                     # get time2 from db
                     # time2 = get_time_from_db(projectname, algorithm)

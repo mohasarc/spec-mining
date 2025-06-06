@@ -39,8 +39,21 @@ call_pymop(){
         # PYTHONPATH="$PWD"/../mop-with-dynapt/pythonmop/pymop-startup-helper/ timeout 14400 pytest --color=no -v -p pythonmop -rA --path="$PWD"/../mop-with-dynapt/specs-new/ --algo $algo --memray --trace-python-allocators --most-allocations=0 --memray-bin-path=$report/MEM_$algo \
         # --continue-on-collection-errors --json-report --json-report-indent=2 --statistics --statistics_file="$algo".json $extra_args &> $report/$algo-pytest-output.txt
 
+        START_TIME=$(python -c 'import time; print(time.time())')
         timeout 14400 pytest --color=no -v -p pythonmop -rA --path="$PWD"/../mop-with-dynapt/specs-new/ --algo $algo --instrument_strategy=builtin --memray --trace-python-allocators --most-allocations=0 --memray-bin-path=$report/MEM_$algo \
         --continue-on-collection-errors --json-report --json-report-indent=2 --statistics --statistics_file="$algo".json $extra_args &> $report/$algo-pytest-output.txt
+        END_TIME=$(python -c 'import time; print(time.time())')
+        END_TO_END_TIME=$(python -c "print($END_TIME - $START_TIME)")
+
+        json_file="$report/$algo-time.json"
+
+        if [[ ! -f "$json_file" ]]; then
+        echo "File not found: $json_file"
+        exit 1
+        fi
+
+        tmp_file=$(mktemp)
+        jq ".test_duration = $END_TO_END_TIME" "$json_file" > "$tmp_file" && mv "$tmp_file" "$json_file"
     fi
     
     # if process stop by timeout, then print timeout
