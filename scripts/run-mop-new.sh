@@ -44,16 +44,6 @@ call_pymop(){
         --continue-on-collection-errors --json-report --json-report-indent=2 --statistics --statistics_file="$algo".json $extra_args &> $report/$algo-pytest-output.txt
         END_TIME=$(python -c 'import time; print(time.time())')
         END_TO_END_TIME=$(python -c "print($END_TIME - $START_TIME)")
-
-        json_file="$algo-time.json"
-
-        if [[ ! -f "$json_file" ]]; then
-        echo "File not found: $json_file"
-        exit 1
-        fi
-
-        tmp_file=$(mktemp)
-        jq ".test_duration = $END_TO_END_TIME" "$json_file" > "$tmp_file" && mv "$tmp_file" "$json_file"
     fi
     
     # if process stop by timeout, then print timeout
@@ -68,6 +58,11 @@ call_pymop(){
     mv "$algo"-full.json $report/$algo-full.json
     mv "$algo"-violations.json $report/$algo-violations.json
     mv "$algo"-time.json $report/$algo-time.json
+
+    json_file=$report/$algo-time.json
+
+    tmp_file=$(mktemp)
+    jq ".test_duration = $END_TO_END_TIME" "$json_file" > "$tmp_file" && mv "$tmp_file" "$json_file"
 
     gzip -f $report/$algo.report.json $report/$algo-pytest-output.txt
 }
