@@ -49,6 +49,14 @@ jobs:
                     # Decode URL-encoded characters
                     DECODED_NAME=$(printf "%b" "${ASSET_NAME//%/\\x}")
                     curl -L -o "./projects/reports/$DECODED_NAME" -H "Authorization: token $GITHUB_TOKEN" "$url"
+
+                    cd ./projects/reports
+
+                    folder_name=$(echo "${DECODED_NAME%.*}" | sed -E 's/(_ORIGINAL|_A|_B|_C\+?|_D)$//')
+                    unzip -o -d "$folder_name" "$DECODED_NAME"
+                    rm "$DECODED_NAME"
+
+                    cd ../..
                   done
                 else
                   echo "No assets found or error in release data for $repo."
@@ -60,17 +68,17 @@ jobs:
             env:
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     
-          - name: extract zip files into folders with the same name
-            run: |
-              cd ./projects/reports
+          # - name: extract zip files into folders with the same name
+          #   run: |
+          #     cd ./projects/reports
 
-              for f in *.zip; do
-                folder_name=$(echo "${f%.*}" | sed -E 's/(_ORIGINAL|_A|_B|_C\+?|_D)$//')
-                unzip -o -d "$folder_name" "$f"
-                rm "$f"
-              done
+          #     for f in *.zip; do
+          #       folder_name=$(echo "${f%.*}" | sed -E 's/(_ORIGINAL|_A|_B|_C\+?|_D)$//')
+          #       unzip -o -d "$folder_name" "$f"
+          #       rm "$f"
+          #     done
 
-              ls -l
+          #     ls -l
 
           - name: Generate report csv
             run: |
