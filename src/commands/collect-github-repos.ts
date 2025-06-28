@@ -14,15 +14,15 @@ import csv from 'csv-parser';
 const GH_ACCESS_TOKEN = process.env['GH_ACCESS_TOKEN'];
 const octokit = new Octokit({ auth: GH_ACCESS_TOKEN });
 const MANIFEST_FILES = [
-    // "setup.py",
-    "requirements",
+    "setup.py",
+    // "requirements",
     // "Pipfile",
     // "Pipfile.lock",
-    // "pyproject.toml",
+    "pyproject.toml",
     // "environment.yml",
     // "tox.ini",
-    "req.txt",
-    "requires"
+    // "req.txt",
+    // "requires"
 ]
 
 export interface BaseRepository {
