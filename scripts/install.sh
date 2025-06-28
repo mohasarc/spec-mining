@@ -44,20 +44,33 @@ curl -sSL https://install.python-poetry.org | python3 -
 python3 -m venv venv
 source venv/bin/activate
 
-if [ -f pyproject.toml ] && grep -q "\[tool.poetry\]" pyproject.toml; then
+# Install additional requirements if available (within root + 2 nest levels excluding venv/ folder)
+find . -maxdepth 3 -type d -name "venv" -prune -o -type f -name "*.txt" -print | while read -r file; do
+    if [ -f "$file" ]; then
+        pip3 install -r "$file"
+    fi
+done
+
+if [ -f pyproject.toml ]; then
+  if grep -q "\[tool.poetry\]" "$PYPROJECT"; then
     echo "Poetry detected. Installing with Poetry..."
     poetry install
-else
-    echo "Poetry not used. Installing with pip..."
+  elif grep -q "setuptools" "$PYPROJECT"; then
+    echo "Setuptools project detected."
+    echo "Recommended install: pip install ."
+    pip3 install .[dev,test,tests,testing]
+  elif grep -q "build-backend" "$PYPROJECT"; then
+    backend=$(grep "build-backend" "$PYPROJECT" | cut -d'"' -f2)
+    echo "Custom PEP 517 build backend detected: $backend"
+    pip3 install .[dev,test,tests,testing]
+  else
+    echo "pyproject.toml found but backend is unclear."
+    echo "Fallback install: pip install ."
+    pip3 install .[dev,test,tests,testing]
+  fi
 
-  # Install additional requirements if available (within root + 2 nest levels excluding venv/ folder)
-  find . -maxdepth 3 -type d -name "venv" -prune -o -type f -name "*.txt" -print | while read -r file; do
-      if [ -f "$file" ]; then
-          pip3 install -r "$file"
-      fi
-  done
-
-  # Install dependencies
+else if [ -f setup.py ]; then
+  echo "setup.py found. Proceeding with pip installation..."
   pip3 install .[dev,test,tests,testing]
 fi
 
