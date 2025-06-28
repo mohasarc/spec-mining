@@ -52,6 +52,7 @@ find . -maxdepth 3 -type d -name "venv" -prune -o -type f -name "*.txt" -print |
 done
 
 if [ -f pyproject.toml ]; then
+
   if grep -q "\[tool.poetry\]" "$PYPROJECT"; then
     echo "Poetry detected. Installing with Poetry..."
     poetry install
@@ -69,7 +70,7 @@ if [ -f pyproject.toml ]; then
     pip3 install .[dev,test,tests,testing]
   fi
 
-else if [ -f setup.py ]; then
+elif [ -f setup.py ]; then
   echo "setup.py found. Proceeding with pip installation..."
   pip3 install .[dev,test,tests,testing]
 fi
