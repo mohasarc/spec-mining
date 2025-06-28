@@ -37,19 +37,29 @@ sha=$(git rev-parse HEAD | cut -c1-7)
 echo "current sha commit: $sha"
 echo "project url: $url"
 
+# install poetry
+curl -sSL https://install.python-poetry.org | python3 -
+
 # Create and activate virtual environment
-python3 -m venv env
-source env/bin/activate
+python3 -m venv venv
+source venv/bin/activate
 
-# Install dependencies
-pip3 install .[dev,test,tests,testing]
+if [ -f pyproject.toml ] && grep -q "\[tool.poetry\]" pyproject.toml; then
+    echo "Poetry detected. Installing with Poetry..."
+    poetry install
+else
+    echo "Poetry not used. Installing with pip..."
 
-# Install additional requirements if available (within root + 2 nest levels excluding env/ folder)
-find . -maxdepth 3 -type d -name "env" -prune -o -type f -name "*.txt" -print | while read -r file; do
-    if [ -f "$file" ]; then
-        pip3 install -r "$file"
-    fi
-done
+  # Install additional requirements if available (within root + 2 nest levels excluding venv/ folder)
+  find . -maxdepth 3 -type d -name "venv" -prune -o -type f -name "*.txt" -print | while read -r file; do
+      if [ -f "$file" ]; then
+          pip3 install -r "$file"
+      fi
+  done
+
+  # Install dependencies
+  pip3 install .[dev,test,tests,testing]
+fi
 
 pip3 install pytest
 pip3 install pandas
@@ -60,7 +70,6 @@ pip3 install pytest-json-report memray pytest-memray pytest-cov pytest-env pytes
 
 # Install pythonmop (assuming it's in a sibling directory named 'mop-with-dynapt')
 if [ "$ALGO" != "ORIGINAL" ]; then
-    pip3 install pytest-json-report memray pytest-memray pytest-cov pytest-env pytest-rerunfailures pytest-socket pytest-django setuptools==75.8.0
     cd ../mop-with-dynapt || exit
     pip3 install .
     sudo apt-get install python3-tk -y

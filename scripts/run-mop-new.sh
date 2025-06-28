@@ -93,7 +93,7 @@ url=$(git remote get-url origin)
 echo "{\"sha-commit\": \"$sha\", \"project-url\": \"$url\"}" > $results_dir/project_info.json
 
 rm -f .pymon
-source env/bin/activate
+source venv/bin/activate
 
 # Convert algos string into an array
 IFS=',' read -r -a algo_array <<< "$algos"
