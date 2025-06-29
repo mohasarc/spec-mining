@@ -30,7 +30,7 @@ on:
         default: 'add_statistics_new'
         required: true
       active_algorithms:
-        description: 'Space-separated list of algorithms to be run.'
+        description: 'Space-separated list of algorithms to be run. None for not running any algorithm.'
         default: 'B C C+ D'
         required: true
   repository_dispatch:

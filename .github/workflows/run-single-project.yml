@@ -133,6 +133,7 @@ jobs:
             python3 check_success.py
 
   run-algos:
+    if: ${{ needs.prepare.outputs.ALGORITHMS != 'None' }}
     needs: [run-original, prepare]
     runs-on: ubuntu-latest
     strategy:
