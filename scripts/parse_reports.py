@@ -88,7 +88,11 @@ def get_monitors_and_events_from_json(projectname, algorithm):
         return None
     # read json file
     with open(filename, 'r') as f:
-        json_data = json.load(f)
+        try:
+            json_data = json.load(f)
+        except Exception as e:
+            add_problem(projectname, algorithm, f"Error loading json file. Original error: {e}")
+            return None
 
     # example of json
     '''
