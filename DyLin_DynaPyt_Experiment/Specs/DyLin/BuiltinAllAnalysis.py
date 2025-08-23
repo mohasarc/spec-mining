@@ -1,8 +1,7 @@
-from .base_analysis import BaseDyLinAnalysis
-from dynapyt.instrument.filters import only
-
 from typing import Any, Callable, Dict, Tuple
+from .base_analysis import BaseDyLinAnalysis
 import builtins
+from dynapyt.instrument.filters import only
 
 
 class BuiltinAllAnalysis(BaseDyLinAnalysis):

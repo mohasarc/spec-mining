@@ -30,7 +30,7 @@ TESTING_REPO_NAME=$(basename -s .git "$TESTING_REPO_URL")
 DEVELOPER_ID=$(echo "$TESTING_REPO_URL" | sed -E 's|https://github.com/([^/]+)/.*|\1|')
 
 # Create combined name with developer ID and repo name
-CLONE_DIR="${DEVELOPER_ID}-${TESTING_REPO_NAME}_DyLin_25"
+CLONE_DIR="${DEVELOPER_ID}-${TESTING_REPO_NAME}_DyLin"
 
 # Create the directory if it does not exist
 mkdir -p "$CLONE_DIR"
@@ -97,7 +97,7 @@ git clone "$DYLIN_REPO_URL" || { echo "Failed to clone $DYLIN_REPO_URL"; exit 1;
 echo "[INFO] Copying Analyses from DynaPyt to DyLin..."
 
 # Specify the source directory containing the Python DynaPyt files
-SOURCE_DIR="$PWD/../Specs_libs/DyLin"
+SOURCE_DIR="$PWD/../Specs/DyLin"
 
 # Define the destination directory in the cloned DyLin repository
 DESTINATION_DIR="$PWD/DyLin/src/dylin/analyses"
@@ -115,7 +115,7 @@ else
 fi
 
 # Override the select_checkers.py file with the one from the parent directory
-cp "$PWD/../Specs_libs/select_checkers.py" "$PWD/DyLin/src/dylin/select_checkers.py"
+cp "$PWD/../Specs/select_checkers.py" "$PWD/DyLin/src/dylin/select_checkers.py"
 
 # --- STEP 3: Install DyLin and pytest ---
 echo "[INFO] Installing DyLin and dependencies..."
@@ -184,7 +184,7 @@ TEST_START_TIME=$(python3 -c 'import time; print(time.time())')
 MEMORY_DATA_DIR_NAME="memory-data-dylin"
 
 # Run tests with 1-hour timeout and save output
-timeout -k 9 3000 pytest --memray --trace-python-allocators --most-allocations=0 --memray-bin-path=./$MEMORY_DATA_DIR_NAME --continue-on-collection-errors > ${TESTING_REPO_NAME}_Output.txt
+timeout -k 9 3000 pytest --continue-on-collection-errors > ${TESTING_REPO_NAME}_Output.txt
 exit_code=$?
 
 # Process test results if no timeout occurred
@@ -241,7 +241,7 @@ cp "${TESTING_REPO_NAME}/${TESTING_REPO_NAME}_findings.txt" $CLONE_DIR/
 # Copy the ${TESTING_REPO_NAME}_Output.txt file to the $CLONE_DIR directory
 cp "${TESTING_REPO_NAME}/${TESTING_REPO_NAME}_Output.txt" $CLONE_DIR/
 
-# Copy the /tmp/dynapyt_output-454852b3-74be-498a-8968-c1bceaaf3293/findings.csv and output.json files to the $CLONE_DIR directory
+# Copy the /tmp/dynapyt_output-<session_id>/findings.csv and output.json files to the $CLONE_DIR directory
 # Rename them to temp_findings.csv and temp_output.json
 cp "${TMPDIR}/dynapyt_output-${DYNAPYT_SESSION_ID}/findings.csv" $CLONE_DIR/temp_findings.csv
 cp "${TMPDIR}/dynapyt_output-${DYNAPYT_SESSION_ID}/output.json" $CLONE_DIR/temp_output.json
@@ -249,12 +249,6 @@ cp "${TMPDIR}/dynapyt_output-${DYNAPYT_SESSION_ID}/output.json" $CLONE_DIR/temp_
 # Archive results
 zip -r "${CLONE_DIR}.zip" $CLONE_DIR
 mv "${CLONE_DIR}.zip" ..
-
-# Show all the files in the memory data directory
-ls $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME
-
-# Copy the memory data to the results directory
-cp -r $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME $CLONE_DIR/
 
 # Return to main directory
 cd ..

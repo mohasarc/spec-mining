@@ -4,15 +4,15 @@ import fire
 here = Path(__file__).parent.resolve()
 
 issue_codes = {
-    "PC-01": {
-        "name": "InvalidFunctionComparison",
-        "analysis": "dylin.analyses.InvalidComparisonAnalysis.InvalidComparisonAnalysis",
-        "aliases": ["A-15"],
+    "PC-03": {
+        "name": "WrongTypeAdded",
+        "analysis": "dylin.analyses.WrongTypeAddedAnalysis.WrongTypeAddedAnalysis",
+        "aliases": ["A-11"],
     },
-    "PC-02": {
-        "name": "RiskyFloatComparison",
-        "analysis": "dylin.analyses.InvalidComparisonAnalysis.InvalidComparisonAnalysis",
-        "aliases": ["A-12"],
+    "PC-04": {
+        "name": "ChangeListWhileIterating",
+        "analysis": "dylin.analyses.ChangeListWhileIterating.ChangeListWhileIterating",
+        "aliases": ["A-22"],
     },
     "PC-05": {
         "name": "ItemInList",
@@ -24,26 +24,36 @@ issue_codes = {
         "analysis": "dylin.analyses.FilesClosedAnalysis.FilesClosedAnalysis",
         "aliases": ["A-08"],
     },
+    "SL-01": {
+        "name": "InPlaceSort",
+        "analysis": "dylin.analyses.InPlaceSortAnalysis.InPlaceSortAnalysis",
+        "aliases": ["A-09"],
+    },
     "SL-02": {
         "name": "AnyAllMisuse",
         "analysis": "dylin.analyses.BuiltinAllAnalysis.BuiltinAllAnalysis",
         "aliases": ["A-21"],
     },
-    "SL-03": {
-        "name": "StringStrip",
-        "analysis": "dylin.analyses.StringStripAnalysis.StringStripAnalysis",
-        "aliases": ["A-19", "A-20"],
+    "CF-01": {
+        "name": "WrongOperatorOverriding",
+        "analysis": "dylin.analyses.ComparisonBehaviorAnalysis.ComparisonBehaviorAnalysis",
+        "aliases": ["A-01", "A-03", "A-04"],
     },
-    "SL-05": {
-        "name": "InvalidTypeComparison",
-        "analysis": "dylin.analyses.InvalidComparisonAnalysis.InvalidComparisonAnalysis",
-        "aliases": ["A-13"],
+    "ML-01": {
+        "name": "InconsistentPreprocessing",
+        "analysis": "dylin.analyses.InconsistentPreprocessing.InconsistentPreprocessing",
+        "aliases": ["M-23"],
     },
     "ML-03": {
         "name": "NonFiniteValues",
         "analysis": "dylin.analyses.NonFinitesAnalysis.NonFinitesAnalysis"
         + "\ndylin.analyses.TensorflowNonFinitesAnalysis.TensorflowNonFinitesAnalysis",
         "aliases": ["M-26", "M-27", "M-32", "M-33"],
+    },
+    "ML-04": {
+        "name": "GradientExplosion",
+        "analysis": "dylin.analyses.GradientAnalysis.GradientAnalysis",
+        "aliases": ["M-28"],
     },
     "TE-02": {
         "name": "Arrays_Comparable",
