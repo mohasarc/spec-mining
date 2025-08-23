@@ -79,9 +79,6 @@ pip install matplotlib
 pip install pandas
 pip install tensorflow
 
-# Install memray and pytest-memray
-pip install memray pytest-memray
-
 # Return back to the parent directory
 cd ..
 
@@ -179,9 +176,6 @@ echo "DynaPyt Session ID: $DYNAPYT_SESSION_ID"
 
 # Record test start time
 TEST_START_TIME=$(python3 -c 'import time; print(time.time())')
-
-# Define the memory data directory name
-MEMORY_DATA_DIR_NAME="memory-data-dylin"
 
 # Run tests with 1-hour timeout and save output
 timeout -k 9 3000 pytest --continue-on-collection-errors > ${TESTING_REPO_NAME}_Output.txt

@@ -24,16 +24,31 @@ class Basic_Instrumentation(BaseAnalysis):
     ) -> Any:
         pass
 
-    def _in(self, dyn_ast: str, iid: int, left: Any, right: Any, result: bool) -> bool:
+    def read_identifier(self, dyn_ast: str, iid: int, val: Any) -> Any:
         pass
 
+    def _in(self, dyn_ast: str, iid: int, left: Any, right: Any, result: bool) -> bool:
+        pass
+    
     def not_in(self, dyn_ast: str, iid: int, left: Any, right: Any, result: bool) -> bool:
         pass
 
     def equal(self, dyn_ast: str, iid: int, left: Any, right: Any, result: Any) -> bool:
         pass
-
+    
     def not_equal(self, dyn_ast: str, iid: int, left: Any, right: Any, result: Any) -> bool:
+        pass
+
+    def add(self, dyn_ast: str, iid: int, left: Any, right: Any, result: Any = None) -> Any:
+        pass
+
+    def add_assign(self, dyn_ast: str, iid: int, left: Any, right: Any) -> None:
+        pass
+
+    def enter_for(self, dyn_ast: str, iid: int, next_value: Any, iterable: Iterable) -> Optional[Any]:
+        pass
+
+    def exit_for(self, dyn_ast, iid):
         pass
 
     def end_execution(self) -> None:

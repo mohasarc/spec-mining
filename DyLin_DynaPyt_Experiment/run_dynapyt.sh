@@ -30,7 +30,7 @@ TESTING_REPO_NAME=$(basename -s .git "$TESTING_REPO_URL")
 DEVELOPER_ID=$(echo "$TESTING_REPO_URL" | sed -E 's|https://github.com/([^/]+)/.*|\1|')
 
 # Create combined name with developer ID and repo name
-CLONE_DIR="${DEVELOPER_ID}-${TESTING_REPO_NAME}_DynaPyt_25"
+CLONE_DIR="${DEVELOPER_ID}-${TESTING_REPO_NAME}_DynaPyt"
 
 # Create the directory if it does not exist
 mkdir -p "$CLONE_DIR"
@@ -79,9 +79,6 @@ pip install matplotlib
 pip install pandas
 pip install tensorflow
 
-# Install memray and pytest-memray
-pip install memray pytest-memray
-
 # ------------------------------------------------------------------------------------------------
 # Install DynaPyt
 # ------------------------------------------------------------------------------------------------
@@ -93,7 +90,7 @@ cd ..
 git clone "$DYNAPYT_REPO_URL" || { echo "Failed to clone $DYNAPYT_REPO_URL"; exit 1; }
 
 # Specify the source directory containing the Python DynaPyt files
-SOURCE_DIR="$PWD/../Specs_libs/DynaPyt"
+SOURCE_DIR="$PWD/../Specs/DynaPyt"
 
 # Define the destination directory in the cloned DynaPyt repository
 DESTINATION_DIR="$PWD/DynaPyt/src/dynapyt/analyses"
@@ -122,7 +119,7 @@ export DYNAPYT_SESSION_ID=$(uuidgen)
 echo "DynaPyt Session ID: $DYNAPYT_SESSION_ID"
 
 # Copy the analyses file to temp directory with session ID
-cp "$PWD/../Specs_libs/dynapyt_analyses.txt" "$TMPDIR/dynapyt_analyses-$DYNAPYT_SESSION_ID.txt"
+cp "$PWD/../Specs/dynapyt_analyses.txt" "$TMPDIR/dynapyt_analyses-$DYNAPYT_SESSION_ID.txt"
 
 # Display contents of the copied file
 cat "$TMPDIR/dynapyt_analyses-$DYNAPYT_SESSION_ID.txt"
@@ -151,11 +148,8 @@ INSTRUMENTATION_TIME=$(python3 -c "print($END_TIME - $START_TIME)")
 # Record test start time
 TEST_START_TIME=$(python3 -c 'import time; print(time.time())')
 
-# Define the memory data directory name
-MEMORY_DATA_DIR_NAME="memory-data-dynapyt"
-
 # Run tests with 1-hour timeout and save output
-timeout -k 9 3000 pytest --memray --trace-python-allocators --most-allocations=0 --memray-bin-path=./$MEMORY_DATA_DIR_NAME --continue-on-collection-errors > ${TESTING_REPO_NAME}_Output.txt
+timeout -k 9 3000 pytest --continue-on-collection-errors > ${TESTING_REPO_NAME}_Output.txt
 exit_code=$?
 
 # Process test results if no timeout occurred
@@ -191,12 +185,6 @@ find "${TESTING_REPO_NAME}" -name "*_statistics.txt" -exec cp {} $CLONE_DIR/ \;
 
 # Copy the ${TESTING_REPO_NAME}_Output.txt file to the $CLONE_DIR directory
 cp "${TESTING_REPO_NAME}/${TESTING_REPO_NAME}_Output.txt" $CLONE_DIR/
-
-# Show all the files in the memory data directory
-ls $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME
-
-# Copy the memory data to the results directory
-cp -r $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME $CLONE_DIR/
 
 # Archive results
 zip -r "${CLONE_DIR}.zip" $CLONE_DIR

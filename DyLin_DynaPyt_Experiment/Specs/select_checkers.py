@@ -39,21 +39,11 @@ issue_codes = {
         "analysis": "dylin.analyses.ComparisonBehaviorAnalysis.ComparisonBehaviorAnalysis",
         "aliases": ["A-01", "A-03", "A-04"],
     },
-    "ML-01": {
-        "name": "InconsistentPreprocessing",
-        "analysis": "dylin.analyses.InconsistentPreprocessing.InconsistentPreprocessing",
-        "aliases": ["M-23"],
-    },
     "ML-03": {
         "name": "NonFiniteValues",
         "analysis": "dylin.analyses.NonFinitesAnalysis.NonFinitesAnalysis"
         + "\ndylin.analyses.TensorflowNonFinitesAnalysis.TensorflowNonFinitesAnalysis",
         "aliases": ["M-26", "M-27", "M-32", "M-33"],
-    },
-    "ML-04": {
-        "name": "GradientExplosion",
-        "analysis": "dylin.analyses.GradientAnalysis.GradientAnalysis",
-        "aliases": ["M-28"],
     },
     "TE-02": {
         "name": "Arrays_Comparable",
