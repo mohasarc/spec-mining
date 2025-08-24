@@ -6,6 +6,9 @@ on:
       project-link:
         required: true
         type: string
+      status_number:
+        required: true
+        type: string
       release-name:
         required: true
         type: string
@@ -45,7 +48,7 @@ jobs:
             cd ./DyLin_DynaPyt_Experiment
             ls -l
             chmod +x ./run_experiment.sh
-            ./run_experiment.sh "${{ inputs.project-link }}" 1
+            ./run_experiment.sh "${{ inputs.project-link }}" "${{ inputs.status_number }}"
           env:
             GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
 
