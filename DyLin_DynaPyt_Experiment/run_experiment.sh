@@ -26,9 +26,9 @@ echo "Status number: $status_number"
 url_with_sha="${TESTING_REPO_URL};${target_sha}"
 
 if [ "$status_number" = "1" ]; then
-    scripts=("run_pymop.sh" "run_dynapyt.sh" "run_dylin.sh" "run_dynapyt_libs.sh" "run_dylin_libs.sh")
+    scripts=("run_dynapyt.sh" "run_pymop.sh" "run_dylin.sh" "run_pymop_libs.sh" "run_dynapyt_libs.sh")
 elif [ "$status_number" = "2" ]; then
-    scripts=("run_pymop.sh" "run_dynapyt.sh" "run_dylin.sh")
+    scripts=("run_dynapyt.sh" "run_pymop.sh" "run_dylin.sh")
 else
     echo "Invalid status number: $status_number"
     exit 1

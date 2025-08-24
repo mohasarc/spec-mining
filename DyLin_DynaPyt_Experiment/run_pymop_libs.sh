@@ -27,7 +27,7 @@ TESTING_REPO_NAME=$(basename -s .git "$TESTING_REPO_URL")
 DEVELOPER_ID=$(echo "$TESTING_REPO_URL" | sed -E 's|https://github.com/([^/]+)/.*|\1|')
 
 # Create combined name with developer ID and repo name
-CLONE_DIR="${DEVELOPER_ID}-${TESTING_REPO_NAME}_PyMOP_28"
+CLONE_DIR="${DEVELOPER_ID}-${TESTING_REPO_NAME}_PyMOP_Libs"
 
 # Create the directory if it does not exist
 mkdir -p "$CLONE_DIR"
@@ -74,9 +74,7 @@ pip install pytest
 pip install numpy
 pip install matplotlib
 pip install pandas
-
-# Install memray and pytest-memray
-pip install memray pytest-memray
+pip install tensorflow
 
 # ------------------------------------------------------------------------------------------------
 # Install PyMOP
@@ -92,7 +90,7 @@ git clone "$PYMOP_REPO_URL" || { echo "Failed to clone $PYMOP_REPO_URL"; exit 1;
 cd mop-with-dynapt
 
 # TODO: Currently using a temp version of PyMOP
-git checkout all-branches-optimized
+git checkout fix-pymop-broken
 
 # Install the project in editable mode with dev dependencies
 pip install . || { echo "Failed to install mop-with-dynapt"; exit 1; }
@@ -111,11 +109,8 @@ cd $TESTING_REPO_NAME
 # Record the start time of the test execution
 TEST_START_TIME=$(python3 -c 'import time; print(time.time())')
 
-# Define the memory data directory name
-MEMORY_DATA_DIR_NAME="memory-data-pymop"
-
 # Run tests with 1-hour timeout and save output
-timeout -k 9 3000 pytest --path="$PWD"/../../Specs/PyMOP --algo=D --memray --trace-python-allocators --most-allocations=0 --memray-bin-path=./$MEMORY_DATA_DIR_NAME --continue-on-collection-errors --json-report --json-report-indent=2 --statistics --statistics_file="D".json > ${TESTING_REPO_NAME}_Output.txt
+timeout -k 9 3000 bash -c 'PYMOP_SPEC_FOLDER="$PWD"/../../Specs/PyMOP PYMOP_ALGO=D PYMOP_INSTRUMENT_SITE_PACKAGES=True PYMOP_STATISTICS=yes PYMOP_STATISTICS_FILE=D.json PYMOP_INSTRUMENTATION_STRATEGY=ast PYTHONPATH="$PWD"/../mop-with-dynapt/pythonmop/pymop-startup-helper/ pytest --continue-on-collection-errors --json-report --json-report-indent=2' > ${TESTING_REPO_NAME}_Output.txt
 exit_code=$?
 
 # Process test results if no timeout occurred
@@ -147,16 +142,9 @@ echo "Test Time: ${TEST_TIME}s" >> $RESULTS_FILE
 
 # Copy the necessary files to the $CLONE_DIR directory
 cp "${TESTING_REPO_NAME}/${TESTING_REPO_NAME}_Output.txt" $CLONE_DIR/
-cp $TESTING_REPO_NAME/.report.json $CLONE_DIR/.report.json
 cp $TESTING_REPO_NAME/D-full.json $CLONE_DIR/D-full.json
 cp $TESTING_REPO_NAME/D-time.json $CLONE_DIR/D-time.json
 cp $TESTING_REPO_NAME/D-violations.json $CLONE_DIR/D-violations.json
-
-# Show all the files in the memory data directory
-ls $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME
-
-# Copy the memory data to the results directory
-cp -r $TESTING_REPO_NAME/$MEMORY_DATA_DIR_NAME $CLONE_DIR/
 
 # Archive results
 zip -r "${CLONE_DIR}.zip" $CLONE_DIR
