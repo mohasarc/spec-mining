@@ -39,12 +39,6 @@ issue_codes = {
         "analysis": "dylin.analyses.ComparisonBehaviorAnalysis.ComparisonBehaviorAnalysis",
         "aliases": ["A-01", "A-03", "A-04"],
     },
-    "ML-03": {
-        "name": "NonFiniteValues",
-        "analysis": "dylin.analyses.NonFinitesAnalysis.NonFinitesAnalysis"
-        + "\ndylin.analyses.TensorflowNonFinitesAnalysis.TensorflowNonFinitesAnalysis",
-        "aliases": ["M-26", "M-27", "M-32", "M-33"],
-    },
     "TE-02": {
         "name": "Arrays_Comparable",
         "analysis": "dylin.analyses.Arrays_Comparable.Arrays_Comparable",
