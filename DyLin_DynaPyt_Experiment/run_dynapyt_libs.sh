@@ -183,7 +183,6 @@ cd "$(basename $DYNAPYT_REPO_URL .git)_virtual"
 # Install the required dependencies for DynaPyt and the package itself
 pip install -r requirements.txt
 pip install .
-pip install pytest-json-report
 
 # Navigate back to the root project directory
 cd ..
@@ -199,7 +198,7 @@ cd "$TESTING_REPO_NAME"
 TEST_START_TIME=$(python3 -c 'import time; print(time.time())')
 
 # Run tests with 1-hour timeout and save output
-timeout -k 9 3000 pytest --continue-on-collection-errors --json-report --json-report-indent=2 > ${TESTING_REPO_NAME}_Output.txt
+timeout -k 9 3000 pytest --continue-on-collection-errors > ${TESTING_REPO_NAME}_Output.txt
 exit_code=$?
 
 # Process test results if no timeout occurred
@@ -237,9 +236,6 @@ echo "Test Time: ${TEST_TIME}s" >> $RESULTS_FILE
 
 # Copy the ${TESTING_REPO_NAME}_Output.txt file to the $CLONE_DIR directory
 cp "${TESTING_REPO_NAME}/${TESTING_REPO_NAME}_Output.txt" $CLONE_DIR/
-
-# Copy the .report.json file to the $CLONE_DIR directory
-cp "${TESTING_REPO_NAME}/.report.json" $CLONE_DIR/
 
 # Copy all the txt files in the TESTING_REPO_NAME directory that end with _statistics.txt to the $CLONE_DIR directory
 find "${TESTING_REPO_NAME}" -name "*_statistics.txt" -exec cp {} $CLONE_DIR/ \;

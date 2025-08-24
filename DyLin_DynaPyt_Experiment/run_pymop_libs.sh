@@ -94,7 +94,6 @@ git checkout fix-pymop-broken
 
 # Install the project in editable mode with dev dependencies
 pip install . || { echo "Failed to install mop-with-dynapt"; exit 1; }
-pip install pytest-json-report
 
 # ------------------------------------------------------------------------------------------------
 # Run the tests
@@ -110,7 +109,7 @@ cd $TESTING_REPO_NAME
 TEST_START_TIME=$(python3 -c 'import time; print(time.time())')
 
 # Run tests with 1-hour timeout and save output
-timeout -k 9 3000 bash -c 'PYMOP_SPEC_FOLDER="$PWD"/../../Specs/PyMOP PYMOP_ALGO=D PYMOP_INSTRUMENT_SITE_PACKAGES=True PYMOP_STATISTICS=yes PYMOP_STATISTICS_FILE=D.json PYMOP_INSTRUMENTATION_STRATEGY=ast PYTHONPATH="$PWD"/../mop-with-dynapt/pythonmop/pymop-startup-helper/ pytest --continue-on-collection-errors --json-report --json-report-indent=2' > ${TESTING_REPO_NAME}_Output.txt
+timeout -k 9 3000 bash -c 'PYMOP_SPEC_FOLDER="$PWD"/../../Specs/PyMOP PYMOP_ALGO=D PYMOP_INSTRUMENT_SITE_PACKAGES=True PYMOP_STATISTICS=yes PYMOP_STATISTICS_FILE=D.json PYMOP_INSTRUMENTATION_STRATEGY=ast PYTHONPATH="$PWD"/../mop-with-dynapt/pythonmop/pymop-startup-helper/ pytest --continue-on-collection-errors' > ${TESTING_REPO_NAME}_Output.txt
 exit_code=$?
 
 # Process test results if no timeout occurred

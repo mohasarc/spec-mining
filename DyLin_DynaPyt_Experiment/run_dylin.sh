@@ -120,9 +120,6 @@ cd DyLin
 pip install -r requirements.txt
 pip install .
 
-# Install pytest-json-report
-pip install pytest-json-report
-
 cd ..
 
 # Generate a unique session ID for the DynaPyt run (in order to run multiple analyses in one run)
@@ -181,7 +178,7 @@ echo "DynaPyt Session ID: $DYNAPYT_SESSION_ID"
 TEST_START_TIME=$(python3 -c 'import time; print(time.time())')
 
 # Run tests with 1-hour timeout and save output
-timeout -k 9 3000 pytest --continue-on-collection-errors --json-report --json-report-indent=2 > ${TESTING_REPO_NAME}_Output.txt
+timeout -k 9 3000 pytest --continue-on-collection-errors > ${TESTING_REPO_NAME}_Output.txt
 exit_code=$?
 
 # Process test results if no timeout occurred
@@ -242,9 +239,6 @@ echo "Post-Run Time: ${POST_RUN_TIME}s" >> $RESULTS_FILE
 
 # Copy the ${TESTING_REPO_NAME}_findings.txt file to the $CLONE_DIR directory
 cp "${TESTING_REPO_NAME}/${TESTING_REPO_NAME}_findings.txt" $CLONE_DIR/
-
-# Copy the .report.json file to the $CLONE_DIR directory
-cp "${TESTING_REPO_NAME}/.report.json" $CLONE_DIR/
 
 # Copy the ${TESTING_REPO_NAME}_Output.txt file to the $CLONE_DIR directory
 cp "${TESTING_REPO_NAME}/${TESTING_REPO_NAME}_Output.txt" $CLONE_DIR/
