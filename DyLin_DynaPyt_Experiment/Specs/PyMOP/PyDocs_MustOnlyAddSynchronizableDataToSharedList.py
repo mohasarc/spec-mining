@@ -5,7 +5,6 @@ import socket
 from pythonmop import Spec, call, VIOLATION, getKwOrPosArg
 
 import pythonmop.spec.spec as spec
-# spec.DONT_MONITOR_PYTHONMOP = False
 
 
 class PyDocs_MustOnlyAddSynchronizableDataToSharedList(Spec):

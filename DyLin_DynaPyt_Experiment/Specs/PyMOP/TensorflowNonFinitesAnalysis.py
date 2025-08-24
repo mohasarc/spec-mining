@@ -3,7 +3,6 @@ import tensorflow as tf
 
 import pythonmop.spec.spec as spec
 
-# spec.DONT_MONITOR_PYTHONMOP = False
 
 tensor_creation_fns = [
     {'module': tf, 'fn_name': 'constant'},
@@ -43,16 +42,16 @@ class TensorflowNonFinitesAnalysis(Spec):
             return self.check_tf_issue_found(kw['obj'])
 
         # Hook into Tensor operations
-        @self.event_after(call(tf.Tensor, r'(__add__|__sub__|__mul__|__truediv__|__matmul__|__pow__)'))
+        @self.event_after(call(tf.Tensor, r'(__add__|__sub__|__mul__|__truediv__|__matmul__|__pow__|__mod__|__floordiv__)'))
         def tensor_op(**kw):
             return self.check_tf_issue_found(kw['return_val'])
 
         # Hook into SparseTensor and RaggedTensor methods
-        @self.event_after(call(tf.SparseTensor, r'(__add__|__sub__|__mul__|__truediv__|__matmul__|__pow__)'))
+        @self.event_after(call(tf.SparseTensor, r'(__add__|__sub__|__mul__|__truediv__|__matmul__|__pow__|__mod__|__floordiv__)'))
         def sparse_tensor_op(**kw):
             return self.check_tf_issue_found(kw['return_val'])
 
-        @self.event_after(call(tf.RaggedTensor, r'(__add__|__sub__|__mul__|__truediv__|__matmul__|__pow__)'))
+        @self.event_after(call(tf.RaggedTensor, r'(__add__|__sub__|__mul__|__truediv__|__matmul__|__pow__|__mod__|__floordiv__)'))
         def ragged_tensor_op(**kw):
             return self.check_tf_issue_found(kw['return_val'])
 
@@ -74,10 +73,9 @@ class TensorflowNonFinitesAnalysis(Spec):
         return False
 
     def check_tf_issue_found(self, value: any) -> bool:
-        print('checking', value, 'which is a tensor?', tf.is_tensor(value))
+        # print('checking', value, 'which is a tensor?', tf.is_tensor(value))
         if tf.is_tensor(value) and self.check_contains_nan_or_inf(value):
             return VIOLATION
-
 
     def match(self, call_file_name, call_line_num):
         print(
