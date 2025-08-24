@@ -180,8 +180,15 @@ mkdir -p $CLONE_DIR
 
 # Save test results
 RESULTS_FILE="${CLONE_DIR}/${TESTING_REPO_NAME}_results.txt"
+echo "Instrumentation Start Time: ${START_TIME}" >> $RESULTS_FILE
+echo "Instrumentation End Time: ${END_TIME}" >> $RESULTS_FILE
 echo "Instrumentation Time: ${INSTRUMENTATION_TIME}s" >> $RESULTS_FILE
+
+echo "Test Start Time: ${TEST_START_TIME}" >> $RESULTS_FILE
+echo "Test End Time: ${TEST_END_TIME}" >> $RESULTS_FILE
 echo "Test Time: ${TEST_TIME}s" >> $RESULTS_FILE
+
+
 
 # Copy all the txt files in the TESTING_REPO_NAME directory that end with _statistics.txt to the $CLONE_DIR directory
 find "${TESTING_REPO_NAME}" -name "*_statistics.txt" -exec cp {} $CLONE_DIR/ \;

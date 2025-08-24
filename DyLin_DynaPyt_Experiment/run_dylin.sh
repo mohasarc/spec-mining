@@ -228,8 +228,16 @@ mkdir -p $CLONE_DIR
 
 # Save test results
 RESULTS_FILE="${CLONE_DIR}/${TESTING_REPO_NAME}_results.txt"
+echo "Instrumentation Start Time: ${INSTRUMENTATION_START_TIME}" >> $RESULTS_FILE
+echo "Instrumentation End Time: ${INSTRUMENTATION_END_TIME}" >> $RESULTS_FILE
 echo "Instrumentation Time: ${INSTRUMENTATION_TIME}s" >> $RESULTS_FILE
+
+echo "Test Start Time: ${TEST_START_TIME}" >> $RESULTS_FILE
+echo "Test End Time: ${TEST_END_TIME}" >> $RESULTS_FILE
 echo "Test Time: ${TEST_TIME}s" >> $RESULTS_FILE
+
+echo "Post-Run Start Time: ${POST_RUN_START_TIME}" >> $RESULTS_FILE
+echo "Post-Run End Time: ${POST_RUN_END_TIME}" >> $RESULTS_FILE
 echo "Post-Run Time: ${POST_RUN_TIME}s" >> $RESULTS_FILE
 
 # Copy the ${TESTING_REPO_NAME}_findings.txt file to the $CLONE_DIR directory
