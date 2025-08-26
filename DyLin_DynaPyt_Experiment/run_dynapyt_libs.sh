@@ -122,7 +122,7 @@ export DYNAPYT_SESSION_ID=$(uuidgen)
 echo "DynaPyt Session ID: $DYNAPYT_SESSION_ID"
 
 # Copy the analyses file to temp directory with session ID
-cp "$PWD/../Specs/dynapyt_analyses.txt" "$TMPDIR/dynapyt_analyses-$DYNAPYT_SESSION_ID.txt"
+cp "$PWD/../Specs_libs/dynapyt_analyses.txt" "$TMPDIR/dynapyt_analyses-$DYNAPYT_SESSION_ID.txt"
 
 # Display contents of the copied file
 cat "$TMPDIR/dynapyt_analyses-$DYNAPYT_SESSION_ID.txt"
