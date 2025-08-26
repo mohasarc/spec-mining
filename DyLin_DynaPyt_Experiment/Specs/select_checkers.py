@@ -4,6 +4,16 @@ import fire
 here = Path(__file__).parent.resolve()
 
 issue_codes = {
+    "PC-01": {
+        "name": "InvalidFunctionComparison",
+        "analysis": "dylin.analyses.InvalidComparisonAnalysis.InvalidComparisonAnalysis",
+        "aliases": ["A-15"],
+    },
+    "PC-02": {
+        "name": "RiskyFloatComparison",
+        "analysis": "dylin.analyses.InvalidComparisonAnalysis.InvalidComparisonAnalysis",
+        "aliases": ["A-12"],
+    },
     "PC-03": {
         "name": "WrongTypeAdded",
         "analysis": "dylin.analyses.WrongTypeAddedAnalysis.WrongTypeAddedAnalysis",
@@ -34,10 +44,31 @@ issue_codes = {
         "analysis": "dylin.analyses.BuiltinAllAnalysis.BuiltinAllAnalysis",
         "aliases": ["A-21"],
     },
+    "SL-03": {
+        "name": "StringStrip",
+        "analysis": "dylin.analyses.StringStripAnalysis.StringStripAnalysis",
+        "aliases": ["A-19", "A-20"],
+    },
+    "SL-04": {
+        "name": "StringConcat",
+        "analysis": "dylin.analyses.StringConcatAnalysis.StringConcatAnalysis",
+        "aliases": ["A-05"],
+    },
+    "SL-05": {
+        "name": "InvalidTypeComparison",
+        "analysis": "dylin.analyses.InvalidComparisonAnalysis.InvalidComparisonAnalysis",
+        "aliases": ["A-13"],
+    },
     "CF-01": {
         "name": "WrongOperatorOverriding",
         "analysis": "dylin.analyses.ComparisonBehaviorAnalysis.ComparisonBehaviorAnalysis",
         "aliases": ["A-01", "A-03", "A-04"],
+    },
+    "ML-03": {
+        "name": "NonFiniteValues",
+        "analysis": "dylin.analyses.NonFinitesAnalysis.NonFinitesAnalysis"
+        + "\ndylin.analyses.TensorflowNonFinitesAnalysis.TensorflowNonFinitesAnalysis",
+        "aliases": ["M-26", "M-27", "M-32", "M-33"],
     },
     "TE-02": {
         "name": "Arrays_Comparable",
