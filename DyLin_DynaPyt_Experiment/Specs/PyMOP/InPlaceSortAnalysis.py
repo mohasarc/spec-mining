@@ -17,7 +17,6 @@ class InPlaceSortAnalysis(Spec):
 
         @self.event_before(call(builtins, 'sorted'))
         def list_sorted(**kw):
-            print('sorted called')
             iterable = getKwOrPosArg('iterable', 0, kw)
 
             if hasattr(iterable, "__len__") and len(iterable) > self.threshold:
@@ -31,12 +30,10 @@ class InPlaceSortAnalysis(Spec):
         # read related events
         @self.event_before(call(list, r'(__len__|__contains__|__getitem__|__eq__|__ne__|__lt__|__le__|__gt__|__ge__|__iter__)' ))
         def list_used(**kw):
-            print('\n\n\nlist used\n\n')
             return TRUE_EVENT
 
         @self.event_before(call(End, 'end_execution'))
         def end_execution(**kw):
-            print('\n\n\n\nend_execution called\n\n\n\n')
             return TRUE_EVENT
     
     fsm = """
