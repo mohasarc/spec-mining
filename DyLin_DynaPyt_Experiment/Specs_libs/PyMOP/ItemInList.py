@@ -1,9 +1,9 @@
 # ============================== Define spec ==============================
 from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT
 
-class ItemInListAnalysis(Spec):
+class ItemInList(Spec):
     """
-    Checks if key in list is used.
+    Checks if item in list is used with a list larger than 100 elements.
     src: https://docs.quantifiedcode.com/python-anti-patterns/performance/using_key_in_list_to_check_if_key_is_contained_in_a_list.html
     """
     should_skip_in_sites = True
@@ -16,14 +16,22 @@ class ItemInListAnalysis(Spec):
 
         @self.event_after(call(list, '__contains__'))
         def list_contains(**kw):
+            # Get the list that is being checked.
             right = kw['args'][0]
-            # print(f"{self.analysis_name} in {iid}")
+
+            # Check if the list is larger than the threshold.
             if type(right) == list and len(right) > self.threshold:
-                uid = id(right) # id works here because we keep file into memory
+
+                # Get the id of the list.
+                uid = id(right)
+
+                # Update the size map if the list is not in the map.
                 if uid not in self.size_map:
                     self.size_map[uid] = len(right)
-                else:
+                else:  # Update the size map if the list is in the map.
                     self.size_map[uid] += len(right)
+
+                # Check if the list is larger than the threshold.
                 if self.size_map[uid] > self.threshold * self.count:
                     return TRUE_EVENT
             return FALSE_EVENT

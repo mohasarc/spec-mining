@@ -1,0 +1,73 @@
+# ============================== Define spec ==============================
+from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT
+
+class StringConcatAnalysis(Spec):
+    """
+    String concatenation via + is only (sometimes) efficient in CPython because they implemented
+    in place concatenation. However, other interpreters don't have this capability.
+    To ensure linear time string concatenation use ''.join()
+    src: https://peps.python.org/pep-0008/#programming-recommendations
+    """
+    def __init__(self):
+        super().__init__()
+        self.concats = {}
+        self.threshold = 10000
+
+        # PymopArithmeticOperatorTracker will be injected by PyMOP at runtime.
+        @self.event_before(call(PymopArithmeticOperatorTracker, r'__pymop__add__|__pymop__iadd__'))
+        def add(**kw):
+            left = kw['args'][1]
+
+            if not isinstance(left, type('')):
+                return FALSE_EVENT
+
+            key = str(left) # Probably not the best key, but good enough for now.
+            if key not in self.concats:
+                self.concats[key] = 1
+            elif self.concats[key] != -1:
+                self.concats[key] += 1
+            if self.concats[key] > self.threshold:
+                self.concats[key] = -1
+                return TRUE_EVENT
+            
+            return FALSE_EVENT
+
+    ere = 'add+'
+    creation_events = ['add']
+
+    def match(self, call_file_name, call_line_num):
+        print(
+            f'Spec - {self.__class__.__name__}:  at file {call_file_name}, line {call_line_num}.')
+# =========================================================================
+
+"""
+def test():
+    '''
+    buggy cases
+    '''
+    a = "a"
+    b = "b"
+
+    for i in range(0, 10001):
+        # to prevent actual memory issues
+        a = "a"
+        b = "b"
+
+        a += b  # DyLin warn
+        a += ""  # DyLin warn
+        a = a + "x"  # No warning because of performance
+        b = "x" + b  # No warning because of performance
+        b += a  # DyLin warn
+        b = a + b  # No warning because of performance
+        a = b + a  # No warning because of performance
+
+    '''
+    fixed cases
+    '''
+    x = 1
+    x += 1
+    x = x + 1
+
+
+test()
+"""
