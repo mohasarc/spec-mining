@@ -15,7 +15,7 @@ on:
         required: false
         default: 'links-1'
       status_number:
-        description: 'Status number of the experiment. 1 for all scripts, 2 for only pymop, dynapyt, and dylin.'
+        description: 'Status number of the experiment. 1 for all scripts with specs supported by dynapyt_libs.sh, 2 for five scripts (no dynapyt_libs.sh) with all specs'
         required: true
         default: '1'
       release_name:
