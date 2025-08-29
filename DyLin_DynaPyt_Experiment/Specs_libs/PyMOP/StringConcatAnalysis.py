@@ -16,12 +16,18 @@ class StringConcatAnalysis(Spec):
         # PymopArithmeticOperatorTracker will be injected by PyMOP at runtime.
         @self.event_before(call(PymopArithmeticOperatorTracker, r'__pymop__add__|__pymop__iadd__'))
         def add(**kw):
-            left = kw['args'][1]
-
-            if not isinstance(left, type('')):
+            if len(kw['args']) >= 3:
+                right = kw['args'][2]
+            else:
                 return FALSE_EVENT
 
-            key = str(left) # Probably not the best key, but good enough for now.
+            if not isinstance(right, type('')):
+                return FALSE_EVENT
+
+            file_name = kw['kwargs']['___pymop__ast__hint__filename']
+            line_num = kw['kwargs']['___pymop__ast__hint__lineno']
+            key = f"{file_name}:{line_num}"
+
             if key not in self.concats:
                 self.concats[key] = 1
             elif self.concats[key] != -1:
