@@ -30,7 +30,7 @@ if [ "$status_number" = "1" ]; then
 elif [ "$status_number" = "2" ]; then
     scripts=("run_dynapyt_13.sh" "run_pymop_13.sh" "run_dylin_13.sh" "run_pymop_libs_13.sh")
 elif [ "$status_number" = "3" ]; then
-    scripts=("run_dylin_8.sh")
+    scripts=("run_dynapyt_13.sh" "run_pymop_13.sh" "run_dylin_13.sh")
 else
     echo "Invalid status number: $status_number"
     exit 1
