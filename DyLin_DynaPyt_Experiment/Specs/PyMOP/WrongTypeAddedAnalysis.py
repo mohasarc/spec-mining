@@ -33,8 +33,23 @@ class WrongTypeAddedAnalysis(Spec):
         def check_extend(**kw):
             return self._check_add("extend", **kw)
 
+        @self.event_before(call(PymopArithmeticOperatorTracker, r'__pymop__add__|__pymop__iadd__'))
+        def check_add_assign(**kw):
+            if len(kw['args']) >= 3:
+                left_list = kw['args'][1]
+            else:
+                return FALSE_EVENT
+
+            if not isinstance(left_list, type([])):
+                return FALSE_EVENT
+
+            return self._check_add("add_assign", **kw)
+
     def _check_add(self, method, **kw):
-        obj = kw['obj']
+        if method == "add_assign":
+            obj = kw['args'][1]
+        else:
+            obj = kw['obj']
 
         if not hasattr(obj, '__len__') or len(obj) <= self.THRESHOLD:
             return FALSE_EVENT
@@ -45,6 +60,12 @@ class WrongTypeAddedAnalysis(Spec):
             arg = getKwOrPosArg('object', 2, kw)
         elif method == 'extend':
             arg = getKwOrPosArg('object', 1, kw)
+            if hasattr(arg, '__iter__'):
+                arg = list(arg)
+            else:
+                return FALSE_EVENT
+        elif method == "add_assign":
+            arg = kw['args'][2]
             if hasattr(arg, '__iter__'):
                 arg = list(arg)
             else:
@@ -74,8 +95,8 @@ class WrongTypeAddedAnalysis(Spec):
 
         return FALSE_EVENT
 
-    ere = 'check_append|check_add|check_insert|check_extend'
-    creation_events = ['check_append', 'check_add', 'check_insert', 'check_extend']
+    ere = 'check_append|check_add|check_insert|check_extend|check_add_assign'
+    creation_events = ['check_append', 'check_add', 'check_insert', 'check_extend', 'check_add_assign']
 
     def match(self, call_file_name, call_line_num):
         print(
