@@ -13,31 +13,42 @@ class ComparisonBehaviorAnalysis(Spec):
     def __init__(self):
         super().__init__()
 
-        for current_class in get_all_subclasses():
-            self.instrument_class(current_class)
+        @self.event_after(call(PymopComparisonTracker, r'__pymop__eq__'))
+        def eq_end(**kw):
+            return self.check_all(kw, "Equal")
 
-        def on_new_class(cls):
-            self.instrument_class(cls)
+        @self.event_after(call(PymopComparisonTracker, r'__pymop__ne__'))
+        def ne_end(**kw):
+            return self.check_all(kw, "NotEqual")
+    
+    # TODO: The old appraoch is kept for reference. But we are instrumenting all classes now.
+    #     for current_class in get_all_subclasses():
+    #         self.instrument_class(current_class)
 
-        class_creation_listener.on_class_creation(on_new_class)
+    #     def on_new_class(cls):
+    #         self.instrument_class(cls)
 
-    def instrument_class(self, cls):
-        try:
-            # Some classes from libraries like pandas cannot be instrumented
-            cls.__PYMOP_IMMUTABLE_TEST__ = True
-            inspect.getmembers(cls)
-        except Exception:
-            return
+    #     class_creation_listener.on_class_creation(on_new_class)
 
-        if cls.__eq__ is not object.__eq__:
-            @self.event_after(call(cls, r'__eq__'))
-            def eq_end(**kw):
-                return self.check_all(kw, "Equal")
+    # def instrument_class(self, cls):
+    #     try:
+    #         # Some classes from libraries like pandas cannot be instrumented
+    #         cls.__PYMOP_IMMUTABLE_TEST__ = True
+    #         inspect.getmembers(cls)
+    #     except Exception:
+    #         return
 
-        if cls.__ne__ is not object.__ne__:
-            @self.event_after(call(cls, r'__ne__'))
-            def ne_end(**kw):
-                return self.check_all(kw, "NotEqual")
+    #     print(cls.__eq__)
+    #     print(object.__eq__)
+    #     if cls.__eq__ is not object.__eq__:
+    #         @self.event_after(call(PymopComparisonTracker, r'__pymop__eq__'))
+    #         def eq_end(**kw):
+    #             return self.check_all(kw, "Equal")
+
+    #     if cls.__ne__ is not object.__ne__:
+    #         @self.event_after(call(PymopComparisonTracker, r'__pymop__ne__'))
+    #         def ne_end(**kw):
+    #             return self.check_all(kw, "NotEqual")
 
     def is_excluded(self, val: any) -> bool:
         return (
@@ -55,8 +66,8 @@ class ComparisonBehaviorAnalysis(Spec):
         )
 
     def check_all(self, kw: dict, op: str):
-        left = kw['obj']
-        right = kw['args'][0]
+        left = kw['args'][1]
+        right = kw['args'][2]
         result = kw['return_val']
 
         if self.is_excluded(left) or self.is_excluded(right):
@@ -122,7 +133,16 @@ class ComparisonBehaviorAnalysis(Spec):
                     return True
         return False
 
-    ere = '(eq_end|ne_end)'
+    fsm = """
+        s0 [
+            eq_end -> s1
+            ne_end -> s1
+        ]
+        s1 [
+            default s1
+        ]
+        alias match = s1
+    """
     creation_events = ['eq_end', 'ne_end']
 
     def match(self, call_file_name, call_line_num, args, kwargs, custom_message):

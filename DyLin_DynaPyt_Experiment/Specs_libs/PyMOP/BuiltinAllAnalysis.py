@@ -15,7 +15,7 @@ class BuiltinAllAnalysis(Spec):
         @self.event_after(call(builtins, 'all'))
         def violation(**kw):
             arg = kw['args'][0]
-            if isinstance(arg, list):
+            if isinstance(arg, type([])):
                 flattened = self._flatten(arg)
                 if len(flattened) == 0 and kw['return_val'] == True:
                     return TRUE_EVENT
@@ -27,7 +27,7 @@ class BuiltinAllAnalysis(Spec):
         @self.event_after(call(builtins, 'any'))
         def violation(**kw):
             arg = kw['args'][0]
-            if isinstance(arg, list):
+            if isinstance(arg, type([])):
                 flattened = self._flatten(arg)
                 if len(flattened) == 0 and kw['return_val'] == True:
                     return TRUE_EVENT
@@ -39,7 +39,7 @@ class BuiltinAllAnalysis(Spec):
     def _flatten(self, l):
         new_list = []
         for i in l:
-            if isinstance(i, list):
+            if isinstance(i, type([])):
                 new_list = new_list + self._flatten(i)
             else:
                 new_list.append(i)
