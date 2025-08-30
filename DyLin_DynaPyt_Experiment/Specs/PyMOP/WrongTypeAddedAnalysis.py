@@ -1,5 +1,4 @@
 # ============================== Define spec ==============================
-import nntplib
 from pythonmop import Spec, call, getKwOrPosArg, TRUE_EVENT, FALSE_EVENT
 import pythonmop.spec.spec as spec
 import random
