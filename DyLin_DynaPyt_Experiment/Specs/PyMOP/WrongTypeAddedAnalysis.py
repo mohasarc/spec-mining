@@ -1,4 +1,5 @@
 # ============================== Define spec ==============================
+import nntplib
 from pythonmop import Spec, call, getKwOrPosArg, TRUE_EVENT, FALSE_EVENT
 import pythonmop.spec.spec as spec
 import random
@@ -14,7 +15,6 @@ class WrongTypeAddedAnalysis(Spec):
     def __init__(self):
         super().__init__()
 
-        self.tracked = {}  # id(obj) -> {"sample": [types...], "type": dominant_type, "threshold": N}
         self.THRESHOLD = 10
 
         @self.event_before(call(list, 'append'))
@@ -35,63 +35,60 @@ class WrongTypeAddedAnalysis(Spec):
 
         @self.event_before(call(PymopArithmeticOperatorTracker, r'__pymop__add__|__pymop__iadd__'))
         def check_add_assign(**kw):
-            if len(kw['args']) >= 3:
-                left_list = kw['args'][1]
-            else:
-                return FALSE_EVENT
-
-            if not isinstance(left_list, type([])):
+            if len(kw['args']) < 3:
                 return FALSE_EVENT
 
             return self._check_add("add_assign", **kw)
 
     def _check_add(self, method, **kw):
         if method == "add_assign":
-            obj = kw['args'][1]
+            left = kw['args'][1]
         else:
-            obj = kw['obj']
+            left = kw['obj']
 
-        if not hasattr(obj, '__len__') or len(obj) <= self.THRESHOLD:
+        if not hasattr(left, '__len__') or len(left) <= self.THRESHOLD:
             return FALSE_EVENT
 
         if method in ('append', 'add'):
-            arg = getKwOrPosArg('object', 1, kw)
+            right = getKwOrPosArg('object', 1, kw)
         elif method == 'insert':
-            arg = getKwOrPosArg('object', 2, kw)
+            right = getKwOrPosArg('object', 2, kw)
         elif method == 'extend':
-            arg = getKwOrPosArg('object', 1, kw)
-            if hasattr(arg, '__iter__'):
-                arg = list(arg)
+            right = getKwOrPosArg('object', 1, kw)
+            if hasattr(right, '__iter__'):
+                right = list(right)
             else:
                 return FALSE_EVENT
         elif method == "add_assign":
-            arg = kw['args'][2]
-            if hasattr(arg, '__iter__'):
-                arg = list(arg)
+            right = kw['args'][2]
+            if hasattr(right, '__iter__'):
+                right = list(right)
             else:
                 return FALSE_EVENT
         else:
             return FALSE_EVENT
 
-        obj_id = id(obj)
+        type_to_check = type(random.choice(list(left)))
 
-        if obj_id not in self.tracked or len(self.tracked[obj_id]['sample']) < self.THRESHOLD:
-            self.tracked[obj_id] = {
-                "sample": random.sample(list(obj), min(len(obj), self.THRESHOLD)),
-                "threshold": len(obj),
-            }
-            sample = self.tracked[obj_id]['sample']
-            types_in_sample = [type(x) for x in sample]
-            dominant_type = types_in_sample[0] if all(isinstance(x, types_in_sample[0]) for x in sample) else None
-            self.tracked[obj_id]['type'] = dominant_type
+        # Optimization to reduce overhead for large lists sample size has to be lower than threshold from DyLin
+        left_sample = random.sample(list(left), self.THRESHOLD)
+        consistent_same_type_left = all(isinstance(n, type_to_check) for n in left_sample)
 
-        dominant_type = self.tracked[obj_id]['type']
-
-
-        if dominant_type is not None:
-            added_values = arg if isinstance(arg, list) else [arg]
-            if any(not isinstance(item, dominant_type) for item in added_values):
-                return TRUE_EVENT
+        if consistent_same_type_left:
+            if method in ('append', 'add', 'insert'):
+                if not isinstance(right, type_to_check):
+                    return TRUE_EVENT
+            elif method == 'extend':
+                if hasattr(right, '__len__') and len(right) >= self.THRESHOLD:
+                    right_sample = random.sample(list(right), self.THRESHOLD)
+                    consistent_same_type_right = all(isinstance(n, type_to_check) for n in right_sample)
+                    if not consistent_same_type_right:
+                        return TRUE_EVENT
+            elif method == "add_assign":
+                if len(right) > 0:
+                    right_sample_type = type(right[0])
+                    if right_sample_type != type_to_check:
+                        return TRUE_EVENT
 
         return FALSE_EVENT
 
