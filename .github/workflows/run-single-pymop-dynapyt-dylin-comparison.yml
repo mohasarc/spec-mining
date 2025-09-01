@@ -9,6 +9,9 @@ on:
       status_number:
         required: true
         type: string
+      libraries_enabled:
+        required: true
+        type: string
       release-name:
         required: true
         type: string
@@ -48,7 +51,7 @@ jobs:
             cd ./DyLin_DynaPyt_Experiment
             ls -l
             chmod +x ./run_experiment.sh
-            ./run_experiment.sh "${{ inputs.project-link }}" "${{ inputs.status_number }}"
+            ./run_experiment.sh "${{ inputs.project-link }}" "${{ inputs.status_number }}" "${{ inputs.libraries_enabled }}"
           env:
             GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
 
