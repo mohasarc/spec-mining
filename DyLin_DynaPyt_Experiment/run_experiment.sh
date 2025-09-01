@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Check if exactly one repository URL and one status number areprovided, and exit if not
-if [ "$#" -ne 2 ]; then
-    echo "Usage: $0 <testing-repo-url> <status-number>"
+if [ "$#" -ne 3 ]; then
+    echo "Usage: $0 <testing-repo-url> <status-number> <libraries-enabled>"
     exit 1
 fi
 
