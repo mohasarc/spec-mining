@@ -1,8 +1,7 @@
+from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT
 import numpy as np
 import pandas as pd
-from pythonmop import Spec, call, VIOLATION, TRUE_EVENT, FALSE_EVENT
 
-import pythonmop.spec.spec as spec
 
 class NonFinitesAnalysis(Spec):
     """
@@ -12,44 +11,28 @@ class NonFinitesAnalysis(Spec):
     def __init__(self):
         super().__init__()
 
-        @self.event_after(call(pd.DataFrame, r'(add|add_prefix|add_suffix|abs|apply|applymap|asfreq|astype|at|at_time|bfill)'))
+        @self.event_before(call(PymopFuncCallTracker, 'after_call'))
         def non_finite_op(**kw):
-            args = kw['args']
-            kwargs = kw['kwargs']
-            return_val = kw['return_val']
+            return_val = kw['args'][1]
+            args = kw['args'][2]
+            kwargs = kw['args'][3]
+            no_nan_in_input = True
 
             for arg in args:
                 if self.check_np_issue_found(arg):
+                    no_nan_in_input = False
                     return TRUE_EVENT
             
             for arg in kwargs:
                 if self.check_np_issue_found(arg):
+                    no_nan_in_input = False
                     return TRUE_EVENT
 
             if self.check_np_issue_found(return_val):
-                return TRUE_EVENT
+                if no_nan_in_input:
+                    return TRUE_EVENT
 
             return FALSE_EVENT
-
-        # @self.event_after(call(np, r'.*'))
-        # def non_finite_op(**kw):
-        #     print('numpy event', kw)
-        #     args = kw['args']
-        #     kwargs = kw['kwargs']
-        #     return_val = kw['return_val']
-
-        #     for arg in args:
-        #         if self.check_np_issue_found(arg):
-        #             return TRUE_EVENT
-
-        #     for arg in kwargs:
-        #         if self.check_np_issue_found(arg):
-        #             return TRUE_EVENT
-            
-        #     if self.check_np_issue_found(return_val):
-        #         return TRUE_EVENT
-
-        #     return FALSE_EVENT
 
     # copied as is from https://github.com/sola-st/DyLin/blob/main/src/dylin/analyses/NonFinitesAnalysis.py
     def can_be_checked_with_numpy(self, value: any) -> bool:

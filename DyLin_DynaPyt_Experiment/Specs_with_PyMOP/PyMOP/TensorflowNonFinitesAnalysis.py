@@ -1,17 +1,6 @@
-from pythonmop import Spec, call, VIOLATION
+from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT
 import tensorflow as tf
 
-import pythonmop.spec.spec as spec
-
-
-tensor_creation_fns = [
-    {'module': tf, 'fn_name': 'constant'},
-    {'module': tf, 'fn_name': 'Variable'},
-    {'module': tf, 'fn_name': 'ones'},
-    {'module': tf, 'fn_name': 'zeros'},
-    {'module': tf.random, 'fn_name': 'normal'},
-    {'module': tf.random, 'fn_name': 'uniform'},
-]
 
 class TensorflowNonFinitesAnalysis(Spec):
     """
@@ -21,39 +10,28 @@ class TensorflowNonFinitesAnalysis(Spec):
     def __init__(self):
         super().__init__()
 
-        self.total_tensors_investigated = 0
-
-        # Hook into Tensor creation
-        for fn_to_instrument in tensor_creation_fns:
-            @self.event_after(call(fn_to_instrument['module'], fn_to_instrument['fn_name']))
-            def tensor_creation(**kw):
-                return self.check_tf_issue_found(kw['return_val'])
-        
-        @self.event_after(call(tf.Tensor, '__init__'))
-        def tensor_init(**kw):
-            return self.check_tf_issue_found(kw['obj'])
-    
-        @self.event_after(call(tf.SparseTensor, '__init__'))
-        def sparse_tensor_init(**kw):
-            return self.check_tf_issue_found(kw['obj'])
-
-        @self.event_after(call(tf.RaggedTensor, '__init__'))
-        def ragged_tensor_init(**kw):
-            return self.check_tf_issue_found(kw['obj'])
-
-        # Hook into Tensor operations
-        @self.event_after(call(tf.Tensor, r'(__add__|__sub__|__mul__|__truediv__|__matmul__|__pow__|__mod__|__floordiv__)'))
-        def tensor_op(**kw):
-            return self.check_tf_issue_found(kw['return_val'])
-
-        # Hook into SparseTensor and RaggedTensor methods
-        @self.event_after(call(tf.SparseTensor, r'(__add__|__sub__|__mul__|__truediv__|__matmul__|__pow__|__mod__|__floordiv__)'))
-        def sparse_tensor_op(**kw):
-            return self.check_tf_issue_found(kw['return_val'])
-
-        @self.event_after(call(tf.RaggedTensor, r'(__add__|__sub__|__mul__|__truediv__|__matmul__|__pow__|__mod__|__floordiv__)'))
-        def ragged_tensor_op(**kw):
-            return self.check_tf_issue_found(kw['return_val'])
+        @self.event_before(call(PymopFuncCallTracker, 'after_call'))
+        def non_finite_op(**kw):
+            return_val = kw['args'][1]
+            args = kw['args'][2]
+            kwargs = kw['args'][3]
+            no_nan_in_input = True
+            
+            for arg in args:
+                if self.check_tf_issue_found(arg):
+                    no_nan_in_input = False
+                    return TRUE_EVENT
+            
+            for arg in kwargs:
+                if self.check_tf_issue_found(arg):
+                    no_nan_in_input = False
+                    return TRUE_EVENT
+            
+            if self.check_tf_issue_found(return_val):
+                if no_nan_in_input:
+                    return TRUE_EVENT
+            
+            return FALSE_EVENT
 
 
     # Copied as is from https://github.com/sola-st/DyLin/blob/820506e532000edaa76f22f55ba94323006b2405/src/dylin/analyses/TensorflowNonFinitesAnalysis.py#L14
@@ -71,11 +49,14 @@ class TensorflowNonFinitesAnalysis(Spec):
             except Exception:
                 return False
         return False
-
+    
     def check_tf_issue_found(self, value: any) -> bool:
-        # print('checking', value, 'which is a tensor?', tf.is_tensor(value))
-        if tf.is_tensor(value) and self.check_contains_nan_or_inf(value):
-            return VIOLATION
+        if isinstance(value, tf.Tensor) and tf.is_tensor(value) and self.check_contains_nan_or_inf(value):
+            return True
+        return False
+
+    ere = 'non_finite_op+'
+    creation_events = ['non_finite_op']
 
     def match(self, call_file_name, call_line_num):
         print(
