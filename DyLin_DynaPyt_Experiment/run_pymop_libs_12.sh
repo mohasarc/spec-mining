@@ -88,7 +88,7 @@ git clone "$PYMOP_REPO_URL" || { echo "Failed to clone $PYMOP_REPO_URL"; exit 1;
 cd mop-with-dynapt
 
 # TODO: Currently using a temp version of PyMOP
-git checkout fix-pymop-broken-2
+git checkout fix-pymop-broken-6
 
 # Install the project in editable mode with dev dependencies
 pip install . || { echo "Failed to install mop-with-dynapt"; exit 1; }
