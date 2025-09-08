@@ -74,10 +74,6 @@ fi
 
 # Install required Python packages
 pip install pytest
-pip install numpy
-pip install matplotlib
-pip install pandas
-pip install tensorflow
 
 # Return back to the parent directory
 cd ..

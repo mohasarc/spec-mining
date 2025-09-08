@@ -76,18 +76,27 @@ class WrongTypeAddedAnalysis(Spec):
         if consistent_same_type_left:
             if method in ('append', 'add', 'insert'):
                 if not isinstance(right, type_to_check):
-                    return TRUE_EVENT
+                    return {
+                        "verdict": TRUE_EVENT,
+                        "param_instance": left,
+                    }
             elif method == 'extend':
                 if hasattr(right, '__len__') and len(right) >= self.THRESHOLD:
                     right_sample = random.sample(list(right), self.THRESHOLD)
                     consistent_same_type_right = all(isinstance(n, type_to_check) for n in right_sample)
                     if not consistent_same_type_right:
-                        return TRUE_EVENT
+                        return {
+                            "verdict": TRUE_EVENT,
+                            "param_instance": left,
+                        }
             elif method == "add_assign":
                 if len(right) > 0:
                     right_sample_type = type(right[0])
                     if right_sample_type != type_to_check:
-                        return TRUE_EVENT
+                        return {
+                            "verdict": TRUE_EVENT,
+                            "param_instance": left,
+                        }
 
         return FALSE_EVENT
 

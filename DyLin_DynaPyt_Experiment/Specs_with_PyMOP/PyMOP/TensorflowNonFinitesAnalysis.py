@@ -10,6 +10,23 @@ class TensorflowNonFinitesAnalysis(Spec):
     def __init__(self):
         super().__init__()
 
+        @self.event_after(call(PymopArithmeticOperatorTracker, r'(__pymop__add__|__pymop__sub__|__pymop__mul__|__pymop__truediv__|__pymop__floordiv__|__pymop__mod__|__pymop__pow__|__pymop__lshift__|__pymop__rshift__|__pymop__and__|__pymop__or__|__pymop__xor__)'))
+        def non_finite_op_by_arithmetic_operator(**kw):
+            args = kw['args'][1:]
+            return_val = kw['return_val']
+            no_nan_in_input = True
+            
+            for arg in args:
+                if self.check_tf_issue_found(arg):
+                    no_nan_in_input = False
+                    return TRUE_EVENT
+            
+            if self.check_tf_issue_found(return_val):
+                if no_nan_in_input:
+                    return TRUE_EVENT
+            
+            return FALSE_EVENT
+
         @self.event_before(call(PymopFuncCallTracker, 'after_call'))
         def non_finite_op(**kw):
             return_val = kw['args'][1]
@@ -37,7 +54,6 @@ class TensorflowNonFinitesAnalysis(Spec):
     # Copied as is from https://github.com/sola-st/DyLin/blob/820506e532000edaa76f22f55ba94323006b2405/src/dylin/analyses/TensorflowNonFinitesAnalysis.py#L14
     def check_contains_nan_or_inf(self, tensor: tf.Tensor) -> bool:
         try:
-            self.total_tensors_investigated = self.total_tensors_investigated + 1
             # checks if tensor contains NaN / inf / -inf by throwing an exception
             tf.debugging.check_numerics(tensor, "")
         except Exception as e:
@@ -55,8 +71,8 @@ class TensorflowNonFinitesAnalysis(Spec):
             return True
         return False
 
-    ere = 'non_finite_op+'
-    creation_events = ['non_finite_op']
+    ere = '(non_finite_op|non_finite_op_by_arithmetic_operator)+'
+    creation_events = ['non_finite_op', 'non_finite_op_by_arithmetic_operator']
 
     def match(self, call_file_name, call_line_num):
         print(

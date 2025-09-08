@@ -24,8 +24,8 @@ class StringConcatAnalysis(Spec):
             if not isinstance(right, type('')):
                 return FALSE_EVENT
 
-            file_name = kw['kwargs']['___pymop__ast__hint__filename']
-            line_num = kw['kwargs']['___pymop__ast__hint__lineno']
+            file_name = kw['args'][-3]
+            line_num = kw['args'][-2]
             key = f"{file_name}:{line_num}"
 
             if key not in self.concats:
