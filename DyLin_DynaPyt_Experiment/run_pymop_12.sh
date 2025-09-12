@@ -71,8 +71,6 @@ fi
 
 # Install required Python packages
 pip install pytest
-pip install numpy
-pip install pandas
 
 # ------------------------------------------------------------------------------------------------
 # Install PyMOP
