@@ -26,6 +26,10 @@ How large is sufficiently large? N=1000?
 function_names = ["append", "extend", "insert", "add"]
 
 
+# Add a seed to the random number generator
+random.seed(35)
+
+
 class WrongTypeAddedAnalysis(BaseAnalysis):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

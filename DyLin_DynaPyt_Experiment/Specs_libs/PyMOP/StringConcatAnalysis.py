@@ -1,6 +1,7 @@
 # ============================== Define spec ==============================
 from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT
 
+
 class StringConcatAnalysis(Spec):
     """
     String concatenation via + is only (sometimes) efficient in CPython because they implemented
