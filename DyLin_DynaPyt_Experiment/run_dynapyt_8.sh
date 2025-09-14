@@ -74,6 +74,7 @@ fi
 
 # Install required Python packages
 pip install pytest
+pip install pandas
 pip install numpy
 pip install tensorflow
 
