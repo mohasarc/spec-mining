@@ -1,6 +1,7 @@
 # ============================== Define spec ==============================
 from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT
 
+
 class ItemInList(Spec):
     """
     Checks if item in list is used with a list larger than 100 elements.

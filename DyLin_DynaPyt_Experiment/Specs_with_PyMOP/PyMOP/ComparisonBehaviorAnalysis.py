@@ -1,7 +1,4 @@
-from pythonmop.builtin_instrumentation import class_creation_listener
-from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT, get_all_subclasses
-import pythonmop.spec.spec as spec
-import inspect
+from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT
 import numpy as np
 
 
@@ -20,35 +17,6 @@ class ComparisonBehaviorAnalysis(Spec):
         @self.event_after(call(PymopComparisonTracker, r'__pymop__ne__'))
         def ne_end(**kw):
             return self.check_all(kw, "NotEqual")
-    
-    # TODO: The old appraoch is kept for reference. But we are instrumenting all classes now.
-    #     for current_class in get_all_subclasses():
-    #         self.instrument_class(current_class)
-
-    #     def on_new_class(cls):
-    #         self.instrument_class(cls)
-
-    #     class_creation_listener.on_class_creation(on_new_class)
-
-    # def instrument_class(self, cls):
-    #     try:
-    #         # Some classes from libraries like pandas cannot be instrumented
-    #         cls.__PYMOP_IMMUTABLE_TEST__ = True
-    #         inspect.getmembers(cls)
-    #     except Exception:
-    #         return
-
-    #     print(cls.__eq__)
-    #     print(object.__eq__)
-    #     if cls.__eq__ is not object.__eq__:
-    #         @self.event_after(call(PymopComparisonTracker, r'__pymop__eq__'))
-    #         def eq_end(**kw):
-    #             return self.check_all(kw, "Equal")
-
-    #     if cls.__ne__ is not object.__ne__:
-    #         @self.event_after(call(PymopComparisonTracker, r'__pymop__ne__'))
-    #         def ne_end(**kw):
-    #             return self.check_all(kw, "NotEqual")
 
     def is_excluded(self, val: any) -> bool:
         return (

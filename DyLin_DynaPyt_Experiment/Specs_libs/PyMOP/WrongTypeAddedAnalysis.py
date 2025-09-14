@@ -6,6 +6,7 @@ import random
 # Add a seed to the random number generator
 random.seed(35)
 
+
 class WrongTypeAddedAnalysis(Spec):
     """
     Warns if a value of a different type is added to a list/set that was previously homogeneous.

@@ -1,6 +1,5 @@
 # ============================== Define spec ==============================
 from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT
-import pythonmop.spec.spec as spec
 
 
 class StringStripAnalysis(Spec):

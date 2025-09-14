@@ -1,9 +1,11 @@
 # ============================== Define spec ==============================
 from pythonmop import Spec, call, getKwOrPosArg, TRUE_EVENT, FALSE_EVENT
-import pythonmop.spec.spec as spec
 import random
 
-spec.DONT_MONITOR_SITE_PACKAGES = True
+
+# Add a seed to the random number generator
+random.seed(35)
+
 
 class WrongTypeAddedAnalysis(Spec):
     """

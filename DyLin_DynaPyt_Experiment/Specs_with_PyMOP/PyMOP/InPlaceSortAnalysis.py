@@ -1,15 +1,12 @@
 # ============================== Define spec ==============================
 from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT, End, getKwOrPosArg
 import builtins
-import pythonmop.spec.spec as spec
 
 
 class InPlaceSortAnalysis(Spec):
     """
     Inplace sort is more efficient that sorted(). prefer using inplace if the original list is not needed.
     """
-
-    # should_skip_in_sites = True
 
     def __init__(self):
         super().__init__()

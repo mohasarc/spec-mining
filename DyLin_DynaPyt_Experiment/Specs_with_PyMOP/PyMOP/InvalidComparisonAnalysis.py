@@ -1,13 +1,9 @@
 # ============================== Define spec ==============================
 from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT, getKwOrPosArg
-import pythonmop.spec.spec as spec
-import pythonmop.builtin_instrumentation as bi
 import numpy as np
 import types
 import math
 
-# spec.DONT_MONITOR_PYTHONMOP = False
-# spec.DONT_MONITOR_SITE_PACKAGES = True
 
 class InvalidComparisonAnalysis(Spec):
     """

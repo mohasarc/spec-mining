@@ -1,7 +1,7 @@
 # ============================== Define spec ==============================
 from pythonmop import Spec, call, getStackTrace, parseStackTrace, End
 import builtins
-import inspect
+
 
 class MonitoredFile():
     def __init__(self, originalFile):
@@ -12,6 +12,7 @@ class MonitoredFile():
 
     def close(self, *args, **kwargs):
         pass
+
 
 # ========== Override builtins open =============
 # These are used to prevent infinite recursion
@@ -54,8 +55,9 @@ def customOpen(*args, **kwargs):
     return originalFile
 
 builtins.open = customOpen
-# =================================================
 
+
+# =================================================
 class FileClosedAnalysis(Spec):
     """
     TODO: Add description here.
