@@ -1,9 +1,11 @@
 # ============================== Define spec ==============================
 from pythonmop import Spec, call, getKwOrPosArg, TRUE_EVENT, FALSE_EVENT
 import pythonmop.spec.spec as spec
-import pythonmop.builtin_instrumentation as bi
 
-# spec.DONT_MONITOR_SITE_PACKAGES = True
+
+if not InstrumentedIterator:
+    from pythonmop.builtin_instrumentation import InstrumentedIterator
+
 
 class UnsafeListIterator(Spec):
     """
@@ -21,7 +23,7 @@ class UnsafeListIterator(Spec):
         def updateList(**kw):
             pass
         
-        @self.event_before(call(bi.InstrumentedIterator, '__init__'), target = [1], names = [call(list, '*')])
+        @self.event_before(call(InstrumentedIterator, '__init__'), target = [1], names = [call(list, '*')])
         def createIter(**kw):
             iterable = getKwOrPosArg('iterable', 1, kw)
 
@@ -30,7 +32,7 @@ class UnsafeListIterator(Spec):
             
             return FALSE_EVENT
 
-        @self.event_before(call(bi.InstrumentedIterator, '__next__'))
+        @self.event_before(call(InstrumentedIterator, '__next__'))
         def next(**kw):
             obj = kw['obj']
 
