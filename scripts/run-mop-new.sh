@@ -32,19 +32,10 @@ call_pymop(){
         END_TO_END_TIME=$(python -c "print($END_TIME - $START_TIME)")
         echo "{\"test_duration\": ${END_TO_END_TIME}}" > $report/$algo-time.json
     else
-        echo "================================================"
-        # ls -l "$PWD"/../mop-with-dynapt/pythonmop/pymop-startup-helper/
-        echo "================================================"
-
         START_TIME=$(python -c 'import time; print(time.time())')
-
         PYMOP_SPEC_FOLDER="$PWD"/../mop-with-dynapt/specs-new/ PYMOP_ALGO=$algo PYMOP_STATISTICS=yes PYMOP_STATISTICS_FILE="$algo".json PYMOP_INSTRUMENTATION_STRATEGY=ast \
         PYTHONPATH="$PWD"/../mop-with-dynapt/pythonmop/pymop-startup-helper/ timeout 14400 pytest --color=no -v -p pythonmop -rA --memray --trace-python-allocators --most-allocations=0 --memray-bin-path=$report/MEM_$algo \
         --continue-on-collection-errors --json-report --json-report-indent=2 $extra_args &> $report/$algo-pytest-output.txt
-
-        # timeout 14400 pytest --color=no -v -p pythonmop -rA --path="$PWD"/../mop-with-dynapt/specs-new/ --algo $algo  --instrument_strategy=builtin --memray --trace-python-allocators --most-allocations=0 --memray-bin-path=$report/MEM_$algo \
-        # --continue-on-collection-errors --json-report --json-report-indent=2 --statistics --statistics_file="$algo".json $extra_args &> $report/$algo-pytest-output.txt
-
         END_TIME=$(python -c 'import time; print(time.time())')
         END_TO_END_TIME=$(python -c "print($END_TIME - $START_TIME)")
     fi
@@ -65,7 +56,7 @@ call_pymop(){
     json_file=$report/$algo-time.json
 
     tmp_file=$(mktemp)
-    jq ".test_duration = $END_TO_END_TIME" "$json_file" > "$tmp_file" && mv "$tmp_file" "$json_file"
+    jq ".test_duration = $END_TO_END_TIME | .start_time = $START_TIME | .end_time = $END_TIME" "$json_file" > "$tmp_file" && mv "$tmp_file" "$json_file"
 
     gzip -f $report/$algo.report.json $report/$algo-pytest-output.txt
 }

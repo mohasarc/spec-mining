@@ -45,13 +45,16 @@ def process_memory_file(file_path):
 
 
 def get_time_from_json(projectname, algorithm):
-    filename = f'{algorithm}-time.json'
-    # check filename
-    if not os.path.isfile(filename):
+    json_filename = f'{algorithm}-time.json'
+    output_filename = f'{projectname}_output.txt'
+
+    # check json filename
+    if not os.path.isfile(json_filename):
         add_problem(projectname, algorithm, "json time not found")
         return None
+
     # read json file
-    with open(filename, 'r') as f:
+    with open(json_filename, 'r') as f:
         json_data = json.load(f)
 
     # example json_data:
@@ -63,21 +66,40 @@ def get_time_from_json(projectname, algorithm):
     #
     #
     try:
-        instrumentation_duration = json_data['instrumentation_duration']
+        start_time = json_data['start_time']
     except:
-        instrumentation_duration = 0
+        start_time = 0
 
     try:
-        create_monitor_duration = json_data['create_monitor_duration']
+        end_time = json_data['end_time']
     except:
-        create_monitor_duration = 0
+        end_time = 0
 
     try:
-        test_duration = json_data['test_duration']
+        instrumentation_end_time = json_data['instrumentation_end_time']
     except:
-        test_duration = 0
+        instrumentation_end_time = 0
 
-    return instrumentation_duration, create_monitor_duration, test_duration
+    try:
+        create_monitor_end_time = json_data['create_monitor_end_time']
+    except:
+        create_monitor_end_time = 0
+
+    if not os.path.isfile(output_filename):
+        add_problem(projectname, algorithm, "output file not found")
+        return None
+    
+    pymop_ast_time = 0
+    with open(output_filename, 'r') as f:
+        for line in reversed(output_filename.readlines()):
+            if "Pythonmop AST after instrumentation time: " in line:
+                pymop_ast_time = line.split(' ')[-2].strip()
+                try:
+                    pymop_ast_time = float(pymop_ast_time)
+                except ValueError:
+                    pass
+
+    return start_time, end_time, instrumentation_end_time, create_monitor_end_time, pymop_ast_time
 
 
 def get_monitors_and_events_from_json(projectname, algorithm):
@@ -462,12 +484,11 @@ def main():
                         ret_time = None
 
                     if ret_time is not None:
-                        (instrumentation_duration,
-                         create_monitor_duration, test_duration) = ret_time
-                        line['time_instrumentation'] = instrumentation_duration
-                        line['time_create_monitor'] = create_monitor_duration
-                        line['test_duration'] = test_duration - (instrumentation_duration + create_monitor_duration)
-                        line['end_to_end_time'] = test_duration
+                        (start_time, end_time, instrumentation_end_time, create_monitor_end_time, pymop_ast_time) = ret_time
+                        line['time_instrumentation'] = instrumentation_end_time - start_time + pymop_ast_time
+                        line['time_create_monitor'] = create_monitor_end_time - instrumentation_end_time
+                        line['test_duration'] = end_time - create_monitor_end_time - pymop_ast_time
+                        line['end_to_end_time'] = end_time - start_time
 
                     # get time2 from db
                     # time2 = get_time_from_db(projectname, algorithm)
