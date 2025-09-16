@@ -46,7 +46,7 @@ def process_memory_file(file_path):
 
 def get_time_from_json(projectname, algorithm):
     json_filename = f'{algorithm}-time.json'
-    output_filename = f'{projectname}_output.txt'
+    output_filename = f'{algorithm}-pytest-output.txt'
 
     # check json filename
     if not os.path.isfile(json_filename):
