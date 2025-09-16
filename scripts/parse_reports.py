@@ -91,7 +91,7 @@ def get_time_from_json(projectname, algorithm):
     
     pymop_ast_time = 0
     with open(output_filename, 'r') as f:
-        for line in reversed(output_filename.readlines()):
+        for line in reversed(f.readlines()):
             if "Pythonmop AST after instrumentation time: " in line:
                 pymop_ast_time = line.split(' ')[-2].strip()
                 try:
