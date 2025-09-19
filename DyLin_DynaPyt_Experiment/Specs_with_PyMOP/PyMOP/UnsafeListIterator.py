@@ -1,6 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call, getKwOrPosArg, TRUE_EVENT, FALSE_EVENT
-import pythonmop.spec.spec as spec
+from pythonmop import Spec, call
 
 
 if not InstrumentedIterator:
@@ -11,63 +10,57 @@ class UnsafeListIterator(Spec):
     """
     Should not call next on iterator after modifying the list
     """
+    class ListMeta:
+        def __init__(self, l: list, length: int, filename: str, lineno: int, warned: bool = False):
+            self.l = l
+            self.length = length
+            self.warned = warned
+            self.filename = filename
+            self.lineno = lineno
+
     should_skip_in_sites = True
+
     def __init__(self):
         super().__init__()
-
-        @self.event_before(call(list, '__init__'))
-        def createList(**kw):
-            pass
-
-        @self.event_before(call(list, r'(__setitem__|append|extend|insert|pop|remove|clear|sort)' ))
-        def updateList(**kw):
-            pass
-        
-        @self.event_before(call(InstrumentedIterator, '__init__'), target = [1], names = [call(list, '*')])
-        def createIter(**kw):
-            iterable = getKwOrPosArg('iterable', 1, kw)
-
-            if isinstance(iterable, list):
-                return TRUE_EVENT
-            
-            return FALSE_EVENT
+        self.iterator_stack: list[self.ListMeta] = []
 
         @self.event_before(call(InstrumentedIterator, '__next__'))
         def next(**kw):
-            obj = kw['obj']
+            iterable = kw['obj'].iterable
+            filename = kw['obj'].filename
+            lineno = kw['obj'].lineno
+            if isinstance(iterable, list):
+                try:
+                    if (
+                        len(self.iterator_stack) == 0
+                        or lineno != self.iterator_stack[-1].lineno
+                        or filename != self.iterator_stack[-1].filename
+                    ):
+                        length = len(iterable)
+                        self.iterator_stack.append(self.ListMeta(iterable, length, filename, lineno))
+                    elif len(self.iterator_stack) > 0:
+                        list_meta: self.ListMeta = self.iterator_stack[-1]
+                        if (
+                            list_meta.warned is False
+                            and len(iterable) < list_meta.length
+                            and id(iterable) == id(list_meta.l)
+                            and iterable == list_meta.l
+                        ):
+                            list_meta.warned = True
+                            return True
 
-            if isinstance(obj.iterable, list):
-                return TRUE_EVENT
+                except Exception as e:
+                    print(e)
+            return False
 
-            return FALSE_EVENT
-
-    ere = 'createList updateList* createIter next* updateList+ next'
-    creation_events = ['createList']
+        # TODO: add for loop end event for clean up memory
+        # @self.event_before(call(PymopForLoopTracker, 'for_loop_end'))
+        # def end_loop_list_changed(**kw):
+        #     print('end_loop_list_changed')
+        #     if len(self.iterator_stack) > 0:
+        #         self.iterator_stack.pop()
 
     def match(self, call_file_name, call_line_num):
         print(
             f'Spec - {self.__class__.__name__}: Should not call next on iterator after modifying the list. file {call_file_name}, line {call_line_num}.')
 # =========================================================================
-
-'''
-spec_instance = UnsafeListIterator()
-spec_instance.create_monitor("D")
-
-list_1 = list()
-list_2 = list()
-
-list_1.append(12)
-list_1.append(32)
-
-list_2.append(19)
-list_2.append(32)
-
-iter_1 = iter(list_1)
-iter_2 = iter(list_2)
-
-list_1[0] = 1
-list_1.append(22)
-
-next(iter_2)  # should show no violation because list_2 was not modified
-next(iter_1)  # should show a violation since list_1 was modified
-'''
