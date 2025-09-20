@@ -1,4 +1,4 @@
-from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT
+from pythonmop import Spec, call
 import tensorflow as tf
 
 
@@ -19,13 +19,13 @@ class TensorflowNonFinitesAnalysis(Spec):
             for arg in args:
                 if self.check_tf_issue_found(arg):
                     no_nan_in_input = False
-                    return TRUE_EVENT
+                    return True
             
             if self.check_tf_issue_found(return_val):
                 if no_nan_in_input:
-                    return TRUE_EVENT
+                    return True
             
-            return FALSE_EVENT
+            return False
 
         @self.event_before(call(PymopFuncCallTracker, 'after_call'))
         def non_finite_op(**kw):
@@ -37,18 +37,18 @@ class TensorflowNonFinitesAnalysis(Spec):
             for arg in args:
                 if self.check_tf_issue_found(arg):
                     no_nan_in_input = False
-                    return TRUE_EVENT
+                    return True
             
             for arg in kwargs:
                 if self.check_tf_issue_found(arg):
                     no_nan_in_input = False
-                    return TRUE_EVENT
+                    return True
             
             if self.check_tf_issue_found(return_val):
                 if no_nan_in_input:
-                    return TRUE_EVENT
+                    return True
             
-            return FALSE_EVENT
+            return False
 
 
     # Copied as is from https://github.com/sola-st/DyLin/blob/820506e532000edaa76f22f55ba94323006b2405/src/dylin/analyses/TensorflowNonFinitesAnalysis.py#L14
@@ -70,9 +70,6 @@ class TensorflowNonFinitesAnalysis(Spec):
         if isinstance(value, tf.Tensor) and tf.is_tensor(value) and self.check_contains_nan_or_inf(value):
             return True
         return False
-
-    ere = '(non_finite_op|non_finite_op_by_arithmetic_operator)+'
-    creation_events = ['non_finite_op', 'non_finite_op_by_arithmetic_operator']
 
     def match(self, call_file_name, call_line_num):
         print(
