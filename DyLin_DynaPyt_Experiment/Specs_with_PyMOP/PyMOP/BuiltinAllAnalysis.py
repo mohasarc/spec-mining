@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT
+from pythonmop import Spec, call
 import builtins
 
 
@@ -18,11 +18,11 @@ class BuiltinAllAnalysis(Spec):
             if isinstance(arg, type([])):
                 flattened = self._flatten(arg)
                 if len(flattened) == 0 and kw['return_val'] == True:
-                    return TRUE_EVENT
+                    return True
                 else:
-                    return FALSE_EVENT
+                    return False
             else:
-                return FALSE_EVENT
+                return False
             
         @self.event_after(call(builtins, 'any'))
         def violation(**kw):
@@ -30,11 +30,11 @@ class BuiltinAllAnalysis(Spec):
             if isinstance(arg, type([])):
                 flattened = self._flatten(arg)
                 if len(flattened) == 0 and kw['return_val'] == True:
-                    return TRUE_EVENT
+                    return True
                 else:
-                    return FALSE_EVENT
+                    return False
             else:
-                return FALSE_EVENT
+                return False
 
     def _flatten(self, l):
         new_list = []
@@ -44,10 +44,6 @@ class BuiltinAllAnalysis(Spec):
             else:
                 new_list.append(i)
         return new_list
-    
-    ere = 'violation'
-
-    creation_events = ['violation']
 
     def match(self, call_file_name, call_line_num):
         print(f'Spec - {self.__class__.__name__}: Potentially unintended result for any() call at file {call_file_name}, line {call_line_num}.')

@@ -13,11 +13,8 @@ class Console_CloseReader(Spec):
         super().__init__()
 
         @self.event_after(call(sys.stdin, 'close'))
-        def close(**kw): pass
-
-    ere = 'close+'
-
-    creation_events = ['close']
+        def close(**kw):
+            return True
 
     def match(self, call_file_name, call_line_num):
         print(f'Spec - {self.__class__.__name__}: The close() method does not necessarily need to be called on sys.stdin. (violation at file {call_file_name}, line {call_line_num}).')
