@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT
+from pythonmop import Spec, call
 from requests import Session
 
 
@@ -19,16 +19,13 @@ class Session_DataMustOpenInBinary(Spec):
                 if k in kwargs:
                     data = kwargs[k]
                     if hasattr(data, 'read') and hasattr(data, 'mode') and 'b' not in data.mode:
-                        return TRUE_EVENT
+                        return True
 
-            return FALSE_EVENT
+            return False
 
         @self.event_before(call(Session, 'post'))
         def test_verify(**kw):
             return do_verify(**kw)
-
-    ere = 'test_verify'
-    creation_events = ['test_verify']
 
     def match(self, call_file_name, call_line_num):
         print(

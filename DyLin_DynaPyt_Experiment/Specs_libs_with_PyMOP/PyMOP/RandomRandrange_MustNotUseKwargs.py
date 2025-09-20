@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT
+from pythonmop import Spec, call
 import random
 
 
@@ -16,11 +16,8 @@ class RandomRandrange_MustNotUseKwargs(Spec):
         def test_verify(**kw):
             kwargs = kw['kwargs']
             if kwargs:
-                return TRUE_EVENT
-            return FALSE_EVENT
-
-    ere = 'test_verify+'
-    creation_events = ['test_verify']
+                return True
+            return False
 
     def match(self, call_file_name, call_line_num):
         print(
