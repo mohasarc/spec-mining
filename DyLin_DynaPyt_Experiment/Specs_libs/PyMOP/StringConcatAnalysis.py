@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT
+from pythonmop import Spec, call
 
 
 class StringConcatAnalysis(Spec):
@@ -20,10 +20,10 @@ class StringConcatAnalysis(Spec):
             if len(kw['args']) >= 3:
                 right = kw['args'][2]
             else:
-                return FALSE_EVENT
+                return False
 
             if not isinstance(right, type('')):
-                return FALSE_EVENT
+                return False
 
             file_name = kw['args'][-3]
             line_num = kw['args'][-2]
@@ -35,12 +35,9 @@ class StringConcatAnalysis(Spec):
                 self.concats[key] += 1
             if self.concats[key] > self.threshold:
                 self.concats[key] = -1
-                return TRUE_EVENT
+                return True
             
-            return FALSE_EVENT
-
-    ere = 'add+'
-    creation_events = ['add']
+            return False
 
     def match(self, call_file_name, call_line_num):
         print(
