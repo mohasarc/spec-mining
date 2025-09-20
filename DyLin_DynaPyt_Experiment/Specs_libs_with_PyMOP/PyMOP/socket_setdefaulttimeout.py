@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call, getKwOrPosArg, TRUE_EVENT, FALSE_EVENT
+from pythonmop import Spec, call, getKwOrPosArg
 import socket
 
 class socket_setdefaulttimeout(Spec):
@@ -18,12 +18,9 @@ class socket_setdefaulttimeout(Spec):
 
             # must not a negative number
             if timeout is not None and timeout < 0:
-                return TRUE_EVENT
+                return True
             
-            return FALSE_EVENT
-
-    ere = 'run+'
-    creation_events = ['run']
+            return False
 
     def match(self, call_file_name, call_line_num):
         # TODO:

@@ -1,6 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call, getKwOrPosArg, TRUE_EVENT, FALSE_EVENT
-import socket
+from pythonmop import Spec, call, getKwOrPosArg
 
 class socket_create_connection(Spec):
     """
@@ -18,11 +17,8 @@ class socket_create_connection(Spec):
 
             # must not a negative number
             if timeout is not None and isinstance(timeout, (int, float)) and timeout < 0:
-                return TRUE_EVENT
-            return FALSE_EVENT
-
-    ere = 'run+'
-    creation_events = ['run']
+                return True
+            return False
 
     def match(self, call_file_name, call_line_num):
         # TODO:

@@ -20,6 +20,8 @@ class socket_socket_settimeout(Spec):
             if timeout is not None and timeout < 0:
                 return True
 
+            return False
+
     def match(self, call_file_name, call_line_num):
         # TODO:
         print(
