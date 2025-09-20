@@ -1,6 +1,6 @@
 # ============================== Define spec ==============================
 from pythonmop import Spec, call, getKwOrPosArg
-import socket
+from socket import socket
 
 class socket_setdefaulttimeout(Spec):
     """

@@ -1,5 +1,6 @@
 # ============================== Define spec ==============================
 from pythonmop import Spec, call, getKwOrPosArg
+from socket import socket
 
 class socket_create_connection(Spec):
     """
