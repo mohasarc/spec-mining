@@ -4,6 +4,8 @@ import socket
 
 from pythonmop import Spec, call, VIOLATION, getKwOrPosArg
 
+import pythonmop.spec.spec as spec
+
 
 class PyDocs_MustOnlyAddSynchronizableDataToSharedList(Spec):
     """

@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT
+from pythonmop import Spec, call
 import random
 
 
@@ -16,20 +16,17 @@ class RandomParams_NoPositives(Spec):
         def test_verify(**kw):
             args = kw['args']
             if args[1] <= 0:
-                return TRUE_EVENT
+                return True
 
-            return FALSE_EVENT
+            return False
 
         @self.event_before(call(random, 'vonmisesvariate'))
         def test_verify(**kw):
             args = kw['args']
             if args[1] < 0:
-                return TRUE_EVENT
+                return True
             
-            return FALSE_EVENT
-
-    ere = 'test_verify+'
-    creation_events = ['test_verify']
+            return False
 
     def match(self, call_file_name, call_line_num):
         print(

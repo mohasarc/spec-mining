@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT
+from pythonmop import Spec, call
 from inspect import getsource
 from hashlib import sha256
 import threading
@@ -22,13 +22,9 @@ class Thread_OverrideRun(Spec):
             if sha == original_run_method_hash:  # method run not overridden
                 # argument 'target' not passed in constructor
                 if not hasattr(obj, '_target') or getattr(obj, '_target') is None:
-                    return TRUE_EVENT
+                    return True
 
-            return FALSE_EVENT
-            # obj.join()
-
-    ere = 'run+'
-    creation_events = ['run']
+            return False
 
     def match(self, call_file_name, call_line_num):
         print(
