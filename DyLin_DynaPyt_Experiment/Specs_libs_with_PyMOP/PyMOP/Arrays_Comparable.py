@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT
+from pythonmop import Spec, call
 import builtins
 
 
@@ -28,12 +28,9 @@ class Arrays_Comparable(Spec):
                             _ = new_objs[i] < new_objs[j]
                 except TypeError:
                     # Return true if it is not comparable for a violation.
-                    return TRUE_EVENT
+                    return True
             
-            return FALSE_EVENT
-
-    ere = 'invalid_sorted+'
-    creation_events = ['invalid_sorted']
+            return False
 
     def match(self, call_file_name, call_line_num):
         print(
