@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT
+from pythonmop import Spec, call
 
 
 class StringStripAnalysis(Spec):
@@ -19,16 +19,13 @@ class StringStripAnalysis(Spec):
             if len(args) > 1:
                 arg = args[1]
                 if len(set(arg)) != len(arg):
-                    return TRUE_EVENT
+                    return True
                 if len(arg) > 1 and (
                     (_self.startswith(arg) and _self[len(arg) : len(arg) + 1] in arg)
                     or (_self.endswith(arg) and _self[-len(arg) - 1 : -len(arg)] in arg)
                 ):
-                    return TRUE_EVENT
-            return FALSE_EVENT
-
-    ere = 'strip+'
-    creation_events = ['strip']
+                    return True
+            return False
 
     def match(self, call_file_name, call_line_num):
         print(

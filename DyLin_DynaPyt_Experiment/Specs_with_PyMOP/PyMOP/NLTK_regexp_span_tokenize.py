@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call, getKwOrPosArg, TRUE_EVENT, FALSE_EVENT
+from pythonmop import Spec, call, getKwOrPosArg
 from nltk.tokenize import util
 
 
@@ -18,11 +18,8 @@ class NLTK_regexp_span_tokenize(Spec):
 
             # must not be empty string
             if regexp == '':
-                return TRUE_EVENT
-            return FALSE_EVENT
-
-    ere = 'tokenize_with_empty_regexp+'
-    creation_events = ['tokenize_with_empty_regexp']
+                return True
+            return False
 
     def match(self, call_file_name, call_line_num):
         # TODO:

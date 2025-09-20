@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT
+from pythonmop import Spec, call
 
 
 class ItemInList(Spec):
@@ -34,11 +34,8 @@ class ItemInList(Spec):
 
                 # Check if the list is larger than the threshold.
                 if self.size_map[uid] > self.threshold * self.count:
-                    return TRUE_EVENT
-            return FALSE_EVENT
-
-    ere = 'list_contains+'
-    creation_events = ['list_contains']
+                    return True
+            return False
 
     def match(self, call_file_name, call_line_num):
         print(

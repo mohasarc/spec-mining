@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT
+from pythonmop import Spec, call
 from requests import Session
 
 
@@ -15,11 +15,8 @@ class HostnamesTerminatesWithSlash(Spec):
         def mount_called(**kw):
             url = kw['args'][1]
             if not url.endswith('/'):
-                return TRUE_EVENT
-            return FALSE_EVENT
-
-    ere = 'mount_called+'
-    creation_events = ['mount_called']
+                return True
+            return False
 
     def match(self, call_file_name, call_line_num):
         print(

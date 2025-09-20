@@ -1,4 +1,4 @@
-from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT
+from pythonmop import Spec, call
 import numpy as np
 import pandas as pd
 
@@ -21,18 +21,18 @@ class NonFinitesAnalysis(Spec):
             for arg in args:
                 if self.check_np_issue_found(arg):
                     no_nan_in_input = False
-                    return TRUE_EVENT
+                    return True
             
             for arg in kwargs:
                 if self.check_np_issue_found(arg):
                     no_nan_in_input = False
-                    return TRUE_EVENT
+                    return True
 
             if self.check_np_issue_found(return_val):
                 if no_nan_in_input:
-                    return TRUE_EVENT
+                    return True
 
-            return FALSE_EVENT
+            return False
 
     # copied as is from https://github.com/sola-st/DyLin/blob/main/src/dylin/analyses/NonFinitesAnalysis.py
     def can_be_checked_with_numpy(self, value: any) -> bool:
@@ -56,9 +56,6 @@ class NonFinitesAnalysis(Spec):
         if self.can_be_checked_with_numpy(value) and self.numpy_check_not_finite(value):
             return True
         return False
-
-    ere = 'non_finite_op+'
-    creation_events = ['non_finite_op']
 
     def match(self, call_file_name, call_line_num):
         print(f"Spec - {self.__class__.__name__}: Non-finite value found in argument. file {call_file_name}, line {call_line_num}.")
