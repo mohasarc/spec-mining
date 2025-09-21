@@ -16,8 +16,6 @@ class UnsafeListIterator(Spec):
             self.length = length
             self.warned = warned
 
-    should_skip_in_sites = True
-
     def __init__(self):
         super().__init__()
         self.iterator_stack: list[self.ListMeta] = []

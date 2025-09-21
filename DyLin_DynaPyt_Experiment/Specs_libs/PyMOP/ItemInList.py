@@ -7,8 +7,6 @@ class ItemInList(Spec):
     Checks if item in list is used with a list larger than 100 elements.
     src: https://docs.quantifiedcode.com/python-anti-patterns/performance/using_key_in_list_to_check_if_key_is_contained_in_a_list.html
     """
-    should_skip_in_sites = True
-
     def __init__(self):
         super().__init__()
         self.threshold = 100

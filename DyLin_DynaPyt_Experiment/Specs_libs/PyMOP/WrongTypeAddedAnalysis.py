@@ -11,8 +11,6 @@ class WrongTypeAddedAnalysis(Spec):
     """
     Warns if a value of a different type is added to a list/set that was previously homogeneous.
     """
-    should_skip_in_sites = True
-
     def __init__(self):
         super().__init__()
 

@@ -10,8 +10,6 @@ class InvalidComparisonAnalysis(Spec):
     Detects invalid or suspicious comparisons between incompatible or misleading types.
     Flags float comparisons involving infs or near equality, comparisons with functions, or type mismatches.
     """
-    should_skip_in_sites = True
-
     def __init__(self):
         super().__init__()
 
