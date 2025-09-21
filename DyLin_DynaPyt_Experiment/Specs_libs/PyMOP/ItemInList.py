@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call
+from pythonmop import Spec, call, VIOLATION
 
 
 class ItemInList(Spec):
@@ -32,12 +32,14 @@ class ItemInList(Spec):
 
                 # Check if the list is larger than the threshold.
                 if self.size_map[uid] > self.threshold * self.count:
-                    return True
-            return False
+                    return {'verdict': VIOLATION, 
+                            'custom_message': f"Checking key in list is less efficient than checking key in set at {kw['call_file_name']}, {kw['call_line_num']}.",
+                            'filename': kw['call_file_name'],
+                            'lineno': kw['call_line_num']}
 
     def match(self, call_file_name, call_line_num):
         print(
-            f'Spec - {self.__class__.__name__}: checking key in list is less efficient than checking key in set. file {call_file_name}, line {call_line_num}.')
+            f'Spec - {self.__class__.__name__}: Checking key in list is less efficient than checking key in set. File {call_file_name}, line {call_line_num}.')
 # =========================================================================
 
 

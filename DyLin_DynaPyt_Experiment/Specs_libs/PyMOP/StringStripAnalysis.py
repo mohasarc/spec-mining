@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call
+from pythonmop import Spec, call, VIOLATION
 
 
 class StringStripAnalysis(Spec):
@@ -24,8 +24,10 @@ class StringStripAnalysis(Spec):
                     (_self.startswith(arg) and _self[len(arg) : len(arg) + 1] in arg)
                     or (_self.endswith(arg) and _self[-len(arg) - 1 : -len(arg)] in arg)
                 ):
-                    return True
-            return False
+                    return {'verdict': VIOLATION, 
+                            'custom_message': f"Possible misuse of str.strip, arg may contains duplicates or might have removed something not expected at {kw['call_file_name']}, {kw['call_line_num']}.",
+                            'filename': kw['call_file_name'],
+                            'lineno': kw['call_line_num']}
 
     def match(self, call_file_name, call_line_num):
         print(

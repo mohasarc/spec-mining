@@ -1,6 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call
-import pythonmop.spec.spec as spec
+from pythonmop import Spec, call, VIOLATION
 
 if not InstrumentedIterator:
     from pythonmop.builtin_instrumentation import InstrumentedIterator
@@ -41,11 +40,13 @@ class UnsafeListIterator(Spec):
                             and iterable == list_meta.l
                         ):
                             list_meta.warned = True
-                            return True
+                            return {'verdict': VIOLATION, 
+                                    'custom_message': f"Should not call next on iterator after modifying the list at {kw['call_file_name']}, {kw['call_line_num']}.",
+                                    'filename': kw['call_file_name'],
+                                    'lineno': kw['call_line_num']}
 
                 except Exception as e:
                     print(e)
-            return False
 
         # TODO: add for loop end event for clean up memory
         @self.event_before(call(PymopForLoopTracker, 'for_loop_end'))

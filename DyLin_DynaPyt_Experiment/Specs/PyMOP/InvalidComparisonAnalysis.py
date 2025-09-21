@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT, getKwOrPosArg
+from pythonmop import Spec, call, VIOLATION, getKwOrPosArg
 import numpy as np
 import types
 import math
@@ -21,34 +21,42 @@ class InvalidComparisonAnalysis(Spec):
             right = getKwOrPosArg('right', 2, kw)
 
             if left is None or right is None:
-                return FALSE_EVENT
+                return False
 
             if self._is_float(left) or self._is_float(right):
                 if self._is_inf(left) or self._is_inf(right):
                     return {
-                        'verdict': TRUE_EVENT,
-                        'custom_message': 'float comparison with inf'
+                        'verdict': VIOLATION,
+                        'custom_message': f"Float comparison with inf at {kw['call_file_name']}, {kw['call_line_num']}.",
+                        'filename': kw['call_file_name'],
+                        'lineno': kw['call_line_num']
                     }
 
                 if self._are_nearly_equal(left, right):
                     return {
-                        'verdict': TRUE_EVENT,
-                        'custom_message': 'float comparison with nearly equal floats'
+                        'verdict': VIOLATION,
+                        'custom_message': f"Float comparison with nearly equal floats at {kw['call_file_name']}, {kw['call_line_num']}.",
+                        'filename': kw['call_file_name'],
+                        'lineno': kw['call_line_num']
                     }
 
             if self._compare_functions(left, right):
                 return {
-                    'verdict': TRUE_EVENT,
-                    'custom_message': 'comparison between function and non-function'
+                    'verdict': VIOLATION,
+                    'custom_message': f"Comparison between function and non-function at {kw['call_file_name']}, {kw['call_line_num']}.",
+                    'filename': kw['call_file_name'],
+                    'lineno': kw['call_line_num']
                 }
 
             if self._compare_types(left, right):
                 return {
-                    'verdict': TRUE_EVENT,
-                    'custom_message': 'comparison between incompatible types'
+                    'verdict': VIOLATION,
+                    'custom_message': f"Comparison between incompatible types at {kw['call_file_name']}, {kw['call_line_num']}.",
+                    'filename': kw['call_file_name'],
+                    'lineno': kw['call_line_num']
                 }
 
-            return FALSE_EVENT
+            return False
 
     def _is_float(self, x):
         return isinstance(x, float) or isinstance(x, np.floating)
@@ -77,9 +85,6 @@ class InvalidComparisonAnalysis(Spec):
 
     def _compare_types(self, left, right):
         return isinstance(left, type) and isinstance(right, type) and left != right
-
-    ere = '(after_comparison)+'
-    creation_events = ['after_comparison']
 
     def match(self, call_file_name, call_line_num, args, kwargs, custom_message):
         print(f"Spec - {self.__class__.__name__}: Suspicious or invalid comparison because of {custom_message}. file {call_file_name}, line {call_line_num}.")

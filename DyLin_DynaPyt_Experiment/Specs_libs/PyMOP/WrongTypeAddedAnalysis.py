@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call, getKwOrPosArg, TRUE_EVENT, FALSE_EVENT
+from pythonmop import Spec, call, getKwOrPosArg, VIOLATION
 import random
 
 
@@ -35,7 +35,7 @@ class WrongTypeAddedAnalysis(Spec):
         @self.event_before(call(PymopArithmeticOperatorTracker, r'__pymop__add__|__pymop__iadd__'))
         def check_add_assign(**kw):
             if len(kw['args']) < 3:
-                return FALSE_EVENT
+                return False
 
             return self._check_add("add_assign", **kw)
 
@@ -46,7 +46,7 @@ class WrongTypeAddedAnalysis(Spec):
             left = kw['obj']
 
         if not hasattr(left, '__len__') or len(left) <= self.THRESHOLD:
-            return FALSE_EVENT
+            return False
 
         if method in ('append', 'add'):
             right = getKwOrPosArg('object', 1, kw)
@@ -57,15 +57,15 @@ class WrongTypeAddedAnalysis(Spec):
             if hasattr(right, '__iter__'):
                 right = list(right)
             else:
-                return FALSE_EVENT
+                return False
         elif method == "add_assign":
             right = kw['args'][2]
             if hasattr(right, '__iter__'):
                 right = list(right)
             else:
-                return FALSE_EVENT
+                return False
         else:
-            return FALSE_EVENT
+            return False
 
         type_to_check = type(random.choice(list(left)))
 
@@ -77,8 +77,10 @@ class WrongTypeAddedAnalysis(Spec):
             if method in ('append', 'add', 'insert'):
                 if not isinstance(right, type_to_check):
                     return {
-                        "verdict": TRUE_EVENT,
-                        "param_instance": left,
+                        "verdict": VIOLATION,
+                        'custom_message': f"Added potentially wrong type to a previously homogeneous list/set at {kw['call_file_name']}, {kw['call_line_num']}.",
+                        'filename': kw['call_file_name'],
+                        'lineno': kw['call_line_num']
                     }
             elif method == 'extend':
                 if hasattr(right, '__len__') and len(right) >= self.THRESHOLD:
@@ -86,22 +88,23 @@ class WrongTypeAddedAnalysis(Spec):
                     consistent_same_type_right = all(isinstance(n, type_to_check) for n in right_sample)
                     if not consistent_same_type_right:
                         return {
-                            "verdict": TRUE_EVENT,
-                            "param_instance": left,
+                            "verdict": VIOLATION,
+                            'custom_message': f"Added potentially wrong type to a previously homogeneous list/set at {kw['call_file_name']}, {kw['call_line_num']}.",
+                            'filename': kw['call_file_name'],
+                            'lineno': kw['call_line_num']
                         }
             elif method == "add_assign":
                 if len(right) > 0:
                     right_sample_type = type(right[0])
                     if right_sample_type != type_to_check:
                         return {
-                            "verdict": TRUE_EVENT,
-                            "param_instance": left,
+                            "verdict": VIOLATION,
+                            'custom_message': f"Added potentially wrong type to a previously homogeneous list/set at {kw['call_file_name']}, {kw['call_line_num']}.",
+                            'filename': kw['call_file_name'],
+                            'lineno': kw['call_line_num']
                         }
 
-        return FALSE_EVENT
-
-    ere = 'check_append|check_add|check_insert|check_extend|check_add_assign'
-    creation_events = ['check_append', 'check_add', 'check_insert', 'check_extend', 'check_add_assign']
+        return False
 
     def match(self, call_file_name, call_line_num):
         print(
