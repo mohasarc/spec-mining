@@ -33,7 +33,7 @@ if [ "$status_number" = "1" ]; then
 elif [ "$status_number" = "2" ]; then
     scripts=("run_dynapyt_12.sh" "run_pymop_12.sh" "run_dylin_12.sh" "run_pymop_libs_12.sh")
 elif [ "$status_number" = "3" ]; then
-    scripts=("run_dynapyt_8_with_pymop.sh" "run_pymop_8_with_pymop.sh" "run_dylin_8_with_pymop.sh" "run_pymop_libs_8_with_pymop.sh" "run_dynapyt_libs_8_with_pymop.sh")
+    scripts=("run_dynapyt_8_with_pymop.sh" "run_pymop_8_with_pymop.sh" "run_dylin_8_with_pymop.sh" "run_pymop_libs_8_with_pymop.sh" "run_dynapyt_libs_with_pymop.sh")
 elif [ "$status_number" = "4" ]; then
     scripts=("run_dynapyt_12_with_pymop.sh" "run_pymop_12_with_pymop.sh" "run_dylin_12_with_pymop.sh" "run_pymop_libs_12_with_pymop.sh")
 else
