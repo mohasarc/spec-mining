@@ -8,52 +8,31 @@ class InPlaceSortAnalysis(Spec):
     Inplace sort is more efficient that sorted(). prefer using inplace if the original list is not needed.
     """
 
+    # should_skip_in_sites = True
+
     def __init__(self):
         super().__init__()
-        self.threshold = 1
+        self.stored_lists = []
+        self.threshold = 1000
 
         @self.event_before(call(builtins, 'sorted'))
         def list_sorted(**kw):
             iterable = getKwOrPosArg('iterable', 0, kw)
-
             if hasattr(iterable, "__len__") and len(iterable) > self.threshold:
-                return {
-                    "verdict": TRUE_EVENT,
-                    "param_instance": iterable,
-                }
-        
-            return FALSE_EVENT
+                self.stored_lists.append(id(iterable))
 
         # read related events
         @self.event_before(call(list, r'(__len__|__contains__|__getitem__|__eq__|__ne__|__lt__|__le__|__gt__|__ge__|__iter__)' ))
         def list_used(**kw):
-            return TRUE_EVENT
+            list_id = id(kw['args'][0])
+            if list_id in self.stored_lists:
+                self.stored_lists.remove(list_id)
 
         @self.event_before(call(End, 'end_execution'))
         def end_execution(**kw):
-            return TRUE_EVENT
-    
-    fsm = """
-        s0 [
-            list_sorted -> s1
-            list_used -> s2
-        ]
-        s1 [
-            list_used -> s2
-            end_execution -> s3
-        ]
-        s2 [
-            list_sorted -> s1
-            default s2
-        ]
-        s3 []
-        alias match = s3
-    """
-    creation_events = ['list_sorted', 'list_used']
+            if len(self.stored_lists) > 0:
+                print(f'Spec - {self.__class__.__name__}: Unnessecary use of sorted() call for lists: {self.stored_lists}.')
 
-    def match(self, call_file_name, call_line_num):
-        # TODO: Provide more information about the lists that are being sorted.
-        print(f'Spec - {self.__class__.__name__}: Unnessecary use of sorted() call at file {call_file_name}, line {call_line_num}.')
 # =========================================================================
 
 """

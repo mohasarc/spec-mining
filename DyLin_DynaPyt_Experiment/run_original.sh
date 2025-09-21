@@ -63,10 +63,7 @@ fi
 
 # Install required Python packages
 pip install pytest
-pip install numpy
-pip install matplotlib
 pip install pandas
-pip install tensorflow
 
 # Record test start time
 TEST_START_TIME=$(python3 -c 'import time; print(time.time())')
