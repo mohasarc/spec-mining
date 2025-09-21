@@ -1,5 +1,7 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT, End, getKwOrPosArg
+from pythonmop import Spec, call, End
+from pythonmop.statistics import StatisticsSingleton
+
 import builtins
 
 
@@ -8,52 +10,45 @@ class InPlaceSortAnalysis(Spec):
     Inplace sort is more efficient that sorted(). prefer using inplace if the original list is not needed.
     """
 
+    # should_skip_in_sites = True
+
     def __init__(self):
         super().__init__()
-        self.threshold = 1
+        self.stored_lists = {}
+        self.threshold = 1000
 
         @self.event_before(call(builtins, 'sorted'))
         def list_sorted(**kw):
-            iterable = getKwOrPosArg('iterable', 0, kw)
-
+            iterable = kw['args'][0]
             if hasattr(iterable, "__len__") and len(iterable) > self.threshold:
-                return {
-                    "verdict": TRUE_EVENT,
-                    "param_instance": iterable,
+                self.stored_lists[id(iterable)] = {
+                    'file_name': kw['call_file_name'],
+                    'line_num': kw['call_line_num'],
                 }
-        
-            return FALSE_EVENT
 
         # read related events
         @self.event_before(call(list, r'(__len__|__contains__|__getitem__|__eq__|__ne__|__lt__|__le__|__gt__|__ge__|__iter__)' ))
         def list_used(**kw):
-            return TRUE_EVENT
+            list_id = id(kw['args'][0])
+            if list_id in self.stored_lists:
+                self.stored_lists.pop(list_id, None)
 
         @self.event_before(call(End, 'end_execution'))
         def end_execution(**kw):
-            return TRUE_EVENT
-    
-    fsm = """
-        s0 [
-            list_sorted -> s1
-            list_used -> s2
-        ]
-        s1 [
-            list_used -> s2
-            end_execution -> s3
-        ]
-        s2 [
-            list_sorted -> s1
-            default s2
-        ]
-        s3 []
-        alias match = s3
-    """
-    creation_events = ['list_sorted', 'list_used']
+            if len(self.stored_lists) > 0:
+                for _, list_info in self.stored_lists.items():
+                    # Get the custom message
+                    custom_message = f'Spec - {self.__class__.__name__}: Unnessecary use of sorted() call for lists: {list_info["file_name"]}, {list_info["line_num"]}.'
 
-    def match(self, call_file_name, call_line_num):
-        # TODO: Provide more information about the lists that are being sorted.
-        print(f'Spec - {self.__class__.__name__}: Unnessecary use of sorted() call at file {call_file_name}, line {call_line_num}.')
+                    # Print the custom message
+                    print(custom_message)
+
+                    # Add the violation into the statistics.
+                    StatisticsSingleton().add_violation(self.__class__.__name__,
+                                                        f'last event: {None}, param: {None}, '
+                                                        f'message: {custom_message}, '
+                                                        f'file_name: {list_info["file_name"]}, line_num: {list_info["line_num"]}')
+
 # =========================================================================
 
 """

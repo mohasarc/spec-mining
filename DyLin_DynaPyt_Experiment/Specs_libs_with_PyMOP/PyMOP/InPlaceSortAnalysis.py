@@ -1,5 +1,7 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT, End, getKwOrPosArg
+from pythonmop import Spec, call, End
+from pythonmop.statistics import StatisticsSingleton
+
 import builtins
 
 
@@ -12,26 +14,40 @@ class InPlaceSortAnalysis(Spec):
 
     def __init__(self):
         super().__init__()
-        self.stored_lists = []
+        self.stored_lists = {}
         self.threshold = 1000
 
         @self.event_before(call(builtins, 'sorted'))
         def list_sorted(**kw):
-            iterable = getKwOrPosArg('iterable', 0, kw)
+            iterable = kw['args'][0]
             if hasattr(iterable, "__len__") and len(iterable) > self.threshold:
-                self.stored_lists.append(id(iterable))
+                self.stored_lists[id(iterable)] = {
+                    'file_name': kw['call_file_name'],
+                    'line_num': kw['call_line_num'],
+                }
 
         # read related events
         @self.event_before(call(list, r'(__len__|__contains__|__getitem__|__eq__|__ne__|__lt__|__le__|__gt__|__ge__|__iter__)' ))
         def list_used(**kw):
             list_id = id(kw['args'][0])
             if list_id in self.stored_lists:
-                self.stored_lists.remove(list_id)
+                self.stored_lists.pop(list_id, None)
 
         @self.event_before(call(End, 'end_execution'))
         def end_execution(**kw):
             if len(self.stored_lists) > 0:
-                print(f'Spec - {self.__class__.__name__}: Unnessecary use of sorted() call for lists: {self.stored_lists}.')
+                for _, list_info in self.stored_lists.items():
+                    # Get the custom message
+                    custom_message = f'Spec - {self.__class__.__name__}: Unnessecary use of sorted() call for lists: {list_info["file_name"]}, {list_info["line_num"]}.'
+
+                    # Print the custom message
+                    print(custom_message)
+
+                    # Add the violation into the statistics.
+                    StatisticsSingleton().add_violation(self.__class__.__name__,
+                                                        f'last event: {None}, param: {None}, '
+                                                        f'message: {custom_message}, '
+                                                        f'file_name: {list_info["file_name"]}, line_num: {list_info["line_num"]}')
 
 # =========================================================================
 
