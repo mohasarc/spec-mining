@@ -1,4 +1,4 @@
-from pythonmop import Spec, call
+from pythonmop import Spec, call, VIOLATION
 import numpy as np
 import pandas as pd
 
@@ -21,18 +21,25 @@ class NonFinitesAnalysis(Spec):
             for arg in args:
                 if self.check_np_issue_found(arg):
                     no_nan_in_input = False
-                    return True
+                    return {'verdict': VIOLATION, 
+                            'custom_message': f"Non-finite value found in argument at {kw['call_file_name']}, {kw['call_line_num']}.",
+                            'filename': kw['call_file_name'],
+                            'lineno': kw['call_line_num']}
             
             for arg in kwargs:
                 if self.check_np_issue_found(arg):
                     no_nan_in_input = False
-                    return True
+                    return {'verdict': VIOLATION, 
+                            'custom_message': f"Non-finite value found in argument at {kw['call_file_name']}, {kw['call_line_num']}.",
+                            'filename': kw['call_file_name'],
+                            'lineno': kw['call_line_num']}
 
             if self.check_np_issue_found(return_val):
                 if no_nan_in_input:
-                    return True
-
-            return False
+                    return {'verdict': VIOLATION, 
+                            'custom_message': f"Non-finite value found in argument at {kw['call_file_name']}, {kw['call_line_num']}.",
+                            'filename': kw['call_file_name'],
+                            'lineno': kw['call_line_num']}
 
     # copied as is from https://github.com/sola-st/DyLin/blob/main/src/dylin/analyses/NonFinitesAnalysis.py
     def can_be_checked_with_numpy(self, value: any) -> bool:

@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call
+from pythonmop import Spec, call, VIOLATION
 import random
 
 
@@ -16,17 +16,19 @@ class RandomParams_NoPositives(Spec):
         def test_verify(**kw):
             args = kw['args']
             if args[1] <= 0:
-                return True
-
-            return False
+                return {'verdict': VIOLATION, 
+                        'custom_message': f"The call to method lognormvariate in file {kw['call_file_name']} at line {kw['call_line_num']} does not have the correct parameters.",
+                        'filename': kw['call_file_name'],
+                        'lineno': kw['call_line_num']}
 
         @self.event_before(call(random, 'vonmisesvariate'))
         def test_verify(**kw):
             args = kw['args']
             if args[1] < 0:
-                return True
-            
-            return False
+                return {'verdict': VIOLATION, 
+                        'custom_message': f"The call to method vonmisesvariate in file {kw['call_file_name']} at line {kw['call_line_num']} does not have the correct parameters.",
+                        'filename': kw['call_file_name'],
+                        'lineno': kw['call_line_num']}
 
     def match(self, call_file_name, call_line_num):
         print(

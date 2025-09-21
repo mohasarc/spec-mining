@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call
+from pythonmop import Spec, call, VIOLATION
 import sys
 
 
@@ -14,7 +14,10 @@ class Console_CloseErrorWriter(Spec):
 
         @self.event_after(call(sys.stderr, 'close'))
         def close(**kw):
-            return True
+            return {'verdict': VIOLATION, 
+                    'custom_message': f"The close() method does not necessarily need to be called on sys.stderr at {kw['call_file_name']}, {kw['call_line_num']}.",
+                    'filename': kw['call_file_name'],
+                    'lineno': kw['call_line_num']}
 
     def match(self, call_file_name, call_line_num):
         print(f'Spec - {self.__class__.__name__}: The close() method does not necessarily need to be called on sys.stderr. (violation at file {call_file_name}, line {call_line_num}).')

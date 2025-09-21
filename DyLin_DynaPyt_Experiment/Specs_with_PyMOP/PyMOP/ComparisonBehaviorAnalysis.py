@@ -1,4 +1,4 @@
-from pythonmop import Spec, call, TRUE_EVENT, FALSE_EVENT
+from pythonmop import Spec, VIOLATION, call
 import numpy as np
 
 
@@ -39,44 +39,56 @@ class ComparisonBehaviorAnalysis(Spec):
         result = kw['return_val']
 
         if self.is_excluded(left) or self.is_excluded(right):
-            return FALSE_EVENT
+            return False
 
         try:
             if self.check_symmetry(left, right, op, result):
                 return {
-                    'verdict': TRUE_EVENT,
-                    'custom_message': f"bad symmetry for {op} with {left} {right}"
+                    'verdict': VIOLATION,
+                    'custom_message': f"Bad symmetry for {op} with {left} {right} at {kw['call_file_name']}, {kw['call_line_num']}.",
+                    'filename': kw['call_file_name'],
+                    'lineno': kw['call_line_num']
                 }
             if self.check_stability(left, right, op, result):
                 return {
-                    'verdict': TRUE_EVENT,
-                    'custom_message': f"bad stability for {op}"
+                    'verdict': VIOLATION,
+                    'custom_message': f"Bad stability for {op} at {kw['call_file_name']}, {kw['call_line_num']}.",
+                    'filename': kw['call_file_name'],
+                    'lineno': kw['call_line_num']
                 }
             elif self.check_identity(left):
                 return {
-                    'verdict': TRUE_EVENT,
-                    'custom_message': f"bad identity {op} of {left} returned true when compared with None"
+                    'verdict': VIOLATION,
+                    'custom_message': f"Bad identity {op} of {left} returned true when compared with None at {kw['call_file_name']}, {kw['call_line_num']}.",
+                    'filename': kw['call_file_name'],
+                    'lineno': kw['call_line_num']
                 }
             elif self.check_identity(right):
                 return {
-                    'verdict': TRUE_EVENT,
-                    'custom_message': f"bad identity {op} of {right} returned true when compared with None"
+                    'verdict': VIOLATION,
+                    'custom_message': f"Bad identity {op} of {right} returned true when compared with None at {kw['call_file_name']}, {kw['call_line_num']}.",
+                    'filename': kw['call_file_name'],
+                    'lineno': kw['call_line_num']
                 }
             elif self.check_reflexivity(left):
                 return {
-                    'verdict': TRUE_EVENT,
-                    'custom_message': f"bad reflexivity {left} {op} to itself"
+                    'verdict': VIOLATION,
+                    'custom_message': f"Bad reflexivity {left} {op} to itself at {kw['call_file_name']}, {kw['call_line_num']}.",
+                    'filename': kw['call_file_name'],
+                    'lineno': kw['call_line_num']
                 }
             elif self.check_reflexivity(right):
                 return {
-                    'verdict': TRUE_EVENT,
-                    'custom_message': f"bad reflexivity {right} {op} to itself"
+                    'verdict': VIOLATION,
+                    'custom_message': f"Bad reflexivity {right} {op} to itself at {kw['call_file_name']}, {kw['call_line_num']}.",
+                    'filename': kw['call_file_name'],
+                    'lineno': kw['call_line_num']
                 }
         except (ValueError, TypeError):
             # some libraries e.g. pandas do not allow to do all kinds of comparisons e.g. pandas.series == None
-            return FALSE_EVENT
-        
-        return FALSE_EVENT
+            return False
+
+        return False
 
     def check_reflexivity(self, left) -> bool:
         return left != left
@@ -100,18 +112,6 @@ class ComparisonBehaviorAnalysis(Spec):
                 if (left != right) != normal:
                     return True
         return False
-
-    fsm = """
-        s0 [
-            eq_end -> s1
-            ne_end -> s1
-        ]
-        s1 [
-            default s1
-        ]
-        alias match = s1
-    """
-    creation_events = ['eq_end', 'ne_end']
 
     def match(self, call_file_name, call_line_num, args, kwargs, custom_message):
         print(

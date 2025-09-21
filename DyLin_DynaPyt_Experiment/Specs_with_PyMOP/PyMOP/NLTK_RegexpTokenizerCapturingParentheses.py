@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call, getKwOrPosArg
+from pythonmop import Spec, call, VIOLATION, getKwOrPosArg
 from nltk.tokenize import RegexpTokenizer
 import re
 
@@ -36,8 +36,10 @@ class NLTK_RegexpTokenizerCapturingParentheses(Spec):
             pattern = getKwOrPosArg('pattern', 1, kw)
 
             if pattern is not None and contains_capturing_groups(pattern):
-                return True
-            return False
+                return {'verdict': VIOLATION, 
+                        'custom_message': f"Must use non_capturing parentheses for RegexpTokenizer pattern at {kw['call_file_name']}, {kw['call_line_num']}.",
+                        'filename': kw['call_file_name'],
+                        'lineno': kw['call_line_num']}
     
     def match(self, call_file_name, call_line_num):
         print(
