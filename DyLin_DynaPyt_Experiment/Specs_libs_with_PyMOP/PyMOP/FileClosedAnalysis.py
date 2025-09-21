@@ -1,5 +1,7 @@
 # ============================== Define spec ==============================
 from pythonmop import Spec, call, getStackTrace, parseStackTrace, End
+from pythonmop.statistics import StatisticsSingleton
+
 import builtins
 
 
@@ -63,19 +65,17 @@ class FileClosedAnalysis(Spec):
     TODO: Add description here.
     """
     def __init__(self):
-        # self.end_state_violation = True
         self.opened = {}
-        self.openStackTrace = {}
         super().__init__()
 
         # open method
         @self.event_before(call(MonitoredFile, 'open'))
         def open(**kw):
             file = kw['args'][1]
-            stackTrace = kw['args'][2]
-
-            self.opened[file] = True
-            self.openStackTrace[file] = stackTrace
+            self.opened[file] = {
+                                    'filename': kw['call_file_name'],
+                                    'lineno': kw['call_line_num']
+                                }
 
         # close method
         @self.event_before(call(MonitoredFile, 'close'))
@@ -83,32 +83,24 @@ class FileClosedAnalysis(Spec):
             file = kw['obj'].originalFile
 
             if file in self.opened:
-                del self.opened[file]
+                self.opened.pop(file)
         
         @self.event_after(call(End, 'end_execution'))
         def end(**kw):
-            pass
+            if len(self.opened) > 0:
+                for file in self.opened:
+                    # Get the custom message
+                    custom_message = f'Spec - {self.__class__.__name__}: You forgot to close {file} at {self.opened[file]["filename"]}, {self.opened[file]["lineno"]}.'
 
-    fsm = '''
-        s0 [
-            open -> s1
-        ]
-        s1 [
-            close -> s0
-            end -> s2
-        ]
-        s2 [
-            default s2
-        ]
-        alias match = s2
-    '''
-    creation_events = ['open']
+                    # Print the custom message
+                    print(custom_message)
 
-    def match(self, call_file_name, call_line_num):
-        size = len(self.opened)
-        print(f'Spec - {self.__class__.__name__}: You forgot to close {size} files.')
-        for file in self.opened:
-            print(f'File {file} opened at {self.openStackTrace[file]}')
+                    # Add the violation into the statistics.
+                    StatisticsSingleton().add_violation(self.__class__.__name__,
+                                                        f'last event: {None}, param: {None}, '
+                                                        f'message: {custom_message}, '
+                                                        f'file_name: {self.opened[file]["filename"]}, line_num: {self.opened[file]["lineno"]}')
+
 # =========================================================================
 
 '''

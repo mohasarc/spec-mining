@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call
+from pythonmop import Spec, call, VIOLATION
 
 
 class StringConcatAnalysis(Spec):
@@ -35,13 +35,14 @@ class StringConcatAnalysis(Spec):
                 self.concats[key] += 1
             if self.concats[key] > self.threshold:
                 self.concats[key] = -1
-                return True
-            
-            return False
+                return {'verdict': VIOLATION, 
+                        'custom_message': f"Attempted to concat strings alot with + operator at {kw['call_file_name']}, {kw['call_line_num']}.",
+                        'filename': kw['call_file_name'],
+                        'lineno': kw['call_line_num']}
 
     def match(self, call_file_name, call_line_num):
         print(
-            f'Spec - {self.__class__.__name__}:  at file {call_file_name}, line {call_line_num}.')
+            f'Spec - {self.__class__.__name__}: Attempted to concat strings alot with + operator at file {call_file_name}, line {call_line_num}.')
 # =========================================================================
 
 """

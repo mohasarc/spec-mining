@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call
+from pythonmop import Spec, call, VIOLATION
 import random
 
 
@@ -16,8 +16,10 @@ class RandomRandrange_MustNotUseKwargs(Spec):
         def test_verify(**kw):
             kwargs = kw['kwargs']
             if kwargs:
-                return True
-            return False
+                return {'verdict': VIOLATION, 
+                        'custom_message': f"Keyword arguments should not be used in random.randrange because they can be interpreted in unexpected ways at {kw['call_file_name']}, {kw['call_line_num']}.",
+                        'filename': kw['call_file_name'],
+                        'lineno': kw['call_line_num']}
 
     def match(self, call_file_name, call_line_num):
         print(

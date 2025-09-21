@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call
+from pythonmop import Spec, call, VIOLATION
 from queue import PriorityQueue
 import heapq
 
@@ -19,7 +19,10 @@ class PriorityQueue_NonComparable(Spec):
                 obj < obj
             except TypeError as e:
                 # its not comparable
-                return True
+                return {'verdict': VIOLATION, 
+                        'custom_message': f"PriorityQueue is about to have a non-comparable object at {kw['call_file_name']}, {kw['call_line_num']}.",
+                        'filename': kw['call_file_name'],
+                        'lineno': kw['call_line_num']}
 
         @self.event_before(call(heapq, 'heappush'))
         def heap_push(**kw):
@@ -28,7 +31,10 @@ class PriorityQueue_NonComparable(Spec):
                 obj < obj
             except TypeError as e:
                 # its not comparable
-                return True
+                return {'verdict': VIOLATION, 
+                        'custom_message': f"PriorityQueue is about to have a non-comparable object at {kw['call_file_name']}, {kw['call_line_num']}.",
+                        'filename': kw['call_file_name'],
+                        'lineno': kw['call_line_num']}
 
     def match(self, call_file_name, call_line_num):
         print(

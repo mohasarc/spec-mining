@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call
+from pythonmop import Spec, call, VIOLATION
 from requests import Session
 
 
@@ -19,9 +19,10 @@ class Session_DataMustOpenInBinary(Spec):
                 if k in kwargs:
                     data = kwargs[k]
                     if hasattr(data, 'read') and hasattr(data, 'mode') and 'b' not in data.mode:
-                        return True
-
-            return False
+                        return {'verdict': VIOLATION, 
+                                'custom_message': f"It is strongly recommended that you open files in binary mode. This is because Requests may attempt to provide the Content-Length header for you, and if it does this value will be set to the number of bytes in the file. Errors may occur if you open the file in text mode at {kw['call_file_name']}, {kw['call_line_num']}.",
+                                'filename': kw['call_file_name'],
+                                'lineno': kw['call_line_num']}
 
         @self.event_before(call(Session, 'post'))
         def test_verify(**kw):

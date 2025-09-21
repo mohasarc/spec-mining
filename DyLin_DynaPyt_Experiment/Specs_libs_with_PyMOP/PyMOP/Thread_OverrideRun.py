@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call
+from pythonmop import Spec, call, VIOLATION
 from inspect import getsource
 from hashlib import sha256
 import threading
@@ -22,9 +22,10 @@ class Thread_OverrideRun(Spec):
             if sha == original_run_method_hash:  # method run not overridden
                 # argument 'target' not passed in constructor
                 if not hasattr(obj, '_target') or getattr(obj, '_target') is None:
-                    return True
-
-            return False
+                    return {'verdict': VIOLATION, 
+                            'custom_message': f"Thread run method not overridden or argument target not passed in constructor at {kw['call_file_name']}, {kw['call_line_num']}.",
+                            'filename': kw['call_file_name'],
+                            'lineno': kw['call_line_num']}
 
     def match(self, call_file_name, call_line_num):
         print(

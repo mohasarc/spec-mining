@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call, getKwOrPosArg
+from pythonmop import Spec, call, VIOLATION, getKwOrPosArg
 from nltk.tokenize import util
 
 
@@ -18,13 +18,15 @@ class NLTK_regexp_span_tokenize(Spec):
 
             # must not be empty string
             if regexp == '':
-                return True
-            return False
+                return {'verdict': VIOLATION, 
+                        'custom_message': f"Regular expression must not be empty at {kw['call_file_name']}, {kw['call_line_num']}.",
+                        'filename': kw['call_file_name'],
+                        'lineno': kw['call_line_num']}
 
     def match(self, call_file_name, call_line_num):
         # TODO:
         print(
-            f'Spec - {self.__class__.__name__}: regular expression must not be empty. file {call_file_name}, line {call_line_num}.')
+            f'Spec - {self.__class__.__name__}: Regular expression must not be empty. file {call_file_name}, line {call_line_num}.')
 
 
 # =========================================================================

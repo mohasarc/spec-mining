@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call
+from pythonmop import Spec, call, VIOLATION
 from requests import Session
 
 
@@ -15,8 +15,10 @@ class HostnamesTerminatesWithSlash(Spec):
         def mount_called(**kw):
             url = kw['args'][1]
             if not url.endswith('/'):
-                return True
-            return False
+                return {'verdict': VIOLATION, 
+                        'custom_message': f"The call to method mount in file {kw['call_file_name']} at line {kw['call_line_num']} does not terminate the hostname with a /.",
+                        'filename': kw['call_file_name'],
+                        'lineno': kw['call_line_num']}
 
     def match(self, call_file_name, call_line_num):
         print(

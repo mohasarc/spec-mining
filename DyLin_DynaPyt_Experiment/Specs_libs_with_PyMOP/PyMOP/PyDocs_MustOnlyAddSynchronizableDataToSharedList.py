@@ -4,8 +4,6 @@ import socket
 
 from pythonmop import Spec, call, VIOLATION, getKwOrPosArg
 
-import pythonmop.spec.spec as spec
-
 
 class PyDocs_MustOnlyAddSynchronizableDataToSharedList(Spec):
     """
@@ -20,7 +18,10 @@ class PyDocs_MustOnlyAddSynchronizableDataToSharedList(Spec):
             data = getKwOrPosArg('object', 1, kw)
 
             if not self.is_synchronizable(data):
-                return VIOLATION
+                return {'verdict': VIOLATION, 
+                        'custom_message': f"Must only add synchronizable data to shared list at {kw['call_file_name']}, {kw['call_line_num']}.",
+                        'filename': kw['call_file_name'],
+                        'lineno': kw['call_line_num']}
 
     def is_synchronizable(self, data):
         # If it's a dict, it's not synchronizable

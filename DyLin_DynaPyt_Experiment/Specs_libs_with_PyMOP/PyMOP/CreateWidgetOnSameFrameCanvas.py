@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call
+from pythonmop import Spec, call, VIOLATION
 from nltk.draw.util import CanvasFrame, CanvasWidget, SequenceWidget
 from tkinter import Tk
 
@@ -28,11 +28,11 @@ class CreateWidgetOnSameFrameCanvas(Spec):
             fCanvas = canvasFrame.canvas()
             wCanvas = canvasWidget.canvas()
 
-            # TODO: Do we need to recursively check the children of the CanvasWidget?
-            # Logically, it makes sense, but docs don't mention it directly.
-
             if wCanvas.winfo_id() != fCanvas.winfo_id():
-                return True
+                return {'verdict': VIOLATION, 
+                        'custom_message': f"CanvasWidget must be created on the same canvas as the CanvasFrame it is being added to at {kw['call_file_name']}, {kw['call_line_num']}.",
+                        'filename': kw['call_file_name'],
+                        'lineno': kw['call_line_num']}
 
 
     def match(self, call_file_name, call_line_num):

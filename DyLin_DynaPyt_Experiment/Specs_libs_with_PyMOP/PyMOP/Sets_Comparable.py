@@ -1,5 +1,5 @@
 # ============================== Define spec ==============================
-from pythonmop import Spec, call
+from pythonmop import Spec, call, VIOLATION
 import builtins
 
 
@@ -28,9 +28,10 @@ class Sets_Comparable(Spec):
                             _ = new_objs[i] < new_objs[j]
                 except TypeError:
                     # Return true if it is not comparable for a violation.
-                    return True
-            
-            return False
+                    return {'verdict': VIOLATION, 
+                            'custom_message': f"Set with non-comparable elements is about to be sorted at {kw['call_file_name']}, {kw['call_line_num']}.",
+                            'filename': kw['call_file_name'],
+                            'lineno': kw['call_line_num']}
 
     def match(self, call_file_name, call_line_num):
         print(
