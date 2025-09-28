@@ -1,6 +1,5 @@
 dynapyt.analyses.BuiltinAllAnalysis.BuiltinAllAnalysis
 dynapyt.analyses.ChangeListWhileIterating.ChangeListWhileIterating
-dynapyt.analyses.FilesClosedAnalysis.FilesClosedAnalysis
 dynapyt.analyses.InPlaceSortAnalysis.InPlaceSortAnalysis
 dynapyt.analyses.ItemInListAnalysis.ItemInListAnalysis
 dynapyt.analyses.StringConcatAnalysis.StringConcatAnalysis

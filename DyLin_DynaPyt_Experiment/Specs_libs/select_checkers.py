@@ -19,11 +19,6 @@ issue_codes = {
         "analysis": "dylin.analyses.ItemInListAnalysis.ItemInListAnalysis",
         "aliases": [],
     },
-    "PC-06": {
-        "name": "FilesClosed",
-        "analysis": "dylin.analyses.FilesClosedAnalysis.FilesClosedAnalysis",
-        "aliases": ["A-08"],
-    },
     "SL-01": {
         "name": "InPlaceSort",
         "analysis": "dylin.analyses.InPlaceSortAnalysis.InPlaceSortAnalysis",
