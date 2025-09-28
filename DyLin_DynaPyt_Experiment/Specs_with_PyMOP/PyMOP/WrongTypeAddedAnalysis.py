@@ -16,21 +16,41 @@ class WrongTypeAddedAnalysis(Spec):
 
         self.THRESHOLD = 10
 
-        @self.event_before(call(list, 'append'))
+        @self.event_before(call(PymopFuncCallTracker, 'before_call'))
         def check_append(**kw):
-            return self._check_add("append", **kw)
+            func = kw['args'][1]
+            try:
+                func_self = func.__self__
+                func_name = func.__name__
+                if isinstance(func_self, list) and func_name == "append":
+                    kw['func_self'] = func_self
+                    return self._check_add("append", **kw)
+            except:
+                pass
 
-        @self.event_before(call(list, 'add'))
-        def check_add(**kw):
-            return self._check_add("add", **kw)
-
-        @self.event_before(call(list, 'insert'))
+        @self.event_before(call(PymopFuncCallTracker, 'before_call'))
         def check_insert(**kw):
-            return self._check_add("insert", **kw)
+            func = kw['args'][1]
+            try:
+                func_self = func.__self__
+                func_name = func.__name__
+                if isinstance(func_self, list) and func_name == "insert":
+                    kw['func_self'] = func_self
+                    return self._check_add("insert", **kw)
+            except:
+                pass
 
-        @self.event_before(call(list, 'extend'))
+        @self.event_before(call(PymopFuncCallTracker, 'before_call'))
         def check_extend(**kw):
-            return self._check_add("extend", **kw)
+            func = kw['args'][1]
+            try:
+                func_self = func.__self__
+                func_name = func.__name__
+                if isinstance(func_self, list) and func_name == "extend":
+                    kw['func_self'] = func_self
+                    return self._check_add("extend", **kw)
+            except:
+                pass
 
         @self.event_before(call(PymopArithmeticOperatorTracker, r'__pymop__add__|__pymop__iadd__'))
         def check_add_assign(**kw):
@@ -43,17 +63,17 @@ class WrongTypeAddedAnalysis(Spec):
         if method == "add_assign":
             left = kw['args'][1]
         else:
-            left = kw['obj']
+            left = kw['func_self']
 
         if not hasattr(left, '__len__') or len(left) <= self.THRESHOLD:
             return False
 
-        if method in ('append', 'add'):
-            right = getKwOrPosArg('object', 1, kw)
+        if method in ('append'):
+            right = kw['args'][2][0]
         elif method == 'insert':
-            right = getKwOrPosArg('object', 2, kw)
+            right = kw['args'][2][1]
         elif method == 'extend':
-            right = getKwOrPosArg('object', 1, kw)
+            right = kw['args'][2][0]
             if hasattr(right, '__iter__'):
                 right = list(right)
             else:

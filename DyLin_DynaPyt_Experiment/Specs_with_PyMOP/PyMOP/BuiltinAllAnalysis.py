@@ -12,27 +12,37 @@ class BuiltinAllAnalysis(Spec):
     def __init__(self):
         super().__init__()
 
-        @self.event_after(call(builtins, 'all'))
+        @self.event_after(call(PymopFuncCallTracker, 'after_call'))
         def violation(**kw):
-            arg = kw['args'][0]
-            if isinstance(arg, type([])):
-                flattened = self._flatten(arg)
-                if len(flattened) == 0 and kw['return_val'] == True:
-                    return {'verdict': VIOLATION, 
-                        'custom_message': f"Potentially unintended result for any() call at {kw['call_file_name']}, {kw['call_line_num']}.",
-                        'filename': kw['call_file_name'],
-                        'lineno': kw['call_line_num']}
+            return_val = kw['args'][1]
+            func = kw['args'][2]
+            args = kw['args'][3]
+            kwargs = kw['args'][4]
+            if func == builtins.all:
+                arg = args[0]
+                if isinstance(arg, type([])):
+                    flattened = self._flatten(arg)
+                    if len(flattened) == 0 and return_val == True:
+                        return {'verdict': VIOLATION, 
+                            'custom_message': f"Potentially unintended result for any() call at {kw['call_file_name']}, {kw['call_line_num']}.",
+                            'filename': kw['call_file_name'],
+                            'lineno': kw['call_line_num']}
             
-        @self.event_after(call(builtins, 'any'))
+        @self.event_after(call(PymopFuncCallTracker, 'after_call'))
         def violation(**kw):
-            arg = kw['args'][0]
-            if isinstance(arg, type([])):
-                flattened = self._flatten(arg)
-                if len(flattened) == 0 and kw['return_val'] == True:
-                    return {'verdict': VIOLATION, 
-                        'custom_message': f"Potentially unintended result for any() call at {kw['call_file_name']}, {kw['call_line_num']}.",
-                        'filename': kw['call_file_name'],
-                        'lineno': kw['call_line_num']}
+            return_val = kw['args'][1]
+            func = kw['args'][2]
+            args = kw['args'][3]
+            kwargs = kw['args'][4]
+            if func == builtins.any:
+                arg = args[0]
+                if isinstance(arg, type([])):
+                    flattened = self._flatten(arg)
+                    if len(flattened) == 0 and return_val == True:
+                        return {'verdict': VIOLATION, 
+                            'custom_message': f"Potentially unintended result for any() call at {kw['call_file_name']}, {kw['call_line_num']}.",
+                            'filename': kw['call_file_name'],
+                            'lineno': kw['call_line_num']}
 
     def _flatten(self, l):
         new_list = []

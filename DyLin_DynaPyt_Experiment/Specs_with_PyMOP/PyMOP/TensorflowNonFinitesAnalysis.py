@@ -34,8 +34,8 @@ class TensorflowNonFinitesAnalysis(Spec):
         @self.event_before(call(PymopFuncCallTracker, 'after_call'))
         def non_finite_op(**kw):
             return_val = kw['args'][1]
-            args = kw['args'][2]
-            kwargs = kw['args'][3]
+            args = kw['args'][3]
+            kwargs = kw['args'][4]
             no_nan_in_input = True
             
             for arg in args:
