@@ -1,8 +1,7 @@
 # ============================== Define spec ==============================
 from pythonmop import Spec, call, VIOLATION
 
-if not InstrumentedIterator:
-    from pythonmop.builtin_instrumentation import InstrumentedIterator
+import collections
 
 
 class UnsafeListIterator(Spec):
@@ -10,49 +9,65 @@ class UnsafeListIterator(Spec):
     Should not call next on iterator after modifying the list
     """
     class ListMeta:
-        def __init__(self, l: list, length: int, warned: bool = False):
+        def __init__(self, l: list, length: int):
             self.l = l
             self.length = length
-            self.warned = warned
 
     def __init__(self):
         super().__init__()
         self.iterator_stack: list[self.ListMeta] = []
 
-        @self.event_before(call(InstrumentedIterator, '__next__'))
-        def next(**kw):
-            iterable = kw['obj'].iterable
+        @self.event_before(call(PymopForLoopTracker, 'for_loop_start'))
+        def for_loop_start(**kw):
+            # Get the iterable from the for loop
+            iterable = kw['args'][1]
 
-            if isinstance(iterable, list):
-                try:
-                    if (
-                        len(self.iterator_stack) == 0
-                        or id(iterable) != id(self.iterator_stack[-1].l)
-                    ):
-                        length = len(iterable)
-                        self.iterator_stack.append(self.ListMeta(iterable, length))
-                    elif len(self.iterator_stack) > 0:
-                        list_meta: self.ListMeta = self.iterator_stack[-1]
-                        if (
-                            list_meta.warned is False
-                            and len(iterable) < list_meta.length
-                            and id(iterable) == id(list_meta.l)
-                            and iterable == list_meta.l
-                        ):
-                            list_meta.warned = True
-                            return {'verdict': VIOLATION, 
-                                    'custom_message': f"Should not call next on iterator after modifying the list at {kw['call_file_name']}, {kw['call_line_num']}.",
-                                    'filename': kw['call_file_name'],
-                                    'lineno': kw['call_line_num']}
+            # Check if the iterable is a list
+            if isinstance(iterable, collections.abc.Iterator) or isinstance(iterable, type({})):
+                return False
 
-                except Exception as e:
-                    print(e)
+            try:
+                # Check if the iterable is not in the stack
+                if (
+                    len(self.iterator_stack) == 0
+                    or id(iterable) != id(self.iterator_stack[-1].l)
+                ):
+                    # Add the iterable to the stack
+                    length = len(iterable)
+                    self.iterator_stack.append(self.ListMeta(iterable, length))
+            except Exception as e:
+                print(e)
 
         # TODO: add for loop end event for clean up memory
         @self.event_before(call(PymopForLoopTracker, 'for_loop_end'))
         def end_loop_list_changed(**kw):
-            if len(self.iterator_stack) > 0:
+            # Get the iterable from the for loop
+            iterable = kw['args'][1]
+
+            # Check if the iterable is a list
+            if isinstance(iterable, collections.abc.Iterator) or isinstance(iterable, type({})):
+                return False
+
+            try:
+                # Get the iterable stored at the beginning of the loop
+                list_meta: self.ListMeta = self.iterator_stack[-1]
+
+                # Check if the iterable is the same as the iterable stored at the beginning of the loop
+                if (
+                    len(iterable) < list_meta.length
+                    and id(iterable) == id(list_meta.l)
+                    and iterable == list_meta.l
+                ):
+                    # Return a violation if the iterable is the same as the iterable stored at the beginning of the loop and modified
+                    return {'verdict': VIOLATION, 
+                            'custom_message': f"Should not call next on iterator after modifying the list at {kw['call_file_name']}, {kw['call_line_num']}.",
+                            'filename': kw['call_file_name'],
+                            'lineno': kw['call_line_num']}
+
+                # Pop the iterable from the stack
                 self.iterator_stack.pop()
+            except Exception as e:
+                print(e)
 
     def match(self, call_file_name, call_line_num):
         print(
