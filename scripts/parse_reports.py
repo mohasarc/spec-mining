@@ -493,10 +493,22 @@ def main():
 
                     if ret_time is not None:
                         (start_time, end_time, instrumentation_end_time, create_monitor_end_time, pymop_ast_time) = ret_time
-                        line['time_instrumentation'] = instrumentation_end_time - start_time + pymop_ast_time
-                        line['time_create_monitor'] = create_monitor_end_time - instrumentation_end_time
-                        line['test_duration'] = end_time - create_monitor_end_time - pymop_ast_time
-                        line['end_to_end_time'] = end_time - start_time
+                        try:
+                            line['time_instrumentation'] = instrumentation_end_time - start_time + pymop_ast_time
+                        except Exception as e:
+                            line['time_instrumentation'] = 'Error'
+                        try:
+                            line['time_create_monitor'] = create_monitor_end_time - instrumentation_end_time
+                        except Exception as e:
+                            line['time_create_monitor'] = 'Error'
+                        try:
+                            line['test_duration'] = end_time - create_monitor_end_time - pymop_ast_time
+                        except Exception as e:
+                            line['test_duration'] = 'Error'
+                        try:
+                            line['end_to_end_time'] = end_time - start_time
+                        except Exception as e:
+                            line['end_to_end_time'] = 'Error'
 
                     # get time2 from db
                     # time2 = get_time_from_db(projectname, algorithm)
