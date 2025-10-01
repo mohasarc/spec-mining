@@ -163,17 +163,25 @@ def get_num_violations_from_json(projectname, algorithm):
     unique_violations_test = {}
 
     for spec in json_data.keys():
-        size = len(json_data[spec])
-        return_spec_string += f'{spec}={size};'
-
         # Count unique elements and their occurrences
+        size = 0
         violations = []
         violations_test = {}
+
+        # Go through each violation in the spec
         for item in json_data[spec]:
-            violations += [item['violation']]
-            if violations_test.get(item['violation']) is None:
-                violations_test[item['violation']] = set()
-            violations_test[item['violation']].add(item['test'])
+            violations += [item]
+            if violations_test.get(item) is None:
+                violations_test[item] = set()
+            # violations_test[item].add(item['test'])
+
+            # Add the count of the violation to the size
+            size += json_data[spec][item]['count']
+
+        # Add the size to the return string
+        return_spec_string += f'{spec}={size};'
+
+        # Count the unique violations
         violations_counter = Counter(violations)
 
         # Store the unique violation counts and summary in the dictionaries
@@ -181,11 +189,11 @@ def get_num_violations_from_json(projectname, algorithm):
         unique_violations_test[spec] = dict(violations_test)
         unique_violations_count += f'{spec}={len(dict(violations_counter))};'
 
+        # Add the size to the total violations
         total_violations += size
 
     return (return_spec_string[:-1], total_violations, unique_violations_count, unique_violations_summary,
             unique_violations_test)
-
 
 def get_result_line(filename):
     # get last line from file
