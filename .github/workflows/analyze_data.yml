@@ -15,6 +15,10 @@ on:
         description: 'Space-separated list of repositories in the format owner/repo.'
         required: true
         type: string
+      output-tag:
+        description: 'The tag of the output to be created.'
+        required: true
+        type: string
 
 jobs:
     analyze_data:
@@ -139,8 +143,8 @@ jobs:
                   ./projects/reports/output_sanity_check.txt
                   ./projects/reports/results_tests.csv
                   ./projects/reports/output_parse_results_tests.txt
-                tag_name: ${{inputs.release-tag}}
-                name: ${{inputs.release-tag}}
+                tag_name: ${{inputs.output-tag}}
+                name: ${{inputs.output-tag}}
                 draft: false
                 prerelease: true
                 token: ${{ secrets.GITHUB_TOKEN }}
