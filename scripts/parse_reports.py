@@ -496,19 +496,19 @@ def main():
                         try:
                             line['time_instrumentation'] = instrumentation_end_time - start_time + pymop_ast_time
                         except Exception as e:
-                            line['time_instrumentation'] = 'Error'
+                            line['time_instrumentation'] = -1
                         try:
                             line['time_create_monitor'] = create_monitor_end_time - instrumentation_end_time
                         except Exception as e:
-                            line['time_create_monitor'] = 'Error'
+                            line['time_create_monitor'] = -1
                         try:
                             line['test_duration'] = end_time - create_monitor_end_time - pymop_ast_time
                         except Exception as e:
-                            line['test_duration'] = 'Error'
+                            line['test_duration'] = -1
                         try:
                             line['end_to_end_time'] = end_time - start_time
                         except Exception as e:
-                            line['end_to_end_time'] = 'Error'
+                            line['end_to_end_time'] = -1
 
                     # get time2 from db
                     # time2 = get_time_from_db(projectname, algorithm)
