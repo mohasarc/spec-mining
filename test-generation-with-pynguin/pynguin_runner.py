@@ -2,6 +2,11 @@ import os
 import sys
 import subprocess
 
+
+# maximum search time in seconds
+MAXIMUM_SEARCH_TIME = 60
+
+
 def find_project_folder(project_path, project_name):
     """Find the actual project folder name regardless of case."""
     # Look for case-insensitive match as the module name need to be matched exactly for pynguin test generation
@@ -13,6 +18,26 @@ def find_project_folder(project_path, project_name):
 
 def detect_python_files(project_path):
     python_files = []
+    # Ignore common artifact and cache directories
+    ignored_dir_names = {
+        "build",
+        "dist",
+        "build.lib",
+        "__pycache__",
+        ".eggs",
+        ".pytest_cache",
+        ".mypy_cache",
+        ".tox",
+        ".nox",
+        ".venv",
+        "venv",
+        "env",
+        ".env",
+        ".git",
+        ".idea",
+        ".vscode",
+    }
+    
 
     # Find the project name and the actual project folder name
     project_name = os.path.basename(os.path.normpath(project_path))
@@ -28,7 +53,12 @@ def detect_python_files(project_path):
         project_folder_status = True
         project_src_path = os.path.join(project_path, actual_project_folder)
 
-    for root, _, files in os.walk(project_src_path):
+    for root, dirnames, files in os.walk(project_src_path):
+        # Prune artifact/cache directories from traversal
+        dirnames[:] = [
+            d for d in dirnames
+            if d not in ignored_dir_names and not d.endswith(".egg-info")
+        ]
         for file in files:
             if file.endswith(".py") and not file.startswith("_") and not file.startswith("__") and not file.startswith("test") and not file.startswith("tests"):
                 # Get the relative path from the project root
@@ -86,6 +116,7 @@ if __name__ == "__main__":
             # Create the command to run Pynguin
             command = (
                 f"pynguin --project-path {project_path} "
+                f"--maximum-search-time {MAXIMUM_SEARCH_TIME} "
                 f"--output-path {output_path} "
                 f"--module-name {module_name} "
                 f"-v --assertion-generation SIMPLE"
