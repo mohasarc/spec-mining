@@ -5,7 +5,7 @@ import pygsheets
 
 def calculate_chunk_size(total_links, num_repositories, min):
     # Start by checking max possible chunk size
-    for size in range(150, 39, -1):  # from 150 down to 40
+    for size in range(400, 39, -1):  # from 800 down to 40
         if total_links / size >= num_repositories:
             return size
     return min  # Minimum size if no ideal size found within range
