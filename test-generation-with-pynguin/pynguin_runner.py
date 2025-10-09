@@ -4,7 +4,7 @@ import subprocess
 
 
 # maximum search time in seconds
-MAXIMUM_SEARCH_TIME = 60
+MAXIMUM_SEARCH_TIME = 120
 
 
 def find_project_folder(project_path, project_name):
