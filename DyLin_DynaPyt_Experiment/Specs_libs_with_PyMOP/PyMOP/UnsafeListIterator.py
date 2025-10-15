@@ -27,14 +27,9 @@ class UnsafeListIterator(Spec):
                 return False
 
             try:
-                # Check if the iterable is not in the stack
-                if (
-                    len(self.iterator_stack) == 0
-                    or id(iterable) != id(self.iterator_stack[-1].l)
-                ):
-                    # Add the iterable to the stack
-                    length = len(iterable)
-                    self.iterator_stack.append(self.ListMeta(iterable, length))
+                # Add the iterable to the stack
+                length = len(iterable)
+                self.iterator_stack.append(self.ListMeta(iterable, length))
             except Exception as e:
                 print(e)
 
