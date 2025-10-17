@@ -1,4 +1,6 @@
 # ============================== Define spec ==============================
+from array import array
+from collections import deque
 from pythonmop import Spec, call, getKwOrPosArg, VIOLATION
 import random
 
@@ -6,6 +8,7 @@ import random
 # Add a seed to the random number generator
 random.seed(35)
 
+ALLOWED_TYPES = (list, deque, set, array)
 
 class WrongTypeAddedAnalysis(Spec):
     """
@@ -22,7 +25,7 @@ class WrongTypeAddedAnalysis(Spec):
             try:
                 func_self = func.__self__
                 func_name = func.__name__
-                if isinstance(func_self, list) and func_name == "append":
+                if isinstance(func_self, ALLOWED_TYPES) and func_name == "append":
                     kw['func_self'] = func_self
                     return self._check_add("append", **kw)
             except:
@@ -34,7 +37,7 @@ class WrongTypeAddedAnalysis(Spec):
             try:
                 func_self = func.__self__
                 func_name = func.__name__
-                if isinstance(func_self, list) and func_name == "insert":
+                if isinstance(func_self, ALLOWED_TYPES) and func_name == "insert":
                     kw['func_self'] = func_self
                     return self._check_add("insert", **kw)
             except:
@@ -46,9 +49,21 @@ class WrongTypeAddedAnalysis(Spec):
             try:
                 func_self = func.__self__
                 func_name = func.__name__
-                if isinstance(func_self, list) and func_name == "extend":
+                if isinstance(func_self, ALLOWED_TYPES) and func_name == "extend":
                     kw['func_self'] = func_self
                     return self._check_add("extend", **kw)
+            except:
+                pass
+
+        @self.event_before(call(PymopFuncCallTracker, 'before_call'))
+        def check_add(**kw):
+            func = kw['args'][1]
+            try:
+                func_self = func.__self__
+                func_name = func.__name__
+                if isinstance(func_self, ALLOWED_TYPES) and func_name == "add":
+                    kw['func_self'] = func_self
+                    return self._check_add("add", **kw)
             except:
                 pass
 
@@ -72,6 +87,8 @@ class WrongTypeAddedAnalysis(Spec):
             right = kw['args'][2][0]
         elif method == 'insert':
             right = kw['args'][2][1]
+        elif method == 'add':
+            right = kw['args'][2][0]
         elif method == 'extend':
             right = kw['args'][2][0]
             if hasattr(right, '__iter__'):
@@ -103,16 +120,20 @@ class WrongTypeAddedAnalysis(Spec):
                         'lineno': kw['call_line_num']
                     }
             elif method == 'extend':
+                right_sample = right
+
+                # Right is so large, sample it
                 if hasattr(right, '__len__') and len(right) >= self.THRESHOLD:
                     right_sample = random.sample(list(right), self.THRESHOLD)
-                    consistent_same_type_right = all(isinstance(n, type_to_check) for n in right_sample)
-                    if not consistent_same_type_right:
-                        return {
-                            "verdict": VIOLATION,
-                            'custom_message': f"Added potentially wrong type to a previously homogeneous list/set at {kw['call_file_name']}, {kw['call_line_num']}.",
-                            'filename': kw['call_file_name'],
-                            'lineno': kw['call_line_num']
-                        }
+
+                consistent_same_type_right = all(isinstance(n, type_to_check) for n in right_sample)
+                if not consistent_same_type_right:
+                    return {
+                        "verdict": VIOLATION,
+                        'custom_message': f"Added potentially wrong type to a previously homogeneous list/set at {kw['call_file_name']}, {kw['call_line_num']}.",
+                        'filename': kw['call_file_name'],
+                        'lineno': kw['call_line_num']
+                    }
             elif method == "add_assign":
                 if len(right) > 0:
                     right_sample_type = type(right[0])
