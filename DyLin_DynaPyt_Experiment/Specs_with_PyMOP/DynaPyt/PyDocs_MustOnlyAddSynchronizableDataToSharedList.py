@@ -62,7 +62,7 @@ class PyDocs_MustOnlyAddSynchronizableDataToSharedList(BaseAnalysis):
             if kw_args.get('object'):
                 data = kw_args['object']
             elif pos_args:
-                data = pos_args[0]
+                data = pos_args[1] # Argument at [0] is self not the data to append
 
             # Check if the data is synchronizable
             if not is_synchronizable(data):
