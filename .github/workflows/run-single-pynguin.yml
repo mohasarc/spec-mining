@@ -47,6 +47,7 @@ jobs:
             mkdir ./results
             
         - name: Run Pynguin
+          id: run_pynguin
           run: |
             cd ./test-generation-with-pynguin
             ls -l
@@ -56,6 +57,7 @@ jobs:
             GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
 
         - name: Run Original Tests
+          if: ${{ steps.run_pynguin.outcome == 'success' }}
           id: run_original
           run: |
             cd ./test-generation-with-pynguin
@@ -66,7 +68,7 @@ jobs:
             GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
 
         - name: Run Testgen Tests
-          if: ${{ steps.run_original.outcome == 'success' }}
+          if: ${{ steps.run_original.outcome == 'success' && steps.run_pynguin.outcome == 'success' }}
           run: |
             cd ./test-generation-with-pynguin
             ls -l
@@ -76,7 +78,7 @@ jobs:
             GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
 
         - name: Run Combined Tests
-          if: ${{ steps.run_original.outcome == 'success' }}
+          if: ${{ steps.run_original.outcome == 'success' && steps.run_pynguin.outcome == 'success' }}
           run: |
             cd ./test-generation-with-pynguin
             ls -l
@@ -86,7 +88,7 @@ jobs:
             GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
 
         - name: Zip all the result files
-          if: ${{ steps.run_original.outcome == 'success' }}
+          if: ${{ steps.run_original.outcome == 'success' && steps.run_pynguin.outcome == 'success' }}
           run: |
             cd ./test-generation-with-pynguin
             zip -j ../$ZIP_FILE ./*.zip  # -j to junk paths and include only .zip files
@@ -94,7 +96,7 @@ jobs:
           shell: bash
 
         - name: Upload report to GitHub Release
-          if: ${{ steps.run_original.outcome == 'success' }}
+          if: ${{ steps.run_original.outcome == 'success' && steps.run_pynguin.outcome == 'success' }}
           uses: Wandalen/wretry.action@master
           with:
             attempt_delay: 60000 # 1 min

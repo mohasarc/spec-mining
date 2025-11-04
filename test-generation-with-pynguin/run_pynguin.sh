@@ -82,7 +82,12 @@ RESULTS_DIR="${DEVELOPER_ID}-${TESTING_REPO_NAME}_testgen"
 mkdir -p $RESULTS_DIR
 
 # Copy test output to results directory
-cp "${TESTING_REPO_NAME}/testgen/*" $RESULTS_DIR/
+if [ -d "${TESTING_REPO_NAME}/testgen" ]; then
+    cp "${TESTING_REPO_NAME}/testgen/*" $RESULTS_DIR/
+else
+    echo "No testgen directory found in ${TESTING_REPO_NAME}"
+    exit 1
+fi
 
 # Archive results
 zip -r "${RESULTS_DIR}.zip" $RESULTS_DIR
