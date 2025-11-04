@@ -87,6 +87,36 @@ jobs:
           env:
             GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
 
+        - name: Run PyMOP Original Tests
+          if: ${{ steps.run_original.outcome == 'success' && steps.run_pynguin.outcome == 'success' }}
+          run: |
+            cd ./test-generation-with-pynguin
+            ls -l
+            chmod +x ./run_pymop_original.sh
+            ./run_pymop_original.sh "${{ inputs.project-link }}"
+          env:
+            GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+
+        - name: Run PyMOP Testgen Tests
+          if: ${{ steps.run_original.outcome == 'success' && steps.run_pynguin.outcome == 'success' }}
+          run: |
+            cd ./test-generation-with-pynguin
+            ls -l
+            chmod +x ./run_pymop_testgen.sh
+            ./run_pymop_testgen.sh "${{ inputs.project-link }}"
+          env:
+            GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+
+        - name: Run PyMOP Combined Tests
+          if: ${{ steps.run_original.outcome == 'success' && steps.run_pynguin.outcome == 'success' }}
+          run: |
+            cd ./test-generation-with-pynguin
+            ls -l
+            chmod +x ./run_pymop_combined.sh
+            ./run_pymop_combined.sh "${{ inputs.project-link }}"
+          env:
+            GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+
         - name: Zip all the result files
           if: ${{ steps.run_original.outcome == 'success' && steps.run_pynguin.outcome == 'success' }}
           run: |

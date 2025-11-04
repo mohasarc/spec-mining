@@ -22,8 +22,8 @@ TESTING_REPO_NAME=$(basename -s .git "$TESTING_REPO_URL")
 # Extract the developer ID from the URL
 DEVELOPER_ID=$(echo "$TESTING_REPO_URL" | sed -E 's|https://github.com/([^/]+)/.*|\1|')
 
-# Create a new directory name by appending _Pynguin to the repository name
-CLONE_DIR="${DEVELOPER_ID}-${TESTING_REPO_NAME}_Pynguin"
+# Create a new directory name by appending _Pynguin_temp to the repository name
+CLONE_DIR="${DEVELOPER_ID}-${TESTING_REPO_NAME}_Pynguin_temp"
 
 # Set the PYNGUIN_DANGER_AWARE environment variable to true
 export PYNGUIN_DANGER_AWARE=true
