@@ -27,7 +27,7 @@ TESTING_REPO_NAME=$(basename -s .git "$TESTING_REPO_URL")
 DEVELOPER_ID=$(echo "$TESTING_REPO_URL" | sed -E 's|https://github.com/([^/]+)/.*|\1|')
 
 # Create combined name with developer ID and repo name
-CLONE_DIR="${DEVELOPER_ID}-${TESTING_REPO_NAME}_PyMOP_Original"
+CLONE_DIR="${DEVELOPER_ID}-${TESTING_REPO_NAME}_PyMOP_Libs_Combined"
 
 # Create the directory if it does not exist
 mkdir -p "$CLONE_DIR"
@@ -73,6 +73,10 @@ fi
 pip install pytest
 pip install pandas
 
+# Copy the generated test cases to the project directory
+mkdir -p testgen
+cp -a "../../${DEVELOPER_ID}-${TESTING_REPO_NAME}_Pynguin/." "testgen/"
+
 # ------------------------------------------------------------------------------------------------
 # Install PyMOP
 # ------------------------------------------------------------------------------------------------
@@ -106,7 +110,7 @@ cd $TESTING_REPO_NAME
 TEST_START_TIME=$(python3 -c 'import time; print(time.time())')
 
 # Run tests with 1-hour timeout and save output
-timeout -k 9 3000 bash -c 'PYMOP_SPEC_FOLDER="$PWD"/../mop-with-dynapt/specs-new PYMOP_ALGO=D PYMOP_STATISTICS=yes PYMOP_STATISTICS_FILE=D.json PYMOP_INSTRUMENTATION_STRATEGY=ast PYTHONPATH="$PWD"/../mop-with-dynapt/pythonmop/pymop-startup-helper/ pytest --continue-on-collection-errors' > ${TESTING_REPO_NAME}_Output.txt
+timeout -k 9 3000 bash -c 'PYMOP_SPEC_FOLDER="$PWD"/../mop-with-dynapt/specs-new PYMOP_ALGO=D PYMOP_INSTRUMENT_SITE_PACKAGES=True PYMOP_STATISTICS=yes PYMOP_STATISTICS_FILE=D.json PYMOP_INSTRUMENTATION_STRATEGY=ast PYTHONPATH="$PWD"/../mop-with-dynapt/pythonmop/pymop-startup-helper/ pytest --continue-on-collection-errors' > ${TESTING_REPO_NAME}_Output.txt
 exit_code=$?
 
 # Process test results if no timeout occurred
