@@ -81,9 +81,9 @@ timeout -k 9 18000 python3 pynguin_runner.py "$PWD/$TESTING_REPO_NAME"
 RESULTS_DIR="${DEVELOPER_ID}-${TESTING_REPO_NAME}_testgen"
 mkdir -p $RESULTS_DIR
 
-# Copy test output to results directory
-if [ -d "${TESTING_REPO_NAME}/testgen" ]; then
-    cp "${TESTING_REPO_NAME}/testgen/*" $RESULTS_DIR/
+# Copy test output to results directory if it exists
+if [ -d "${TESTING_REPO_NAME}/testgen" ] && [ -n "$(find "${TESTING_REPO_NAME}/testgen" -mindepth 1 -print -quit)" ]; then
+    cp -a "${TESTING_REPO_NAME}/testgen/." $RESULTS_DIR/
 else
     echo "No testgen directory found in ${TESTING_REPO_NAME}"
     exit 1

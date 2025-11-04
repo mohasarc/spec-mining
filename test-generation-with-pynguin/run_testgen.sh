@@ -67,7 +67,7 @@ pip install pandas
 
 # Copy the generated test cases to the project directory
 mkdir -p testgen
-cp ../../${TESTING_REPO_NAME}/testgen/* testgen/
+cp -a "../../${TESTING_REPO_NAME}/testgen/." "testgen/"
 
 # Record test start time
 TEST_START_TIME=$(python3 -c 'import time; print(time.time())')
