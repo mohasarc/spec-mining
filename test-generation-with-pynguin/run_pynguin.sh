@@ -78,7 +78,7 @@ cp ../pynguin_runner.py .
 timeout -k 9 18000 python3 pynguin_runner.py "$PWD/$TESTING_REPO_NAME"
 
 # Ensure results directory exists
-RESULTS_DIR="${DEVELOPER_ID}-${TESTING_REPO_NAME}_testgen"
+RESULTS_DIR="${DEVELOPER_ID}-${TESTING_REPO_NAME}_Pynguin"
 mkdir -p $RESULTS_DIR
 
 # Copy test output to results directory if it exists
