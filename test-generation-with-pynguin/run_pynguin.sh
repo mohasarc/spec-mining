@@ -19,8 +19,11 @@ echo "Sha: $target_sha"
 # Extract the repository name from the URL
 TESTING_REPO_NAME=$(basename -s .git "$TESTING_REPO_URL")
 
-# Create a new directory name by appending _Pyguin to the repository name
-CLONE_DIR="${TESTING_REPO_NAME}_Pyguin"
+# Extract the developer ID from the URL
+DEVELOPER_ID=$(echo "$TESTING_REPO_URL" | sed -E 's|https://github.com/([^/]+)/.*|\1|')
+
+# Create a new directory name by appending _Pynguin to the repository name
+CLONE_DIR="${DEVELOPER_ID}-${TESTING_REPO_NAME}_Pynguin"
 
 # Set the PYNGUIN_DANGER_AWARE environment variable to true
 export PYNGUIN_DANGER_AWARE=true
@@ -75,14 +78,16 @@ cp ../pynguin_runner.py .
 timeout -k 9 18000 python3 pynguin_runner.py "$PWD/$TESTING_REPO_NAME"
 
 # Ensure results directory exists
-mkdir -p $CLONE_DIR
+RESULTS_DIR="${DEVELOPER_ID}-${TESTING_REPO_NAME}_testgen"
+mkdir -p $RESULTS_DIR
 
 # Copy test output to results directory
-cp -r "${TESTING_REPO_NAME}/testgen" $CLONE_DIR/
+cp "${TESTING_REPO_NAME}/testgen/*" $RESULTS_DIR/
 
 # Archive results
-zip -r "${CLONE_DIR}.zip" $CLONE_DIR
-mv "${CLONE_DIR}.zip" ..
+zip -r "${RESULTS_DIR}.zip" $RESULTS_DIR
+mv $RESULTS_DIR ..
+mv "${RESULTS_DIR}.zip" ..
 
 # Return to main directory
 cd ..
