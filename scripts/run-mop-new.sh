@@ -33,7 +33,7 @@ call_pymop(){
         echo "{\"test_duration\": ${END_TO_END_TIME}}" > $report/$algo-time.json
     else
         START_TIME=$(python -c 'import time; print(time.time())')
-        PYMOP_SPEC_FOLDER="$PWD"/../mop-with-dynapt/specs-new/ PYMOP_ALGO=$algo PYMOP_STATISTICS=yes PYMOP_STATISTICS_FILE="$algo".json PYMOP_INSTRUMENTATION_STRATEGY=ast \
+        PYMOP_SPEC_FOLDER="$PWD"/../mop-with-dynapt/specs-new/ PYMOP_ALGO=$algo PYMOP_STATISTICS=yes PYMOP_STATISTICS_FILE="$algo".json PYMOP_INSTRUMENTATION_STRATEGY=ast PYMOP_INSTRUMENT_SITE_PACKAGES=True \
         PYTHONPATH="$PWD"/../mop-with-dynapt/pythonmop/pymop-startup-helper/ timeout 14400 pytest --color=no -v -p pythonmop -rA --memray --trace-python-allocators --most-allocations=0 --memray-bin-path=$report/MEM_$algo \
         --continue-on-collection-errors --json-report --json-report-indent=2 $extra_args &> $report/$algo-pytest-output.txt
         END_TIME=$(python -c 'import time; print(time.time())')
