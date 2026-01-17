@@ -30,7 +30,7 @@ TESTING_REPO_NAME=$(basename -s .git "$TESTING_REPO_URL")
 DEVELOPER_ID=$(echo "$TESTING_REPO_URL" | sed -E 's|https://github.com/([^/]+)/.*|\1|')
 
 # Create combined name with developer ID and repo name
-CLONE_DIR="${DEVELOPER_ID}-${TESTING_REPO_NAME}_DynaPyt_Libs"
+CLONE_DIR="${DEVELOPER_ID}-${TESTING_REPO_NAME}_DynaPyt_Libs_with_pymop"
 
 # Create the directory if it does not exist
 mkdir -p "$CLONE_DIR"
@@ -66,7 +66,7 @@ for file in *.txt; do
 done
 
 # Install missing dependencies from the requirements directory if exists
-if [ -d "$PWD/../../requirements/${DEVELOPER_ID}-${TESTING_REPO_NAME}_${target_sha}/requirements.txt" ]; then
+if [ -f "$PWD/../../requirements/${DEVELOPER_ID}-${TESTING_REPO_NAME}_${target_sha}/requirements.txt" ]; then
     pip install -r "$PWD/../../requirements/${DEVELOPER_ID}-${TESTING_REPO_NAME}_${target_sha}/requirements.txt"
 fi
 
