@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if exactly one repository URL and one status number areprovided, and exit if not
-if [ "$#" -ne 3 ]; then
+if [ "$#" -ne 1 ]; then
     echo "Usage: $0 <testing-repo-url>"
     exit 1
 fi
@@ -15,10 +15,6 @@ IFS=';' read -r TESTING_REPO_URL target_sha <<< "$repo_url_with_sha"
 # Output the url
 echo "Url: $TESTING_REPO_URL"
 echo "Sha: $target_sha"
-
-# Assign the provided argument (status number and libraries enabled) to a variable
-status_number="$2"
-libraries_enabled="$3"
 
 echo "🚀 Running experiment for: $TESTING_REPO_URL - $target_sha"
 
