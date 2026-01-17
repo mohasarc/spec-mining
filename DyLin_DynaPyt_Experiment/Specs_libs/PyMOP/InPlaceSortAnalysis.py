@@ -1,5 +1,6 @@
 # ============================== Define spec ==============================
 from pythonmop import Spec, call, End
+from pythonmop.spec import spec
 from pythonmop.statistics import StatisticsSingleton
 
 import builtins
@@ -40,14 +41,14 @@ class InPlaceSortAnalysis(Spec):
                     # Get the custom message
                     custom_message = f'Spec - {self.__class__.__name__}: Unnessecary use of sorted() call for lists: {list_info["file_name"]}, {list_info["line_num"]}.'
 
-                    # Print the custom message
-                    print(custom_message)
-
                     # Add the violation into the statistics.
-                    StatisticsSingleton().add_violation(self.__class__.__name__,
+                    violation_first_occurrence = StatisticsSingleton().add_violation(self.__class__.__name__,
                                                         f'last event: {None}, param: {None}, '
                                                         f'message: {custom_message}, '
                                                         f'file_name: {list_info["file_name"]}, line_num: {list_info["line_num"]}')
+
+                    if violation_first_occurrence and spec.PRINT_VIOLATIONS_TO_CONSOLE:
+                        print(custom_message)
 
 # =========================================================================
 

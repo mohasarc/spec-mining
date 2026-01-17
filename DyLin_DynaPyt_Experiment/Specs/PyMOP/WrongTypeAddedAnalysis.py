@@ -1,11 +1,14 @@
 # ============================== Define spec ==============================
+from array import array
+from collections import deque
 from pythonmop import Spec, call, getKwOrPosArg, VIOLATION
+import inspect
 import random
 
+ALLOWED_TYPES = (list, deque, set, array)
 
 # Add a seed to the random number generator
 random.seed(35)
-
 
 class WrongTypeAddedAnalysis(Spec):
     """
@@ -16,53 +19,116 @@ class WrongTypeAddedAnalysis(Spec):
 
         self.THRESHOLD = 10
 
-        @self.event_before(call(list, 'append'))
+        @self.event_before(call(PymopFuncCallTracker, 'before_call'))
         def check_append(**kw):
-            return self._check_add("append", **kw)
+            func = kw['args'][1]
+            try:
+                # only handle “real” callables you care about
+                if not (inspect.ismethod(func) or inspect.isbuiltin(func)):
+                    return
 
-        @self.event_before(call(list, 'add'))
-        def check_add(**kw):
-            return self._check_add("add", **kw)
+                func_self = inspect.getattr_static(func, "__self__", None)
+                func_name = inspect.getattr_static(func, "__name__", None)
 
-        @self.event_before(call(list, 'insert'))
+                if func_self is None or func_name is None:
+                    return
+
+                if isinstance(func_self, ALLOWED_TYPES) and func_name == "append":
+                    kw['func_self'] = func_self
+                    return self._check_add("append", **kw)
+            except:
+                pass
+
+        @self.event_before(call(PymopFuncCallTracker, 'before_call'))
         def check_insert(**kw):
-            return self._check_add("insert", **kw)
+            func = kw['args'][1]
+            try:
+                # only handle “real” callables you care about
+                if not (inspect.ismethod(func) or inspect.isbuiltin(func)):
+                    return
 
-        @self.event_before(call(list, 'extend'))
+                func_self = inspect.getattr_static(func, "__self__", None)
+                func_name = inspect.getattr_static(func, "__name__", None)
+
+                if func_self is None or func_name is None:
+                    return
+
+                if isinstance(func_self, ALLOWED_TYPES) and func_name == "insert":
+                    kw['func_self'] = func_self
+                    return self._check_add("insert", **kw)
+            except:
+                pass
+
+        @self.event_before(call(PymopFuncCallTracker, 'before_call'))
         def check_extend(**kw):
-            return self._check_add("extend", **kw)
+            func = kw['args'][1]
+            try:
+                # only handle “real” callables you care about
+                if not (inspect.ismethod(func) or inspect.isbuiltin(func)):
+                    return
+
+                func_self = inspect.getattr_static(func, "__self__", None)
+                func_name = inspect.getattr_static(func, "__name__", None)
+
+                if func_self is None or func_name is None:
+                    return
+
+                if isinstance(func_self, ALLOWED_TYPES) and func_name == "extend":
+                    kw['func_self'] = func_self
+                    return self._check_add("extend", **kw)
+            except:
+                pass
+
+        @self.event_before(call(PymopFuncCallTracker, 'before_call'))
+        def check_add(**kw):
+            func = kw['args'][1]
+            try:
+                # only handle “real” callables you care about
+                if not (inspect.ismethod(func) or inspect.isbuiltin(func)):
+                    return
+
+                func_self = inspect.getattr_static(func, "__self__", None)
+                func_name = inspect.getattr_static(func, "__name__", None)
+
+                if func_self is None or func_name is None:
+                    return
+
+                if isinstance(func_self, ALLOWED_TYPES) and func_name == "add":
+                    kw['func_self'] = func_self
+                    return self._check_add("add", **kw)
+            except:
+                pass
 
         @self.event_before(call(PymopArithmeticOperatorTracker, r'__pymop__add__|__pymop__iadd__'))
         def check_add_assign(**kw):
             if len(kw['args']) < 3:
                 return False
-
             return self._check_add("add_assign", **kw)
 
     def _check_add(self, method, **kw):
         if method == "add_assign":
             left = kw['args'][1]
         else:
-            left = kw['obj']
+            left = kw['func_self']
 
         if not hasattr(left, '__len__') or len(left) <= self.THRESHOLD:
             return False
 
-        if method in ('append', 'add'):
-            right = getKwOrPosArg('object', 1, kw)
+        if method in ('append'):
+            right = kw['args'][2][0]
         elif method == 'insert':
-            right = getKwOrPosArg('object', 2, kw)
+            right = kw['args'][2][1]
+        elif method == 'add':
+            right = kw['args'][2][0]
         elif method == 'extend':
-            right = getKwOrPosArg('object', 1, kw)
-            if hasattr(right, '__iter__'):
+            right = kw['args'][2][0]
+            if "__len__" in dir(right):
                 right = list(right)
             else:
                 return False
         elif method == "add_assign":
             right = kw['args'][2]
-            if hasattr(right, '__iter__'):
-                right = list(right)
-            else:
+            if type(right) != list:
                 return False
         else:
             return False
@@ -83,16 +149,19 @@ class WrongTypeAddedAnalysis(Spec):
                         'lineno': kw['call_line_num']
                     }
             elif method == 'extend':
+                right_sample = right
+
+                # Right is so large, sample it
                 if hasattr(right, '__len__') and len(right) >= self.THRESHOLD:
                     right_sample = random.sample(list(right), self.THRESHOLD)
-                    consistent_same_type_right = all(isinstance(n, type_to_check) for n in right_sample)
-                    if not consistent_same_type_right:
-                        return {
-                            "verdict": VIOLATION,
-                            'custom_message': f"Added potentially wrong type to a previously homogeneous list/set at {kw['call_file_name']}, {kw['call_line_num']}.",
-                            'filename': kw['call_file_name'],
-                            'lineno': kw['call_line_num']
-                        }
+                consistent_same_type_right = all(isinstance(n, type_to_check) for n in right_sample)
+                if not consistent_same_type_right:
+                    return {
+                        "verdict": VIOLATION,
+                        'custom_message': f"Added potentially wrong type to a previously homogeneous list/set at {kw['call_file_name']}, {kw['call_line_num']}.",
+                        'filename': kw['call_file_name'],
+                        'lineno': kw['call_line_num']
+                    }
             elif method == "add_assign":
                 if len(right) > 0:
                     right_sample_type = type(right[0])
