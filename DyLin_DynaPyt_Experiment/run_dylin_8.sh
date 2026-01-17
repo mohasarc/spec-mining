@@ -21,7 +21,7 @@ TMPDIR=/tmp
 echo "TMPDIR: $TMPDIR"
 
 # Define the fixed repository URL for the DyLin project
-DYLIN_REPO_URL="https://github.com/AryazE/DyLin.git"
+DYLIN_REPO_URL="https://github.com/sola-st/DyLin.git"
 
 # Extract the repository name from the URL
 TESTING_REPO_NAME=$(basename -s .git "$TESTING_REPO_URL")
