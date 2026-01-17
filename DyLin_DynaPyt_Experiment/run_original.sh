@@ -55,12 +55,11 @@ for file in *.txt; do
 done
 
 # Install missing dependencies from the requirements directory if exists
-pushd ../../requirements &> /dev/null
-ls
-echo "PWD: $PWD"
-echo "${DEVELOPER_ID}-${TESTING_REPO_NAME}_${target_sha}"
-popd &> /dev/null
-
+# pushd ../../requirements &> /dev/null
+# ls
+# echo "PWD: $PWD"
+# echo "${DEVELOPER_ID}-${TESTING_REPO_NAME}_${target_sha}"
+# popd &> /dev/null
 if [ -f "$PWD/../../requirements/${DEVELOPER_ID}-${TESTING_REPO_NAME}_${target_sha}/requirements.txt" ]; then
     pip install -r "$PWD/../../requirements/${DEVELOPER_ID}-${TESTING_REPO_NAME}_${target_sha}/requirements.txt"
 fi
