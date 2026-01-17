@@ -142,9 +142,9 @@ echo "Test Time: ${TEST_TIME}s" >> $RESULTS_FILE
 
 # Copy the necessary files to the $CLONE_DIR directory
 cp "${TESTING_REPO_NAME}/${TESTING_REPO_NAME}_Output.txt" $CLONE_DIR/
-cp $TESTING_REPO_NAME/D-full.json $CLONE_DIR/C+-full.json
-cp $TESTING_REPO_NAME/D-time.json $CLONE_DIR/C+-time.json
-cp $TESTING_REPO_NAME/D-violations.json $CLONE_DIR/C+-violations.json
+cp $TESTING_REPO_NAME/C+-full.json $CLONE_DIR/C+-full.json
+cp $TESTING_REPO_NAME/C+-time.json $CLONE_DIR/C+-time.json
+cp $TESTING_REPO_NAME/C+-violations.json $CLONE_DIR/C+-violations.json
 
 # Archive results
 zip -r "${CLONE_DIR}.zip" $CLONE_DIR
