@@ -62,6 +62,11 @@ for file in *.txt; do
     fi
 done
 
+# Install missing dependencies from the requirements directory if exists
+if [ -d "$PWD/../../requirements/${DEVELOPER_ID}-${TESTING_REPO_NAME}_${target_sha}/requirements.txt" ]; then
+    pip install -r "$PWD/../../requirements/${DEVELOPER_ID}-${TESTING_REPO_NAME}_${target_sha}/requirements.txt"
+fi
+
 # Install the package with test dependencies using custom install script if available
 if [ -f myInstall.sh ]; then
     bash ./myInstall.sh
@@ -86,9 +91,6 @@ git clone "$PYMOP_REPO_URL" || { echo "Failed to clone $PYMOP_REPO_URL"; exit 1;
 # Navigate to the mop-with-dynapt directory
 cd mop-with-dynapt
 
-# TODO: Currently using a temp version of PyMOP
-# git checkout fix-pymop-broken-6
-
 # Install the project in editable mode with dev dependencies
 pip install . || { echo "Failed to install mop-with-dynapt"; exit 1; }
 
@@ -106,7 +108,7 @@ cd $TESTING_REPO_NAME
 TEST_START_TIME=$(python3 -c 'import time; print(time.time())')
 
 # Run tests with 1-hour timeout and save output
-timeout -k 9 3000 bash -c 'PYMOP_SPEC_FOLDER="$PWD"/../../Specs_libs_with_PyMOP/PyMOP PYMOP_ALGO=D PYMOP_STATISTICS=yes PYMOP_STATISTICS_FILE=D.json PYMOP_INSTRUMENTATION_STRATEGY=ast PYTHONPATH="$PWD"/../mop-with-dynapt/pythonmop/pymop-startup-helper/ pytest --continue-on-collection-errors' > ${TESTING_REPO_NAME}_Output.txt
+time timeout -k 9 3000 bash -c 'PYMOP_SPEC_FOLDER="$PWD"/../../Specs_libs_with_PyMOP/PyMOP PYMOP_ALGO=D PYMOP_STATISTICS=yes PYMOP_STATISTICS_FILE=D.json PYMOP_INSTRUMENTATION_STRATEGY=ast PYTHONPATH="$PWD"/../mop-with-dynapt/pythonmop/pymop-startup-helper/ pytest --continue-on-collection-errors' > ${TESTING_REPO_NAME}_Output.txt
 exit_code=$?
 
 # Process test results if no timeout occurred
