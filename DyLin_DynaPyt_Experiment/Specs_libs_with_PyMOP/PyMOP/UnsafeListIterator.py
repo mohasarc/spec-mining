@@ -31,7 +31,7 @@ class UnsafeListIterator(Spec):
                 length = len(iterable)
                 self.iterator_stack.append(self.ListMeta(iterable, length))
             except Exception as e:
-                print(e)
+                pass
 
         # TODO: add for loop end event for clean up memory
         @self.event_before(call(PymopForLoopTracker, 'for_loop_end'))
@@ -62,7 +62,7 @@ class UnsafeListIterator(Spec):
                 # Pop the iterable from the stack
                 self.iterator_stack.pop()
             except Exception as e:
-                print(e)
+                pass
 
     def match(self, call_file_name, call_line_num):
         print(

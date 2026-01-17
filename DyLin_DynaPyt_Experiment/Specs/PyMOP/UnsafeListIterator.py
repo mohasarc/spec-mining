@@ -46,7 +46,7 @@ class UnsafeListIterator(Spec):
                                     'lineno': kw['call_line_num']}
 
                 except Exception as e:
-                    print(e)
+                    pass
 
         # TODO: add for loop end event for clean up memory
         @self.event_before(call(PymopForLoopTracker, 'for_loop_end'))
