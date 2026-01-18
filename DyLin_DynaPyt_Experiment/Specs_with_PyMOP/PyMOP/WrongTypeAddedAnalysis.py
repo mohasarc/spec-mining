@@ -23,12 +23,8 @@ class WrongTypeAddedAnalysis(Spec):
         def check_append(**kw):
             func = kw['args'][1]
             try:
-                # only handle “real” callables you care about
-                if not (inspect.ismethod(func) or inspect.isbuiltin(func)):
-                    return
-
-                func_self = inspect.getattr_static(func, "__self__", None)
-                func_name = inspect.getattr_static(func, "__name__", None)
+                func_self = getattr(func, "__self__", None)
+                func_name = getattr(func, "__name__", None)
 
                 if func_self is None or func_name is None:
                     return
@@ -43,12 +39,8 @@ class WrongTypeAddedAnalysis(Spec):
         def check_insert(**kw):
             func = kw['args'][1]
             try:
-                # only handle “real” callables you care about
-                if not (inspect.ismethod(func) or inspect.isbuiltin(func)):
-                    return
-
-                func_self = inspect.getattr_static(func, "__self__", None)
-                func_name = inspect.getattr_static(func, "__name__", None)
+                func_self = getattr(func, "__self__", None)
+                func_name = getattr(func, "__name__", None)
 
                 if func_self is None or func_name is None:
                     return
@@ -63,12 +55,8 @@ class WrongTypeAddedAnalysis(Spec):
         def check_extend(**kw):
             func = kw['args'][1]
             try:
-                # only handle “real” callables you care about
-                if not (inspect.ismethod(func) or inspect.isbuiltin(func)):
-                    return
-
-                func_self = inspect.getattr_static(func, "__self__", None)
-                func_name = inspect.getattr_static(func, "__name__", None)
+                func_self = getattr(func, "__self__", None)
+                func_name = getattr(func, "__name__", None)
 
                 if func_self is None or func_name is None:
                     return
@@ -83,12 +71,8 @@ class WrongTypeAddedAnalysis(Spec):
         def check_add(**kw):
             func = kw['args'][1]
             try:
-                # only handle “real” callables you care about
-                if not (inspect.ismethod(func) or inspect.isbuiltin(func)):
-                    return
-
-                func_self = inspect.getattr_static(func, "__self__", None)
-                func_name = inspect.getattr_static(func, "__name__", None)
+                func_self = getattr(func, "__self__", None)
+                func_name = getattr(func, "__name__", None)
 
                 if func_self is None or func_name is None:
                     return
