@@ -35,7 +35,7 @@ if timeout 3600 bash "run_original.sh" "$url_with_sha"; then
     # Run pymop and dynapyt scripts sequentially
     for script in "${scripts[@]}"; do
         echo "🚀 Running $script on $TESTING_REPO_URL with SHA $target_sha..."
-        if timeout 7200 bash "$script" "$url_with_sha"; then
+        if timeout 3600 bash "$script" "$url_with_sha"; then
             echo "✅ Finished $script on $TESTING_REPO_URL"
         else
             echo "❌ $script failed for $TESTING_REPO_URL. Continuing to the next script..."
