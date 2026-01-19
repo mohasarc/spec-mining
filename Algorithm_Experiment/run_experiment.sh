@@ -22,20 +22,21 @@ echo "🚀 Running experiment for: $TESTING_REPO_URL - $target_sha"
 url_with_sha="${TESTING_REPO_URL};${target_sha}"
 
 # Define the scripts to run
-scripts=("run_pymop_b.sh" "run_pymop_c.sh" "run_pymop_c+.sh" "run_pymop_d.sh")
+# scripts=("run_pymop_b.sh" "run_pymop_c.sh" "run_pymop_c+.sh" "run_pymop_d.sh")
+scripts=("run_pymop_d.sh")
 
 # Output the scripts to run
 echo "Scripts: ${scripts[@]}"
 
 # Run the original script
 echo "🚀 Running run_original.sh on $TESTING_REPO_URL with SHA $target_sha..."
-if timeout 3600 bash "run_original.sh" "$url_with_sha"; then
+if timeout 1800 bash "run_original.sh" "$url_with_sha"; then
     echo "✅ Finished run_original.sh on $TESTING_REPO_URL"
 
     # Run pymop and dynapyt scripts sequentially
     for script in "${scripts[@]}"; do
         echo "🚀 Running $script on $TESTING_REPO_URL with SHA $target_sha..."
-        if timeout 7200 bash "$script" "$url_with_sha"; then
+        if timeout 19500 bash "$script" "$url_with_sha"; then
             echo "✅ Finished $script on $TESTING_REPO_URL"
         else
             echo "❌ $script failed for $TESTING_REPO_URL. Continuing to the next script..."
