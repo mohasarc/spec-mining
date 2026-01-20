@@ -202,7 +202,7 @@ cd "$TESTING_REPO_NAME"
 TEST_START_TIME=$(python3 -c 'import time; print(time.time())')
 
 # Run tests with 1-hour timeout and save output
-time timeout -k 9 3000 pytest --continue-on-collection-errors > ${TESTING_REPO_NAME}_Output.txt
+/usr/bin/time -v timeout -k 9 7000 pytest --continue-on-collection-errors &> ${TESTING_REPO_NAME}_Output.txt
 exit_code=$?
 
 # Process test results if no timeout occurred
