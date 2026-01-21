@@ -58,6 +58,9 @@ python3 -m venv venv
 # Activate the virtual environment
 source venv/bin/activate
 
+# Install numpy 2.3.5
+pip install numpy==2.3.5
+
 # Install dependencies from all requirement files if they exist
 for file in *.txt; do
     if [ -f "$file" ]; then

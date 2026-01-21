@@ -55,6 +55,9 @@ python3 -m venv venv
 # Activate the virtual environment
 source venv/bin/activate
 
+# Install numpy 2.3.5
+pip install numpy==2.3.5
+
 # Navigate to the testing project directory
 cd "$TESTING_REPO_NAME" || { echo "Failed to enter directory $TESTING_REPO_NAME"; exit 1; }
 
