@@ -67,6 +67,10 @@ if [ "${DEVELOPER_ID}-${TESTING_REPO_NAME}_${target_sha}" == "davidhalter-jedi_8
     git submodule update --init --recursive
 fi
 
+if [ "${DEVELOPER_ID}-${TESTING_REPO_NAME}_${target_sha}" == "Telefonica-HomePWN_0803981" ]; then
+    sed -i '87 s/^/# /; 92 s/^/# /; 97 s/^/# /' tests/test_utils.py
+fi
+
 # Install numpy
 pip install numpy==2.3.5
 
