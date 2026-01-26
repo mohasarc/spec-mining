@@ -41,7 +41,7 @@ elif [ "$status_number" = "5" ]; then
 elif [ "$status_number" = "6" ]; then
     scripts=("run_pymop_8_with_pymop.sh" "run_pymop_12_with_pymop.sh" "run_pymop_libs_8_with_pymop.sh")
 elif [ "$status_number" = "7" ]; then
-    scripts=("run_pymop_libs_8_with_pymop.sh")
+    scripts=("run_pymop_8_with_pymop.sh")
 else
     echo "Invalid status number: $status_number"
     exit 1
