@@ -70,6 +70,7 @@ fi
 
 # Install numpy
 pip install numpy==2.3.5
+pip install setuptools wheel
 
 # Install dependencies from all requirement files if they exist
 for file in *.txt; do
